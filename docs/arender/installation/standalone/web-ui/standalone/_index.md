@@ -1,0 +1,116 @@
+---
+title: "Installation"
+draft: false
+weight: 1
+type: docs
+icon: mdi-cog-outline
+keywords: [ "standalone", "hmi", "configuration", "Web-UI" ]
+related:
+    - name : "Configuration"
+      rel: '/installation/standalone/web-ui/configuration.fr.md'
+    - name : "Configuration Spring Boot"
+      rel: '/installation/standalone/web-ui/configuration.fr.md#springboot'
+---
+
+
+Ci-après, une installation standard d’ARender Web-UI.
+
+[shortcode]
+Pour installer sur **IBM FileNet**, vous pouvez sauter cette page et vous rendre directement sur :
+[Installation de ARender sur IBM FileNet]({{< relref "/content/installation/standalone/web-ui/filenet/_index.fr.md">}}).
+[shortcode]
+
+[shortcode]
+Depuis ARender 2023.0.0, le déploiement de la WEB-UI ARender a été modifié. Veuillez consulter la 
+documentation détaillée de mise à jour [ici]({{< relref "/guides/upgrade/4.8_to_2023.0/_index.fr.md">}}).
+[shortcode]
+
+## Prérequis
+
+
+### Matériel
+
+| Catégorie   | Minimum | Conseillé                                                                                        |
+| ----------- | ------- | ------------------------------------------------------------------------------------------------ |
+| Nb Serveur  | 1       | Environ le nombre de serveur de rendition divisé par deux (exemple 4 serveurs de rendition donc 2 serveurs de présentation)|
+| RAM         | 1Go     | 2Go                                                                                              |                                                           
+| Type de CPU | 64Bits  | 64Bits                                                                                           |
+
+### Logiciel
+
+| Logiciel                   | Pré-requis                                                                   |
+| -------------------------- | ---------------------------------------------------------------------------- |
+| Java Runtime               | JRE 1.8 64 bits Minimum, OpenJDK 11 conseillé. JRE IBM J9 et java 17 ne sont pas supportés.                                                                                                                                                                                                                                       |
+| ARender Rendition démarré  | La page de météo de la Rendition doit être au vert, voir [la documentation liée]({{< relref "/content/installation/standalone/rendition/verification.fr.md">}}). Si ce n'est pas le cas, merci d'installer la Rendition en suivant [cette documentation]({{< relref "/content/installation/standalone/rendition/_index.fr.md">}}).|
+
+## Installation
+
+### Download installation files
+
+* Se munir du couple login/mot de passe d'accès à notre répertoire de binaires (si vous n'avez pas d'accès merci de prendre contact avec nous : arender-sales@arondor.com)
+* Télécharger le zip :
+
+[shortcode]https://artifactory.arondor.cloud/artifactory/arondor-all/com/arondor/arender/arondor-arender-hmi-spring-boot-package/[shortcode]/arondor-arender-hmi-spring-boot-package-[shortcode].zip[shortcode]
+
+* Décompresser le fichier zip dans le dossier de votre choix (Appelons le *[Web-UI-folder]*).
+>Le fichier zip contient les script d'installation de la web-ui en tant que service mais aussi les scripts utiles à la suppression et au démarrage de ce service.
+
+## Démarrage
+
+* Extraire le contenu du zip dans le dossier de votre choix. (Appelons le *[Web-UI-folder]*)
+
+* Ouvrir une console et utiliser la commande suivante : 
+[shortcode] 
+  java -jar [Web-UI-folder]/arondor-arender-hmi-spring-boot-[shortcode].jar
+[shortcode]
+
+
+## Ouvrir une nouvelle fenêtre navigateur
+
+[shortcode]
+Accès à <http://localhost:8080> via un navigateur web.
+[shortcode]
+
+![Document par défaut]([shortcode])
+
+
+[shortcode]
+L'URL à utiliser doit être comme suit : <http://{Web-UI-HostName}:{port-Web-UI}/{ARenderContext}/>:
+- *{Web-UI-HostName}* : le nom d'hôte du serveur d'application
+- *{port-Web-UI}* : le port du serveur d'application
+[shortcode]
+
+### Pas de Rendition fonctionnelle en local
+
+Si vous rencontrez l'erreur suivante, merci de lire la suite.
+
+![Document par défaut - KO]([shortcode])
+
+Cela peut signifier que :
+* Soit la Rendition en locale n'est pas installée ou démarrée : 
+    * Dans ce cas merci de revenir sur la documentation ci-après : [Documentation d'installation de la Rendition]({{< relref "/content/installation/standalone/rendition/_index.fr.md">}}). 
+* Soit la Rendition est installée sur un serveur disant :
+    * Dans ce cas il faut configurer ARender en suivant la documentation sur la propriété **arender.server.rendition.hosts** : [Configuration de ARender Web-UI]({{< relref "/content/installation/standalone/web-ui/configuration.fr.md">}}).
+
+## Installation de ARender Web-UI en service
+
+* Ouvrir une ligne de commande avec les droits **administrateur**,
+* Se rendre dans le dossier **[Web-UI-folder]**
+* Exécuter le script d’installation comme indiqué ci-dessous :
+
+
+
+{{< tabs id="1" tabs="Windows, Linux">}}
+[shortcode]
+```cmd
+$> .\ARenderHmiService-install.bat
+```
+[shortcode]
+[shortcode]
+```bash
+$> ./ARenderHmiService-install.sh
+```
+[shortcode]
+[shortcode]
+    
+Le service **ARenderHMIService** devrait être créé et en cours d'exécution sur le port 8080.

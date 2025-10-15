@@ -1,0 +1,164 @@
+---
+title: "Installer dans ICN"
+draft: false
+weight: 2
+keywords: [ "standalone", "hmi", "web ui", "configuration", "filenet", "ICN" ]
+---
+
+Nous continuons ici l'installation mais dans le module ICN de FileNet.
+
+## Prérequis
+
+Pour l'utilisation du SSO entre ICN et ARender, il faut savoir que le SSO inter-domaine n'est pas supporté. Par exemple z.AAAcompany.com et w.BBBcompany.com, où les domaines DNS sont différents.
+Plus d'information ci-après : https://www.ibm.com/docs/fr/was-nd/8.5.5?topic=authentication-single-sign-using-ltpa-cookies
+
+
+## Récupérer l'archive du serveur de présentation
+
+En utilisant l'identifiant et mot de passe préalablement fournis,
+vous pouvez récupérer le plugin navigator
+[ici](https://artifactory.arondor.cloud/artifactory/arondor-all/com/arondor/arender/arondor-arender-navigator-plugin/[shortcode]/arondor-arender-navigator-plugin-[shortcode].jar)
+
+## ARender et IBM Content Navigator (ou encore IBM Content Manager)
+
+### Partage de clef LTPA
+
+Afin de permettre l’utilisation de la session utilisateur (ICN) au sein d’Arender Web-UI, il faut mettre en place la configuration LTPA, comme suit :
+
+- Export de la clef LTPA du CPE
+
+Dans la console d’administration WebSphere du **CPE**, rendez-vous sur la page **Sécurité** > **Sécurité Globale**, dans la partie **Authentification**, cliquer sur **LTPA**
+
+![filenet]([shortcode])
+
+Renseigner un mot de passe, un chemin d’export, puis cliquer sur « Exporter les clés »
+
+![filenet]([shortcode])
+
+- Import de la clef LTPA du CPE dans la JVM ARender
+
+Copier le fichier de clés sur le serveur où sera déployé Arender Web-UI
+
+Puis, importer les clés dans le profil hébergeant Arender Web-UI depuis la console d’administration WebSphere, comme ci-desous :
+
+- Dans la console d’administration WebSphere, rendez-vous sur la page **Sécurité** > **Sécurité Globale**, dans la partie **Authentification**, cliquer sur **LTPA**
+- Renseigner le même mot de passe que précédemment
+- Renseigner le chemin du fichier contenant les clés
+- Cliquer sur « Importer les clés »
+- Sauvegarder les modifications
+
+### Invalidation de session lors d'un changement d'utilisateur
+
+Depuis ICN version 3.0.6, si vous changez d'utilisateur sur la même session alors vous allez avoir un message d'erreur à l'ouverture d'un document par le nouvel utilisateur qui va ressembler à cela :
+
+
+[shortcode]
+
+Error 500: com.ibm.websphere.servlet.session.UnauthorizedSessionRequestException: SESN0008E: A user authenticated as user:localhost:389/CN=userB,CN=Users,DC=ircem,DC=dev has attempted to access a session owned by user:localhost:389/CN=userA,CN=Users,DC=ircem,DC=dev
+
+[shortcode]
+
+La session de l'utilisateur userA n'a pas été invalidé à sa déconnexion, ce qui va entrainer l'erreur à l'ouverture d'un document par l'utilisateur userB. Il y a une propriété à rajouter dans une console WebSphere qui va permettre d'invalider une session sur laquelle une requête non autorisé est faite. Cette invalidation de session va permettre la récupération du bon nom d'utilisateur par ARender.
+
+#### Ajout de la propriété
+
+- Aller sur votre console websphere puis dans le menu aller dans *servers -> server types -> websphere application servers*.
+- Sélectionner le serveur sur lequel vous voulez faire la modification. Dans notre exemple, on choisis *serverICN*
+
+![filenet]([shortcode])
+
+- Dans *Container settings* aller dans *Session management*.
+
+![filenet]([shortcode])
+
+- Dans *Additional properties*, cliquer sur *custom properties*.
+
+![filenet]([shortcode])
+
+- Cliquer sur *New...* pour rajouter une propriété.
+
+![filenet]([shortcode])
+
+- Ajouter la propriété *InvalidateOnUnauthorizedSessionRequestException* avec la valeur *true* afin qu'elle soit appliquée.
+
+![filenet]([shortcode])
+
+- Il faut ensuite cliquer sur *Ok* puis *save*. Relancer vos services Filenet pour prendre en compte cette propriété.
+
+### Intégration du plugin arender pour FileNet
+
+Un plugin spécifique a été développé pour permettre l’intégration d’ARender avec ICN. Nota : le connecteur ICN est basé sur la syntaxe mixedObjects cité ci-dessus.
+
+Se connecter au Content Navigator.
+
+Aller dans la vue « Administration » et cliquer sur « Plug-ins ».
+
+![filenet]([shortcode])
+
+Cliquer sur « Nouveau Plug-in ».
+
+![filenet]([shortcode])
+
+Entrer le chemin et nom du JAR et cliquer sur « Charger ».
+
+![filenet]([shortcode])
+
+Dans le champ ARender context root entrer l’adresse (host + port + context root) de ARender. Cf. exemple ci-dessous :
+
+![filenet]([shortcode])
+
+Pour utiliser cette mappe d’afficheur, il suffit de l’associer à un bureau (dans l’onglet général de définition du bureau, Mappe d’afficheur).
+
+![filenet]([shortcode])
+
+Et enfin, cliquer sur « Sauvegarder ».
+
+![filenet]([shortcode])
+
+Vous pouvez maintenant redémarrer vos serveurs d'application et tenter d'ouvrir un fichier dans FileNet.
+
+![filenet]([shortcode])
+
+![filenet]([shortcode])
+
+## Utiliser les fonctionnalités avancées d'ARender directement depuis ICN
+
+Les utilisateurs finaux peuvent utiliser les fonctionnalités de comparaison et de fusion/découpage de document(s) directement depuis l'interface d'ICN.
+
+### Créer un menu ICN dédié pour afficher les fonctionnalités avancées ARender
+
+* Dans ICN, ouvrir le menu **Administration**
+* Sélectionner **Menus**
+* Rechercher le menu nommé **Menu contextuel de document par défaut**
+
+![filenet]([shortcode])
+
+* Faire un clic droit sur ce menu et sélectionner **Copier**
+* Définir le nom et la description de ce menu
+* Dans la partie gauche nommée *Disponible* sélectionner les actions **Comparer les documents** et/ou **Fusionner les documents** et ajouter les dans la partie droite nommée *sélectionné*
+
+![filenet]([shortcode])
+
+
+### Ajouter le menu créé dans le bureau ICN
+
+* Dans ICN, ouvrir le menu **Administration**
+* Sélectionner **Bureaux**
+* Sélectionner le bureau à mettre à jour
+* Sélectionner l'onglet **Menus**
+* Rechercher le menu nommé **Menu contextuel de document**
+* Dans sa liste déroulante sélectionner le menu créé plus haut
+
+![filenet]([shortcode])
+
+### Utiliser la fonctionnalité de comparaison de document
+
+Pour comparer des documents, sélectionner **deux documents** puis cliquer sur **Comparer les documents** depuis le menu Actions de ICN ou depuis le clic droit.
+
+![filenet]([shortcode])
+
+### Utiliser la fonctionnalité de découpage/fusion de document
+
+Pour découper ou fusionner des documents, sélectionner au moins un document puis cliquer sur **Fusionner les documents** depuis le menu Actions de ICN ou depuis le clic droit.
+
+![filenet]([shortcode])

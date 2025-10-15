@@ -1,45 +1,42 @@
-# Docker - Alfresco
+---
+title: "Alfresco"
+draft: false
+weight: 4
+keywords: ["docker"]
+image: /images/icons/alfresco.png
+---
 
-Intégration ARender avec Alfresco via Docker.
+## ARender UI pour Alfresco
 
-## Architecture
-```yaml
-version: '3.8'
-services:
-  alfresco:
-    image: alfresco/alfresco-content-repository:23.x
-    ports:
-      - "8080:8080"
-    
-  arender-alfresco:
-    image: arender/webui-alfresco:4.x.x
-    ports:
-      - "8082:8082"
-    environment:
-      - ALFRESCO_URL=http://alfresco:8080
-      - ARENDER_RENDITION_SERVER=http://arender-rendition:8080
-    depends_on:
-      - alfresco
-      - arender-rendition
+Pour démarrer le conteneur, exécuter:
 
-  arender-rendition:
-    image: arender/rendition-server:4.x.x
-    ports:
-      - "8081:8080"
-```
-
-## Configuration Alfresco
-Le connecteur ARender s'intègre automatiquement avec :
-- Alfresco Share
-- Alfresco Content App (ACA)
-- API REST Alfresco
-
-## Variables spécifiques
-- `ALFRESCO_URL` : URL du repository Alfresco
-- `ALFRESCO_USER` : Utilisateur de service
-- `ALFRESCO_PASSWORD` : Mot de passe
-
-## Démarrage
 ```bash
-docker-compose -f docker-compose-alfresco.yml up -d
+$> docker run [shortcode]/arender-ui-springboot:[shortcode]-alfresco \
+-e ARENDERSRV_ARENDER_SERVER_ALFRESCO_ATOM_PUB_URL="http://<alfresco-host>:<alfresco-port>/alfresco/api/-default-/cmis/versions/1.1/atom"
 ```
+
+## Alfresco dans Docker
+
+Ajouter le plugin arender-for-alfreco-share dans le conteneur d'Alfresco Share et le conteneur Alfresco content repository.
+
+Si besoin, voici quelques ressources à propos d'ARender pour Alfresco :
+
+- [Voir la documentation Alfresco]({{< relref "/guides/configurations/web-ui/connectors/_index.fr.md">}})
+- [Télécharger le plugin arender-for-Alfresco-share](https://artifactory.arondor.cloud/artifactory/webapp/#/artifacts/browse/tree/General/arondor-release/com/arondor/arender/arender-for-alfresco-share-plugin/[shortcode]/arender-for-alfresco-share-plugin-[shortcode].jar)
+[shortcode]
+Le plugin share doit être situé dans /tomcat/shared/lib. Assurez-vous que ces chemins sont listés dans la propriété shared.lib dans le fichier **catalina.properties** des composants Alfresco.  
+[shortcode]
+
+Pour informer Alfresco Share de l'emplacement du server ARender UI, ajouter les lignes suivantes dans le fichier de configuration :
+
+{{< tag type="code"
+  title="tomcat/shared/classes/alfresco/web-extension/share-config-custom.xml" >}}
+
+```XML
+  <config evaluator="string-compare" condition="Arender">
+    <url>http://{arender-web-ui_serveur}</url>
+    <!-- example : <url>http://localhost</url> -->
+  </config>
+```
+
+[shortcode]
