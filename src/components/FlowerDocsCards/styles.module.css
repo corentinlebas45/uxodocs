@@ -1,0 +1,176 @@
+.documentationSection {
+    padding: 4rem 0;
+    background: white;
+}
+
+.mainTitle {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    color: #7f8c8d;
+    margin-bottom: 3rem;
+    text-align: left;
+}
+
+.cardsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin-bottom: 3rem;
+}
+
+.guidesGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+}
+
+.card {
+    background: white;
+    border: 1px solid #e1e8ed;
+    border-radius: 8px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.guidesCard {
+    background: white;
+    border: 1px solid #e1e8ed;
+    border-radius: 8px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover,
+.guidesCard:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    border-color: #ddd;
+    transform: translateY(-2px);
+}
+
+.cardHeader {
+    margin-bottom: 1rem;
+}
+
+.icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.cardTitle {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+}
+
+.underline {
+    width: 40px;
+    height: 3px;
+    margin-bottom: 1rem;
+}
+
+.cardDescription {
+    color: #7f8c8d;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+.cardLink {
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 0.95rem;
+    align-self: flex-start;
+    transition: opacity 0.3s ease;
+}
+
+.cardLink:hover {
+    opacity: 0.8;
+    text-decoration: none;
+}
+
+.itemsList {
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+.guideItem {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.guideItem:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.guideIcon {
+    font-size: 1.5rem;
+    margin-right: 1rem;
+    margin-top: 0.2rem;
+}
+
+.guideContent {
+    flex: 1;
+}
+
+.guideTitle {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 0.3rem;
+    margin-top: 0;
+}
+
+.guideDescription {
+    font-size: 0.9rem;
+    color: #7f8c8d;
+    margin: 0;
+    line-height: 1.4;
+}
+
+.allLink {
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 0.95rem;
+    align-self: flex-start;
+    transition: opacity 0.3s ease;
+}
+
+.allLink:hover {
+    opacity: 0.8;
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+
+    .cardsGrid,
+    .guidesGrid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .mainTitle {
+        font-size: 2.5rem;
+    }
+}
