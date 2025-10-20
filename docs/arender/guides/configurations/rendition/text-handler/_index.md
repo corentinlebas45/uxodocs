@@ -8,7 +8,9 @@ ARender application prend en charge l’affichage et la vérification des signat
 Cette fonctionnalité est désactivée par défaut, mais peut être activée dans les paramètres.
 Une fois l’affichage activé, les informations de signature deviennent visibles et il est possible de configurer des certificats de confiance afin de vérifier l’authenticité des signatures présentes dans les documents.
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 | Description                                                                                                        | Clé du paramètre               | Valeur par défaut        | Type    |
 | ------------------------------------------------------------------------------------------------------------------ | ------------------------------ | ------------------------ | ------- |

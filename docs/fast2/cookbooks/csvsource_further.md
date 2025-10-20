@@ -91,7 +91,7 @@ Enter one line per new data you intend to create.
 ```
 ### Rules
 1. The separator is the character `:` (semi-colon).
-2. Parameters have to striclty match the format `$<data_name>`. A data with the name "key" will be accessed under `$key`.
+2. Parameters have to striclty match the format `$&lt;data_name&gt;`. A data with the name "key" will be accessed under `$key`.
 3. Parameters can use other params
 
 

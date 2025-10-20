@@ -7,7 +7,9 @@ Cette page détaille la configuration d'ARender pour la GED Alfresco.
 
 Pour continuer sur cette page, ARender en standalone doit être correctement configuré.
 
+```xml
 Si ce n'est pas le cas, merci de vous rendre [ici](<!-- Commentaire nettoyé -->).
+```
 
 ## Connecteur 
 
@@ -59,9 +61,13 @@ Par défaut, le contexte est *alfresco* (pour /alfresco).
 
 Aucune configuration n'est nécessaire pour la gestion des annotations ARender dans Alfresco.
 
-Ces dernières sont sauvegardées en tant que child node du document lui-même. Le nom du child node est : **cm:arender-annotations-v{version document}**
+```text
+Ces dernières sont sauvegardées en tant que child node du document lui-même. Le nom du child node est : **cm:arender-annotations-v\{version document\}**
+```
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 ## L'installation est terminée
 
@@ -72,4 +78,6 @@ http://{arender_serveur}:{arender_port}/ARenderHMI/?nodeRef={nodeRef}&user={user
 ```
 
 
+```xml
 Plus d'informations sur le connecteur Alfresco [ici](<!-- Commentaire nettoyé -->)
+```

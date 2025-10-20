@@ -8,10 +8,14 @@ La fonction lasso permet à un utilisateur de récupérer un texte dans le docum
 
 ## Utilisation
 
+```xml
 La fonction lasso est utilisable avec notre API Javascript. Les explications d'utilisation se trouvent [ici](<!-- Commentaire nettoyé -->).
+```
 
 ## Démonstration
 
 Voici une démonstration avec un bouton personnalisé.
 
+```xml
 <!-- Commentaire nettoyé -->
+```

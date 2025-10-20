@@ -7,7 +7,9 @@ Une fois que le serveur commence à démarrer, vous pouvez vérifier l'URL
 démarrage en action (veuillez remplacer "renditionServerHost" par votre
 nom d'hôte *effectif* sur lequel le serveur de rendition est en cours d'exécution).
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 Tous les services doivent être visibles, démarrés et fonctionnels.
 

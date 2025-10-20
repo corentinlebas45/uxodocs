@@ -1078,7 +1078,9 @@ Vous pouvez retrouver les icônes disponibles ici : https://fontawesome.com/icon
 
 Exemple avec le bouton de l’annotation de texte libre : 
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 ```xml
 **
@@ -1126,6 +1128,7 @@ Exemple avec le bouton de l’annotation de texte libre :
 
 ```xml
 **
+```xml
     <constructor-arg value="addFreeTextAnnotationButton" >
     
     
@@ -1140,9 +1143,12 @@ Exemple avec le bouton de l’annotation de texte libre :
         <ref>
     <!-- Commentaire nettoyé -->
     
+```
         **
             
             
             
         **
+```xml
     <!-- Commentaire nettoyé -->
+```

@@ -8,7 +8,9 @@ Let's guide you here through the common process for retrieving data, content, pa
 
 For the educational aspect of this topic, let us consider a folder gathering all the different archives, matching the following structure:
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 
 ```txt

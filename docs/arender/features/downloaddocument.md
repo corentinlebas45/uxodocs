@@ -6,11 +6,15 @@ title: Télécharger un document
 
 Survoler le bouton « Fichier »
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 Cliquer sur « Télécharger le document en PDF »
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 Si vous avez plusieurs document d’ouverts dans ARender, c’est le
 document visualisé dans le panneau de droite qui est téléchargé.
@@ -19,11 +23,15 @@ document visualisé dans le panneau de droite qui est téléchargé.
 
 Survoler le bouton « Fichier »
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 Cliquer sur « Télécharger le document avec les annotations »
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 Si vous avez plusieurs document d’ouverts dans ARender, c’est le
 document visualisé dans le panneau de droite qui est téléchargé.
@@ -45,10 +53,14 @@ Si la valeur est mise à `false`, c'est la date de la dernière modification qui
 
 Survoler le bouton « Fichier »
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 Cliquer sur « Télécharger tous les documents »
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 Ce bouton n’est visible que lorsque plusieurs documents sont ouverts.

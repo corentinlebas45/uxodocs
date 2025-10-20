@@ -2,7 +2,9 @@
 title: Architecture Docker
 ---
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 * **N1: ECM UI**: a la responsabilité de laisser l'utilisateur choisir quel document il veut ouvrir dans ARender,
 * **N2: Browser**: va créer la "frame" d'ARender en utilisant l'URL fourni par N1,

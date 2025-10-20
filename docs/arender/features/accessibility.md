@@ -89,7 +89,9 @@ La navigation de certains éléments ne fonctionne pas de la même manière :
 
 Pour paramétrer le visuel de l'élément mis en évidence à vos besoin, les classes CSS suivantes doivent être modifiées :  
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 ```css
 :focus-visible,
@@ -122,7 +124,9 @@ Chacun de ces troubles de la perception des couleurs possède son propre style. 
 
 Si vous souhaitez modifier l'une des couleurs, il est possible de changer la valeur de la variable associée dans l'une des classes CSS suivante :
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 ```css
 .deuteranopia-theme {

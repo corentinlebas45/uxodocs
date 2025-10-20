@@ -120,7 +120,9 @@ However data manipulations in this tool are not always intuitive nor straight fo
 
 Several use-cases can be envisioned, we will only relate here the data conversion steps to go through given the widespread necessity of such a basic task.
 
+```xml
 ### Imports objects into the dashboards feature <!-- Commentaire nettoyé -->
+```
 
 This section will guide you through the import process of resources (such as indices, visualization as `.ndjson` files and others).
 
@@ -136,7 +138,9 @@ as shown on the screen-capture below :
 
 ![Dashboards : choose already existing Fast2 index](../assets/img/components/Dashboards-select-existing-index.png)
 
+```xml
 ### Resource #1 : Exception table <!-- Commentaire nettoyé -->
+```
 
 :::info
 
@@ -169,7 +173,9 @@ This resources can be imported as [explained previously](#imports-objects-into-t
 
 
 
+```xml
 ### Resource #2 : Campaign success ratio <!-- Commentaire nettoyé -->
+```
 
 :::info
 
@@ -190,7 +196,9 @@ This resources can be imported as [explained previously](#imports-objects-into-t
 
 
 
+```xml
 ### Resource #3 : Processing speed per task <!-- Commentaire nettoyé -->
+```
 
 :::info
 
@@ -388,15 +396,21 @@ This new dimension of data analysis via Kibana opens up way more possibilities, 
 
 ## :octicons-bug-24: Troubleshooting
 
+```xml
 ### :material-connection: Dashboards do not reach the database <!-- Commentaire nettoyé -->
+```
 
 Make sure the database port has been correctly configured in the YAML file of the dashboards. Head to the [port section](database.md#port) for more details.
 
+```xml
 ### :material-lan-connect: Could not ping dashboard on port 1791 <!-- Commentaire nettoyé -->
+```
 
 Make sure declaring your port in the 2 expected places. Head to the [port section](#ports) for more details.
 
+```xml
 ### :material-web-remove: Connection refused when accessing the dashboards port <!-- Commentaire nettoyé -->
+```
 
 In case you cannot reach the dashboards UI remotely, you might want to check several things :
 
@@ -426,10 +440,14 @@ The latter option gives access to the tool even when Fast2 is not running.
 
 Since the dashboards fetch data directly from the database, it is not possible to populate the visualizations with migration data if the database is not running as well.
 
+```xml
 ### :octicons-question-24: Dashboards do not reach the database <!-- Commentaire nettoyé -->
+```
 
 Make sure the database port has been correctly configured in the YAML file of the dashboards. Head to the [port section](database.md#port) for more details.
 
+```xml
 ### :octicons-question-24: Could not ping dashboard on port 1791 <!-- Commentaire nettoyé -->
+```
 
 Make sure declaring your port in the 2 expected places. Head to the [port section](#ports) for more details.

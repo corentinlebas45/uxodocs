@@ -35,7 +35,9 @@ $> java -jar arondor-arender-rendition-tester-{"NUMÉRO"-VERSION}.jar
 
   ```bash
   #adapter le port 8761 suivant votre configuration
+```text
   $> java -jar arondor-arender-rendition-tester-{"NUMÉRO"-VERSION}.jar -d "http://serveur-de-rendition:8761/" -w "(100,1100,100)" -t 4 -v report_ARender.csv
+```
   ```
 
 - Test à partir des fichiers d'exemple : Afin de tester le serveur de

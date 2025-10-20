@@ -27,7 +27,9 @@ To select a task, click on its name and it will appear in the design area. You w
 
 ![New map GIF](../assets/img/create_workflow/newMap2025.gif)
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 For task and link configuration, please head towards the [task configuration](#tasks) and [link configuration](#links) sections.
 

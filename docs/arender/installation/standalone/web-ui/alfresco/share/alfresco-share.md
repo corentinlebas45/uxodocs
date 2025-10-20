@@ -10,26 +10,25 @@ En utilisant l'identifiant et mot de passe préalablement fournis,
 
 ## Redéploiement du serveur de présentation dans Alfresco
 
-Si votre Alfresco et module Share ne partage pas le même tomcat, il faudra déposer les plugins
-**arender-for-alfresco-share-plugin-\{version\}.jar** et **arender-for-alfresco-ACS-plugin-\{version\}.jar** dans le dossier *lib/* de chacune de ces
+Si votre Alfresco et module Share ne partagent pas le même Tomcat, il faudra déposer les plugins
+`arender-for-alfresco-share-plugin-{version}.jar` et `arender-for-alfresco-ACS-plugin-{version}.jar` dans le dossier `lib/` de chacune de ces
 applications déployées.
 
-S’ils sont déployés dans le même tomcat, alors déposer les plugins **arender-for-alfresco-share-plugin-\{version\}.jar** et **arender-for-alfresco-ACS-plugin-\{version\}.jar** dans *\{alfresco_tomcat\}/shared/lib*.
+S’ils sont déployés dans le même Tomcat, déposer les plugins `arender-for-alfresco-share-plugin-{version}.jar` et `arender-for-alfresco-ACS-plugin-{version}.jar` dans ` {alfresco_tomcat}/shared/lib`.
 
-Les deux plugins permettent respectivement d'étendre l'API REST d'ACS utilisée par ARender et l'intégration du viewer ARender dans share.
+Les deux plugins permettent respectivement d'étendre l'API REST d'ACS utilisée par ARender et l'intégration du viewer ARender dans Share.
 
-Ajouter les lignes suivantes dans le fichier _\{alfresco_tomcat\}/shared/classes/alfresco/web-extension/**share-config-custom.xml**_ entre les balises alfresco-config
+Ajouter les lignes suivantes dans le fichier ` {alfresco_tomcat}/shared/classes/alfresco/web-extension/share-config-custom.xml` entre les balises `alfresco-config` :
 
 ```xml
 <config evaluator="string-compare" condition="Arender">
-        **http://\{arender_serveur\}:\{arender_port\}/\{arender_contexte\}**
-        <!-- Commentaire nettoyé -->
-<!-- Commentaire nettoyé -->
+        <!-- Exemple d'URL du serveur ARender -->
+        <!-- http://{arender_serveur}:{arender_port}/{arender_contexte} -->
+</config>
+```
 
 ## Installation terminée
 
-Vous pouvez maintenant démarrer le serveur alfresco et tenter d'ouvrir un fichier stocké dans celui-ci.
+Vous pouvez maintenant démarrer le serveur Alfresco et tenter d'ouvrir un fichier stocké dans celui-ci.
 
-<!-- Commentaire nettoyé -->
-
-Vous avez terminé l'installation rapide d'ARender pour Alfresco Share. Pour aller plus loin dans la configuration du connecteur ARender pour Alfresco rendez-vous sur cette page : ****Configuration avancée** (lien supprimé)**
+Vous avez terminé l'installation rapide d'ARender pour Alfresco Share. Pour aller plus loin dans la configuration du connecteur ARender pour Alfresco, consultez la documentation de configuration avancée.

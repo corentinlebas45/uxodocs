@@ -24,4 +24,6 @@ layer.explorer.enabled=true
 
 
 
+```xml
 <!-- Commentaire nettoyé -->
+```

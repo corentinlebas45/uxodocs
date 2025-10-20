@@ -33,4 +33,6 @@ Fast2 application run on the 1789 port by default. To change this, add or update
 server.port=1789
 ```
 
+```xml
 <!-- Commentaire nettoyé -->
+```

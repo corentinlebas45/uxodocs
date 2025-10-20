@@ -5,10 +5,14 @@ title: Installation
 Ci-après, une installation standard d’ARender Web-UI.
 
 Pour installer sur **IBM FileNet**, vous pouvez sauter cette page et vous rendre directement sur :
+```xml
 [Installation de ARender sur IBM FileNet](<!-- Commentaire nettoyé -->).
+```
 
 Depuis ARender 2023.0.0, le déploiement de la WEB-UI ARender a été modifié. Veuillez consulter la 
+```xml
 documentation détaillée de mise à jour [ici](<!-- Commentaire nettoyé -->).
+```
 
 ## Prérequis
 
@@ -26,7 +30,9 @@ documentation détaillée de mise à jour [ici](<!-- Commentaire nettoyé -->).
 | Logiciel                   | Pré-requis                                                                   |
 | -------------------------- | ---------------------------------------------------------------------------- |
 | Java Runtime               | JRE 1.8 64 bits Minimum, OpenJDK 11 conseillé. JRE IBM J9 et java 17 ne sont pas supportés.                                                                                                                                                                                                                                       |
+```xml
 | ARender Rendition démarré  | La page de météo de la Rendition doit être au vert, voir [la documentation liée](<!-- Commentaire nettoyé -->). Si ce n'est pas le cas, merci d'installer la Rendition en suivant [cette documentation](<!-- Commentaire nettoyé -->).|
+```
 
 ## Installation
 
@@ -50,24 +56,38 @@ documentation détaillée de mise à jour [ici](<!-- Commentaire nettoyé -->).
 
 Accès à  via un navigateur web.
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 
-L'URL à utiliser doit être comme suit : <http:{Web-UI-HostName}:{port-Web-UI}{ARenderContext}>:
-- *{Web-UI-HostName}* : le nom d'hôte du serveur d'application
-- *{port-Web-UI}* : le port du serveur d'application
+```text
+L'URL à utiliser doit être comme suit : &lt;http:\{Web-UI-HostName\}:\{port-Web-UI\}\{ARenderContext\}&gt;:
+```
+```text
+- *\{Web-UI-HostName\}* : le nom d'hôte du serveur d'application
+```
+```text
+- *\{port-Web-UI\}* : le port du serveur d'application
+```
 
 ### Pas de Rendition fonctionnelle en local
 
 Si vous rencontrez l'erreur suivante, merci de lire la suite.
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 Cela peut signifier que :
 * Soit la Rendition en locale n'est pas installée ou démarrée : 
+```xml
     * Dans ce cas merci de revenir sur la documentation ci-après : [Documentation d'installation de la Rendition](<!-- Commentaire nettoyé -->). 
+```
 * Soit la Rendition est installée sur un serveur disant :
+```xml
     * Dans ce cas il faut configurer ARender en suivant la documentation sur la propriété **arender.server.rendition.hosts** : [Configuration de ARender Web-UI](<!-- Commentaire nettoyé -->).
+```
 
 ## Installation de ARender Web-UI en service
 
@@ -77,7 +97,9 @@ Cela peut signifier que :
 
 
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 ```cmd
 $> .\ARenderHmiService-install.bat
 ```

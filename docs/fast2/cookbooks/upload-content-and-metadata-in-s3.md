@@ -33,6 +33,8 @@ Let's first create an XML file out of the metadata of the punnet, attach this cr
 ### ⚗️ From metadata to XML
 Once our document fully extracted from the source CMS (via the tasks Source and ContentExtractor), we have the content and the metadata in a punnet.
 
+```xml
 The [PunnetSerializer](../catalog/tool.md#PunnetSerializer) will convert the in-memory dataset record into XML format, in the default storage architecture (namely `$FAST2_HOME/files/<!-- Commentaire nettoyé -->/<!-- Commentaire nettoyé -->Process S3 objects as punnets (ie. metadata as XML and associated content)<!-- Commentaire nettoyé -->Extract punnet contents (if required)
+```
 
 ![Bucket S3 : 1 document, 2 contents](../assets/img/cookbooks/s3-extractor-for-punnet2025.png)

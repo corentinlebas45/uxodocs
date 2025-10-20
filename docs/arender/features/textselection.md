@@ -16,18 +16,24 @@ Lorsque l'utilisateur passe la souris sur le texte, le curseur de la souris devi
 Une fois le texte copié, il peut coller le texte dans une autre application tierce.
 L'utilisateur peut également sélectionner un mot en double cliquant dessus.
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 
 Lorsque la sélection de texte est finie, le menu rapide s'affiche en dessous du texte pour permettre diverses actions concernant le texte sélectionné.
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 ## Sélection de texte - Caractère par Caractère
 
 Par défaut, la sélection de texte surligne caractère par caractère :
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 ## Sélection de texte - Mot par Mot
 
@@ -35,26 +41,36 @@ La version 4.1.x d'ARender introduit une nouvelle fonctionnalité de sélection 
 
 Dès lors qu'un mot ou une partie d'un mot est sélectionné, la sélection s'étend automatiquement pour inclure la totalité du mot.
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 L'utilisateur a la possibilité d'annuler la sélection du mot dans son entièreté en changeant la direction dans laquelle le pointeur de la souris est déplacé lors de la sélection.
 Cette action annule la sélection automatique du mot en entier et permet à l'utilisateur de sélectionner précisément une partie ou la totalité du mot.
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
+```xml
 Pour activer cette nouvelle fonctionnalité, veuillez vous référer à la configuration dédiée [ici](<!-- Commentaire nettoyé -->)
+```
 
 ## Sélection de texte - Ligne entière
 
 Depuis la version 4.7.3 d'ARender, il est possible de sélectionner une ligne entière en faisant trois clics consécutifs.
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 ## Sélection de texte - Page entière
 
 Depuis la version 4.7.3 d'ARender, il est possible de sélectionner une page entière en faisant quatre clics consécutifs.
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 ## Sélection de texte - Document entier
 
@@ -70,12 +86,16 @@ topPanel.copy.document.text=true
 ```
 
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 Au clique, le bouton va lancer la récupération du texte de chaque page du document courant. L'avancement de la copie sera indiqué
  par une notification en bas à droite. Une fois la copie du texte finis, une notification sera à nouveau visible pour informer l'utilisateur.
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 ## Sélection de texte - Par zone
 
@@ -83,6 +103,8 @@ Depuis la version 4.5.x d'ARender, il est possible de sélectionner le texte con
 
 L'utilisateur peut faire `CTRL + clique-gauche` ou `ALT + clique-gauche` afin de pouvoir commencer la sélection de texte par zone.
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 

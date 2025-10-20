@@ -89,14 +89,18 @@ There are two different ways to use parameters:
 
 ## :octicons-pencil-16: Write a condition
 
+```xml
 Conditions, just as in a regular coding snippet, must be performed as a boolean. Actions are executed only if condition is _TRUE_. It’s highly recommended to use `eval(<!-- Commentaire nettoyé -->)` for conditions.
+```
 
 !!! Check
 
     Just as you would write any condition in your code,
 
     - Conditions must not end by a semi-colon (`;`)
+```xml
     - Characters allowed : `<`, `>`, `<=`, `>=`, `||`, `&&`, …
+```
 
 If you want to perform an action no matter what, do `eval($param)` with `$param = true`.
 

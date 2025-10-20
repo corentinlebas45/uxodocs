@@ -10,7 +10,9 @@ Si vous avez besoin de désactiver ce comportement, vous devez utiliser les vrai
 
 * Activer la récupération des biffures avant la génération d'image :
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 ```cfg
 arender.server.process.annotations.rendition=true
@@ -25,7 +27,9 @@ ARender offre la possibilité de cacher le contenu de n'importe quel type de doc
 
 Pour activer le panneau dédié au biffage, ajouter la propriété suivante. Par défaut, elle est désactivée. 
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 ```cfg
 redactexplorer.enabled=true
@@ -37,7 +41,9 @@ Ce panneau vous donnera accès aux différents boutons de biffage.
 
 Par défaut, quatre boutons de création classique de biffure sont mis à disposition. 
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 ```cfg
 redactexplorer.redact=true
@@ -55,7 +61,9 @@ Le quatrième permet de biffer toute la page courante.
 
 Deux boutons de création avancé de biffure sont mis à disposition.
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 ```cfg
 redactexplorer.manualInput=true
@@ -73,7 +81,9 @@ Vous trouverez plus de détails sur le biffage avancé en dessous.
 Il est possible de sélectionner des raisons pour les appliquer sur les biffures.
 
 Par défaut le bouton radio "Avec raison" est sélectionné. 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 ```cfg
 # Si true, le radio bouton "Avec raison" est sélectionné 
@@ -81,10 +91,14 @@ redactexplorer.redact.with.reasons=true
 ```
 
 
+```xml
 Les raisons sont définies dans les fichiers de configurations, il est possible de les modifier ainsi que les raisons par défaut comme expliqué dans [la documentation dédiée](<!-- Commentaire nettoyé -->)
+```
 
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 Par défaut, seul l'utilisateur **admin** peut sauvegarder les biffures
 
@@ -100,7 +114,9 @@ Pour tester veuillez :
 
 Le panneau de biffage avancé propose deux boutons, la saisie manuelle et les règles : 
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 ```cfg
 redactexplorer.manualInput=true
@@ -128,7 +144,9 @@ Si vous souhaitez affiner votre sélection, vous pouvez ouvrir le panneau des r�
 ### Les règles
 
 L'option des règles permet de sélectionner une ou plusieurs règles et les appliquer. 
+```xml
 Ces règles sont définies dans les fichiers de configuration comme expliqué dans [la documentation dédiée](<!-- Commentaire nettoyé -->)
+```
 
 Une fois vos règles sélectionnées, lancez la recherche. Cela affichera un aperçu des résultats sur votre document. 
 Si vous souhaitez affiner votre sélection, vous pouvez ouvrir le panneau des résultats : 
@@ -145,7 +163,9 @@ Si vous souhaitez affiner votre sélection, vous pouvez ouvrir le panneau des r�
  
 Il est également possible d'ajouter vos propres boutons. Dans votre fichier *arender-custom-integration.xml* ajoutez les informations du bouton.
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 ```xml
     **
@@ -163,8 +183,10 @@ Il est également possible d'ajouter vos propres boutons. Dans votre fichier *ar
 ```xml
 **
     
+```xml
         <!-- Commentaire nettoyé -->
         <!-- Commentaire nettoyé -->
+```
 **
 ```
 

@@ -34,6 +34,41 @@ Toutes les propriétés yaml peuvent être surchargées par variable d'environne
 
 
 
+---
+title: Partie de rendition
+---
+
+## Par variables d'environement
+
+Toutes les propriétés yaml peuvent être surchargées par variable d'environnement en suivant les règles suivantes :
+
+- la variable d'environment doit être en lettre capitale
+- les lettres en capitale sont précédés d'un **."**
+- utiliser **"_"** pour associer les objets
+- utiliser **"[n]"** pour renseigner un élément d'une liste (avec **n** pour l'index)
+
+
+```yaml
+nurse:
+  samplesDirectory: ../../samples/
+  components:
+    - functionality: TKC_MailConversion
+      factoryName: "mailFactory"
+      samplePath: "test.msg"
+      docIdStr: "m41lS4mpl3"
+```
+
+
+```yaml
+environment:
+  - "DCV_NURSE_SAMPLES.DIRECTORY=../../samples/"
+  - "DCV_NURSE_COMPONENTS[0]_FUNCTIONALITY=TKC_MailConversion"
+  - "DCV_NURSE_COMPONENTS[0]_FACTORY.NAME=mailFactory"
+  - "DCV_NURSE_COMPONENTS[0]_SAMPLE.PATH=test.msg"
+  - "DCV_NURSE_COMPONENTS[0]_DOC.ID.STR=m41lS4mpl3"
+```
+
+
 ## Par volumes
 
 Emplacements des fichiers de configuration :
@@ -44,7 +79,9 @@ Emplacements des fichiers de configuration :
 - /arender/config/application.yaml
 - /arender/config/application-*.yaml
 
-**\{"service"-name\}**: nom du conteneur sans le préfixe "arender"
+```text
+**{service-name}**: nom du conteneur sans le préfixe "arender"
+```
 
 ## PDFOwl: une alternative pour la rendition de document
 
@@ -66,16 +103,16 @@ Il génère et gère des sous-processus responsables du traitement des demandes 
 Exemple d'utilisation de cette image avec docker compose :
 
 ```yaml
-"version": "3.7"
+version: "3.7"
 
 services:
   ui:
     environment:
-      - "ARENDERSRV_ARENDER_SERVER_RENDITION_HOSTS=http://"service"-broker:8761/"
+      - "ARENDERSRV_ARENDER_SERVER_RENDITION_HOSTS=http://service-broker:8761/"
     ports:
       - 8080:8080
 
-  "service"-broker:
+  service-broker:
     environment:
       - "DSB_KUBEPROVIDER_KUBE.HOSTS_DOCUMENT-CONVERTER=19999"
       - "DSB_KUBEPROVIDER_KUBE.HOSTS_DOCUMENT-RENDERER=9091"
@@ -87,10 +124,10 @@ services:
       - arender-tmp:/arender/tmp
 
   document-renderer:
-    hostname: drn-"service"
+    hostname: drn-service
     environment:
       - "DRN_EUREKA_INSTANCE_METADATA.MAP_HOST.NAME=document-renderer"
-      - "DRN_EUREKA_INSTANCE_HOSTNAME="service"-broker"
+      - "DRN_EUREKA_INSTANCE_HOSTNAME=service-broker"
       - "DRN_EUREKA_SERVER_PORT=8761"
       - "DRN_PDFOWL_CLIENT_WATCHDOG=60000"
     ports:
@@ -101,7 +138,7 @@ services:
   document-text-handler:
     environment:
       - "DTH_EUREKA_INSTANCE_METADATA.MAP_HOST.NAME=document-text-handler"
-      - "DTH_EUREKA_INSTANCE_HOSTNAME="service"-broker"
+      - "DTH_EUREKA_INSTANCE_HOSTNAME=service-broker"
       - "DTH_EUREKA_SERVER_PORT=8761"
     ports:
       - 8899:8899
@@ -111,7 +148,7 @@ services:
   document-converter:
     environment:
       - "DCV_EUREKA_INSTANCE_METADATA.MAP_HOST.NAME=document-converter"
-      - "DCV_APP_EUREKA_HOSTNAME="service"-broker"
+      - "DCV_APP_EUREKA_HOSTNAME=service-broker"
       - "DCV_APP_EUREKA_PORT=8761"
     ports:
       - 19999:19999

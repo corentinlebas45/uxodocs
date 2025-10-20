@@ -15,7 +15,9 @@ quick.contextual.menu.enabled=false
 ```
 
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 ## Actions
 

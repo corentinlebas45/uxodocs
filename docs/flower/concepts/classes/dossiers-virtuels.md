@@ -29,7 +29,7 @@ Lorsque l'arborescence d'un dossier virtuel est en mode `Visualiser`, nous préc
 
 Dans les recherches d'une classe de dossiers virtuels, les critères définis peuvent être des valeurs fixes ou bien sous forme de variable. Le fonctionnement est identique aux tags conditionnels pour la résolution de variable.
 
-Grâce à ce mécanisme, il est possible de définir un même dossier virtuel de *Banette personnelle* en utilisant un critère `assignee = ${user.id}`. 
+Grâce à ce mécanisme, il est possible de définir un même dossier virtuel de *Banette personnelle* en utilisant un critère `assignee = $\{user.id\}`. 
 Les variables de types `tags` se basent sur les tags portés par le dossier virtuel.
 
 :::warning

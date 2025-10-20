@@ -29,7 +29,9 @@ arender.server.perf.es.use=false
 Des propriétés YAML peuvent être ajoutées à la rendition afin de faire
 le même comportement que le war Web-UI ARender :
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 ```yaml
     aop :
@@ -58,7 +60,9 @@ possible d'activer la sauvegarde des documents en rejet.
 
 Voici les trois paramétrages possibles:
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 ```yaml
     aop :

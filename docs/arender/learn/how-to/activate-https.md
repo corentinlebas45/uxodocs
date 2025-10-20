@@ -6,7 +6,9 @@ Pour pouvoir utiliser une connexion sécurisée vers la rendition depuis
 ARender, vous devrez modifier certains paramètres sur le serveur de
 rendition et le serveur ARender.
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 **Vous ne pourrez pas utiliser la connexion en http et en
 https en même temps.**
 

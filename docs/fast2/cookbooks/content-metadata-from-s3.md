@@ -58,7 +58,7 @@ Optionally, you can also provide the concerned folder(s) in the Source folders i
 
 In the [AWSContentSource](../catalog/contentsource.md#AWSContentSource) task configuration, fields to fill are :
 
-- Bucket name : `${bucket}`
+- Bucket name : `$\{bucket\}`
 - Content path (S3 object key) :
 
 ```java

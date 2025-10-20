@@ -10,7 +10,9 @@ L'intégration est détaillée pour les frameworks suivants :
 
     
         
+```xml
         React<!-- Commentaire nettoyé -->Angular<!-- Commentaire nettoyé -->Vue.js<!-- Commentaire nettoyé -->Svelte<!-- Commentaire nettoyé -->JavaScript<!-- Commentaire nettoyé -->)ins> ****.
+```
 - Vous devez avoir mis en place une des solutions détaillées ci-dessous pour éviter les erreurs de types CORS lors de la communication entre l'application hôte et ARender.
 
 ## Eviter les erreurs CORS
@@ -69,7 +71,9 @@ Cela est évidemment une **très mauvaise pratique sur un environnement de produ
 
 Il est possible de conserver des domaines différents pour l'application hôte et ARender en utilisant la méthode window.postMessage, qui permet une communication inter-domaines en toute sécurité.
 
+```xml
 Pour cela, il faut ajouter ce **** **[script d'initialisation](<!-- Commentaire nettoyé -->)** **** côté ARender :
+```
 
 ```javascript
 function arenderjs_init(arenderjs_)<!-- Commentaire nettoyé -->,
@@ -87,9 +91,13 @@ Dans cette documentation, le script est nommé "arender-custom-starter-script.js
 - Si vous avez utilisé le fichier ARender HMI Spring Boot (JAR) pour l'installation d'ARender, placez le script d'initialisation dans le répertoire public. L'url à utiliser à l'étape suivante ppour indiquer l'emplacement du script sera alors : "./arender-custom-starter-script.js"
 - Si vous utilisez un serveur Tomcat, placez le script dans le répertoire scripts. L'url à utiliser à l'étape suivante sera alors : "./scripts/arender-custom-starter-script.js"
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 On peut ensuite mettre en place les actions voulues en fonction du message reçu :
 L'exemple donné ci-dessus concerne la récupération de l'id du document actuellement affiché dans ARender. On décide que pour déclencher cette requête, il faudra que la data passée à postMessage soit "getCurrentDocumentId".

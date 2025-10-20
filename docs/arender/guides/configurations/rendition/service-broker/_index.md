@@ -9,7 +9,9 @@ title: Service broker
     | Description                              | Parameter Key | Type             |
     | ---------------------------------------- | ------------- | ---------------- |
     | Utilise localhost pour tous les services | useLocalhost  | Booléen          |
+```xml
     | Map l'host et le port des services       | kubeHosts     | Map<String, int> |
+```
 
 
 ```yaml

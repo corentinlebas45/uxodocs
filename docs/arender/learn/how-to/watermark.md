@@ -14,7 +14,9 @@ $TIMESTAMP$ sera remplacé par la date et l'heure d'ouverture du document
 
 Pour configurer l'affichage du filigrane il faut ajouter les propriétés ci-dessous dans la configuration serveur de ARender (*configurations/arender-custom-server.properties*) :
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 ```cfg
 # Configuration de l'activation de l'ajout d'un filigrane à la visualisation

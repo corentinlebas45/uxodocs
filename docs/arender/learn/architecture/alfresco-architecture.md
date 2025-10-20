@@ -2,7 +2,9 @@
 title: Architecture dans Alfresco
 ---
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 * **N1: Alfresco UI**: a la responsabilité de laisser l'utilisateur d'Alfresco choisir quel document il veut ouvrir dans ARender,
 * **N2: Browser**: va créer la "frame" d'ARender en utilisant l'URL fourni par N1,
@@ -12,7 +14,9 @@ title: Architecture dans Alfresco
 * **N5: ARender Rendition**: va générer des images, extraire du texte et plus.
 
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 ```
 Le port de votre GED doit être différent du port d'ARender WEB-UI.

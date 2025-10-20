@@ -17,27 +17,27 @@ Corps :
 | :-------------------- | :-------------------------- | :----- | :---------------------------------------------------------------------- |
 | format                | String                      | oui    | Le format du document en sortie                                         |
 | transformationDetails | List**This is a freetext**\n**This a sticky note"
-        },
+        \},
         "contents": "This a sticky note",
         "icon": "Note"
-      },
+      \},
       ,
         "page": 0,
         "position": ,
         "end": 
     ]
-  },
+  \},
   "format": "pdf",
   "transformationDetails": [
       ,
             ,
         
           ]
-        }
+        \}
       ]
-    }
+    \}
   ]
-}'
+\}'
 ```
 
 ### Ajouter des annotations FDF dans un document
@@ -54,14 +54,14 @@ curl -X 'POST' \
         "documentId": ,
         "interiorColor": 
     ]
-  },
+  \},
   "format": "pdf-fdf",
   "transformationDetails": [
     
       ]
-    }
+    \}
   ]
-}'
+\}'
 ```
 
 ### Fusionner plusieurs documents en un seul PDF
@@ -77,7 +77,7 @@ curl -X 'POST' \
   -d ',
         
   ]
-}'
+\}'
 ```
 
 ### Archiver des documents
@@ -94,5 +94,5 @@ curl -X 'POST' \
   -d ',
         
   ]
-}'
+\}'
 ```

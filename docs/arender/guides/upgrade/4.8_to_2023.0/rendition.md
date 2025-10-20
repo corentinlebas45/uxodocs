@@ -87,7 +87,9 @@ Les connexions sont toujours configurables avec de nouvelles propriétés situé
 
 Les propriétés de configuration de la messagerie ont en fait été déplacées vers le fichier application.properties du Document Service Broker
 
+```xml
 La manière de configurer le type mime a changé, pour plus d'informations voir [ici](<!-- Commentaire nettoyé -->).
+```
 
 ### Propriétés dans le fichier application.yaml
 

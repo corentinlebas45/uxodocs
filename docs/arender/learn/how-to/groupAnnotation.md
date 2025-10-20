@@ -55,7 +55,9 @@ Exemple de configuration du bean qui va peupler la liste de groupe d'annotation 
 
 Visuellement, une liste déroulante s'affiche dans le toppanel à l'édition d'une annotation.
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 ## Modification par le connecteur
 
@@ -82,7 +84,9 @@ private Map<String, String> buildLocalizedDisplayNames(String fr, String en)
 
 ## Garder la notion d'annotation privée
 
+```xml
 La notion d'annotation privée est compatible avec la notion de groupe d'annotation. Il faut garder la définition de *property name="symbolicName" value="private"*. La description des annotations privées est trouvable à la section *Annotation securities configuration* dans la page [Annotation](<!-- Commentaire nettoyé -->)
+```
 
 Exemple de configuration du bean qui va peupler la liste de groupe d'annotation avec le choix *Privé* :
 
@@ -124,7 +128,9 @@ Exemple de configuration du bean qui va peupler la liste de groupe d'annotation 
 
 
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 
 ## Comment utiliser la notion de groupe

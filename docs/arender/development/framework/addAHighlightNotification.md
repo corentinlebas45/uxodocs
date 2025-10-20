@@ -2,10 +2,14 @@
 title: Ajouter une annotation de type surlignage
 ---
 
+```xml
 L'API JavaScript permet de mettre en place des souscriptions pour recevoir des événements lors d'actions variées sur ARender (ajout / suppression de notification, rotation de page, ou encore clic sur un hyperlien). Ces informations sont accessibles **** **[dans la documentation](<!-- Commentaire nettoyé -->)** ****
+```
 
 
+```xml
 Il est également possible de créer des annotations de type surlignage directement depuis l'application hôte, sans le faire manuellement dans ARender, à l'aide de la fonction **addAnnotation** de l'API JavaScript en suivant **** **[ces indications](<!-- Commentaire nettoyé -->)** ****.
+```
 
 
 
@@ -131,7 +135,9 @@ export function addAnnotation(
 ) <!-- Commentaire nettoyé -->
 
 ```
+```xml
     <!-- Commentaire nettoyé -->
+```
 ```javascript
 /**
  * Ajoute une annotation au document en cours.

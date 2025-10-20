@@ -10,7 +10,9 @@ Avec le conteneur ARender UI, modifier le contexte avec la variable d'environnem
 2. Récupérer l'image ACA depuis notre artifactory avec :
 
     ```bash
+```xml
     $> docker pull artifactory.arondor.cloud:5001/adf-content-app-arender:<!-- Commentaire nettoyé -->
+```
     ```
 
 3. Puis, exécuter le conteneur avec la configuration suivante :

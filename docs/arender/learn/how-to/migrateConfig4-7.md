@@ -23,7 +23,9 @@ Le Toppanel est organisé en plusieurs sections permettant d'organiser les diff�
 - Plugin : Contient les boutons pour les plugins Plume et HTML
 - Right : Contient les boutons devant être à droite dont l'ellipsis
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 Cette organisation est modifiable comme dans les versions précédentes. Voici une liste des différentes propriétés servant à manipuler la disposition des différents éléments du Toppanel : 
 

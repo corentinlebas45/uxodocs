@@ -16,7 +16,9 @@ ARender est construit sur deux composants :
 - **ARender Rendition** : serveur Java principal : fournit les rendus de documents et de nombreux autres services à
   l'aide d'une API REST à ARender UI.
 
+```xml
 Plus d'information dans le chapitre [architecture](<!-- Commentaire nettoyé -->).
+```
 
 ### Rendu d'un document
 
@@ -69,13 +71,17 @@ Nous avons de nombreuses intégrations prêtes à l'emploi :
 * [FlowerDocs](https://flowerdocs.com/).
 
 Et de nombreux autres GED (voir
+```xml
 [la liste des connecteurs existants](<!-- Commentaire nettoyé -->)).
+```
 
 #### Des solutions sur mesure pour vos besoins spécifiques :
 
 Si votre GED ne figure pas dans la liste ou si vous avez des exigences particulières, ARender offre la flexibilité de 
 créer votre connecteur personnalisé. Consultez notre documentation dédiée pour des instructions détaillées sur la 
+```xml
 création de votre connecteur personnalisé : [documentation](<!-- Commentaire nettoyé -->).
+```
 
 Renforcez votre stratégie de gestion de documents avec les intégrations polyvalentes et les solutions personnalisables 
 d'ARender. Améliorez la collaboration, rationalisez les flux de travail et optimisez vos processus centrés sur les 

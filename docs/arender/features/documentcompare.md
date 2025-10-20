@@ -18,12 +18,16 @@ dans le volet de navigation au niveau du document à comparer avec celui
 en cours de visualisation, en cliquant sur *Ouvrir comme un nouveau
 document*.
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 Le document s'ouvre alors à côté du premier et les résultats de la
 comparaison s'affichent.
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 #### Dans le cas de documents de type image
 
@@ -32,12 +36,16 @@ dans le volet de navigation au niveau du document à comparer avec celui
 en cours de visualisation, en cliquant sur *Ouvrir comme un nouveau
 document et comparer les images*.
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 Le document s'ouvre alors à côté du premier et les résultats de la
 comparaison s'affichent.
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 ### Lancement automatique au démarrage de l'application
 
@@ -59,12 +67,16 @@ Comment quitter le mode comparaison ? =============================
 - Pour quitter, cliquer sur la croix présente dans le coin en haut à
   droite du document à fermer.
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 - Il est également possible d'effectuer un clic droit puis de
   sélectionner *Fermer la vue multiple*.
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 ## Analyser les résultats d'une comparaison
 
@@ -77,18 +89,24 @@ La couleur d'une ligne définit sa différence avec l'autre document :
 | Grise   | Ligne modifiée                   |
 | Orange  | Modification au sein d'une ligne |
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 ## Parcourir les résultats obtenus
 
 ### Navigation dans les résultats
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 Cliquer sur le bouton *Résultat suivant* ou *Résultat précédent*
 redirigera sur le résultat le plus proche, peu importe le document.
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 ### Défilement synchronisé des documents
 
@@ -103,7 +121,9 @@ dans le bandeau de navigation.
 Cliquer sur un résultat renvoi à la ligne correspondant à cette
 différence dans l'autre document.
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 ## Spécificités du mode comparaison
 
@@ -134,7 +154,9 @@ vous pouvez modifier les valeurs de la "fuzz", la "highlight color" et la "lowli
 ainsi que le résultat de l'image.
 
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 La comparaison d'images est basée sur des calculs mathématiques affectés
 par la valeur du "fuzz". Plus la valeur du "fuzz" est élevée, moins le calcul
@@ -168,7 +190,9 @@ visualization.image.comparison.default.lowlight.color=none
 ### Avec l'interface
 Une fois la comparaison faite, un bouton est disponible pour le téléchargement des deux documents côte à côte avec les résultats de comparaison dessus.
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 ### Avec la servlet
 

@@ -33,7 +33,9 @@ title: Barre de menu
 | ----------------------------------------------------------------------------- | ---------------- | ----------------- | ------- |
 | Affiche une boîte de dialogue permettant de sélectionner le type d'impression | topPanel.print   | true              | Booléen |
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 ```cfg
 # Masquer le bouton d'impression

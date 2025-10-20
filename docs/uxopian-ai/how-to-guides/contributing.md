@@ -17,8 +17,8 @@ The recommended way to manage Prompts and Goals is to store them in OpenSearch u
 - **Create/Update a Prompt**: `POST /prompt`, `PUT /prompt`
 - **Create/Update a Goal**: `POST /goal`, `PUT /goal`
 - **List all Prompts/Goals**: `GET /prompt/all`, `GET /goal/all`
-- **Get a specific item**: `GET /prompt/{id}`, `GET /goal/{id}`
-- **Delete an item**: `DELETE /prompt/{id}`, `DELETE /goal/{id}`
+- **Get a specific item**: `GET /prompt/\{id\}`, `GET /goal/\{id\}`
+- **Delete an item**: `DELETE /prompt/\{id\}`, `DELETE /goal/\{id\}`
 
 Refer to the Swagger UI documentation for a complete list of endpoints and detailed models.
 
@@ -53,10 +53,10 @@ curl -X POST http://localhost:8080/ai/goal \
 
 The templating engine is based on Thymeleaf and supports Spring Expression Language (SpEL), giving you powerful capabilities within your prompts.
 
-- **Accessing the Request Payload**: Use `${payload.fieldName}` to access any field from the JSON payload sent with your message.
-- **Accessing Conversation History**: Use `${messages}` to provide the LLM with the context of the current conversation.
-- **Using Conditional Logic**: Use SpEL for conditional logic, e.g., `[[${payload.language != null} ? ${payload.language} : 'english']]`.
-- **Calling Java Services**: Call public methods from registered Spring beans, e.g., `[[${documentService.extractTextualContent(payload.documentId)}]]`.
+- **Accessing the Request Payload**: Use `$\{payload.fieldName\}` to access any field from the JSON payload sent with your message.
+- **Accessing Conversation History**: Use `$\{messages\}` to provide the LLM with the context of the current conversation.
+- **Using Conditional Logic**: Use SpEL for conditional logic, e.g., `[[$\{payload.language != null\} ? $\{payload.language\} : 'english']]`.
+- **Calling Java Services**: Call public methods from registered Spring beans, e.g., `[[$\{documentService.extractTextualContent(payload.documentId)\}]]`.
 
 ## Examples of Prompt and Goal Definitions
 
@@ -157,7 +157,7 @@ A `basePrompt` can be used to define the persona and core instructions for the A
 
 In addition to the REST API, `uxopian-ai` includes a built-in web interface that lets you visually manage prompts.
 
-> 🖥️ **URL**: `https://<your-uxopian-endpoint>/ai`
+> 🖥️ **URL**: `https://&lt;your-uxopian-endpoint&gt;/ai`
 > Replace with your actual deployment host.
 
 Through this interface, you can:

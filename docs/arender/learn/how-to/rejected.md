@@ -4,7 +4,9 @@ title: Image de document rejeté
 
 Depuis la version 4.8.0, il est possible de configurer le serveur de rendition afin d'afficher une image indiquant que le document n'a pas pu être chargé correctement.
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 ## Activer la fonctionnalité
 
@@ -27,7 +29,9 @@ rejected.document.path={chemin_vers_le_document_souhaité}
 ```
 
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 
 ## Modifier le titre du document
@@ -40,4 +44,6 @@ rejected.document.title=Custom title
 ```
 
 
+```xml
 <!-- Commentaire nettoyé -->
+```

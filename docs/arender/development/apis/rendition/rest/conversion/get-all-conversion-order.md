@@ -23,7 +23,7 @@ Réponse :
 
 | Attribut             | Type                      | Description                        |
 | :------------------- | :------------------------ |:-----------------------------------|
-| conversionOrders     | `List<ConversionOrder>`     | La liste des ordres de conversion. |
+| conversionOrders     | `List&lt;ConversionOrder&gt;`     | La liste des ordres de conversion. |
 
 ## Exemples
 

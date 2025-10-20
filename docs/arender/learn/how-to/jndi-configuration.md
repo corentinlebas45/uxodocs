@@ -44,7 +44,9 @@ vous trouverez un détail par serveur d'application.
   *customer-**.properties* créé ci-dessus. Exemple
   :
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 ``` xml
 <!-- Commentaire nettoyé -->

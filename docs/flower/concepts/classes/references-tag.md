@@ -30,5 +30,5 @@ Les valeurs par défaut sont valables uniquement à la création : si la valeur 
 
 Il est possible d'utiliser des variables comme valeur par défaut :
 
-* `${dayDate}` : la date courante
-* `${user.id}` : l'identifiant de l'utilisateur connecté
+* `$\{dayDate\}` : la date courante
+* `$\{user.id\}` : l'identifiant de l'utilisateur connecté

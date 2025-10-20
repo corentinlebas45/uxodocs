@@ -12,7 +12,9 @@ un moyen rapide et efficace de naviguer dans les pages.
 L'une des fonctionnalités est la mise en évidence dynamique des vignettes en fonction de la page en cours de visualisation.
 Ce repère visuel permet aux utilisateurs d'identifier facilement leur emplacement actuel dans le document, améliorant ainsi la navigation et l'orientation.
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 ## Saut de page
 
@@ -20,7 +22,9 @@ Naviguer vers une page spécifique devient facile grâce à la vue miniature. Le
 et l'application passera automatiquement à la page correspondante.
 Cette fonctionnalité rationalise le processus de navigation, économisant du temps et des efforts aux utilisateurs.
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 ## Ajustement de la structure d'affichage des miniatures (v2023.1.0 et versions ultérieures)
 
@@ -34,14 +38,18 @@ ui.legacy.enabled=false
 ```
 
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 ```cfg
 ui.legacy.enabled=false
 ```
 
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 ## Configuration du nombre de colonnes par défaut (v2023.4.0 et versions ultérieures)
 
@@ -58,7 +66,9 @@ thumbexplorer.columns=1
 ```
 
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 ```cfg
 thumbexplorer.columns=1
@@ -78,7 +88,9 @@ thumbexplorer.contextualMenu.createPageAnchor=false
 ```
 
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 ```cfg
 thumbexplorer.contextualMenu.createPageAnchor=false
@@ -87,8 +99,12 @@ thumbexplorer.contextualMenu.createPageAnchor=false
 
 Par défaut, le paramètre de configuration est à `true`, l'option "Créer une ancre à cette page" est activée.
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 Avec le paramètre de configuration à `false`, l'option "Créer une ancre à cette page" est désactivée.
 
+```xml
 <!-- Commentaire nettoyé -->
+```

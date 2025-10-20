@@ -41,7 +41,7 @@ Pour décrire une pièce jointe, il est possible de définir :
 
 ## Résumé
 
-Le résumé peut être configuré, par langue du scope, pour afficher les tags du composant attaché (exemple: `${Priority} Créé par ${owner}`)	
+Le résumé peut être configuré, par langue du scope, pour afficher les tags du composant attaché (exemple: `$\{Priority\} Créé par $\{owner\}`)	
 
 Par défaut, le résumé affiche la date de création du composant.
 

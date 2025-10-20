@@ -25,11 +25,15 @@ Afin de permettre l’utilisation de la session utilisateur (ICN) au sein d’AR
 
 Dans la console d’administration WebSphere du **CPE**, rendez-vous sur la page **Sécurité** > **Sécurité Globale**, dans la partie **Authentification**, cliquer sur **LTPA**
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 Renseigner un mot de passe, un chemin d’export, puis cliquer sur « Exporter les clés »
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 - Import de la clef LTPA du CPE dans la JVM ARender
 
@@ -59,23 +63,33 @@ La session de l'utilisateur userA n'a pas été invalidée à sa déconnexion, c
 - Aller sur votre console websphere puis dans le menu aller dans *servers -> server types -> websphere application servers*.
 - Sélectionner le serveur sur lequel vous voulez faire la modification. Dans notre exemple, on choisit *serverICN*
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 - Dans *Container settings* aller dans *Session management*.
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 - Dans *Additional properties*, cliquer sur *custom properties*.
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 - Cliquer sur *New...* pour rajouter une propriété.
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 - Ajouter la propriété *InvalidateOnUnauthorizedSessionRequestException* avec la valeur *true* afin qu'elle soit appliquée.
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 - Il faut ensuite cliquer sur *Ok* puis *save*. Relancer vos services Filenet pour prendre en compte cette propriété.
 
@@ -87,24 +101,34 @@ Se connecter au Content Navigator.
 
 Aller dans la vue « Administration » et cliquer sur « Plug-ins ».
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 Cliquer sur « Nouveau Plug-in ».
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 Entrer le chemin et nom du JAR et cliquer sur « Charger ».
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 Dans le champ **ARender context root** entrer l’adresse (host + port + context root) de ARender. Cf. exemple ci-dessous :
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 Remplissez le champ **Unauthorized Desktops for document builder (id1,id2...)** avec des valeurs d'ID de bureau séparées par des virgules.
 Dans la capture d'écran ci-dessous, nous avons mis sur liste noire le bureau FakeDesktop afin que la fonction de création de documents ne soit pas activée.
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 Remplissez le champ **Watermark applied on download** avec une paire clé-valeur séparée par des virgules contenant respectivement l'ID du bureau et le nom du bean du filigrane. Le nom du bean du filigrane doit être configuré dans ARender. Il existe des noms de bean de filigrane par défaut déjà prédéfinis dans le fichier annotationtemplate-catalog.xml, downloadWatermark et printWatermark.
 
@@ -114,7 +138,9 @@ Ci-dessous un exemple de filigrane à appliquer au téléchargement en fonction 
 OS1=downloadWatermark,CustomDesktop=downloadWatermark
 ```
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 Remplissez le champ **Watermark applied on print** avec une paire clé-valeur séparée par des virgules contenant respectivement l'ID du bureau et le nom du bean du filigrane. Le nom du bean du filigrane doit être configuré dans ARender. Il existe des noms de bean de filigrane par défaut déjà prédéfinis dans le fichier annotationtemplate-catalog.xml, downloadWatermark et printWatermark.
 
@@ -124,22 +150,32 @@ Ci-dessous un exemple de filigrane à appliquer au téléchargement en fonction 
 OS1=printWatermark,CustomDesktop=printWatermark
 ```
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 
 Pour utiliser cette mappe d’afficheur, il suffit de l’associer à un bureau (dans l’onglet général de définition du bureau, Mappe d’afficheur).
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 Et enfin, cliquer sur « Sauvegarder ».
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 Vous pouvez maintenant redémarrer vos serveurs d'application et tenter d'ouvrir un fichier dans FileNet.
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 ## Utiliser les fonctionnalités avancées d'ARender directement depuis ICN
 
@@ -151,13 +187,17 @@ Les utilisateurs finaux peuvent utiliser les fonctionnalités de comparaison et 
 * Sélectionner **Menus**
 * Rechercher le menu nommé **Menu contextuel de document par défaut**
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 * Faire un clic droit sur ce menu et sélectionner **Copier**
 * Définir le nom et la description de ce menu
 * Dans la partie gauche nommée *Disponible* sélectionner les actions **Comparer les documents** et/ou **Fusionner les documents** et ajouter les dans la partie droite nommée *sélectionné*
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 
 ### Ajouter le menu créé dans le bureau ICN
@@ -169,16 +209,22 @@ Les utilisateurs finaux peuvent utiliser les fonctionnalités de comparaison et 
 * Rechercher le menu nommé **Menu contextuel de document**
 * Dans sa liste déroulante sélectionner le menu créé plus haut
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 ### Utiliser la fonctionnalité de comparaison de document
 
 Pour comparer des documents, sélectionner **deux documents** puis cliquer sur **Comparer les documents** depuis le menu Actions de ICN ou depuis le clic droit.
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 ### Utiliser la fonctionnalité de découpage/fusion de document
 
 Pour découper ou fusionner des documents, sélectionner au moins un document puis cliquer sur **Fusionner les documents** depuis le menu Actions de ICN ou depuis le clic droit.
 
+```xml
 <!-- Commentaire nettoyé -->
+```

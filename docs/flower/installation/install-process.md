@@ -8,12 +8,12 @@ title: "Processus d'installation"
 Cette section décrit l'installation des applications FlowerDocs GUI, FlowerDocs Core et ARender HMI
 :::
 
-Dans la suite de cette page `${APP_HOME}` correspond au dossier dans lequel va être déployée chacune des applications.
+Dans la suite de cette page `$\{APP_HOME\}` correspond au dossier dans lequel va être déployée chacune des applications.
 
 ## FlowerDocs GUI
 
-1. Après avoir effectué les téléchargements mentionnés dans les prérequis, déposer l'application `flower-docs-gui-webapp-{version}.jar` dans le dossier `${APP_HOME}`.
-2. Ajouter le fichier de configuration `gui.properties` dans `${APP_HOME}`.
+1. Après avoir effectué les téléchargements mentionnés dans les prérequis, déposer l'application `flower-docs-gui-webapp-\{version\}.jar` dans le dossier `$\{APP_HOME\}`.
+2. Ajouter le fichier de configuration `gui.properties` dans `$\{APP_HOME\}`.
 
 ### Structure des dossiers
 ```
@@ -24,16 +24,16 @@ ${APP_HOME}/
 
 ## ARender HMI
 
-1. Après avoir effectué les téléchargements mentionnés dans les prérequis, déposer l'application `arondor-arender-hmi-spring-boot-{version}.jar` dans le dossier `${APP_HOME}`.
+1. Après avoir effectué les téléchargements mentionnés dans les prérequis, déposer l'application `arondor-arender-hmi-spring-boot-\{version\}.jar` dans le dossier `$\{APP_HOME\}`.
 2. Ajouter un fichier `application.properties` avec les propriétés suivantes :
    ```properties
    spring.task.execution.pool.core-size=16
    spring.task.execution.pool.max-size=16
    spring.task.execution.thread-name-prefix=flowerdocs-async-
    ```
-3. Créer les dossiers `${APP_HOME}/configurations` et `${APP_HOME}/lib`
-4. Ajouter le fichier de configuration `arender-custom-server.properties` dans `${APP_HOME}/configurations`.
-5. Ajouter le connecteur ARender FlowerDocs `flower-docs-arender-hmi-{version}.jar` dans `${APP_HOME}/lib`.
+3. Créer les dossiers `$\{APP_HOME\}/configurations` et `$\{APP_HOME\}/lib`
+4. Ajouter le fichier de configuration `arender-custom-server.properties` dans `$\{APP_HOME\}/configurations`.
+5. Ajouter le connecteur ARender FlowerDocs `flower-docs-arender-hmi-\{version\}.jar` dans `$\{APP_HOME\}/lib`.
 
 :::warning Haute disponibilité
 En haute disponibilité, il est nécessaire d'activer l'affinité de session sur chaque HMI.
@@ -56,8 +56,8 @@ ${APP_HOME}/
 
 ## FlowerDocs Core
 
-1. Après avoir effectué les téléchargements mentionnés dans les prérequis, déposer l'application `flower-docs-core-webapp-{version}.jar` dans le dossier `${APP_HOME}`.
-2. Ajouter le fichier de configuration `core.properties` dans `${APP_HOME}`.
+1. Après avoir effectué les téléchargements mentionnés dans les prérequis, déposer l'application `flower-docs-core-webapp-\{version\}.jar` dans le dossier `$\{APP_HOME\}`.
+2. Ajouter le fichier de configuration `core.properties` dans `$\{APP_HOME\}`.
 
 ### Structure des dossiers
 ```

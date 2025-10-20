@@ -2,7 +2,9 @@
 title: Architecture dans M-Files
 ---
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 * **N1: M-Files UI**: a la responsabilité de laisser l'utilisateur de M-Files choisir quel document il veut ouvrir dans ARender,
 * **N2: Browser**: va créer la "frame" d'ARender en utilisant l'URL fourni par N1,

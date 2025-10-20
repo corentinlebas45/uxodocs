@@ -44,12 +44,16 @@ Vous devez modifier différentes valeurs du fichier *arender-server.properties* 
 - Dézipper ARenderApp.zip avec 7zip
 - Ouvrez **dashboard.html**
 - Modifiez l'URL de l'UI par celle que vous déployez (dans l'exemple il s'agit du 4.8.7)
+```xml
 <!-- Commentaire nettoyé -->
 <!-- Commentaire nettoyé -->
+```
 - Ouvrez votre coffre
 - Installer le ARenderApp.zip dans les applications de votre coffre.
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 *( M-Files Admin -> choisir le coffre -> clique droit -> Applications -> Installer )*
 
 - Déconnectez-vous du coffre et reconnectez-vous pour vous assurer que les changements sont pris en compte
@@ -59,14 +63,20 @@ Vous devez modifier différentes valeurs du fichier *arender-server.properties* 
 
 - Redémarrer le serveur IIS
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 - Démarrer le serveur Tomcat9
 - Accédez à M-Files sous le lecteur M:\
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 - Sélectionnez votre coffre
 - Faites glisser et déposez un document pour l'ouvrir avec ARender
 
+```xml
 <!-- Commentaire nettoyé -->
+```

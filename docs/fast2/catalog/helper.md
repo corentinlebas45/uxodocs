@@ -1,4 +1,6 @@
+```xml
 ## DctmConfiguration ** - Module for customized Documentum configuration ** <!-- Commentaire nettoyé -->
+```
 
 
 
@@ -17,7 +19,9 @@
 
 
 
+```xml
 ## WcmApiConfigSettings ** - URL configuration ** <!-- Commentaire nettoyé -->
+```
 
 This class allows to configure several elements associated with a URL.
 

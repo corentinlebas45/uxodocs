@@ -180,7 +180,9 @@ fonction de l'état de santé des instances de Rendition.
 
 Les détails de configuration sont disponibles sur la **page dédiée** (lien supprimé).
 
+```xml
 #### Pour des Répertoires de Cache Partagés entre Plusieurs Instances de Rendition <!-- Expression supprimée -->
+```
 
 ##### Ouverture du port Hazelcast
 
@@ -202,7 +204,9 @@ sur un système de fichiers partagé de type [NFS](https://fr.wikipedia.org/wiki
 
 Chaque microservice doit spécifier l’emplacement du répertoire de cache partagé dans le fichier application.yaml.
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 
 ```cfg
@@ -299,7 +303,9 @@ inconvénients :
   * **Avantages** : Conversion rapide et de haute qualité ; résolution rapide des problèmes avec le support Uxopian.
   * **Valeur ajoutée** : Idéal pour les entreprises recherchant une qualité constante et un support technique fiable.
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 
 Aucune action n'est nécessaire, c'est la configuration par défaut :).
@@ -337,9 +343,9 @@ recommandons également de maintenir Office à jour.
 Ignorez cette installation manuelle si l'installation automatique a réussi.
 
 * Téléchargez et installez les logiciels suivants :
-  * .Net 4.5 : [Télécharger](<https:www.microsoft.comen-usdownloaddetails.aspx?id=30653>)
-  * Microsoft Visual C++ redistribuable 2010 : [Télécharger](<https:www.microsoft.comen-USDownloadconfirmation.aspx?id=14632>)
-  * Microsoft Visual C++ redistribuable 2008 : [Télécharger](<https:www.microsoft.comen-usdownloaddetails.aspx?id=15336>)
+  * .Net 4.5 : [Télécharger](&lt;https:www.microsoft.comen-usdownloaddetails.aspx?id=30653&gt;)
+  * Microsoft Visual C++ redistribuable 2010 : [Télécharger](&lt;https:www.microsoft.comen-USDownloadconfirmation.aspx?id=14632&gt;)
+  * Microsoft Visual C++ redistribuable 2008 : [Télécharger](&lt;https:www.microsoft.comen-usdownloaddetails.aspx?id=15336&gt;)
 -------------------------------------------------------------------
 #### Configuration
 

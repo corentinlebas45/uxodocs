@@ -31,18 +31,24 @@ Les tests d'intégration d'ARender ont été effectués avec les versions suivan
 - VueJs : "version" 3.5.13
 - Svelte : "version" 5.19.0
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
+```xml
 <!-- Commentaire nettoyé -->
 <!-- Commentaire nettoyé -->
 <!-- Commentaire nettoyé -->
+```
 
       import useRef from 'react';
 
+```xml
       function ARender() <!-- Commentaire nettoyé -->
+```
           
         );
-      }
+      \}
 
       export default ARender;
 
@@ -76,7 +82,9 @@ export class ARenderComponent {@ViewChild('iframeRef', { static: false}) iframeR
 
 ```
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 Vous pouvez utiliser le composant ARender dans votre application Svelte comme suit :
 
@@ -88,25 +96,39 @@ Vous pouvez utiliser le composant ARender dans votre application Svelte comme su
 <Arender>
 ```
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
+```xml
 <!-- Commentaire nettoyé --> 
+```
     **- Visibilité dynamique de l'iframe : ** 
     La propriété arenderIsDisplayed contrôle l'affichage ou la dissimulation de l'iframe. 
+```xml
   <!-- Commentaire nettoyé --> 
+```
     **- Référence directe à l'iframe : ** 
     La propriété iframeRef lie l'élément iframe, permettant une interaction directe. 
+```xml
   <!-- Commentaire nettoyé --> 
+```
     **- Style personnalisé : ** 
     L'iframe peut être stylisée à l'aide de classes CSS. 
+```xml
   <!-- Commentaire nettoyé --> 
+```
     **- URL dynamique : ** 
     Vous pouvez modifier dynamiquement la source de l'iframe en mettant à jour l'attribut src. 
+```xml
   <!-- Commentaire nettoyé -->
+```
 
         Pour une intégration avec du CSS pur, sans utilisation d'un framework particulier, créer le fichier script suivant :
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 ```javascript
   document.addEventListener('DOMContentLoaded', function () <!-- Commentaire nettoyé -->
   
@@ -139,15 +161,19 @@ Ce script attend le chargement du DOM du document HTML auquel il sera associé, 
   <!-- Commentaire nettoyé -->
 ```html
 
+```xml
 <!DOCTYPE html>
 <html lang="en">
 <!-- Commentaire nettoyé -->Document<!-- Commentaire nettoyé -->
+```
 **
     **Afficher / Masquer l'iframe**
 
     
 **
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 Dans cet exemple, une classe 'hidden' a été ajoutée à l'iframe quand on souhaite la masquer (en passant sa "largeur" à 0px par exemple).
 
@@ -162,5 +188,5 @@ Souvent, on souhaite afficher ARender sur une portion fixe de l'écran, occupant
 Voici un exemple de CSS commenté :
 ```css
 iframe <!-- Expression supprimée -->
-}
+\}
 ```

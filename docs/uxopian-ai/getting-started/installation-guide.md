@@ -29,7 +29,9 @@ The service is configured through a set of `.yml` files (`application.yml`, `ope
 > 📌 For example, the OpenSearch host is defined in `opensearch.yml` as:
 >
 > ```yml
-> host: ${OPENSEARCH_HOST:localhost}
+```text
+> host: $\{OPENSEARCH_HOST:localhost\}
+```
 > ```
 >
 > You can set the `OPENSEARCH_HOST` environment variable to specify your server's address.

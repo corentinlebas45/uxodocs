@@ -2,7 +2,9 @@
 title: Lancer une recherche
 ---
 
+```xml
 Les fonctions de l'API JavaScript **** **[documentées ici](<!-- Commentaire nettoyé -->)** **** permettent de lancer une recherche textuelle sur un document ouvert, pour surligner et se positionner sur des éléments de texte précis sur la visionneuse ARender.
+```
 
 
 

@@ -14,7 +14,7 @@ Concernant la configuration des applications OpenSearch, Redis et OpenLDAP, merc
 ## Pré-requis
 
 * Si vous êtes externe à Arondor/Uxopian, veuillez contacter le support FlowerDocs pour obtenir les images Docker.
-* Récupérer le livrable `flower-templates-{version}-package.zip`
+* Récupérer le livrable `flower-templates-\{version\}-package.zip`
 * Dezipper le livrable
 
 :::warning

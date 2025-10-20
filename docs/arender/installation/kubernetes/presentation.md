@@ -21,15 +21,15 @@ Le tableau liste les paramètres configurables du subchart Web UI d'ARender et l
 | `web-ui.image.pullPolicy`      | Politique de récupération de l'image ARender UI                                     |                     `Always`                      |
 | `web-ui.serviceAccount.create` | Spécifie si un compte de service doit être créé                                     |                      `true`                       |
 | `web-ui.serviceAccount.name`   | Nom du compte de service crée. Si n'est pas renseigné prend la valeur du fullname   |                       `''`                        |
-| `web-ui.podSecurityContext`    | Contexte de sécurité du pod ARender UI                                              |                       `{}`                        |
-| `web-ui.securityContext`       | Contexte de sécurité du conteneur                                                   |                       `{}`                        |
+| `web-ui.podSecurityContext`    | Contexte de sécurité du pod ARender UI                                              |                       `\{\}`                        |
+| `web-ui.securityContext`       | Contexte de sécurité du conteneur                                                   |                       `\{\}`                        |
 | `web-ui.service.type`          | Type du service ARender UI                                                          |                    `ClusterIP`                    |
 | `web-ui.service.port`          | Port du service ARender UI                                                          |                       `80`                        |
 | `web-ui.ingress.enabled`       | Active l'Ingress                                                                    |                      `false`                      |
-| `web-ui.ingress.annotations`   | Annotations de l'Ingress annotations                                                |                       `{}`                        |
+| `web-ui.ingress.annotations`   | Annotations de l'Ingress annotations                                                |                       `\{\}`                        |
 | `web-ui.ingress.hosts`         | Nom d'hôtes Ingress                                                                 |                       `[]`                        |
-| `web-ui.ingress.tls`           | Configuration tls                                                                   |                       `{}`                        |
+| `web-ui.ingress.tls`           | Configuration tls                                                                   |                       `\{\}`                        |
 | `web-ui.rendition.hosts`       | Liste d'URL des serveurs de rendition (exemple: `- http://rendition-hostname:8761`) |                       `[]`                        |
-| `web-ui.resources`             | Limites et requêtes de ressource pour ARender UI                                    |                       `{}`                        |
-| `web-ui.nodeSelector`          | Sélecteur de node                                                                   |                       `{}`                        |
-| `web-ui.environment`           | Variables d'environments à passer au conteneur                                      |                       `{}`                        |
+| `web-ui.resources`             | Limites et requêtes de ressource pour ARender UI                                    |                       `\{\}`                        |
+| `web-ui.nodeSelector`          | Sélecteur de node                                                                   |                       `\{\}`                        |
+| `web-ui.environment`           | Variables d'environments à passer au conteneur                                      |                       `\{\}`                        |

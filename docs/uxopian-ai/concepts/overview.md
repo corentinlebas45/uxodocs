@@ -98,7 +98,7 @@ All messages are stored in OpenSearch, linked to their parent conversation.
 A **Prompt** is a reusable, templated instruction sent to a model to guide its response. Prompts are the core building blocks for interacting with LLMs.
 
 **Templating:**
-They use the Thymeleaf engine, allowing for dynamic content using variables (e.g., `${payload.documentId}`) and advanced logic.
+They use the Thymeleaf engine, allowing for dynamic content using variables (e.g., `$\{payload.documentId\}`) and advanced logic.
 
 **Storage:**
 Prompts are stored and managed in OpenSearch. They can be created and updated via the REST API.

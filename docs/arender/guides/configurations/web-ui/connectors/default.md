@@ -16,11 +16,11 @@ Voici quelques exemples:
 
 - Ouverture d'un document stocké sur le web
 
-  `http://{ARENDER_SERVER}/ARender/ARender.html?url=...`
+  `http://\{ARENDER_SERVER\}/ARender/ARender.html?url=...`
 
 - Ouverture d'un document via un connecteur spécifique en propageant un identifiant et un jeton de sécurité
 
-  `http://{SERVEUR_ARENDER}/ARender.html?bean=monConnecteur&identifiant=123456&token=9GISU9SG4Z`
+  `http://\{SERVEUR_ARENDER\}/ARender.html?bean=monConnecteur&identifiant=123456&token=9GISU9SG4Z`
 
 
 ### Configurer la liste des URLs authorisées

@@ -30,7 +30,7 @@ Pour lancer manuellement les applications FlowerDocs GUI, FlowerDocs Core et ARe
 
 Les applications FlowerDocs peuvent être installées simplement en tant que service Linux `init.d` ou `systemd`.
 
-Dans cette section, il est supposé que les JAR `flower-docs-gui-webapp-{version}.jar`, `flower-docs-core-webapp-{version}.jar` et `arondor-arender-hmi-spring-boot-{version}.jar` sont placés dans le dossier `/opt/flowerdocs`. Ce dossier est également utilisé comme répertoire de configuration.
+Dans cette section, il est supposé que les JAR `flower-docs-gui-webapp-\{version\}.jar`, `flower-docs-core-webapp-\{version\}.jar` et `arondor-arender-hmi-spring-boot-\{version\}.jar` sont placés dans le dossier `/opt/flowerdocs`. Ce dossier est également utilisé comme répertoire de configuration.
 
 #### Service init.d
 

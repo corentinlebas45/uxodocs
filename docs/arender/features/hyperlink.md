@@ -11,7 +11,9 @@ Vous aurez besoin d’un texte source qui sera le texte sélectionné et qui ser
 Pour permettre la création d'hyperliens, surlignez du texte, le bouton *Créer un lien* apparaîtra alors.
 En cliquant dessus, un menu demandera de sélectionner une page ou de fournir une URL.
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 Pour sélectionner la page, changez simplement la page depuis le navigateur de documents et appuyez sur le bouton *OK*.
 
@@ -19,22 +21,30 @@ Pour fournir une URL, entrez l'URL souhaitée dans la zone de texte et appuyez s
 
 Pour créer un hyperlien vers une zone, cliquez sur le bouton *Créer un lien vers une zone*.
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 La fenêtre contextuelle ci-dessous apparaît permettant la sélection de la zone cible.
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 Pour modifier le texte source d'un lien hypertexte, cliquez sur le bouton d'édition (icone de crayon) dans le panneau 
 source du lien hypertexte souhaité dans l'explorateur d'hyperliens.
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 La source peut être modifiée en sélectionnant un nouveau texte et en appuyant sur le bouton *OK*.
 
 Pour modifier la cible, cliquez sur le bouton d'édition (icone de crayon) dans le panneau cible.
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 Il est alors demandé de sélectionner l'option souhaitée : 
 - *sélectionner la page*
@@ -52,7 +62,9 @@ hyperlinkexplorer.enabled=true
 ```
 
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 Il permet de voir pour chaque hyperlien : 
 
@@ -62,7 +74,9 @@ Il permet de voir pour chaque hyperlien :
 * le document source
 * la cible 
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 
 Plusieurs options d’affichage vous sont mises à disposition : 
@@ -81,7 +95,9 @@ Plusieurs options d’affichage vous sont mises à disposition :
 
 A partir de l’explorateur des hyperliens il est possible d’appliquer un filtre. Pour cela, vous pouvez utiliser le bandeau en haut de l'explorateur dédié aux filtres et aux tris. 
 
+```xml
 <!-- Commentaire nettoyé --> 
+```
 
 
 Plusieurs options de filtre sont disponibles :
@@ -94,22 +110,30 @@ Vous pouvez également utiliser les boutons de filtres mis à disposition dans l
 
 Un pour filtrer en fonction du nom de l’utilisateur. Il apparaît au survol du nom de l'utilisateur.
 
+```xml
 <!-- Commentaire nettoyé --> 
+```
 
 
 Quand ce filtre est activé, il devient bleu. Pour le désactiver, il suffit de cliquer une nouvelle fois dessus.
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 
 Le deuxième filtre pour filtrer en fonction de la date. Il apparaît au survol de la date (uniquement si celle-ci est affichée).
 
+```xml
 <!-- Commentaire nettoyé --> 
+```
 
 
 Lui aussi est bleu quand il est activé. Pour le désactiver, il suffit de cliquer une nouvelle fois dessus.
 
+```xml
 <!-- Commentaire nettoyé --> 
+```
 
 ## Liens entre documents
 
@@ -117,7 +141,9 @@ La fonctionnalité *docLink* permet de créer des hyperliens entre documents.
 Elle peut être activée via une propriété dédiée dans le fichier de 
 configuration.
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 ```cfg
 topPanel.docLink=true
@@ -126,11 +152,15 @@ topPanel.docLink=true
 
 Une fois activée, un bouton dédié apparaît dans le panneau supérieur.
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 Il est également possible d'activer automatiquement la fonctionnalité au chargement du document en utilisant la propriété suivante :
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 ```cfg
 topPanel.docLink.activateOnStartup=true

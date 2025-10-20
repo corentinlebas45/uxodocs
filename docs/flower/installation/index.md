@@ -57,7 +57,9 @@ Les **contenus** des documents (PDF, Microsoft Office Word, etc.) gérés par Fl
 * un système de fichiers type NAS via **NFS**
 * un service de stockage objet type **AWS S3** via les API REST mise à disposition
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 ![Exemple d'architecture](/img/documentation/fd-architecture.png)
 
 ### Redis

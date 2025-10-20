@@ -19,7 +19,9 @@ Les règles seront définies via des *bean* dans les fichiers de configurations 
 
 Une règle a besoin d'un identifiant et d'un nom.
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 ```xml
 
@@ -37,7 +39,9 @@ Différents types de recherches sont configurables afin de l'appliquer sur diff�
 - SELECTED_PAGES
 
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 ```xml
 
@@ -52,10 +56,14 @@ Différents types de recherches sont configurables afin de l'appliquer sur diff�
 <!-- Commentaire nettoyé -->
 
 ```xml
+```xml
 <!-- Commentaire nettoyé -->
+```
 
+```xml
 	<!-- Commentaire nettoyé -->your_page_number_here<!-- Commentaire nettoyé -->another page number..<!-- Commentaire nettoyé -->
 <!-- Commentaire nettoyé -->
+```
 
 ```xml
 
@@ -76,7 +84,9 @@ Différents types de recherches sont configurables afin de l'appliquer sur diff�
 
 Voici une exemple de *bean* d'une règle complète réunissant les trois grandes parties. L'exemple permet de souligner en rouge chaque lettre 'e' de la page courante.
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 ```xml
 **
@@ -113,7 +123,9 @@ Voici une exemple de *bean* d'une règle complète réunissant les trois grandes
 
 Les règles personnalisées ne sont connues d'ARender uniquement à partir du catalogue de règle qui liste les différents identifiants des règles.
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 ```xml
 **
@@ -150,7 +162,9 @@ L'exemple qui suit va permettre de définir une règle permettant de biffer les 
 
 ### Création d'une règle personnalisée
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 ```xml
 **
@@ -185,7 +199,9 @@ L'exemple qui suit va permettre de définir une règle permettant de biffer les 
 
 ### Configuration du catalogue des règles d'annotations
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 ```xml
 **
@@ -201,7 +217,9 @@ L'exemple qui suit va permettre de définir une règle permettant de biffer les 
 
 Premièrement, on définit un bouton personnalisé :
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 ```xml
 **
@@ -221,7 +239,9 @@ Premièrement, on définit un bouton personnalisé :
 
 Ensuite, nous devons ajouter l'identifiant du bean customButtonToRedactSomething à la liste des boutons d'annotation comme ci-dessous : 
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 ```cfg
 topPanel.annotation.buttons.beanNames=addStickyNoteAnnotationButton,addFreeTextAnnotationButton,customButtonToRedactSomething

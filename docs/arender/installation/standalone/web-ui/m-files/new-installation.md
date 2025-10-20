@@ -47,11 +47,15 @@ Pour installer ARender sur le coffre-fort M-Files, suivez les étapes ci-dessous
 - Cliquez sur **Installer...**
 - Sélectionnez le fichier **VAF_MFF_ArenderConnector_22.12.3.mfappx** précédemment téléchargé
 - Cliquez sur **Oui** si cette fenêtre apparaît
+```xml
 <!-- Commentaire nettoyé -->
+```
 - L'application est maintenant installée
 - Cliquez sur **Fermer**
 - Cliquez sur **Oui** si cette fenêtre apparaît
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 Maintenant que nous avons installé ARender sur le coffre-fort M-Files, nous pouvons commencer à configurer l'application.
 
@@ -61,12 +65,16 @@ VAF_MFF_ArenderConnector utilise un fichier de configuration JSON. Vous pouvez l
 
 - Exécuter le client Administrateur M-Files
 - Cliquez sur la flèche à côté de votre coffre-fort
+```xml
 <!-- Commentaire nettoyé -->
+```
 - Cliquez sur **Configurations** pour votre coffre-fort
 - Sélectionnez **Autres applications** puis sélectionnez **VAF_MFF_ArenderConnector**. Le tableau de bord apparaît
 - Cliquez sur l'onglet **Configuration**
 - Remplissez toutes les propriétés de configuration. En cliquant sur l'icône **i**, vous obtiendrez une aide qui s'affichera.
+```xml
 <!-- Commentaire nettoyé -->
+```
 - Une fois que vous avez configuré, cliquez sur **Enregistrer**
 
 
@@ -74,14 +82,20 @@ VAF_MFF_ArenderConnector utilise un fichier de configuration JSON. Vous pouvez l
 
 - Redémarrer le serveur IIS
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 - Démarrer le serveur Tomcat9
 - Accédez à M-Files sous le lecteur M:\
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 - Sélectionnez votre coffre
 - Faites glisser et déposez un document pour l'ouvrir avec ARender
 
+```xml
 <!-- Commentaire nettoyé -->
+```

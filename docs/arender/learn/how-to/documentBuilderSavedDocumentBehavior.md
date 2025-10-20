@@ -10,7 +10,9 @@ Ci-après sera décrit la configuration de l'interface avec ajout de
 propriétés par profil.
 
 Ainsi, avant de continuer assurez-vous d'avoir lu le chapitre : [Guide de
+```xml
 configuration de la WEB-UI](<!-- Commentaire nettoyé -->).
+```
 
 Par ailleurs, pour créer de nouveaux documents avec ARender il faut que
 la fonctionnalité de découpage/fusion de document soit activée :

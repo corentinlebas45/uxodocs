@@ -64,27 +64,31 @@ Since the embedded database has to be reach from both Fast2 broker and Kibana mo
     | File                                           | Specification                                         |
     | ---------------------------------------------- | ----------------------------------------------------- |
     | ./config/application.properties                | `opensearch.port=1790`                                |
+```xml
     | ./elasticsearch-X.Y.Z/config/elasticsearch.yml | `http.port: <!-- Commentaire nettoyé -->"]` |
+```
 
 === "v2.5+"
 
     | File                                                           | Specification                                      |
     | -------------------------------------------------------------- | -------------------------------------------------- |
     | ./config/application.properties                                | `opensearch.port=1790`                             |
+```xml
     | ./opensearch-X.Y.Z/config/opensearch.yml                       | `http.port: <!-- Commentaire nettoyé -->"]` |
+```
 
 If the dashboard component is installed, the database port also needs to be updated on this front as the dashboard needs to access the DB in order to read the data :
 
 === "v2.4-"
 
     ```ini title="./kibana-X.Y.Z/config/kibana.yml"
-    elasticsearch.hosts: ["http://<DB-server:DB-port>"]
+    elasticsearch.hosts: ["http://&lt;DB-server:DB-port&gt;"]
     ```
 
 === "v2.6+"
 
     ```ini title="./opensearch-dashboards-X.Y.Z/config/opensearch_dashboards.yml"
-    opensearch.hosts: ["http://<DB-server:DB-port>"]
+    opensearch.hosts: ["http://&lt;DB-server:DB-port&gt;"]
     ```
 
 
@@ -113,7 +117,9 @@ Upgrading the metrics will prevent `java.lang.OutOfMemoryError` to pop up during
 
 
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 ## Remote access to the database
 
@@ -128,7 +134,9 @@ The database port needs to be opened from the Fast2 server, and accessible by yo
 1.  To check the database port is accessible from your machine, run the following command (from your work station):
 
     ```sh
+```xml
     curl :<!-- Commentaire nettoyé -->:<!-- Commentaire nettoyé -->:<!-- Commentaire nettoyé -->]"
+```
 ```
 
 
@@ -153,7 +161,9 @@ Documents concerned by a migration can quickly add up, especially on cumulative 
 
 ```log
 Suppressed: org.opensearch.client.ResponseException: method [POST], host [http://localhost:1790], URI [/f2_campaign_try1/_search?pre_filter_shard_size=...], status line [HTTP/1.1 503 Service Unavailable]
+```xml
 <!-- Commentaire nettoyé -->],"type":"search_phase_execution_exception","reason":"all shards failed","phase":"query","grouped":true,"failed_shards":[<!-- Commentaire nettoyé -->}]},"status":503}
+```
 ```
 
 To fix this, you need to stop Fast2 (and the database), and add the following line:

@@ -27,16 +27,16 @@ Le tableau liste les paramètres configurables du microservice broker de la rend
 | `rendition.broker.rbac.create`           | Spécifie si les ressources d'attribution de rôle doivent être créées         |                              `true`                              |
 | `rendition.broker.serviceAccount.create` | Spécifie si un compte de service doit être créé                              |                              `true`                              |
 | `rendition.broker.serviceAccount.name`   | Nom du compte de service. Si n'est pas renseigné prend la valeur du fullname |                               `''`                               |
-| `rendition.broker.podSecurityContext`    | Contexte de sécurité des pods du broker                                      |                               `{}`                               |
-| `rendition.broker.securityContext`       | Contexte de sécurité des conteneurs du broker                                |                               `{}`                               |
+| `rendition.broker.podSecurityContext`    | Contexte de sécurité des pods du broker                                      |                               `\{\}`                               |
+| `rendition.broker.securityContext`       | Contexte de sécurité des conteneurs du broker                                |                               `\{\}`                               |
 | `rendition.broker.service.type`          | Type de service du broker                                                    |                           `ClusterIP`                            |
 | `rendition.broker.ingress.enabled`       | Active l'ingress pour la rendition                                           |                             `false`                              |
-| `rendition.broker.ingress.annotations`   | Annotation de l'Ingress de la rendition                                      |                               `{}`                               |
+| `rendition.broker.ingress.annotations`   | Annotation de l'Ingress de la rendition                                      |                               `\{\}`                               |
 | `rendition.broker.ingress.hosts`         | Nom d'hôte Ingress de la rendition                                           |                               `[]`                               |
 | `rendition.broker.ingress.tls`           | Configuration tls de la rendition                                            |                               `[]`                               |
-| `rendition.broker.resources`             | Limites et requêtes de ressources du broker                                  |                               `{}`                               |
-| `rendition.broker.nodeSelector`          | Sélecteur de node du broker                                                  |                               `{}`                               |
-| `rendition.broker.environment`           | Variables d'environments à passer au conteneur du broker                     |                               `{}`                               |
+| `rendition.broker.resources`             | Limites et requêtes de ressources du broker                                  |                               `\{\}`                               |
+| `rendition.broker.nodeSelector`          | Sélecteur de node du broker                                                  |                               `\{\}`                               |
+| `rendition.broker.environment`           | Variables d'environments à passer au conteneur du broker                     |                               `\{\}`                               |
 
 
 Si `rendition.broker.rbac.create` n'est pas à `true`, il faut s'assurer que le compte de service du broker ait les droits nécessaires au calcul du 'weather'.
@@ -68,12 +68,12 @@ Le tableau liste les paramètres configurables du microservice de conversion de 
 | `rendition.converter.imagepullPolicy`       | Politique de récupération de l'image du converter                            |                          `Always`                           |
 | `rendition.converter.serviceAccount.create` | Spécifie si un compte de service doit être créé                              |                           `true`                            |
 | `rendition.converter.serviceAccount.name`   | Nom du compte de service. Si n'est pas renseigné prend la valeur du fullname |                            `''`                             |
-| `rendition.converter.podSecurityContext`    | Contexte de sécurité des pods du converter                                   |                            `{}`                             |
-| `rendition.converter.securityContext`       | Contexte de sécurité des conteneurs du converter                             |                            `{}`                             |
+| `rendition.converter.podSecurityContext`    | Contexte de sécurité des pods du converter                                   |                            `\{\}`                             |
+| `rendition.converter.securityContext`       | Contexte de sécurité des conteneurs du converter                             |                            `\{\}`                             |
 | `rendition.converter.service.type`          | Type de service du converter                                                 |                         `ClusterIP`                         |
-| `rendition.converter.resources`             | Limites et requêtes de ressources du converter                               |                            `{}`                             |
-| `rendition.converter.nodeSelector`          | Sélecteur de node du converter                                               |                            `{}`                             |
-| `rendition.converter.environment`           | Variables d'environments à passer au conteneur du converter                  |                            `{}`                             |
+| `rendition.converter.resources`             | Limites et requêtes de ressources du converter                               |                            `\{\}`                             |
+| `rendition.converter.nodeSelector`          | Sélecteur de node du converter                                               |                            `\{\}`                             |
+| `rendition.converter.environment`           | Variables d'environments à passer au conteneur du converter                  |                            `\{\}`                             |
 
 ### Hazelcast
 
@@ -98,12 +98,12 @@ Le tableau liste les paramètres configurables du microservice de manipulation d
 | `rendition.handler.imagepullPolicy`       | Politique de récupération de l'image du handler                              |                            `Always`                            |
 | `rendition.handler.serviceAccount.create` | Spécifie si un compte de service doit être créé                              |                             `true`                             |
 | `rendition.handler.serviceAccount.name`   | Nom du compte de service. Si n'est pas renseigné prend la valeur du fullname |                              `''`                              |
-| `rendition.handler.podSecurityContext`    | Contexte de sécurité des pods du handler                                     |                              `{}`                              |
-| `rendition.handler.securityContext`       | Contexte de sécurité des conteneurs du handler                               |                              `{}`                              |
+| `rendition.handler.podSecurityContext`    | Contexte de sécurité des pods du handler                                     |                              `\{\}`                              |
+| `rendition.handler.securityContext`       | Contexte de sécurité des conteneurs du handler                               |                              `\{\}`                              |
 | `rendition.handler.service.type`          | Type de service du handler                                                   |                          `ClusterIP`                           |
-| `rendition.handler.resources`             | Limites et requêtes de ressources du handler                                 |                              `{}`                              |
-| `rendition.handler.nodeSelector`          | Sélecteur de node du handler                                                 |                              `{}`                              |
-| `rendition.handler.environment`           | Variables d'environments à passer au conteneur du handler                    |                              `{}`                              |
+| `rendition.handler.resources`             | Limites et requêtes de ressources du handler                                 |                              `\{\}`                              |
+| `rendition.handler.nodeSelector`          | Sélecteur de node du handler                                                 |                              `\{\}`                              |
+| `rendition.handler.environment`           | Variables d'environments à passer au conteneur du handler                    |                              `\{\}`                              |
 
 ### Document renderer
 
@@ -119,9 +119,9 @@ Le tableau liste les paramètres configurables du microservice de rendu de docum
 | `rendition.renderer.imagepullPolicy`       | Politique de récupération de l'image du renderer                             |                          `Always`                          |
 | `rendition.renderer.serviceAccount.create` | Spécifie si un compte de service doit être créé                              |                           `true`                           |
 | `rendition.renderer.serviceAccount.name`   | Nom du compte de service. Si n'est pas renseigné prend la valeur du fullname |                            `''`                            |
-| `rendition.renderer.podSecurityContext`    | Contexte de sécurité des pods du renderer                                    |                            `{}`                            |
-| `rendition.renderer.securityContext`       | Contexte de sécurité des conteneurs du renderer                              |                            `{}`                            |
+| `rendition.renderer.podSecurityContext`    | Contexte de sécurité des pods du renderer                                    |                            `\{\}`                            |
+| `rendition.renderer.securityContext`       | Contexte de sécurité des conteneurs du renderer                              |                            `\{\}`                            |
 | `rendition.renderer.service.type`          | Type de service du renderer                                                  |                        `ClusterIP`                         |
-| `rendition.renderer.resources`             | Limites et requêtes de resources du renderer                                 |                            `{}`                            |
-| `rendition.renderer.nodeSelector`          | Sélécteur de node du renderer                                                |                            `{}`                            |
-| `rendition.renderer.environment`           | Variables d'environments à passer au conteneur du renderer                   |                            `{}`                            |
+| `rendition.renderer.resources`             | Limites et requêtes de resources du renderer                                 |                            `\{\}`                            |
+| `rendition.renderer.nodeSelector`          | Sélécteur de node du renderer                                                |                            `\{\}`                            |
+| `rendition.renderer.environment`           | Variables d'environments à passer au conteneur du renderer                   |                            `\{\}`                            |

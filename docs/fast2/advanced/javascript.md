@@ -11,7 +11,9 @@ Any data within a punnet can be accessed, added, edited or remove ! Make sure be
 
 Let's now go through 3 quick scenarios.
 
+```xml
 ## Example #1 **Map document properties from JSON** <!-- Commentaire nettoyé -->
+```
 
 Depending on your use-case, the metadata could have been stored within a JSON file. Parsing such file and build a punnet based on its content is another kind of operation where this Fast2 task comes in handy !
 
@@ -67,7 +69,9 @@ the ouput punnet would then look like this:
 
 Next step could be to attach the document content to your document, now that you have the `contentPath` data with its value easily resolved by the [AlterDocumentContent](../catalog/transformer.md#AlterDocumentContent) task.
 
+```xml
 ## Example #2 **Delete content based on property** <!-- Commentaire nettoyé -->
+```
 
 Let us now supposed we want to filter out document contents based on a given property. For convenience, the reference value is stored at the punnet level, under the property `punnetKeyA`.
 
@@ -148,7 +152,9 @@ punnet.getDocuments().forEach(function (document) <!-- Commentaire nettoyé -->)
 });
 ```
 
+```xml
 ## Example #3 **Get content path** <!-- Commentaire nettoyé -->
+```
 
 Another application of this task could be to reach values outside the scope of the document dataset, like for example the path of the associated content.
 

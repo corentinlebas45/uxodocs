@@ -94,4 +94,6 @@ la machine des utilisateurs.
 
 Pour désactiver l'Analyse Produit, définissez la propriété **arender.data.analytics.enabled** à false dans les
 paramètres de configuration. (Plus d'informations 
+```xml
 [ici](<!-- Commentaire nettoyé -->)).
+```

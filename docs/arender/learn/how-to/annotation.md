@@ -163,8 +163,10 @@ Voici la configuration actuelle du bean servant de conteneur pour les boutons de
 		
 		
 		
-			<ref>
+			&lt;ref&gt;
+```xml
 		<!-- Commentaire nettoyé -->
+```
 		
 		
 	**
@@ -177,6 +179,7 @@ Voici un exemple de bean qui définit un bouton de création d'annotation se tro
 
 ``` xml
     **
+```xml
 		<constructor-arg value="addHighlightRectangleAnnotationButton" >
 		
 		
@@ -195,18 +198,23 @@ Voici un exemple de bean qui définit un bouton de création d'annotation se tro
 			<ref>
 		<!-- Commentaire nettoyé -->
 		
+```
 			**
 				
 				
 				
 			**
+```xml
 		<!-- Commentaire nettoyé -->
+```
     
     
     
     
-        <ref>
+        &lt;ref&gt;
+```xml
     <!-- Commentaire nettoyé -->
+```
 **
 ```
 
@@ -236,6 +244,7 @@ Une fois ces étapes terminées, vous allez avoir un bean ressemblant à l'exemp
 
 ``` xml
 **
+```xml
     <constructor-arg value="addHighlightRectangleAnnotationButton" >
     
     
@@ -250,3 +259,4 @@ Une fois ces étapes terminées, vous allez avoir un bean ressemblant à l'exemp
     <!-- Commentaire nettoyé -->
         <ref>
     <!-- Commentaire nettoyé -->
+```

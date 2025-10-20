@@ -15,7 +15,7 @@ Réponse :
 
 | Attribut             | Type                      | Description                          |
 | :------------------- | :------------------------ | :----------------------------------- |
-| transformationOrders | `List<TransformationOrder>` | La liste des ordre de transformation |
+| transformationOrders | `List&lt;TransformationOrder&gt;` | La liste des ordre de transformation |
 
 ## Exemples
 

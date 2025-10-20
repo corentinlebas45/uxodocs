@@ -42,7 +42,7 @@ document sera choisi par rapport au dossier.
 Le document composite peut aussi être récupérer :
 
 ``` bash
-curl -X GET http://<arender_host>/arendergwt/compositeAccessorServlet?title=monTitre
+curl -X GET http://&lt;arender_host&gt;/arendergwt/compositeAccessorServlet?title=monTitre
 ```
 * title : le titre de votre document composite
 

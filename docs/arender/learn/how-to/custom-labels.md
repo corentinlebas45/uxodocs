@@ -12,7 +12,9 @@ ARender vous permet de personnaliser des libellés localisés à partir de fichi
 
 Par défaut, ARender utilise l'ordre suivant pour récupérer les fichiers de ressources personnalisés externes :
 - Propriété de configuration
+```xml
 - `<!-- Commentaire nettoyé -->
+```
 
 ```cfg
 # Configuration des libellés ARender
@@ -43,21 +45,31 @@ Depuis la "version" 2023.0.0 :
 <!-- Commentaire nettoyé -->
 
 ```xml
+```xml
 <!-- Commentaire nettoyé -->
+```
 **
+```xml
 		<constructor-arg value="customButton">
 		
 		
 		
 			<!-- Commentaire nettoyé -->
 		<!-- Commentaire nettoyé -->
+```
 			**
 				
+```xml
 					<!-- Commentaire nettoyé -->
+```
 						catch(e)
+```xml
 						<!-- Expression supprimée -->;
-						}
+```
+						\}
+```xml
 					<!-- Commentaire nettoyé -->
+```
 			**
 		
 	**

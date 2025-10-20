@@ -68,7 +68,9 @@ Basically, two fields are mandory:
 - The query to insert or update your database.
 
     ```sql
+```text
     INSERT INTO table_test_connection (column_A, column_B) VALUES ('${punnetId}', "test");
+```
     ```
 
     ![SQLStatement](../assets/img/cookbooks/jdbc_SQLStatement.png)

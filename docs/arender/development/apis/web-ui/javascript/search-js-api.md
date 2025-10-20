@@ -80,5 +80,7 @@ La navigation de proche en proche et le nettoyage des résultats se font de la m
 **- Exemple de recherche par expression régulière :**
 
 Une expression régulière (ou regex) est une règle permettant de définir quelles séquences de caractères ressortent dans une recherche.
-Par exemple, ** \b\w<!-- Balise invalide supprimée -->\b", false, false, true, "AllDocuments", "WithAnnotations", null)
+```xml
+Par exemple, ** &#92;b&#92;w<!-- Balise invalide supprimée -->&#92;b", false, false, true, "AllDocuments", "WithAnnotations", null)
+```
 ```

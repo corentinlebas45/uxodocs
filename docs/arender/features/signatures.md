@@ -28,9 +28,13 @@ pdf.signatures.enable=true
 Après l'ouverture d'un document, un nouvel onglet dédié à la signature apparaît. En entête de ce dernier deux icônes peuvent apparaître :
 
 Signature valide :
+```xml
 <!-- Commentaire nettoyé -->
+```
 Signature non-valide :
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 ### Le cas nominal : une signature valide
 
@@ -38,7 +42,9 @@ La signature est désignée comme valide à partir du moment où l’entête de 
 
 Un clic sur ce dernier provoque l’ouverture de l’onglet comme ci-dessous :
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 On peut y voir les informations suivantes :
 
@@ -56,17 +62,25 @@ Ainsi, l’intégrité n’est pas conservée ou l’identité du signataire ne 
 
 Au niveau de l’interface, l’alerte est donnée par l’icône de signature non-valide.
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 Les différents types d'erreurs sont remontés au niveau du panneau des signatures :
 
+```xml
 - Non intégrité : <!-- Commentaire nettoyé -->
+```
 Si le document a été modifié ou endommagé.
 
+```xml
 - Signature non valide : <!-- Commentaire nettoyé -->
+```
 Si la signature du document est non valide.
 
+```xml
 - Certificat inconnu : <!-- Commentaire nettoyé -->
+```
 Il est possible de paramétrer une liste de certificats valides.
   Pour cela, placer les certificats voulus dans un dossier défini par la propriété PUBLIC_CERT pour le service document-text-handler, dont la valeur par défaut est ../defaultPathPublicCert  :
 

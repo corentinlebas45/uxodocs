@@ -32,24 +32,36 @@ https://serveur_websphere:9043/ibm/console
 - Aller dans l’onglet « **Applications** », puis cliquer sur « Applications d’entreprise »
 
 - Pour lancer l’installation, cliquer sur « **Installer** »
+```xml
   <!-- Balise invalide supprimée -->
+```
 
 - Choisir le chemin de l’EAR à déployer et cliquer sur « **Suivant** »
+```xml
   <!-- Balise invalide supprimée -->
+```
 
 - Pour accepter les paramètres par défaut, cliquer sur « **Suivant** »
+```xml
   <!-- Balise invalide supprimée -->
   <!-- Balise invalide supprimée -->
+```
 
 - Sélectionner le(s) webserver(s) et/ou serveur(s), puis cliquer sur « **Suivant** »
+```xml
   <!-- Balise invalide supprimée -->
+```
 
 - Pour accepter les paramètres par défaut (hôte virtuel : default_host), cliquer sur « **Suivant** »
+```xml
   <!-- Balise invalide supprimée -->
   <!-- Balise invalide supprimée -->
+```
 
 - Dans la fenêtre récapitulative de l’installation, cliquer sur « **Terminer** » pour procéder à l’installation avec ces paramètres après les avoir vérifié
+```xml
   <!-- Balise invalide supprimée -->
+```
 
 ## Configuration post installation
 
@@ -60,13 +72,19 @@ Il faut s’assurer que l’ordre de chargement des librairies soit configuré d
 - Dans la liste des applications d’entreprise cliquer l’application **ARender 2023.0.X for FileNet 5.x**
 
 - Cliquer sur **Gestion des modules**
+```xml
   <!-- Balise invalide supprimée -->
+```
 
 - Cliquer sur le module ARender
+```xml
   <!-- Balise invalide supprimée -->
+```
 
 - Sélectionner, dans la liste déroulante « Ordre du chargeur de classes » : « Classes chargées en premier avec un chargeur de classe local (dernier parent)
+```xml
   <!-- Balise invalide supprimée -->
+```
 
 - Cliquer sur OK puis sauvegarder les modifications.
 
@@ -123,16 +141,20 @@ La configuration IHS implique quatre éléments principaux :
    #### Exemple de configuration :
 
 ```xml
+```xml
 <ServerCluster CloneSeparatorChange="false" GetDWLMTable="true" IgnoreAffinityRequests="false" LoadBalance="Round-Robin" Name="ARender_ServerCluster" PostBufferSize="0" PostSizeLimit="-1" RemoveSpecialHeaders="true" RetryInterval="60" ServerIOTimeoutRetry="-1">
    <Server CloneId="node1" Name="node1" ServerIOTimeout="900">
       <Transport Hostname="localhost" Port="9080" Protocol="http">
    <!-- Balise invalide supprimée -->
       <Transport Hostname="localhost" Port="9081" Protocol="http">
    <!-- Balise invalide supprimée -->
+```
 **
    **
 **
+```xml
 <Route ServerCluster="ARender_ServerCluster" UriGroup="ARender_UriGroup" VirtualHostGroup="ARender_VirtualHostGroup">
+```
 ```
 
 #### Explications :

@@ -97,21 +97,25 @@ Ce document téléchargé contient l'annotation biffure souhaitée.
 
 Le modèle de création d'annotation peut être utilisé directement pour créer une 
 annotation dans une zone. Pour créer une annotation aux positions
+```xml
 *<!-- Balise invalide supprimée -->,
         "position": <!-- Balise invalide supprimée -->
-      }
+```
+      \}
     ]
-  },
+  \},
   "format": "pdf",
   "transformationDetails": [
+```xml
       <!-- Balise invalide supprimée -->
+```
           ]
-        }
+        \}
       ],
 	  "documentTitle": "MyDocument"
-    }
+    \}
   ]
-}'
+\}'
 ```
 
 ### Créer une annotation de biffure basée sur une règle

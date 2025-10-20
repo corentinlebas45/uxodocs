@@ -18,19 +18,19 @@ Voici quelques exemples :
 
 - Ouverture d'un document simple stocké dans FileNet P8 :
 
-    `http://\{arender_serveur\}/ARender.html?id=\{345A81-KT7SK95747S-5IS8-8SK0\}&objectStoreName=OS1`
+    `http://\\{arender_serveur\\}/ARender.html?id=\\{345A81-KT7SK95747S-5IS8-8SK0\\}&objectStoreName=OS1`
 
 - Ouverture de deux documents simultanément avec la syntaxe mixedObjects :
 
-    `http://\{arender_serveur\}/ARender.html?ids=doc:\{345A81-KT7SK95747S-5IS8-8SK0\},doc:\{F64A9342-6114-4A5C-A5E1-589A2FFB159F\}&objectStoreName=OS1&objectType=mixedObjects`
+    `http://\\{arender_serveur\\}/ARender.html?ids=doc:\\{345A81-KT7SK95747S-5IS8-8SK0\\},doc:\\{F64A9342-6114-4A5C-A5E1-589A2FFB159F\\}&objectStoreName=OS1&objectType=mixedObjects`
 
 - Ouverture de deux documents et d'un folder simultanément :
 
-    `http://\{arender_serveur\}/ARender.html?objectStoreName=OS1&ids=doc:\{3DBE573A-1AC9-4B08-8CB1-8F9495619954\},doc:\{F64A9342-6114-4A5C-A5E1-589A2FFB159F\},folder:\{55714817-BDAC-4C8A-9EFB-963E4620A4E4\}&objectType=mixedObjects`
+    `http://\\{arender_serveur\\}/ARender.html?objectStoreName=OS1&ids=doc:\\{3DBE573A-1AC9-4B08-8CB1-8F9495619954\\},doc:\\{F64A9342-6114-4A5C-A5E1-589A2FFB159F\\},folder:\\{55714817-BDAC-4C8A-9EFB-963E4620A4E4\\}&objectType=mixedObjects`
 
 - Ouverture d'un element de contenu précis :
 
-  `http://\{arender_serveur\}/ARender.html?id=\{345A81-KT7SK95747S-5IS8-8SK0\}&objectStoreName=OS1&contentElement=2`
+  `http://\\{arender_serveur\\}/ARender.html?id=\\{345A81-KT7SK95747S-5IS8-8SK0\\}&objectStoreName=OS1&contentElement=2`
 
 
 La syntaxe mixedObjects est la suivante :
@@ -332,19 +332,31 @@ Pour définir un filigrane dépendant de la classe de document FileNet et/ou du 
             
 **
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 **
+```xml
   <constructor-arg value="""">
+```
 **
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 **
+```xml
   <constructor-arg value="""">
+```
 **
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 **
+```xml
   <constructor-arg value="""">
+```
 **
 ```
 
@@ -368,9 +380,13 @@ Vous pouvez créer un usage de filigrane en filtrant par groupe LDAP :
         
 **
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 **
+```xml
   <constructor-arg value="myGroup">
+```
 **
 ```
 
@@ -383,9 +399,13 @@ Vous pouvez créer un usage de filigrane pour tous les utilisateurs sauf ceux d�
         
 **
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 **
+```xml
   <constructor-arg value="myGroup">
+```
 **
 ```
 
@@ -398,9 +418,13 @@ Vous pouvez créer un usage de filigrane qui dépend des classes de document de 
      
 **
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 **
+```xml
   <constructor-arg value="""">
+```
 **
 ```
 
@@ -414,14 +438,22 @@ Bien entendu, vous pouvez mixer les configurations pour définir des usages de f
         
 **
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 **
+```xml
   <constructor-arg value="""">
+```
 **
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 **
+```xml
   <constructor-arg value="myLDAPGroup">
+```
 **
 ```
 
@@ -441,13 +473,19 @@ Vous devez ajouter toutes les définitions d'usage de filigrane dans le provider
 
 ```xml
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 **
     
+```xml
       <!-- Commentaire nettoyé -->
+```
+```xml
         <ref bean="newWatermarkDefinition">
       <!-- Commentaire nettoyé -->
+```
 **
 ```
 
@@ -484,30 +522,44 @@ et modifier la propriété **contentUpdateBehavior** comme cela:
 	
 	
 		**
+```xml
 	<!-- Commentaire nettoyé -->
-		<ref>
+```
+		&lt;ref&gt;
+```xml
 	<!-- Commentaire nettoyé -->
+```
 	
 		**
 			
 			
 			
 			
+```xml
 				<!-- Commentaire nettoyé -->UPDATE_FIRST_DOCUMENT_PDFA<!-- Commentaire nettoyé -->
+```
 		**
+```xml
 	<!-- Commentaire nettoyé -->
+```
 	
 		**
+```xml
 	<!-- Commentaire nettoyé -->
-		<ref>
+```
+		&lt;ref&gt;
+```xml
 	<!-- Commentaire nettoyé -->
+```
 	
 		**
 			
 			
 			
 			
+```xml
 				<!-- Commentaire nettoyé -->CREATE_NEW_FIRST_DOCUMENT_PDFA<!-- Commentaire nettoyé -->
+```
 		**
 	
 **
@@ -523,7 +575,9 @@ Voici un exemple de l'appel POST, où *\{documentId\}* est à remplacer par le "
 
 
 ```cfg
-http://\{HOST_ARENDER\}/arendergwt/updateDocumentMetadataServlet?uuid=\{documentId\}
+```text
+http://\\{HOST_ARENDER\\}/arendergwt/updateDocumentMetadataServlet?uuid=\\{documentId\\}
+```
 ```
 
 
@@ -531,8 +585,8 @@ Ensuite, le corps de la requête va accepter une structure JSON définissant cha
 
 
 ```cfg
-\{"propertyKey1" : "propertyValue1",
-  "propertyKey2" : "propertyValue2"\}
+\\{"propertyKey1" : "propertyValue1",
+  "propertyKey2" : "propertyValue2"\\}
 ```
 
 

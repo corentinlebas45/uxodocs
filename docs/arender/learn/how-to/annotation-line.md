@@ -24,7 +24,9 @@ trouve dans _event-configuration.xml_. Une
 fois fait, pour avoir une ligne il faut que la propriété head et la
 propriété tail soient à `NONE`.
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 ``` xml
 **

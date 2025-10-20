@@ -23,13 +23,17 @@ Avant de commencer le développement du connecteur, assurez-vous de satisfaire l
   
 ### Infrastructure réseau
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 ## Partie 1 : Fonctionnement d'ARender avec un connecteur
 
 ARender est un outil de rendu de documents qui peut être intégré avec différents systèmes de gestion de documents (GED)
 grâce à des connecteurs personnalisés (voir 
+```xml
 [la liste des connecteurs existants](<!-- Commentaire nettoyé -->)).
+```
 
 Un connecteur permet à ARender de se connecter à une GED spécifique pour, entre autres, récupérer des 
 documents et les afficher via ARender. Le processus se déroule comme suit :
@@ -150,7 +154,9 @@ Exemple en ligne :
 $> mvn clean install
 ```
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 * Placer le jar dans le dossier **lib/** d'ARender WEB-UI,
 * Configurer l'URLParser développé précédemment, en ajoutant le contenu ci-dessous au fichier
@@ -214,7 +220,9 @@ Pour tester il faut :
   
 ### Debugging
 
+```xml
 Voir [cette page dédiée au logs ARender](<!-- Commentaire nettoyé -->).
+```
 
 ## Pour aller plus loin - Gestion des annotations
 

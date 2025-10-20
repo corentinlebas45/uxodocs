@@ -289,7 +289,9 @@ worker.content.factory="remote|local"
 ##### Example
 This is an example to understand what happens for both scenarios. Imagine that we are extracting some documents from a Documentum environment and we need to convert tiff files to a pdf format.
 
+```xml
 <!-- Commentaire nettoyé -->> Broker: Hi broker, I'm available
+```
 Broker ->> Worker: Hello worker, I have some work for you
 Worker ->> Dctm: Ask for documents
 Dctm ->> Worker: Provide documents

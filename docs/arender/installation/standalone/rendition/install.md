@@ -3,7 +3,9 @@ title: Installation
 ---
 
 Si l'installation est une montée de version de la version 4.8 vers la version 2023.0, merci de consulter la documentation 
+```xml
 détaillée de mise à jour [ici](<!-- Commentaire nettoyé -->).
+```
 
 ## Installation avec l'installeur
 
@@ -29,18 +31,26 @@ Voici un exemple des étapes d'installation sous Windows :
 
 * Sélectionner le dossier d'installation :
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 * Sélectionner les composants à installer. Les composants non sélectionnées devront être installés manuellement.
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 * Écran de fin d'installation :
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 * Les logiciels installés, à l'exception de LibreOffice, seront situés dans le dossier ***third_party*** :
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 **Félicitations, l'installation est terminée !**
 
@@ -82,7 +92,9 @@ $> java -jar ARender-rendition-installer.jar -options install-rendition.properti
 
 Pour l'installation avec le package zip, les logiciels additionnels doivent être installés manuellement.
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 Nous vous recommandons d’utiliser Chocolatey pour gérer cela facilement : 
 Nous vous recommandons d'installer ces logiciels à partir des packages de distribution officiels de l'OS. 
 

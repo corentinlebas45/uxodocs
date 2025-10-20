@@ -1,4 +1,6 @@
+```xml
 ## AlfrescoRestDeleteNode ** - Alfresco delete nodes using Alfresco REST protocol ** <!-- Commentaire nettoyé -->
+```
 
 This task relies on the Alfresco public REST API (with v1.0.4 of the Alfresco REST client) to delete nodes.
 
@@ -18,7 +20,9 @@ This task relies on the Alfresco public REST API (with v1.0.4 of the Alfresco RE
 
 
 
+```xml
 ## AwsMove ** - AWS S3 file mover ** <!-- Commentaire nettoyé -->
+```
 
 Reorganize your files inside your AWS S3 environment.
 
@@ -37,7 +41,9 @@ Reorganize your files inside your AWS S3 environment.
  | Target bucket | `String` | The target bucket where you want to move your S3 files. If empty use the same as origin | 
 
 
+```xml
 ## CheckCompoundDocumentSettings ** - Check if an Office document contains embedded files ** <!-- Commentaire nettoyé -->
+```
 
 Only Office documents are supported (docx, xlsx, pptx). All other contents will be skipped.
 
@@ -49,7 +55,9 @@ Only Office documents are supported (docx, xlsx, pptx). All other contents will 
 | Extract as side content | `Boolean` | | |
 
 
+```xml
 ## CountPdfPages ** - Count the number of pages in PDF file ** <!-- Commentaire nettoyé -->
+```
 
 This task will add the number of pages as a metadata to the document.
 
@@ -69,7 +77,9 @@ This task will add the number of pages as a metadata to the document.
 
 
 
+```xml
 ## DeduplicatePunnets ** - De-duplicate tasks based on some pattern ** <!-- Commentaire nettoyé -->
+```
 
 This task is used to get rid of duplicate punnets
 
@@ -93,7 +103,9 @@ This task is used to get rid of duplicate punnets
 
 
 
+```xml
 ## EndTaskWriter ** - Create file with custom content when map ends ** <!-- Commentaire nettoyé -->
+```
 
 A task to write a file when all punnets of task are finished.
 
@@ -113,7 +125,9 @@ A task to write a file when all punnets of task are finished.
 
 
 
+```xml
 ## ExceptionGenerator ** - Regularly generate exceptions ** <!-- Commentaire nettoyé -->
+```
 
 This task will generates different exception types : either TaskException or RuntimeException. It will be usefull for your when dealing with exception routing.By default, Fast2 will produce 3 task exceptions, then 4 runtime exceptions, and finally 4 no-exception punnets. To force exceptions, set the no-exceptions ratio to zero.
 
@@ -129,7 +143,9 @@ This task will generates different exception types : either TaskException or Run
 
 
 
+```xml
 ## GenerateExceptionTask ** - Throw exception when condition is verified ** <!-- Commentaire nettoyé -->
+```
 
 This task is responsible for exception generation based on a condition which can be dynamically built for each punnet.
 
@@ -139,11 +155,15 @@ This task is responsible for exception generation based on a condition which can
 
 |Key      | Type    | Description |  Default value |
 | - | - | - | - |
+```xml
  | Condition | `String` | Set here the condition to trigger exception. This field will be resolved by Fast2 before the task is executed  <!-- Commentaire nettoyé --> | `true ` | 
+```
 
 
 
+```xml
 ## HashSignTask ** - Compute content hash ** <!-- Commentaire nettoyé -->
+```
 
 This task computes the hash of a given document content. This new hash can be confronted to an already existing one.
 
@@ -168,7 +188,9 @@ This task computes the hash of a given document content. This new hash can be co
 
 
 
+```xml
 ## MailMover ** - Move email conversation into folder ** <!-- Commentaire nettoyé -->
+```
 
 This task will be useful when your needs will be to move a given email conversation into a dedicated folder. Whether this folder exists or not, Fast2 will be able to retrieve or create it.
 
@@ -186,13 +208,15 @@ This task will be useful when your needs will be to move a given email conversat
 | - | - | - | - |
  | mailNotFoundException | `Boolean` |  | 
  | Maximum connection TTL | `Long` | Fill the value in milliseconds | `60 ` | 
- | Data to find | `String` | The data to look for. This value will be resolved by Fast2 prior to the task execution | `${Message-Id} ` | 
+ | Data to find | `String` | The data to look for. This value will be resolved by Fast2 prior to the task execution | `$\{Message-Id\} ` | 
  | Create destination folder | `Boolean` | Ask Fast2 to create the destination folder to move the email into, in case this specific folder does not exist yet | `false ` | 
  | Search field name | `String` | The name of the field where to find the data. Only 'Subject' and 'Message-Id' are available | `Message-Id ` | 
 
 
 
+```xml
 ## MimeTypeFinder ** - Find mime-type of documents ** <!-- Commentaire nettoyé -->
+```
 
 This task is used for automatic detection of mime type for documents
 
@@ -216,7 +240,9 @@ This task is used for automatic detection of mime type for documents
 
 
 
+```xml
 ## MimetypeToExtension ** - Append extension to name ** <!-- Commentaire nettoyé -->
+```
 
 Based on the mime-type of the content, this task will resolve the correct extension to append to the name of the document. Only supported for one content per document
 
@@ -226,12 +252,14 @@ Based on the mime-type of the content, this task will resolve the correct extens
 
 |Key      | Type    | Description |  Default value |
 | - | - | - | - |
- | Document mime-type | `String` | This value will be resolved by Fast2, `${...}` syntax is supported. Use this option when only the document mime-type has been provided, without the actual content. | 
+ | Document mime-type | `String` | This value will be resolved by Fast2, `$\{...\}` syntax is supported. Use this option when only the document mime-type has been provided, without the actual content. | 
  | Key of name property | `String` | Key of the current name metadata, whose value will be appended by the matching extension. | `name ` | 
 
 
 
+```xml
 ## MoveAnnotationContent ** - Move the content of any annotation ** <!-- Commentaire nettoyé -->
+```
 
 This task is responsible for moving content of annotations from a given folder into a new one.
 
@@ -244,7 +272,9 @@ This task is responsible for moving content of annotations from a given folder i
 
 
 
+```xml
 ## MoveContent ** - Move or copy the content of a document ** <!-- Commentaire nettoyé -->
+```
 
 This task is responsible for moving content of documents from a given folder into a new one.
 
@@ -274,11 +304,15 @@ This task is responsible for moving content of documents from a given folder int
  | File extension | `String` | The extension to append to the name of the files once they'll be moved | 
  | Keep original filename | `Boolean` | Set the destination file name to the 'title' property defined at the content level. Otherwise, keep the name of the file pointed by the URL | `false ` | 
  | Process all contents | `Boolean` | Fast2 will either only focus on the first encountered content, or process them all | `true ` | 
+```xml
  | Files to exclude | `String list` | The path of the folder to exclude. Its whole content will remain in place. Leave empty to move all folders children  <!-- Commentaire nettoyé --> | 
+```
 
 
 
+```xml
 ## MovePunnet ** - Move a punnet from folder to folder ** <!-- Commentaire nettoyé -->
+```
 
 This task is responsible for moving a punnet from an embedded path into a new folder.
 
@@ -300,13 +334,17 @@ This task is responsible for moving a punnet from an embedded path into a new fo
 
 
 
+```xml
 ## Noop ** - Blank task performing no operation ** <!-- Commentaire nettoyé -->
+```
 
 This task does not perform anything, hence you don't have to configure it. All documents and punnets will go through it without having their state updated.
 
 
 
+```xml
 ## NuxeoQuery ** - Query nuxeo from NXQL ** <!-- Commentaire nettoyé -->
+```
 
 This task only works with JDK-11. If any record matches the input query, the UUID of the Nuxeo items will be added to the F2 document as a new dataset.
 
@@ -315,11 +353,13 @@ This task only works with JDK-11. If any record matches the input query, the UUI
 |Key      | Type    | Description | 
 | - | - | - |
 | Nuxeo connection details | `NuxeoConnectionProvider` |  |
-| Nuxeo query | `String` | NXQL query, with double-quotes around values (Ex: SELECT * FROM Document WHERE dc:title = `\"${nom}\"` AND ecm:isTrashed = 0) |
+| Nuxeo query | `String` | NXQL query, with double-quotes around values (Ex: SELECT * FROM Document WHERE dc:title = `\"$\{nom\}\"` AND ecm:isTrashed = 0) |
 
 
 
+```xml
 ## PropertyHelper ** - FileNet submodule for properties management ** <!-- Commentaire nettoyé -->
+```
 
 
 
@@ -338,7 +378,9 @@ This task only works with JDK-11. If any record matches the input query, the UUI
 
 
 
+```xml
 ## PunnetSerializer ** - From-java-to-XML punnet converter ** <!-- Commentaire nettoyé -->
+```
 
 This task is responsible for serializing a punnet to an XML file. That can be interesting to check punnet metadata or freeze a punnet at a certain state.
 
@@ -352,7 +394,9 @@ This task is responsible for serializing a punnet to an XML file. That can be in
 
 
 
+```xml
 ## PunnetWriteId ** - List all punnet IDs into a file ** <!-- Commentaire nettoyé -->
+```
 
 This task is responsible for writing all punnet IDs into a given text file. Whether the punnet has documents or not, you can keep a trace of all created and encountered punnets.
 
@@ -373,7 +417,9 @@ This task is responsible for writing all punnet IDs into a given text file. Whet
 
 
 
+```xml
 ## ReadContent ** - Resolve mime type from content ** <!-- Commentaire nettoyé -->
+```
 
 This task is responsible to find the mime type of a document accross either its metadata or its content.
 
@@ -394,7 +440,9 @@ This task is responsible to find the mime type of a document accross either its 
 
 
 
+```xml
 ## SQLMultiQueryTask ** - Perform SQL statements between database tables and documents in Fast2 ** <!-- Commentaire nettoyé -->
+```
 
 Perform SQL INSERT or UPDATE statements to documents in database, or SELECT from data existing in the database to attach them onto the document dataset.
 
@@ -411,14 +459,20 @@ Perform SQL INSERT or UPDATE statements to documents in database, or SELECT from
 |Key      | Type    | Description |  Default value |
 | - | - | - | - |
  | Use PreparedStatements | `Boolean` | Use PreparedStatements instead of plain SQL statements | 
- | Target attributes | `String/Pattern map` | \<key, value> set where 'key' refers to the SQL name of the data, and 'value' refers the name of the data in the Fast2 dataset. | 
+```xml
+ | Target attributes | `String/Pattern map` | &#92;<key, value> set where 'key' refers to the SQL name of the data, and 'value' refers the name of the data in the Fast2 dataset. | 
+```
  | Reset target data | `Boolean` | Clean content when target already exists | `true ` | 
- | SQL column types | `String/String map` | \<key, value> where 'key' is the SQL data name, and 'value' is its type. Supported types are : String, float, int, Date. | 
+```xml
+ | SQL column types | `String/String map` | &#92;<key, value> where 'key' is the SQL data name, and 'value' is its type. Supported types are : String, float, int, Date. | 
+```
  | SQL query | `String` | Select precisely data you want to extract through a classic SQL query. All retieved values will be attached to the document dataset based on the data listed in the 'Target attributes' configuration section. | 
 
 
 
+```xml
 ## SingleCallTask ** - Call a task only once per campaign ** <!-- Commentaire nettoyé -->
+```
 
 This task will be useful to perform a given subtask only once in a map execution. You choose to call this subtask at the very begining of the campaign, or at its very end.
 
@@ -438,7 +492,9 @@ This task will be useful to perform a given subtask only once in a map execution
 
 
 
+```xml
 ## SleepTask ** - Blocks punnet on thread for a given period of time ** <!-- Commentaire nettoyé -->
+```
 
 Task blocking a thread per punnet to wait some time before processing the punnet, without updating its state or metadata.
 

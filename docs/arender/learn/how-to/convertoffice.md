@@ -51,13 +51,17 @@ DocumentAccessor documentAccessor = new DocumentAccessorByteArray(fileInputStrea
 client.loadDocumentAccessor(documentAccessor);
 ```
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 Différentes implémentations du DocumentAccessor sont fournies
 nativement par ARender. Mais cette interface reste un point d’extension
 d’ARender qui en lui fournissant un accesseur approprié peut être
 capable de récupérer un document dans n’importe quel système
 d’information.
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 ### Récupération du document converti
 

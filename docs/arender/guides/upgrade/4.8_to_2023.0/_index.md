@@ -57,18 +57,24 @@ $> ./removeService.sh
 
 
 * **Installation de la Rendition en version 2023** : suivez les instructions d'installation détaillées dans la 
+```xml
   documentation officielle, disponibles [ici](<!-- Commentaire nettoyé -->).
+```
   Cette documentation vous guidera à travers le processus d'installation de la Version 2023.
 
 * **Transfert des propriétés** : une fois ARender Rendition Version 2023 installée, vous devrez transférer les propriétés 
   et configurations de votre installation actuelle (Version 4) vers la nouvelle installation. Pour ce faire, 
   référez-vous à la liste des changements de propriétés disponible
+```xml
   [ici](<!-- Commentaire nettoyé -->) pour vous assurer que toutes les configurations 
+```
   nécessaires sont correctement migrées vers la Version 2023.
 
 * **Configuration d'ARender Rendition Version 2023** : après le transfert des propriétés, vous pouvez configurer ARender
   Rendition Version 2023 selon vos besoins spécifiques en suivant la documentation
+```xml
   [ici](<!-- Commentaire nettoyé -->).
+```
 
 ### Migration de ARender UI
 
@@ -84,14 +90,20 @@ actuelle (Version 4) vers la Version 2023 :
 
 * **Installation de la Version 2023 d'ARender WEB-UI** : suivez les instructions d'installation détaillées dans la 
   documentation officielle d'ARender UI Version 2023, disponibles 
+```xml
   [ici](<!-- Commentaire nettoyé -->).
+```
   Cette documentation vous guidera à travers le processus d'installation de la Version 2023.
 
 * **Transfert des propriétés** : Une fois ARender UI Version 2023 installé, vous devrez transférer les propriétés et 
   configurations de votre installation actuelle (Version 4) vers la nouvelle installation. Pour ce faire, référez-vous à
+```xml
   la liste des changements de propriétés listée [ici](<!-- Commentaire nettoyé -->) pour vous
+```
   assurer que toutes les configurations nécessaires sont correctement migrées vers la Version 2023.
 
 * **Configuration d'ARender UI Version 2023** : après le transfert des propriétés, vous pouvez configurer ARender UI 
   Version 2023 selon vos besoins spécifiques en suivant la documentation 
+```xml
   [ici](<!-- Commentaire nettoyé -->).
+```

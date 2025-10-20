@@ -5,7 +5,9 @@ title: Traitement des images
 Pour améliorer la visibilité des éléments sur certains documents, il est possible de manipuler le contraste, la luminosité et l'inversion de couleur. Cette manipulation se fait à l'aide d'un curseur allant de -100 à 100 où 0 est la valeur par défaut. 
 
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 
 Les boutons permettant de faire apparaitre les sliders individuellement, peuvent être activés ou non par les propriétés suivantes :  

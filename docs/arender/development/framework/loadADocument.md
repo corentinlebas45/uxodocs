@@ -2,13 +2,19 @@
 title: Charger un document
 ---
 
+```xml
 L'API JavaScript  permet d'interagir aisément avec ARender à l'aide de différentes commandes ****[ listées ici ](<!-- Commentaire nettoyé -->) ****
+```
 
 ## Charger un document
 
+```xml
 Les fonctions **loadDocument** et **openDocument** de l'API, ******[ décrites ici ](<!-- Commentaire nettoyé -->)****** permettent de charger et ouvrir un document sur le serveur d'ARender.
+```
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 ### Exemple d'implémentation depuis l'iframe
 
@@ -68,16 +74,24 @@ export function loadAndOpenDocument(url) <!-- Commentaire nettoyé -->)
 }
 ```
     
+```xml
 <!-- Commentaire nettoyé -->
+```
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 **
+```xml
 <!-- Commentaire nettoyé -->
 <!-- Commentaire nettoyé -->
 <!-- Commentaire nettoyé -->
+```
 **
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 ```javascript
     function loadAndOpen() <!-- Commentaire nettoyé -->
             );
@@ -85,6 +99,8 @@ export function loadAndOpenDocument(url) <!-- Commentaire nettoyé -->)
           }        
     }
 ```    
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 

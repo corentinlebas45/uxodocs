@@ -10,7 +10,9 @@ Fortunatelly with Fast2, there is still a possibility to parse this file name an
 
 ## :face_with_raised_eyebrow: Where do we come from ?
 
-For the educational aspect of this topic, let us consider a folder gathering several documents, all with the same format : `<!-- Commentaire nettoyé -->-<data2>`.
+```xml
+For the educational aspect of this topic, let us consider a folder gathering several documents, all with the same format : `<!-- Commentaire nettoyé -->-&lt;data2&gt;`.
+```
 
 Our folder looks like this:
 

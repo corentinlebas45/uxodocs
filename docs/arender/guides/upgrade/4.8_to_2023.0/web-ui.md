@@ -46,11 +46,15 @@ title: Changements Web-UI
 | -------------------------------------------- | ------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
 | topPanel.section.file.buttons.beanNames      | topPanel.section.left.buttons.beanNames                                                     | La liste des widgets à définir (noms de bean XML) pour la partie gauche du toppanel                                                       |
 | topPanel.annotation.buttons.beanNames        | toolbar.annotation.buttons.beanNames                                                        | La liste des widgets à définir (noms de bean XML) pour la barre d'outils d'annotation                                                     |
+```xml
 | topPanel.obfuscate                           | redactexplorer.redact                                                                       | Active le bouton pour biffer du texte ([documentation](<!-- Commentaire nettoyé -->))                                   |
 | topPanel.obfuscateZone                       | redactexplorer.redactZone                                                                   | Active le bouton pour biffer en zone  ([documentation](<!-- Commentaire nettoyé -->))                                   |
+```
 | toolbar.lockedObfuscate                      | toolbar.redact.locked                                                                       | Toutes les biffures sont bloqués après la sauvegarde et ne peuvent plus être éditées                                                      |
 | annotation.canHideObfuscate                  | annotation.can.hide.redact                                                                  | Toutes les biffures peuvent être cachées en utilisant le boutons pour cacher les annotations                                              | 
+```xml
 | topPanel.imageProcessMenu                    | topPanel.imageProcessMenu.brightness.enabled et topPanel.imageProcessMenu.contrast.enabled  | Activer le curseur de luminosité / Activer le curseur de contraste  ([documentation](<!-- Commentaire nettoyé -->)) |
+```
 
 
 ### Changements des propriétés serveur (arender-server-custom-vanilla.properties)

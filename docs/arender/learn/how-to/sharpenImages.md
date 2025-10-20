@@ -14,10 +14,12 @@ Le paramètre à changer est le suivant:
 *visualization.images.sharpen* et le placer à *true* dans les profils
 ARender.
 
+```xml
 <!-- Commentaire nettoyé -->
 <!-- Commentaire nettoyé -->
 <!-- Commentaire nettoyé -->
 <!-- Commentaire nettoyé -->
+```
 
 On voit bien que le rendu sharpen est fidèle au rendu Adobe. Si vos
 utilisateurs sont donc habitués à ce genre de rendus, vous pouvez songer

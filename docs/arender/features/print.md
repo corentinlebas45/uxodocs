@@ -9,11 +9,15 @@ title: Imprimer un document
 Vous pouvez accéder aux impressions par le bandeau de navigation sur
 cliquant sur le bouton dédié
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 Ouverture d’un pop-up avec les différentes options d’impression
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 - Page courante : imprime seulement la page affichée dans la
   visionneuse sera imprimée
@@ -29,7 +33,9 @@ Ouverture d’un pop-up avec les différentes options d’impression
 
 Sur le document faire un clic droit
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 - Imprimer : ouverture du pop-up ave les différentes options
   d’impression

@@ -93,7 +93,9 @@ This type can be included into punnets, documents and workflows.
 	ㄴ ...
 ```
 
+```xml
 ### Content **(aka 'ContentContainer')** <!-- Expression supprimée -->
+```
 
 Content object materializes document content that can be simple or made up of several pages. It can be materialized by a relative or absolute path to its storage location or stored directly in memory / in an XML file.
 
@@ -208,7 +210,9 @@ When serialized in XML format, it will look roughly like :
 
 The punnet will iterate through the follwing lifecycle until the last step is reached.
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 
 
@@ -222,13 +226,17 @@ One of the benefits of these statistics is the ability to visualize bottlenecks.
 
 When multiple tasks are linked together it represents a processing chain or a workflow where each punnet will be processed task by task. We will call this object a campaign.
 
+```xml
 ## Map **― workflow** <!-- Expression supprimée -->
+```
 
 Map is the Fast2 word for the workflow. It is a collection of tasks.
 
 ![Fast2 map](../assets/img/map.png)
 
+```xml
 ## Campaign **― workflow instance** <!-- Expression supprimée -->
+```
 
 As we have just seen, a campaign is made up of several tasks. In other words, it represents an instance of a map.
 
@@ -270,4 +278,6 @@ Each colored bubble shows a specific metric:
 
 ### Operating
 
+```xml
 <!-- Commentaire nettoyé -->
+```

@@ -21,7 +21,9 @@ title: Document builder
     | registerNotifyAlterDocumentContentEvent(callback) | Enregistre une fonction callback à appeler en cas de sauvegarde d'un document découpé | **callback:** La fonction callback à appeler                                                                                                |
     | registerSubmitAlterDocumentContentEvent(callback) | Enregistre une fonction callback à appeler en cas de demande de creation de document  | **callback:** La fonction callback à appeler                                                                                                |
     | getSubmittedAlterDocumentContentDescription(obj)  | Récupère la description du contenu du document modifié                                | **obj:** l'objet SubmitAlterDocumentContentEvent source                                                                                     |
+```xml
     | getDocumentMetadata(desc,index)                   | Extrait l'object DocumentMetadata de l'objet source AlterContentDescription           | <!-- Commentaire nettoyé --><!-- Commentaire nettoyé -->  |
+```
     | getResultDocumentId(obj)                          | Récupère le documentId qui résulte du découpage de document                           | **obj:** l'événement qui a été envoyé lorsque l'opération altercontent a été effectuée                                                      |
 
 
@@ -29,7 +31,9 @@ title: Document builder
 
     | Fonction                                          | Description                                                | Arguments                                                                                                                                                                        |
     | ------------------------------------------------- | ---------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+```xml
     | addDocumentMetadata(metadata, key, value)         | Ajoute une metadata à un objet documentMetadata            | <!-- Commentaire nettoyé --><!-- Commentaire nettoyé --> |
+```
 
 
 ``` javascript

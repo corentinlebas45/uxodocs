@@ -28,7 +28,9 @@ Before using the API, make sure you have:
 
 ## Authentication
 
+```xml
 - **Bearer JWT** via `Authorization: Bearer <!-- Commentaire nettoyé --> All examples include cURL requests. Replace placeholders with real values.
+```
 
 ## Tags
 
@@ -279,7 +281,7 @@ curl -X GET 'http://localhost:1789/campaigns/dto/search-by-names' \
 
 ### Get campaign dto information
 
-`GET /campaigns/dto/{campaign}`
+`GET /campaigns/dto/\{campaign\}`
 
 Retrieves a campaign dto from its name
 
@@ -364,7 +366,7 @@ curl -X POST 'http://localhost:1789/campaigns/stop-by-names' \
 
 ### Delete a campaign
 
-`DELETE /campaigns/{campaign}`
+`DELETE /campaigns/\{campaign\}`
 
 Deletes a campaign from its name
 
@@ -391,7 +393,7 @@ curl -X DELETE 'http://localhost:1789/campaigns/<!-- Commentaire nettoyé -->' \
 
 ### deleteCampaignParameter
 
-`DELETE /campaigns/{campaign}/parameter/{campaignParameter}`
+`DELETE /campaigns/\{campaign\}/parameter/\{campaignParameter\}`
 
 **Parameters**
 
@@ -423,7 +425,7 @@ curl -X DELETE 'http://localhost:1789/campaigns/<!-- Commentaire nettoyé -->' \
 
 ### Pause a step
 
-`POST /campaigns/{campaign}/step/{stepId}/pause`
+`POST /campaigns/\{campaign\}/step/\{stepId\}/pause`
 
 Pause a step by providing the campaign name, map ID, and step ID. These parameters define the exact context of the task to pause.
 
@@ -453,7 +455,7 @@ curl -X POST 'http://localhost:1789/campaigns/<!-- Commentaire nettoyé -->/paus
 
 ### Stop a campaign
 
-`POST /campaigns/{campaign}/stop`
+`POST /campaigns/\{campaign\}/stop`
 
 Stop a campaign from its name
 
@@ -636,7 +638,7 @@ curl -X GET 'http://localhost:1789/emails/search-by-names' \
 
 ### deleteEmail
 
-`DELETE /emails/{email}`
+`DELETE /emails/\{email\}`
 
 **Parameters**
 
@@ -881,7 +883,7 @@ curl -X DELETE 'http://localhost:1789/maps/delete-by-pattern' \
 
 ### Download map
 
-`GET /maps/download/{mapId}`
+`GET /maps/download/\{mapId\}`
 
 Downloads map file from provided map id
 
@@ -990,7 +992,7 @@ curl -X GET 'http://localhost:1789/maps/summary/search-by-ids' \
 
 ### Upload a map
 
-`POST /maps/upload/{mapName}`
+`POST /maps/upload/\{mapName\}`
 
 Created a new map from file and associates it with the given map name
 
@@ -1037,7 +1039,7 @@ curl -X POST 'http://localhost:1789/maps/upload/<!-- Commentaire nettoyé -->' \
 
 ### Delete a map from its Id
 
-`DELETE /maps/{mapId}`
+`DELETE /maps/\{mapId\}`
 
 Deletes one map from provided map Id
 
@@ -1064,7 +1066,7 @@ curl -X DELETE 'http://localhost:1789/maps/<!-- Commentaire nettoyé -->' \
 
 ### Get a map from its id
 
-`GET /maps/{mapId}`
+`GET /maps/\{mapId\}`
 
 Retrieves one map from its map Id
 
@@ -1226,7 +1228,7 @@ curl -X DELETE 'http://localhost:1789/queues/delete-by-ids' \
 
 ### deleteQueue
 
-`DELETE /queues/{queueId}`
+`DELETE /queues/\{queueId\}`
 
 **Parameters**
 
@@ -1248,7 +1250,7 @@ curl -X DELETE 'http://localhost:1789/queues/<!-- Commentaire nettoyé -->' \
 
 ### getQueue
 
-`GET /queues/{queueId}`
+`GET /queues/\{queueId\}`
 
 **Parameters**
 
@@ -1361,7 +1363,7 @@ curl -X GET 'http://localhost:1789/shared-objects/search-by-names' \
 
 ### Delete a shared object
 
-`DELETE /shared-objects/{sharedObjectName}`
+`DELETE /shared-objects/\{sharedObjectName\}`
 
 Deletes a shared object from its name
 
@@ -1388,7 +1390,7 @@ curl -X DELETE 'http://localhost:1789/shared-objects/<!-- Commentaire nettoyé -
 
 ### Get specific shared object
 
-`GET /shared-objects/{sharedObjectName}`
+`GET /shared-objects/\{sharedObjectName\}`
 
 Retrieve one shared object configuration from its name
 
@@ -1415,7 +1417,7 @@ curl -X GET 'http://localhost:1789/shared-objects/<!-- Commentaire nettoyé -->'
 
 ### Create a shared object
 
-`POST /shared-objects/{sharedObjectName}`
+`POST /shared-objects/\{sharedObjectName\}`
 
 Creates a shared object from its object configuration and a provided name
 
@@ -1493,7 +1495,7 @@ curl -X POST 'http://localhost:1789/shared-objects/<!-- Commentaire nettoyé -->
 
 ### Update a shared object
 
-`PUT /shared-objects/{sharedObjectName}`
+`PUT /shared-objects/\{sharedObjectName\}`
 
 Updates the configuration or the name of a shared object
 
@@ -1606,7 +1608,7 @@ curl -X DELETE 'http://localhost:1789/users' \
 
 ### Check if user exists
 
-`GET /users/does-user-exist/{userEmail}`
+`GET /users/does-user-exist/\{userEmail\}`
 
 Checks if a user with the given email exists
 
@@ -1762,7 +1764,7 @@ curl -X GET 'http://localhost:1789/users/super-admin-exists' \
 
 ### Get a user
 
-`GET /users/{userEmail}`
+`GET /users/\{userEmail\}`
 
 Retrieves user information from its email
 
@@ -1839,7 +1841,7 @@ curl -X POST 'http://localhost:1789/workers' \
 
 ### getLibraryVersions
 
-`GET /workers/library-versions/{libraryName}`
+`GET /workers/library-versions/\{libraryName\}`
 
 **Parameters**
 
@@ -1889,7 +1891,7 @@ curl -X POST 'http://localhost:1789/workers/restart' \
 
 ### deleteWorkerById
 
-`DELETE /workers/{workerId}`
+`DELETE /workers/\{workerId\}`
 
 **Parameters**
 
@@ -1911,7 +1913,7 @@ curl -X DELETE 'http://localhost:1789/workers/<!-- Commentaire nettoyé -->' \
 
 ### getWorkerById
 
-`GET /workers/{workerId}`
+`GET /workers/\{workerId\}`
 
 **Parameters**
 
@@ -1933,7 +1935,7 @@ curl -X GET 'http://localhost:1789/workers/<!-- Commentaire nettoyé -->' \
 
 ### getWorkerLogs
 
-`GET /workers/{workerId}/logs`
+`GET /workers/\{workerId\}/logs`
 
 **Parameters**
 

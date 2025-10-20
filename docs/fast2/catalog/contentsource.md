@@ -25,7 +25,7 @@ This Documentum connector is designed for extraction of document versions, metad
 
 | Parameter | Type | Description | Default |
 |-----------|------|-------------|---------|
-| Query | String | SELECT [Id],[DocumentTitle] FROM Document WHERE [Property] = `'${myCriterion}'` | |
+| Query | String | SELECT [Id],[DocumentTitle] FROM Document WHERE [Property] = `'$\{myCriterion\}'` | |
 | Extract folders absolute path | `Boolean` | The absolute path of the folder inside the FileNet instance will be extracted during the process | `false ` |
 | Extract content | `Boolean` | The document content will be extracted during the process | `true ` |
 | Extract all versions | `Boolean` | Extract the superseded versions of the documents matching the query | |

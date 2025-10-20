@@ -101,15 +101,18 @@ A présent, une fois passé par le traducteur log4j.properties, nous obtenons le
 
 ## Emplacement des fichiers de logs
 
+```xml
 L'emplacement du fichier de log en sortie, pour le serveur de présentation (Web-UI) se trouve dans `<!-- Commentaire nettoyé -->
+```
 
 ```cfg
 logging.config=file:`<!-- Commentaire nettoyé -->
 
 ```xml
+```xml
 <appender name="SERVER" class="ch.qos.logback.core.rolling.RollingFileAppender">
     <!-- Commentaire nettoyé -->
-    <!-- Commentaire nettoyé -->%date %level [%thread] %logger{10} [%file:%line] %msg%n<!-- Commentaire nettoyé -->
+    <!-- Commentaire nettoyé -->%date %level [%thread] %logger\{10\} [%file:%line] %msg%n<!-- Commentaire nettoyé -->
     <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
         <!-- Commentaire nettoyé -->
         <!-- Commentaire nettoyé -->
@@ -117,6 +120,7 @@ logging.config=file:`<!-- Commentaire nettoyé -->
     <!-- Commentaire nettoyé -->
         <!-- Commentaire nettoyé -->
     <!-- Commentaire nettoyé -->
+```
 ```
 
 
@@ -126,6 +130,7 @@ Cela nous permettra d'utiliser la balise **layout** pour définir le formatage J
 
  <!-- Commentaire nettoyé -->
 
+```xml
 ```xml
 <appender name="SERVER" class="ch.qos.logback.core.rolling.RollingFileAppender">
     <!-- Commentaire nettoyé -->
@@ -142,6 +147,7 @@ Cela nous permettra d'utiliser la balise **layout** pour définir le formatage J
         <!-- Commentaire nettoyé -->
     <!-- Commentaire nettoyé -->
 ```
+```
 
 
 
@@ -153,8 +159,10 @@ Afin de demander à logback-classic de rechercher les modifications dans son fic
 définissez l'attribut scan de l'élément <!-- Commentaire nettoyé -->
 
 ```xml
+```xml
 <configuration scan="true">
+```
     ...
-<configuration>
+&lt;configuration&gt;
 ```
 

@@ -8,7 +8,9 @@ Si la Rendition est installée sur un serveur qui **n'a pas accès à Internet**
 
 - Ajouter un proxy à la configuration WKHTMLTOPDF. Pour cela créer un fichier nommé **application.properties** dans le module TaskConversion et contenant la propriété ci-dessous (Valeur du proxy à adapter si besoin) (version 4.3.8 et supérieures) :
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 ```cfg
 tools.wkhtmltopdf.options=--disable-javascript,--quiet,--encoding,UTF-8,--load-error-handling,ignore,--disable-external-links,--disable-internal-links,--disable-local-file-access,--proxy,localhost
@@ -25,7 +27,9 @@ Notez que cela peut avoir un impact sur le rendu du HTML dans ARender :
 
 Les propriétés par défaut du service TaskConversion ressemblent à ceci :
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 ```cfg
 tools.wkhtmltopdf.options=--disable-javascript,--quiet,--encoding,UTF-8,--load-error-handling,ignore,--disable-external-links,--disable-internal-links,--disable-local-file-access
@@ -44,7 +48,9 @@ Il est possible de changer la langue de ces libellés. Pour l'instant, deux lang
 
 La propriété par défaut du service TaskConversion ressemble à ceci :
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 ```cfg
 # Configurer la langue des champs d'information. Les valeurs possibles sont : "FR", "EN".
@@ -56,7 +62,9 @@ vcard.label.language=EN
 
 Des propriétés sont disponibles afin de configurer le rendu des images générées depuis les TIFF.
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 | Description                                                                                                                  | Clé du paramètre                  | Valeur par défaut | Type   |
 | ---------------------------------------------------------------------------------------------------------------------------- | --------------------------------- | ----------------- | ------ |

@@ -25,7 +25,9 @@ arender.server.rendition.hosts=\{rendition_server_1:8761/\},\{rendition_server_2
 ```
 
 
-La valeur de chaque _"\{rendition_server_x\}"_ ci-dessus doit être modifiée par la bonne URL de chaque serveur de 
+```text
+La valeur de chaque _"\\{rendition_server_x\\}"_ ci-dessus doit être modifiée par la bonne URL de chaque serveur de 
+```
 Rendition.
 
 *(N'oubliez pas de redémarrer ARender Web-UI)*
@@ -38,7 +40,9 @@ Rendition.
 
 Pour l'ajout d'un fichier *.css* qui sera nommé *test.css* et sera placé directement dans le dossier *public* :
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 ```cfg
 style.sheet=css/arender-style.css,test.css
@@ -93,7 +97,9 @@ Il permet un meilleur support de la scalabilité de la Web-UI grâce à son syst
 Pour activer la fonctionnalité de partage de cache il faut modifier le fichier 
 **arender-custom-server.properties** comme suit :
 
+```xml
 <!-- Commentaire nettoyé -->
+```
 
 ```cfg
 # Defines the cache strategy to use. Valid values : ehCacheStrategy, hazelCastStrategy
