@@ -21,10 +21,10 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-          cache: 'yarn'
+          cache: 'npm'
 
       - name: Install deps
-        run: yarn install --frozen-lockfile
+        run: npm ci
 
       - name: Hydrate versions from branches
         run: |
@@ -35,10 +35,10 @@ jobs:
         run: node scripts/collectVersions.mjs
 
       - name: Build
-        run: yarn build
+        run: npm run build
 
       - name: Deploy to GitHub Pages
         env:
           GIT_USER: ${{ github.actor }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: yarn deploy
+        run: npm run deploy
