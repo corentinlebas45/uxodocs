@@ -7,6 +7,11 @@ PRODUCTS=("fast2" "flower" "arender")
 # NOTE: Ne pas nettoyer docs/, on copie seulement les versions
 # Les dossiers versioned_docs sont conservés pour référence mais non utilisés par Docusaurus
 
+# Nettoyer les worktrees existants
+echo "Cleaning existing worktrees..."
+rm -rf .cache/worktrees
+git worktree prune
+
 # Récupère toutes les branches distantes de versions
 git fetch --all --prune
 
