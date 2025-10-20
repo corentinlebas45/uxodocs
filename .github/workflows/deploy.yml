@@ -2,8 +2,12 @@ name: Hydrate & Deploy Docs
 
 on:
   push:
-    branches: [ master, "fast2/v*", "flowerdocs/v*", "arender/v*" ]
+    branches: [ master, "fast2/v*", "flower/v*", "arender/v*" ]
   workflow_dispatch:
+
+# Give the workflow permission to push/deploy (used by the deploy step / gh-pages)
+permissions:
+  contents: write
 
 jobs:
   build-deploy:
@@ -14,8 +18,17 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          # Important pour récupérer toutes les branches
+          # Important pour récupérer toutes les branches and allow pushing back
+          persist-credentials: true
           ref: ${{ github.ref }}
+          fetch-tags: true
+
+      - name: Ensure remote branches are available
+        run: |
+          git fetch --prune --unshallow || true
+          git fetch --all --prune
+          git fetch origin '+refs/heads/*:refs/remotes/origin/*' || true
+          git branch -r
 
       - name: Setup Node
         uses: actions/setup-node@v4

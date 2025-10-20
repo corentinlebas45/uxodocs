@@ -7,6 +7,14 @@ PRODUCTS=("fast2" "flower" "arender")
 # NOTE: Ne pas nettoyer docs/, on copie seulement les versions
 # Les dossiers versioned_docs sont conservés pour référence mais non utilisés par Docusaurus
 
+# Prevent running locally by default. Hydration should run in GitHub Actions only.
+# To run locally for debugging: ALLOW_HYDRATE_LOCAL=1 bash scripts/hydrate.sh
+if [ -z "${GITHUB_ACTIONS:-}" ] && [ "${ALLOW_HYDRATE_LOCAL:-}" != "1" ]; then
+  echo "Hydration is restricted to CI (GitHub Actions)."
+  echo "To force local run, set ALLOW_HYDRATE_LOCAL=1"
+  exit 0
+fi
+
 # Nettoyer les worktrees existants
 echo "Cleaning existing worktrees..."
 rm -rf .cache/worktrees
