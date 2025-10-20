@@ -116,12 +116,12 @@ const config: Config = {
           items: [
             {
               type: 'docSidebar',
-              sidebarId: 'fast2v2025Sidebar',
+              sidebarId: 'fast2Sidebar',
               label: 'v2025',
             },
             {
               type: 'docSidebar',
-              sidebarId: 'fast2v2xSidebar',
+              sidebarId: 'fast2Sidebar',
               label: 'v2x',
             },
           ],
@@ -133,12 +133,12 @@ const config: Config = {
           items: [
             {
               type: 'docSidebar',
-              sidebarId: 'flowerv2025Sidebar',
+              sidebarId: 'flowerSidebar',
               label: 'v2025',
             },
             {
               type: 'docSidebar',
-              sidebarId: 'flowerv28ltsSidebar',
+              sidebarId: 'flowerSidebar',
               label: 'v2.8 LTS',
             },
           ],
@@ -150,17 +150,17 @@ const config: Config = {
           items: [
             {
               type: 'docSidebar',
-              sidebarId: 'arenderv2025Sidebar',
+              sidebarId: 'arenderSidebar',
               label: 'v2025',
             },
             {
               type: 'docSidebar',
-              sidebarId: 'arenderv4Sidebar',
+              sidebarId: 'arenderSidebar',
               label: 'v4',
             },
             {
               type: 'docSidebar',
-              sidebarId: 'arenderv43Sidebar',
+              sidebarId: 'arenderSidebar',
               label: 'v4.3',
             },
           ],
