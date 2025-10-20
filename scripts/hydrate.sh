@@ -37,6 +37,11 @@ hydrate_product() {
     if [ -d "$src" ]; then
       mkdir -p "$dst"
       rsync -a --delete "$src/" "$dst/"
+      
+      # Fix empty description frontmatter fields
+      echo "Fixing empty description fields in $dst..."
+      find "$dst" -name "*.md" -type f -exec sed -i '/^description:\s*$/d' {} \;
+      
       echo "Hydrated $id/$ver from $br"
     else
       echo "WARN: $src not found in $br"
