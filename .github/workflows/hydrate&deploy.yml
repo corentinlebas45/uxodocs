@@ -1,0 +1,44 @@
+name: Hydrate & Deploy Docs
+
+on:
+  push:
+    branches: [ master, "fast2/v*", "flowerdocs/v*", "arender/v*" ]
+  workflow_dispatch:
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          # Important pour récupérer toutes les branches
+          ref: ${{ github.ref }}
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'yarn'
+
+      - name: Install deps
+        run: yarn install --frozen-lockfile
+
+      - name: Hydrate versions from branches
+        run: |
+          mkdir -p .cache/worktrees
+          bash scripts/hydrate.sh
+
+      - name: Generate versions manifest
+        run: node scripts/collectVersions.mjs
+
+      - name: Build
+        run: yarn build
+
+      - name: Deploy to GitHub Pages
+        env:
+          GIT_USER: ${{ github.actor }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: yarn deploy
