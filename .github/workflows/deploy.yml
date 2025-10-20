@@ -27,9 +27,7 @@ jobs:
         run: npm ci
 
       - name: Hydrate versions from branches
-        run: |
-          mkdir -p .cache/worktrees
-          bash scripts/hydrate.sh
+        run: bash scripts/hydrate.sh
 
       - name: Generate versions manifest
         run: node scripts/collectVersions.mjs

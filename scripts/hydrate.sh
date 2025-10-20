@@ -29,10 +29,8 @@ hydrate_product() {
     ver="${br##*/}"                              # ex: fast2/v2025 -> v2025
     workdir=".cache/worktrees/${br}"
     mkdir -p "$workdir"
-    # crée un worktree si pas déjà présent
-    if [ ! -d "$workdir/.git" ]; then
-      git worktree add --detach "$workdir" "origin/${br}"
-    fi
+    # crée un worktree (force si déjà présent)
+    git worktree add --force --detach "$workdir" "origin/${br}" 2>/dev/null || true
 
     src="$workdir/docs/$id"
     dst="docs/$id/$ver"
