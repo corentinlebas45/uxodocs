@@ -36,7 +36,8 @@ hydrate_product() {
     dst="docs/$id/$ver"
     if [ -d "$src" ]; then
       mkdir -p "$dst"
-      rsync -a --delete "$src/" "$dst/"
+      # Exclude version subdirectories to avoid duplicates (v*, v2*, v3*, v4*)
+      rsync -a --delete --exclude='v*/' "$src/" "$dst/"
       
       # Fix empty description frontmatter fields
       echo "Fixing empty description fields in $dst..."
