@@ -1,8 +1,7 @@
-+++
-date = "2018-04-07T13:20:01+02:00"
-title = "Catégories"
-description = "Organisez les tags par catégorie."
-+++
+---
+title: Catégories
+description: Organisez les tags par catégorie.
+---
 
 Les catégories de tags permettent de regrouper, à l'affichage, des tags ayant un lien logique.
 
@@ -23,7 +22,6 @@ Pour être affichée, une catégorie doit être reliée à une classe de composa
 Les tags définis dans une catégorie et non-référencés au niveau de la classe du composant ne sont pas affichés sur le formulaire d'indexation.
 :::
 
-[shortcode]
 ```xml
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <ns3:TagCategory icon="flower-button header-icon fa fa-envelope flat-purple"
@@ -41,4 +39,3 @@ Les tags définis dans une catégorie et non-référencés au niveau de la class
 	<ns3:tags>ObjetCourrier</ns3:tags>
 </ns3:TagCategory>
 ```
-[shortcode]

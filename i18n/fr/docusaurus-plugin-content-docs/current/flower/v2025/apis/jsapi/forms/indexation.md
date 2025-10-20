@@ -1,7 +1,6 @@
-+++
-date = "2001-03-28T13:20:01+02:00"
-title = "Indexation"
-+++
+---
+title: Indexation
+---
 
 Un formulaire d'indexation permet la visualisation et la modification des tags d'un composant. Afin de pouvoir interagir avec ce type de formulaire, il est nécessaire de s'abonner à son ouverture : 
 

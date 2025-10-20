@@ -1,8 +1,8 @@
-+++
-date = "2020-02-01"
-title = "Cycle de vie"
-Description = "Gestion de version de documents"
-+++
+---
+title: Cycle de vie
+Description: Gestion de version de documents
+---
+
 :::info
 La plateforme FlowerDocs permet la gestion du cycle de vie des documents depuis leur création jusqu'à leur destruction. 
 Plusieurs fonctionnalités sont mises en oeuvre afin d'assurer cette gestion du cycle de vie. 

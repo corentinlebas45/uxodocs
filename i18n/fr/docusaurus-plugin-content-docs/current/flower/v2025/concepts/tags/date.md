@@ -1,8 +1,7 @@
-+++
-date = "2018-03-07T13:24:01+02:00"
-title = "Date"
-description = "Utilisez les tags de type date."
-+++
+---
+title: Date
+description: Utilisez les tags de type date.
+---
 
 Le modèle de données FlowerDocs offre la possibilité de définir des tags de type `DATE`. 
 

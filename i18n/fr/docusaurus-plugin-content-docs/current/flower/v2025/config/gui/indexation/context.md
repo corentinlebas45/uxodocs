@@ -1,8 +1,7 @@
-+++
-date = "2001-03-28T13:20:01+02:00"
-title = "Contextes"
-description = "Configurez les formulaires d'indexation"
-+++
+---
+title: Contextes
+description: Configurez les formulaires d'indexation
+---
 
 Pour configurer un écran d'indexation, il est d'abord nécessaire d'identifier les composants pour lesquels vous souhaitez appliquer la configuration. Cette identification se fait sur la base d'un contexte.
 

@@ -1,9 +1,8 @@
-+++
-date = "2004-02-01"
-title = "Les documents & leurs fichiers"
-Description = "Manipuler des documents en JavaScript"
-Intro = "" 
-+++
+---
+title: Les documents & leurs fichiers
+Description: Manipuler des documents en JavaScript
+Intro: 
+---
 
 # Manipuler les fichiers
 
@@ -25,21 +24,15 @@ A partir d'un objet `Document`, la fonction `getDocumentFiles()` expose un table
 |getCreationDate()                                      | Récupération de la date de création du fichier                                 |        
 
 
-[shortcode]
-[shortcode]
 var doc = formAPI.getComponent();
 doc.getDocumentFiles().forEach(function(file){
    console.info('The document has file: '+file.getId());
 });
-[shortcode]
-[shortcode]
 JSAPI.get().document().getFiles(component.getId(), function(files){
     files.forEach(function(file){
         console.info('The document has file: '+file.getId());
     }); 
 });
-[shortcode]
-[shortcode]
 
 Les identifiants des fichiers peuvent également être récupérés, depuis un document, à l'aide de la fonction `getFiles()`.
 
@@ -50,8 +43,6 @@ Pour cela, les fonctions `addFile(tempFileId)` ou `setFiles(tempFileIds)` peuven
 Les modifications apportées à l'objet seront prises compte uniquement dans le cas d'une création de document.
 
 
-[shortcode]
-[shortcode]
 function createDocument(tempFileId, callback){
     var doc = new Document();
     doc.setName('Mon document');
@@ -83,8 +74,6 @@ uploadTextFile('Some text content', (tempFileId)=>{
         JSAPI.get().getNavigationAPI().goToComponentPlace(doc.getCategory(), doc.getId(), false);
     });
 });
-[shortcode]
-[shortcode]
 
 # Versioning
 

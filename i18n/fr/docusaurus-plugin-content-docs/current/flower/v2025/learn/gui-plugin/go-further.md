@@ -1,8 +1,7 @@
-+++
-date = "2020-02-02T15:20:01+02:00"
-title = "Aller plus ploin"
-description = ""
-+++
+---
+title: Aller plus ploin
+description: 
+---
 
 :::info
 Sans lien direct avec le module, cette section vous permet d'aller plus loin dans l'implémentation d'un client FlowerDocs.

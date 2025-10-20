@@ -1,7 +1,6 @@
-+++
-date = "2018-03-06T13:20:01+02:00"
-title = "Les fonctionnalités"
-+++
+---
+title: Les fonctionnalités
+---
 
 Les fonctionnalités sont encadrées en rouge (voir ci-dessous) et disposées à côté de l'identifiant de la tâche.
 <br>

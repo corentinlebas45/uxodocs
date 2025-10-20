@@ -1,8 +1,7 @@
-+++
-date = "2003-03-29T13:20:01+02:00"
-title = "Email sortant"
-intro =""
-+++
+---
+title: Email sortant
+intro: 
+---
 
 # Indexation du courrier sortant
 

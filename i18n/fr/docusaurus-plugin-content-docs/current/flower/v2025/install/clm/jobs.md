@@ -1,8 +1,6 @@
-+++
-date = "2004-03-21T13:21:01+02:00"
-title = "Jobs standards"
-+++
-
+---
+title: Jobs standards
+---
 
 # Création
 

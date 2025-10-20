@@ -1,8 +1,7 @@
-+++
-date = "2019-06-03T13:20:01+02:00"
-title = "Secrets"
-description = "Pour que les secrets restent secrets"
-+++
+---
+title: Secrets
+description: Pour que les secrets restent secrets
+---
 
 Il est déconseillé de stocker des mots de passe en clair dans des fichiers de configuration. Afin d'éviter de stocker les différents secrets en clair dans les fichiers `core.properties` et `gui.properties`, FlowerDocs fourni un mécanisme de chiffrement des secrets. 
 
@@ -16,17 +15,12 @@ Afin d'indiquer à FlowerDocs que la valeur d'une propriété est chiffrée, ell
 
 Le chiffrement de propriété peut être réalisé de plusieurs façons à partir d'un secret principal : 
 
-[shortcode]
-[shortcode]
 <clm> string encrypt --secret=<secret> --password=<propriété à chiffrer>
 {{< /tab >>}}
-[shortcode]
 curl -X POST \
   <core>/rest/encrypt \
   -H 'token: <token>' \
   -d {{toEncrypt}}
-[shortcode]
-[shortcode] 
 
 :::info
 Il est conseillé de définir, avec cette méthode, les propriétés `token.key` et `system.admin.password` à minima.

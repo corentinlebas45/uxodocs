@@ -1,8 +1,7 @@
-+++
-date = "2005-03-28T13:22:01+02:00"
-title = "Abonnement"
-description = "S'abonner à l'exécution d'une recherche"
-+++
+---
+title: Abonnement
+description: S'abonner à l'exécution d'une recherche
+---
 
 L'abonnement à l'exécution d'une requête de recherche se fait en fonction du template de recherche. 
 Les informations disponibles lors de l'abonnement sont le nom du template, la requête, la réponse et le callback de réponse. 

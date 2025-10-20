@@ -1,23 +1,18 @@
-+++
-date = "2000-03-31T13:20:01+02:00"
-title = "Configuration ARender HMI"
-+++
+---
+title: Configuration ARender HMI
+---
 
-Cette partie décrit les différentes configurations pour l'application [shortcode] à définir au sein du fichier `arender-custom-server.properties` de l'application.
 
 # Général
 
 |Propriété					    |Description																|
 |-------------------------------|---------------------------------------------------------------------------|
 |arender.server.rendition.hosts	|Adresses des différentes renditions ARender séparées par une ``,``			|
-|token.key					    |Token partagé entre FlowerDocs Core, FlowerDocs GUI et  [shortcode]		|
 |ws.url						    |URL d'accès aux WebServices FlowerDocs Core									|
 
 # Journalisation
 
-Afin de configurer la journalisation des logs de [shortcode]et du connecteur FlowerDocs ARender, il est nécessaire de créer un dossier `configurations` à côté de l'application [shortcode] contenant le fichier `logback.xml` suivant : 
 
-[shortcode]
 ```xml 
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
@@ -80,7 +75,6 @@ Afin de configurer la journalisation des logs de [shortcode]et du connecteur Flo
     </root>
 </configuration>
 ```
-[shortcode]
 
 :::warning
 Il n'est pas préconisé de modifier des propriétés d'ARender via du paramétrage dans le fichier `arender-custom-server.properties`. Les propriétés non définies dans la documentation ne sont pas qualifiées par FlowerDocs : le bon fonctionnement de l'application n'est donc pas garanti avec ces modifications.

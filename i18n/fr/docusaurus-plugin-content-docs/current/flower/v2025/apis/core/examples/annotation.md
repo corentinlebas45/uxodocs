@@ -1,8 +1,7 @@
-+++
-date = "2001-03-30T13:20:01+02:00"
-title = "Manipuler les annotations"
-description = "Créez, modifiez, supprimez vos annotations"
-+++
+---
+title: Manipuler les annotations
+description: Créez, modifiez, supprimez vos annotations
+---
 
 Le service `Annotation` expose toutes les opérations disponibles autour des annotations d'un document.
 
@@ -13,8 +12,6 @@ Ce service permet de récupérer des annotations d'un document avec une opérati
 
 ## Récupération de toutes les annotations 
 
-[shortcode]
-[shortcode]
 GET {{core}}/rest/documents/{documentId}/annotations HTTP/1.1
 
 -- Paramètres d'URL --
@@ -22,11 +19,9 @@ core: host de FlowerDocs core
 documentId: identifiant du document sur lequel se trouvent les annotations à récupérer
 
 -- Headers --
-token: {{token}}
+token: {token}
 Content-Type: application/json
-[shortcode]
 
-[shortcode]
 @Autowired
 private AnnotationService service;
 
@@ -35,8 +30,6 @@ public List<Annotation> get() throws FunctionalException, TechnicalException
 	Id documentId = new Id("documentId");
 	return service.get(documentId);
 }
-[shortcode]
-[shortcode]
 
 <!-- ## Récupération des rotations 
 
@@ -46,8 +39,6 @@ Cette fonctionnalité n'est pas implémentée. -->
 
 ## A partir d'un json
 
-[shortcode]
-[shortcode]
 POST {{core}}/rest/documents/{documentId}/annotations HTTP/1.1
 
 -- Paramètres d'URL --
@@ -55,7 +46,7 @@ core: host de FlowerDocs core
 documentId: identifiant du document sur lequel créer les annotations
 
 -- Headers --
-token: {{token}}
+token: {token}
 Content-Type: application/json
 
 -- Body (json) --
@@ -99,9 +90,7 @@ Content-Type: application/json
 		"title": "annotationTest"
     }
 ]
-[shortcode]
 
-[shortcode]
 @Autowired
 private AnnotationService service;
 
@@ -121,13 +110,9 @@ public void create() throws FunctionalException, TechnicalException
 
 	service.create(documentId, annotations);
 }
-[shortcode]
-[shortcode]
 
 ## A partir d'un xml
 
-[shortcode]
-[shortcode]
 POST {{core}}/rest/documents/{documentId}/annotations HTTP/1.1
 
 -- Paramètres d'URL --
@@ -135,7 +120,7 @@ core: host de FlowerDocs core
 documentId: identifiant du document sur lequel créer les annotations
 
 -- Headers --
-token: {{token}}
+token: {token}
 Content-Type: application/xml
 
 -- Body (xml) --
@@ -144,13 +129,9 @@ Content-Type: application/xml
 <ns0:circle color="#EAF39C" flags="" name="cfdbee9c-dce1-4e62-bc10-55ab1554476b" page="0" rect="82.02787,218.50267,183.40193,337.67523" title="Unknown" creationdate="D:20221228084701+00'00'" opacity="0.7" fringe="0.0,0.0,0.0,0.0" interior-color="#EAF39C" width="0.0" style="solid" intensity=""/>
 </ns0:annots>
 </ns0:xfdf>
-[shortcode]
-[shortcode]
 
 # Mise à jour des annotations 
 
-[shortcode]
-[shortcode]
 POST {{core}}/rest/documents/{documentId}/annotations/{annotationIds} HTTP/1.1
 
 -- Paramètres d'URL --
@@ -159,7 +140,7 @@ documentId: identifiant du document sur lequel se trouvent les annotations à mo
 annotationIds: identifiants des annotations à modifier 
 
 -- Headers --
-token: {{token}}
+token: {token}
 Content-Type: application/json
 
 -- Body (json) --
@@ -203,8 +184,6 @@ Content-Type: application/json
 		"title": "annotationTest"
     }
 ]
-[shortcode]
-[shortcode]
 @Autowired
 private AnnotationService service;
 
@@ -220,8 +199,6 @@ public void update() throws FunctionalException, TechnicalException
 
     annotationService.update(documentId, updates);
 }
-[shortcode]
-[shortcode]
 
 
 # Suppression d'annotation
@@ -232,8 +209,6 @@ Les exemples ci-dessous indiquent comment supprimer des annotations.
 
 Cette opération permet de supprimer une partie des annotations d'un document 
 
-[shortcode]
-[shortcode]
 DELETE {{core}}/rest/documents/{documentId}/annotations/{annotationIds} HTTP/1.1
 
 -- Paramètres d'URL --
@@ -242,11 +217,9 @@ documentId: identifiant du document sur lequel se trouvent les annotations à su
 annotationIds: identifiants des annotations à supprimer  
 
 -- Header -- 
-token: {{token}}
+token: {token}
 Content-Type: application/json
-[shortcode]
 
-[shortcode]
 @Autowired
 private AnnotationService service;
 
@@ -257,15 +230,11 @@ public void delete() throws FunctionalException, TechnicalException
 	List<Id> ids = Lists.newArrayList(new Id("annot1"));
 	service.delete(documentId, ids);
 }
-[shortcode]
-[shortcode]
 
 ## Suppression de toutes les annotations
 
 Cette opération permet de supprimer l'ensemble des annotations d'un document 
 
-[shortcode]
-[shortcode]
 DELETE {{core}}/rest/documents/{documentId}/annotations/allAnnotations HTTP/1.1
 
 -- Paramètres d'URL --
@@ -273,11 +242,9 @@ core: host de FlowerDocs core
 documentId: identifiant du document sur lequel se trouvent les annotations à supprimer
 
 -- Headers -- 
-token: {{token}}
+token: {token}
 Content-Type: application/json
-[shortcode]
 
-[shortcode]
 @Autowired
 private AnnotationService service;
 
@@ -286,6 +253,3 @@ public void delete() throws FunctionalException, TechnicalException
 	Id documentId = new Id("documentId");
 	service.delete(documentId);
 }
-[shortcode]
-[shortcode]
-

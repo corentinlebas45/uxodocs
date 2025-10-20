@@ -1,7 +1,6 @@
-+++
-date = "2001-03-29T13:22:01+02:00"
-title = "Pièces jointes de tâche"
-+++
+---
+title: Pièces jointes de tâche
+---
 
 # Document en tant que pièce jointe sans indexation
 

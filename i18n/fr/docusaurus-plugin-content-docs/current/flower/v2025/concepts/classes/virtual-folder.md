@@ -1,9 +1,7 @@
-+++
-date = "2018-03-02T14:20:01+02:00"
-title = "Dossiers virtuels"
-description = "Les classes de dossiers virtuels"
-+++
-
+---
+title: Dossiers virtuels
+description: Les classes de dossiers virtuels
+---
 
 :::info
 Contrairement aux dossiers qui ont un lien parent-enfant avec les composants qu'ils contiennent, les dossiers virtuels sont composés de recherches permettant de trouver dynamiquement les composants. 

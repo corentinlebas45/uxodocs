@@ -1,8 +1,7 @@
-+++
-date = "2018-03-20T13:20:01+02:00"
-title = "Identités"
-description = "Organisez les utilisateurs accédant à votre application"
-+++
+---
+title: Identités
+description: Organisez les utilisateurs accédant à votre application
+---
 
 # Principe
 
@@ -20,16 +19,13 @@ Ces identités sont stockées  dans un [annuaire d'entreprise](broken-link.md) c
 
 # Utilisateurs
 
-Un [shortcode] représente une personne physique ou une application tierce. Chaque interaction avec la plateforme requiert d'être liée à un utilisateur préalablement authentifié. Un utilisateur peut appertenir à un groupe ou une équipe.
 
 # Groupes
 
-Un [shortcode] représente un ensemble d'utilisateurs ou d'autres groupes.
 Cette notion est généralement utilisée afin d'appliquer des permissions particulières en fonction des groupes auxquels appartient un utilisateur.
 
 # Equipes
 
-La notion d'[shortcode] est similaire à celle de groupe à la différence qu'elle est gérée et stockée par la plateforme FlowerDocs.
 Elle permet ainsi d'avoir des regroupements d'utilisateurs distincts de ceux définis dans l'annuaire d'entreprise. Les équipes sont généralement utilisées dans les organisations où la hiérarchie définie dans l'annuaire d'entreprise diffère de celle liée aux usages dans la plateforme FlowerDocs.
 
 Les équipes possèdent une liste de propriétés permettant de configurer FlowerDocs GUI.
@@ -45,4 +41,3 @@ La plateforme FlowerDocs propose plusieurs rôles natifs offrant des permissions
 |`SECURITY_ADMIN`|Administrateur de la sécurité *(ACL, identités...)*|
 |`ADMIN`|Administrateur du scope|
 |`SYSTEM_ADMIN`|Administrateur de la plateforme|
-

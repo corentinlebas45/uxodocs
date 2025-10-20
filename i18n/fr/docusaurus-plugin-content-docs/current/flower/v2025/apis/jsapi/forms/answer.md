@@ -1,7 +1,6 @@
-+++
-date = "2001-03-28T13:22:01+02:00"
-title = "Réponse avec motif"
-+++
+---
+title: Réponse avec motif
+---
 
 Les fonctions disponibles sur l'API de réponses avec motifs sont : 
 
@@ -30,4 +29,4 @@ JSAPI.get().getReasonedAnswerAPI(<identifiant de la réponse>).registerForFieldC
 	
 __Note :__ Dans cette partie, la variable ``reasonedAnswerId`` permet d'utiliser l'identifiant de la réponse venant d'être ouverte
 
-__Attention :__ Dans le cas de l'affichage de plusieurs formulaires de réponses avec motifs, il peut être nécessaire d'accéder à un formulaire en particulier : ``JSAPI.get().getReasonedAnswerAPI(<identifiant de la réponse>)``. 
+__Attention :__ Dans le cas de l'affichage de plusieurs formulaires de réponses avec motifs, il peut être nécessaire d'accéder à un formulaire en particulier : ``JSAPI.get().getReasonedAnswerAPI(<identifiant de la réponse>)``.

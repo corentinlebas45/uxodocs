@@ -1,16 +1,13 @@
-+++
-date = "2005-04-28T13:20:01+02:00"
-title = "Résultats de recherche"
-description = "Personnaliser la présentation des résultats de recherche."
-Intro = "La configuration de la présentation des résultats s'effectue par formulaire de recherche au niveau du bean `ComponentSearchPresenter`."
-+++
-
+---
+title: Résultats de recherche
+description: Personnaliser la présentation des résultats de recherche.
+Intro: La configuration de la présentation des résultats s'effectue par formulaire de recherche au niveau du bean `ComponentSearchPresenter`.
+---
 
 # Masquer des colonnes
 
 Dans le tableau de résultats il est possible de masquer des colonnes. Pour cela, il faut ajouter la propriété ``hiddenColumns``. 
 
-[shortcode]
 ```xml 
 <property name="hiddenColumns">
 	<list>
@@ -18,7 +15,6 @@ Dans le tableau de résultats il est possible de masquer des colonnes. Pour cela
 	</list>
 </property>
 ```
-[shortcode]
 	
 
 

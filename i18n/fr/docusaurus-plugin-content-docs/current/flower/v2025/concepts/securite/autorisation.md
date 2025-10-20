@@ -1,8 +1,7 @@
-+++
-date = "2018-03-27T13:20:01+02:00"
-title = "Autorisation"
-description = "Sécurisez votre application"
-+++
+---
+title: Autorisation
+description: Sécurisez votre application
+---
 
 :::info
 Le rôle d'un objet de sécurité est de gérer les différentes permissions sur les objets dans FlowerDocs (composants, recherches sauvegardées, scopes, ...). Ces objets de sécurité sont référencés sur les objets FlowerDocs.
@@ -73,7 +72,6 @@ Trois types de conditions sont supportés par l'application :
 * [Condition sur l'utilisateur](broken-link.md)
 
 
-[shortcode]
 ```xml
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <ACLProxy name="Acl proxy for document" xmlns="https://flower.com/docs/domain/acl" xmlns:common="https://flower.com/docs/domain/common">
@@ -96,7 +94,6 @@ Trois types de conditions sont supportés par l'application :
 	</rules>
 </ACLProxy>
 ```
-[shortcode]
 
 <br/>
 :::info
@@ -112,9 +109,4 @@ Un objet de sécurité est associé à un objet à travers son champ `ACL`. Ce c
 L'ACL référencée, par exemple sur un composant, sera utilisée pour déterminer si un utilisateur est autorisé ou non à effectuer une action sur celui-ci.
 
 <br/>
-La création d'un composant est un cas particulier. En effet, celui-ci n'existant pas encore, c'est l'ACL définie au niveau de la classe de composants qui est évaluée. Ainsi afin d'autoriser un utilisateur à créer un composant, il est nécessaire qu'il possède la permission `CREATE` sur l'ACL référencée au niveau de sa classe. 
-
-
-
-
-
+La création d'un composant est un cas particulier. En effet, celui-ci n'existant pas encore, c'est l'ACL définie au niveau de la classe de composants qui est évaluée. Ainsi afin d'autoriser un utilisateur à créer un composant, il est nécessaire qu'il possède la permission `CREATE` sur l'ACL référencée au niveau de sa classe.

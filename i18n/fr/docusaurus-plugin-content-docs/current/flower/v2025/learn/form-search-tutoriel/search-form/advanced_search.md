@@ -1,8 +1,6 @@
-+++
-date = "2020-02-02T08:20:01+02:00"
-title = "Recherche avancée"
-+++
-
+---
+title: Recherche avancée
+---
 
 La configuration des formulaires de recherches passe par des fichiers XML. Utilisez l'éditeur interne pour la rédaction du fichier.
 

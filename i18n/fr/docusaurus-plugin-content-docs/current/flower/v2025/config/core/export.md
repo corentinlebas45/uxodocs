@@ -1,8 +1,7 @@
-+++
-date = "2020-02-01"
-title = "Export des résultats"
-Description = "Export des résultats de recherche"
-+++
+---
+title: Export des résultats
+Description: Export des résultats de recherche
+---
 
 Cette partie concerne la configuration du téléchargement des résultats de recherche au format CSV. 
 

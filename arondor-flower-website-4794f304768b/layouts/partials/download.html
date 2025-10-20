@@ -1,0 +1,209 @@
+{{ $ARenderVersion := .Parent.Params.arenderversion }}
+
+{{ $version := .Parent.Title }}
+
+{{ $extension := ""}}
+{{ if or (hasPrefix $version "2.3") (hasPrefix $version "2.4") }}
+{{ $extension = "war" }}
+{{else }}
+{{ $extension = "jar" }}
+{{ end }}
+
+{{ if isset .Parent.Params "fixversion" }}
+{{ $delimiter := "" }}
+{{ $fixVersion := .Parent.Params.fixversion }}
+{{ if or (hasPrefix $version "2.3") (eq $version "2.4.0") }}
+{{ $delimiter = "-" }}
+{{else }}
+{{ $delimiter = "." }}
+{{end}}
+{{$version = print $version $delimiter $fixVersion }}
+{{end}}
+
+<div class="col-12 download-item">
+	<div class="col-sm-8">
+		<h6>FlowerDocs GUI</h6>
+		Interface graphique
+	</div>
+	<div class="col-sm-4">
+		<ul class="pager">
+			<li class="next"><a
+					href="https://artifactory.arondor.cloud/artifactory/arondor-release/com/flower/docs/gui/flower-docs-gui-webapp/{{ $version }}/flower-docs-gui-webapp-{{ $version }}.{{ $extension }}.sha256">Sha256</a>
+			</li>
+			<li class="next"><a
+					href="https://artifactory.arondor.cloud/artifactory/arondor-release/com/flower/docs/gui/flower-docs-gui-webapp/{{ $version }}/flower-docs-gui-webapp-{{ $version }}.{{ $extension }}">{{upper $extension }}</a>
+			</li>
+		</ul>
+	</div>
+</div>
+<hr>
+
+<div class="col-12 download-item">
+	<div class="col-sm-8">
+		<h6>FlowerDocs Core</h6>
+		Coeur de l'application exposant des web services
+	</div>
+	<div class="col-sm-4">
+		<ul class="pager">
+			<li class="next"><a
+					href="https://artifactory.arondor.cloud/artifactory/arondor-release/com/flower/docs/core/flower-docs-core-webapp/{{ $version }}/flower-docs-core-webapp-{{ $version }}.{{ $extension }}.sha256">Sha256</a>
+			</li>
+			<li class="next"><a
+					href="https://artifactory.arondor.cloud/artifactory/arondor-release/com/flower/docs/core/flower-docs-core-webapp/{{ $version }}/flower-docs-core-webapp-{{ $version }}.{{ $extension }}">{{ upper $extension }}</a>
+			</li>
+		</ul>
+	</div>
+</div>
+<hr>
+
+{{ if (hasPrefix $version "202") }}
+<div class="col-12 download-item">
+	<div class="col-sm-8">
+		<h6>FlowerDocs CLM</h6>
+		Interagir avec FlowerDocs en ligne de commandes
+	</div>
+	<div class="col-sm-4">
+		<ul class="pager">
+			<li class="next"><a
+					href="https://artifactory.arondor.cloud/artifactory/arondor-release/com/flower/docs/core/flower-docs-clm/{{ $version }}/flower-docs-clm-{{ $version }}-bundle.{{ $extension }}.sha256">Sha256</a>
+			</li>
+			<li class="next"><a
+					href="https://artifactory.arondor.cloud/artifactory/arondor-release/com/flower/docs/core/flower-docs-clm/{{ $version }}/flower-docs-clm-{{ $version }}-bundle.{{ $extension }}">{{ upper $extension }}</a>
+			</li>
+		</ul>
+	</div>
+</div>
+<hr>
+{{ end }}
+
+{{ if or (hasPrefix $version "2.8") (hasPrefix $version "202") }}
+<div class="col-12 download-item">
+	<div class="col-sm-8">
+		<h6>FlowerDocs default template</h6>
+		Template par défaut de FlowerDocs
+	</div>
+	<div class="col-sm-4">
+		<ul class="pager">
+			<li class="next"><a
+					href="https://artifactory.arondor.cloud/artifactory/arondor-release/com/flower/docs/flower-templates/{{ $version }}/flower-templates-{{ $version }}-package.zip.sha256">Sha256</a>
+			</li>
+			<li class="next"><a
+					href="https://artifactory.arondor.cloud/artifactory/arondor-release/com/flower/docs/flower-templates/{{ $version }}/flower-templates-{{ $version }}-package.zip">ZIP</a>
+			</li>
+		</ul>
+	</div>
+</div>
+<hr>
+{{ end }}
+
+{{ if (hasPrefix $version "202") }}
+<div class="col-12 download-item">
+	<div class="col-sm-8">
+		<h6>Connecteur ARender FlowerDocs</h6>
+		Connecteur ARender pour FlowerDocs
+	</div>
+	<div class="col-sm-4">
+		<ul class="pager">
+			<li class="next"><a
+					href="https://artifactory.arondor.cloud/artifactory/arondor-release/com/flower/docs/arender/flower-docs-arender-hmi{{ $version }}/flower-docs-arender-hmi-{{ $version }}.{{ $extension }}.sha256">Sha256</a>
+			</li>
+			<li class="next"><a
+					href="https://artifactory.arondor.cloud/artifactory/arondor-release/com/flower/docs/arender/flower-docs-arender-hmi/{{ $version }}/flower-docs-arender-hmi-{{ $version }}.{{ $extension }}">{{ upper $extension }}</a>
+			</li>
+		</ul>
+	</div>
+</div>
+<hr>
+{{ end }}
+
+{{ if or (hasPrefix $version "2.3") (hasPrefix $version "2.4") (hasPrefix $version "202") }}
+<div class="col-12 download-item">
+	<div class="col-sm-8">
+		<h6>ARender HMI</h6>
+		Interface graphique de la visionneuse
+	</div>
+	<div class="col-sm-4">
+		<ul class="pager">
+			{{ if or (hasPrefix $version "2.3") (hasPrefix $version "2.4") }}
+			<li class="next"><a
+					href="https://artifactory.arondor.cloud/artifactory/arondor-release/com/flower/docs/arender/flower-docs-arender-hmi/{{ $version }}/flower-docs-arender-hmi-{{ $version }}.war.sha256">Sha256</a>
+			</li>
+			<li class="next"><a
+					href="https://artifactory.arondor.cloud/artifactory/arondor-release/com/flower/docs/arender/flower-docs-arender-hmi/{{ $version }}/flower-docs-arender-hmi-{{ $version }}.war">WAR</a>
+			</li> {{ else }}
+						<li class="next"><a
+					href="https://artifactory.arondor.cloud/artifactory/arondor-release/com/arondor/arender/arondor-arender-hmi-spring-boot/{{ $ARenderVersion }}/arondor-arender-hmi-spring-boot-{{ $ARenderVersion }}.{{ $extension }}.sha256">Sha256</a>
+			</li>
+			<li class="next"><a
+					href="https://artifactory.arondor.cloud/artifactory/arondor-release/com/arondor/arender/arondor-arender-hmi-spring-boot/{{ $ARenderVersion }}/arondor-arender-hmi-spring-boot-{{ $ARenderVersion }}.{{ $extension }}">{{ upper $extension }}</a>
+			</li> {{ end }}
+		</ul>
+	</div>
+</div>
+<hr>
+{{ end }}
+
+<div class="col-12 download-item">
+	<div class="col-sm-8">
+		<h6>ARender Rendition Server</h6>
+		Moteur de rendition de la visionneuse
+	</div>
+	<div class="col-sm-4">
+		<ul class="pager">
+			{{ if hasPrefix $ARenderVersion "3.1" }}
+			<li class="next"><a
+					href="https://artifactory.arondor.cloud/artifactory/arondor-release/com/arondor/arender/arondor-arender-rendition-service/{{ $ARenderVersion }}/arondor-arender-rendition-service-{{ $ARenderVersion }}-rendition.jar.sha256">Sha256</a>
+			</li>
+			<li class="next"><a
+					href="https://artifactory.arondor.cloud/artifactory/arondor-release/com/arondor/arender/arondor-arender-rendition-service/{{ $ARenderVersion }}/arondor-arender-rendition-service-{{ $ARenderVersion }}-rendition.jar">JAR</a>
+			</li> {{ else }}
+			<li class="next"><a
+					href="https://artifactory.arondor.cloud/artifactory/arondor-release/com/arondor/arender/micro/services/rendition-engine-package/{{ $ARenderVersion }}/rendition-engine-package-{{ $ARenderVersion }}.zip.sha256">Sha256</a>
+			</li>
+			<li class="next"><a
+					href="https://artifactory.arondor.cloud/artifactory/arondor-release/com/arondor/arender/micro/services/rendition-engine-package/{{ $ARenderVersion }}/rendition-engine-package-{{ $ARenderVersion }}.zip">ZIP</a>
+			</li> {{ end }}
+		</ul>
+	</div>
+</div>
+<hr>
+
+{{ if (hasPrefix $version "202") }}
+<div class="col-12 download-item">
+	<div class="col-sm-8">
+		<h6>Solution GEC</h6>
+		Gestion Electronique de Courriers
+	</div>
+	<div class="col-sm-4">
+		<ul class="pager">
+			<li class="next"><a
+					href="https://artifactory.arondor.cloud/artifactory/arondor-release/com/arondor/flower/gec/flower-gec-packaging/{{ $version }}/flower-gec-packaging-{{ $version }}-package-client.zip.sha256">Sha256</a>
+			</li>
+			<li class="next"><a
+					href="https://artifactory.arondor.cloud/artifactory/arondor-release/com/arondor/flower/gec/flower-gec-packaging/{{ $version }}/flower-gec-packaging-{{ $version }}-package-client.zip">ZIP</a>
+			</li>
+		</ul>
+	</div>
+</div>
+<hr>
+{{ end }}
+
+{{ if (hasPrefix $version "202") }}
+<div class="col-12 download-item">
+	<div class="col-sm-8">
+		<h6>Solution eProcess</h6>
+		Automatisation de processus métier
+	</div>
+	<div class="col-sm-4">
+		<ul class="pager">
+			<li class="next"><a
+					href="https://artifactory.arondor.cloud/artifactory/arondor-release/com/arondor/flower/env/e-enveloppe-packaging/{{ $version }}/e-enveloppe-packaging-{{ $version }}-package-client.zip.sha256">Sha256</a>
+			</li>
+			<li class="next"><a
+					href="https://artifactory.arondor.cloud/artifactory/arondor-release/com/arondor/flower/env/e-enveloppe-packaging/{{ $version }}/e-enveloppe-packaging-{{ $version }}-package-client.zip">ZIP</a>
+			</li>
+		</ul>
+	</div>
+</div>
+<hr>
+{{ end }}

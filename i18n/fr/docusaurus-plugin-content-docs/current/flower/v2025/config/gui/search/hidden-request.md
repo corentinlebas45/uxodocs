@@ -1,7 +1,6 @@
-+++
-date = "2004-04-03T13:20:01+02:00"
-title = "Requête cachée"
-+++
+---
+title: Requête cachée
+---
 
 Pour chaque formulaire de recherche, il est possible de définir une requête de recherche cachée et donc non-visible des utilisateurs.
 
@@ -16,7 +15,6 @@ Cette requête permet par exemple de :
 L'objet `ComponentSearchPresenter` accepte une propriété `hiddenRequest` avec un bean de classe `com.flower.docs.domain.search.SearchRequest`.
 
 
-[shortcode]
 ```xml
 <bean id="monFormulaire" class="com.flower.docs.gui.client.search.ComponentSearchPresenter"
 		scope="prototype">
@@ -66,7 +64,6 @@ L'objet `ComponentSearchPresenter` accepte une propriété `hiddenRequest` avec 
 		<!-- ... -->
 	</bean>
 ```
-[shortcode]
 
 
 <br/>

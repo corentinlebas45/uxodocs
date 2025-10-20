@@ -1,14 +1,12 @@
-+++
-date = "2022-02-14T13:20:01+02:00"
-title = "Montée de version FlowerDocs 2.6"
-intro = "Migrez vos données vers FlowerDocs 2.6"
-+++
+---
+title: Montée de version FlowerDocs 2.6
+intro: Migrez vos données vers FlowerDocs 2.6
+---
 
 Lors d'une montée de version de FlowerDocs d'une version 2.5 et inférieure vers une version 2.6 et ses mineures, il est nécessaire de migrer les données. En effet, le moteur d'indexation utilisé à partir de FlowerDocs 2.6.0 est OpenSearch, issu d'un fork de la version 7.10.2 d'Elasticsearch. Le modèle de données interne à Elasticsearch a été revu à la suite de la version 6.0 par la suppression du support des types dans les index. Une migration avec réécriture est donc  nécessaire afin d’effectuer cette montée de version. 
 
 <br/>
 
-Pour cela, FlowerDocs CLM met à disposition un `job`, chargé de ré-indexer les données d'un scope d'une instance Elasticsearch 5.2.1 dans une instance OpenSearch [shortcode].
 
 <br/>
 

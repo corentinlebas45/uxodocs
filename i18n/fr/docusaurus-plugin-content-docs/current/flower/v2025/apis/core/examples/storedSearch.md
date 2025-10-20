@@ -1,8 +1,7 @@
-+++
-date = "2018-04-01T12:20:01+01:57"
-title = "Les recherches sauvegardées"
-description = "Créez, récupérez, modifiez, supprimez vos recherches sauvegardées"
-+++
+---
+title: Les recherches sauvegardées
+description: Créez, récupérez, modifiez, supprimez vos recherches sauvegardées
+---
 
 Le service `StoredSearchService` expose toutes les opérations disponibles autour des composants de type `StoredSearch`.
 
@@ -12,18 +11,14 @@ Le service `StoredSearchService` expose toutes les opérations disponibles autou
 
 Les exemples ci-dessous indiquent comment récupérer toutes les recherches sauvegardées d'un scope.
 
-[shortcode]
-[shortcode]
 GET {{core}}/rest/storedsearch HTTP/1.1
 
 -- Paramètre d'URL -- 
 core: host de FlowerDocs core
 
 -- Headers -- 
-token: {{token}}
+token: {token}
 
-[shortcode]
-[shortcode]
 	@Autowired
     private StoredSearchService service;
 
@@ -31,15 +26,11 @@ token: {{token}}
     {
         return service.getAll();
     }
-[shortcode]
-[shortcode]
 
 ## Récupération d'une liste définie
 
 Les exemples ci-dessous indiquent comment récupérer une liste de recherches sauvegardées à partir de leurs identifiants.
 
-[shortcode]
-[shortcode]
 GET {{core}}/rest/storedsearch/{ids} HTTP/1.1
 
 -- Paramètre d'URL -- 
@@ -47,10 +38,8 @@ core: host de FlowerDocs core
 ids: liste d'identifiants de recherches sauvegardées
 
 -- Headers -- 
-token: {{token}}
+token: {token}
 
-[shortcode]
-[shortcode]
 	@Autowired
     private StoredSearchService service;
 
@@ -59,22 +48,18 @@ token: {{token}}
         List<Id> storedSearchIds = Lists.newArrayList(new Id("folderStoredSearch"));
         return service.get(storedSearchIds);
     }
-[shortcode]
-[shortcode]
 
 # Création
 
 Les exemples ci-dessous indiquent comment créer une recherche sauvegardée. 
 
-[shortcode]
-[shortcode]
 POST {{core}}/rest/storedsearch HTTP/1.1
 
 -- Paramètre d'URL -- 
 core: host de FlowerDocs core
 
 -- Headers -- 
-token: {{token}}
+token: {token}
 Content-Type: application/json
 
 -- Body (json) --
@@ -124,8 +109,6 @@ Content-Type: application/json
         ]
     }
 ]
-[shortcode]
-[shortcode]
 	@Autowired
     private StoredSearchService service;
     
@@ -168,15 +151,11 @@ Content-Type: application/json
         List<StoredSearch> storedSearchList = Lists.newArrayList(search);
         return service.create(storedSearchList);
     }
-[shortcode]
-[shortcode]
 
 # Modification
 
 Les exemples ci-dessous indiquent comment modifier une recherche sauvegardée.
 
-[shortcode]
-[shortcode]
 POST {{core}}/rest/storedsearch/{ids} HTTP/1.1
 
 -- Paramètre d'URL -- 
@@ -184,7 +163,7 @@ core: host de FlowerDocs core
 ids : liste des identifiants de recherches sauvegardés
 
 -- Headers --
-token: {{token}}
+token: {token}
 Content-Type: application/json
 
 -- Body (json) --
@@ -235,8 +214,6 @@ Content-Type: application/json
         ]
     }
 ]
-[shortcode]
-[shortcode]
 	@Autowired
     private StoredSearchService service;
     
@@ -255,8 +232,6 @@ Content-Type: application/json
         List<StoredSearch> storedSearchList = Lists.newArrayList(search);
         return service.update(storedSearchList);
     }
-[shortcode]
-[shortcode]
 
 :::warning
 En utilisant le service REST, les informations non renseignées seront vidées : il faut envoyer la totalité de la recherche sauvegardée et pas seulement les informations à modifier. 
@@ -266,8 +241,6 @@ En utilisant le service REST, les informations non renseignées seront vidées :
 
 Les exemples ci-dessous indiquent comment supprimer une liste de recherche sauvegardées.
 
-[shortcode]
-[shortcode]
 DELETE {{core}}/rest/storedsearch/{ids} HTTP/1.1
 
 -- Paramètre d'URL -- 
@@ -275,10 +248,8 @@ core: host de FlowerDocs core
 ids : liste des identifiants de recherches sauvegardées
 
 -- Headers --
-token: {{token}}
+token: {token}
 
-[shortcode]
-[shortcode]
 	@Autowired
     private StoredSearchService service;
 	
@@ -287,5 +258,3 @@ token: {{token}}
         List<Id> storedSearchIds = Lists.newArrayList(new Id("testFolderStoredSearch"));
         service.delete(storedSearchIds);
     }
-[shortcode]
-[shortcode]

@@ -1,15 +1,13 @@
-+++
-date = "2001-04-01T13:20:01+02:00"
-title = "Client Java"
-description="Consommer les web services à l'aide du client Java."
-+++
+---
+title: Client Java
+description: Consommer les web services à l'aide du client Java.
+---
+
 :::info
 Le client Java permet d'interagir avec FlowerDocs Core à travers les web services exposés.
 
-Cette documentation s'appuie sur l'utilisation de [Maven](https://maven.apache.org/) et [Spring Boot [shortcode]] (https://spring.io/projects/spring-boot).
 :::
 
-[shortcode]
 
 
 # Set-up
@@ -129,4 +127,4 @@ La configuration des niveaux de log est identique à celle de FlowerDocs : [Logs
 Par défaut, nos APIs utilisent le protocole SOAP.
 <br/>
 Il est toutefois possible de choisir d'utiliser les APIs en REST en configurant votre application.
-Pour ce faire, il est nécessaire de définir la propriété `rest.client.enabled` avec pour valeur `true` dans un fichier _`application.properties`_. 
+Pour ce faire, il est nécessaire de définir la propriété `rest.client.enabled` avec pour valeur `true` dans un fichier _`application.properties`_.

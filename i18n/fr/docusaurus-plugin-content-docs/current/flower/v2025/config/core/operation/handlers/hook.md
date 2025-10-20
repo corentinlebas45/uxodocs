@@ -1,8 +1,7 @@
-+++
-date = "2010-12-28T13:20:01+02:00"
-title = "Hook"
-description = "Adapter, enrichir, contrôler..."
-+++
+---
+title: Hook
+description: Adapter, enrichir, contrôler...
+---
 
 # Principe
 

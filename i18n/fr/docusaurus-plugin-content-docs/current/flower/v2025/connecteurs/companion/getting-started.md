@@ -1,7 +1,6 @@
-+++
-date = "2000-03-28T13:20:01+02:00"
-title = "Getting Started"
-+++
+---
+title: Getting Started
+---
 
 Avec le FlowerDocs Companion, un nouveau Ruban apparaît dans l'outil de bureautique. 
 
@@ -25,5 +24,4 @@ Des boutons sont alors mis à disposition permettant aux utilisateurs d'injecter
 
 # Plugin pour Microsoft PowerPoint
 * Sauvegarde du diaporama au sein de FlowerDocs au format PowerPoint
-* Sauvegarde du diaporama au sein de FlowerDocs au format PDF 
-
+* Sauvegarde du diaporama au sein de FlowerDocs au format PDF

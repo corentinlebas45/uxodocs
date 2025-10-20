@@ -1,9 +1,7 @@
-+++
-date = "2004-03-28T13:25:01+02:00"
-title = "Attachement d'un document "
-description = "Les popups affichées au sein de l'interface graphique"
-+++
-
+---
+title: Attachement d'un document 
+description: Les popups affichées au sein de l'interface graphique
+---
 
 Cette partie détaille les interactions possibles avec le widget appelé ``ComponentAttacher`` permettant d'attacher un composant à un dossier.
 
@@ -59,5 +57,4 @@ folderAttacher.register(function(folder,toAttach, callback){
 
 Dans l'exemple ci-dessus, le composant ayant pour nom *Arondor* sera affiché, mais non sélectionnable. Celui avec le nom *2014* ne sera pas affiché et les autres seront affichés. 
 <br/>
-Dans ce dernier cas, la sélection utilisée est celle calculée par l'application, c'est-à-dire qu'elle est affichée uniquement si la classe du composant courant est dans la liste des enfants autorisés du dossier. 
-
+Dans ce dernier cas, la sélection utilisée est celle calculée par l'application, c'est-à-dire qu'elle est affichée uniquement si la classe du composant courant est dans la liste des enfants autorisés du dossier.

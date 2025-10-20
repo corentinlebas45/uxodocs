@@ -1,9 +1,7 @@
-+++
-date = "2012-03-28T13:20:01+02:00"
-title = "Contenu de dossier"
-description = "Personnalisation du contenu d'un dossier"
-+++
-
+---
+title: Contenu de dossier
+description: Personnalisation du contenu d'un dossier
+---
 
 La gestion des actions de création au sein d'un dossier peut être configurée en enregistrant un processeur.
 Ce processeur permet de déterminer si les actions de création sont activées ou non. 

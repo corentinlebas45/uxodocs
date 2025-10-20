@@ -1,9 +1,7 @@
-+++
-date = "2000-03-20T13:20:01+02:00"
-title = "Annuaire"
-Description = "Authentifier les utilisateurs auprès d'un annuaire d'entreprise"
-+++
-
+---
+title: Annuaire
+Description: Authentifier les utilisateurs auprès d'un annuaire d'entreprise
+---
 
 # Configuration de l'annuaire
 
@@ -152,4 +150,4 @@ Pour cela, le mot de passe ne doit pas être obligatoire, il s'agit d'un paramè
 	
 La création d'utilisateur ou de groupe ne peut être effectuée qu'à la racine du noeud d'accès à l'annuaire. 
 
-**Exemple :** Pour un Microsoft Active Directory: ``<domaine>/<base DN>`` 
+**Exemple :** Pour un Microsoft Active Directory: ``<domaine>/<base DN>``

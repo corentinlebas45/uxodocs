@@ -1,0 +1,44 @@
+<!-- Banner -->
+<section class="iq-breadcrumb overview-block-pt text-center iq-bg iq-bg-fixed iq-over-blue-90 iq-mtb-100" style="background:url('{{ .Site.BaseURL }}images/header/flower-header-06.jpg');">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="heading-title white iq-breadcrumb-title">
+                    <h1 class="text-uppercase iq-font-white iq-tw-3">{{ .Title }}</h1>
+                    {{ if .Description }}
+                    <h2 class="description iq-font-white iq-tw-3">{{ .Description }}</h2>
+                    {{ end }}
+                </div>
+                <ul class="breadcrumb">
+                    {{ if .Parent }}
+	                    <li>
+	                    	{{ if .Parent.Params.startpage }}
+	                    		<a href="{{ .Parent.URL }}{{ .Parent.Params.startpage }}">
+	                    	{{ else }}
+	                    		<a href="{{ .Parent.URL }}">
+	                    	{{ end }}
+	                    		<i class="far fa-file-alt"></i>
+	                    		{{ .Parent.Title }}
+	                    	</a>
+	                    </li>
+                    {{ end }}
+                    <li class="active">{{.Title}}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="banner-objects">
+        <span class="banner-objects-01" data-bottom="transform:translatey(50px)" data-top="transform:translatey(-50px);">
+            <img src="{{ .Site.BaseURL }}images/drive/03.png" alt="drive02" />
+        </span>
+        <span class="banner-objects-02 iq-fadebounce">
+            <span class="iq-round"></span>
+        </span>
+        <span class="banner-objects-03 iq-fadebounce">
+            <span class="iq-round"></span>
+        </span>
+        <span class="banner-objects-04" data-bottom="transform:translatex(100px)" data-top="transform:translatex(-100px);">
+            <img src="{{ .Site.BaseURL }}images/drive/04.png" alt="drive04" />
+        </span>
+    </div>
+</section>

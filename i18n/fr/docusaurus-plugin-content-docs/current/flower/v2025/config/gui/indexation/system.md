@@ -1,8 +1,7 @@
-+++
-date = "2002-03-28T13:20:01+02:00"
-title = "Métadonnées système"
-description = "Configurez les formulaires d'indexation"
-+++
+---
+title: Métadonnées système
+description: Configurez les formulaires d'indexation
+---
 
 # Métadonnées système
 

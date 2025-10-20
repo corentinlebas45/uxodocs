@@ -1,8 +1,7 @@
-+++
-date = "2001-03-28T14:20:01+02:00"
-title = "Configuration minimale"
-intro = ""
-+++
+---
+title: Configuration minimale
+intro: 
+---
 
 # Accès à FlowerDocs
 
@@ -23,4 +22,3 @@ Pour injecter des documents Fast2 dans FlowerDocs, il est nécessaire de :
 Lors de l'intégration de cette tâche au sein d'un processus Fast2, il se peut que des documents ne puissent être injectés car ils possèdent un tag non référencé au niveau de la classe de documents.
 
 En effet, FlowerDocs refuse la création de document non-valide. Si ces tags non-référencés sont introduits par des propriétés techniques utilisées dans le processus Fast2, il est possible d'exclure certaines propriétés lors de la tache d'injection. Pour cela, éditer la propriété ``ignoredData``.
-

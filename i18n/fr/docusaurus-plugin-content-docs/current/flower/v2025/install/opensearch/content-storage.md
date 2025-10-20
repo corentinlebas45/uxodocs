@@ -1,10 +1,9 @@
-+++
-date = "2003-03-28T13:20:01+02:00"
-title = "Stockage des contenus"
-categories = []
-banner = "img/banner/historique.png"
-description = "Gérer le stockage du contenus des documents"
-+++
+---
+title: Stockage des contenus
+categories: []
+banner: img/banner/historique.png
+description: Gérer le stockage du contenus des documents
+---
 
 Le connecteur OpenSearch fournit deux types de stockage pour les contenus (ou fichiers) de document.
 
@@ -13,11 +12,7 @@ Le connecteur OpenSearch fournit deux types de stockage pour les contenus (ou fi
 Ce connecteur permet le stockage des fichiers sur un système de fichier vu comme local par la JVM (local, NFS...).
 Le répertoire utilisé peut être configuré : 
 
-[shortcode]
-[shortcode]
 file.dir=/opt/FlowerDocs/Files/
-[shortcode]
-[shortcode] 
 
 
 ## Amazon S3
@@ -60,5 +55,3 @@ Un bucket unique peut être utilisé pour tous les scopes FlowerDocs avec la con
 s3.bucket.scoped=false
 s3.bucketName=<nom du bucket>
 ```
-
-	

@@ -1,0 +1,68 @@
+
+FileNetP8 {
+    com.ibm.ws.security.common.auth.module.WSLoginModuleImpl required;
+};
+
+FileNetP8WSI {
+    com.filenet.api.util.WSILoginModule required;
+};
+
+FileNetP8Engine {
+    com.ibm.ws.security.common.auth.module.proxy.WSLoginModuleProxy required
+        delegate=com.ibm.ws.security.common.auth.module.WSLoginModuleImpl;
+};
+
+FileNetP8Server {
+    com.ibm.ws.security.common.auth.module.proxy.WSLoginModuleProxy required
+        delegate=com.ibm.ws.security.common.auth.module.WSLoginModuleImpl;
+};
+
+FileNetP8KerberosService {
+    com.ibm.ws.security.common.auth.module.proxy.WSLoginModuleProxy required
+        delegate=com.filenet.engine.authentication.kerberos.login.KrbServiceLoginModule;
+    com.ibm.ws.security.common.auth.module.proxy.WSLoginModuleProxy required
+        delegate=com.ibm.ws.security.server.lm.ltpaLoginModule;
+    com.ibm.ws.security.common.auth.module.proxy.WSLoginModuleProxy required
+        delegate=com.ibm.ws.security.server.lm.wsMapDefaultInboundLoginModule;
+};
+
+Credentials {
+    com.idoox.security.jaas.GSSLoginModule required debug=true;
+};
+
+ReceivedCredentials {
+    com.idoox.security.jaas.GSSLoginModuleNoAuth required debug=true;
+};
+
+HttpCredentials {
+    com.idoox.security.jaas.HttpLoginModule required debug=true;
+};
+
+KrbCredentials {
+    com.ibm.security.auth.module.Krb5LoginModule required debug=false credsType=both;
+};
+
+CachedKrbCredentials {
+    com.ibm.security.auth.module.Krb5LoginModule required debug=false useDefaultCcache=true;
+};
+
+NamePasswordNoAN {
+    com.idoox.security.jaas.NamePasswordLoginModuleNoAuth required debug=true;
+};
+
+NamePasswordAN {
+    com.idoox.security.jaas.NamePasswordLoginModule required debug=true;
+};
+
+NameDigestAN {
+    com.idoox.security.jaas.NameDigestLoginModule required debug=true;
+};
+
+NameMapping {
+    com.idoox.security.jaas.NameLoginModuleNoAuth required debug=true;
+};
+
+CertsMapping {
+    com.idoox.security.jaas.CertsLoginModule required debug=true;
+};
+

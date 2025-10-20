@@ -1,9 +1,7 @@
-+++
-date = "2018-03-02T14:20:01+02:00"
-title = "Dossier"
-description = "Les classes de dossiers"
-+++
-
+---
+title: Dossier
+description: Les classes de dossiers
+---
 
 :::info
 Contrairement aux dossiers virtuels qui sont composés de recherches permettant de trouver dynamiquement les composants, les dossiers ont un modèle physique par le biais d'un lien parent-enfant avec les composants qu'ils contiennent. 
@@ -26,4 +24,3 @@ Il est possible d'en définir autant que possible. Si le besoin est de contenir 
 		<id>*</id>
 </ns2:children>
 ```
-

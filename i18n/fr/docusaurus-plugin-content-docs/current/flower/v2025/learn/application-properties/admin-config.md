@@ -1,7 +1,6 @@
-+++
- date = "2020-02-01T13:20:01+02:00"
-title = "A travers l'application FlowerDocs"
-+++
+---
+title: A travers l'application FlowerDocs
+---
 
 # Mise en place
 

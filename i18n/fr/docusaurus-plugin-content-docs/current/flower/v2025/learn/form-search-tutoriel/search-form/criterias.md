@@ -1,7 +1,6 @@
-+++
-date = "2020-03-03T09:20:01+02:00"
-title = "Critères"
-+++
+---
+title: Critères
+---
 
 :::info
 
@@ -87,4 +86,3 @@ Référencez les critères dans la liste à l’aide de l’identifiant du bean 
 
 ```
 </br>
-

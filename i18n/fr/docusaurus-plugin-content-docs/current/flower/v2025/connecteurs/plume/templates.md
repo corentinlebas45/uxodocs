@@ -1,8 +1,7 @@
-+++
-date = "2003-03-28T13:20:01+02:00"
-title = "Modèles"
-intro = "Plume s'appuie sur une logique de modèles pour aider les utilisateurs à rédiger leurs emails."
-+++
+---
+title: Modèles
+intro: Plume s'appuie sur une logique de modèles pour aider les utilisateurs à rédiger leurs emails.
+---
 
 Ces modèles sont déterminés à partir d'une recherche de document de classe `Template` (cette classe peut être modifiée par la propriété `flower.template.class`).
 Les modèles doivent donc être accessibles aux utilisateurs utilisant Plume.

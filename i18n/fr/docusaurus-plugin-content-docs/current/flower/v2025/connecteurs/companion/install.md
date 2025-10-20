@@ -1,7 +1,6 @@
-+++
-date = "2001-03-28T13:20:01+02:00"
-title = "Installation"
-+++
+---
+title: Installation
+---
 
 # Installer FlowerDocs Companion
 

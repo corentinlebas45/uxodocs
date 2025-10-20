@@ -1,8 +1,7 @@
-+++
-date = "2018-03-07T13:20:01+02:00"
-title = "Textuel"
-description = "Utilisez les tags textuels."
-+++
+---
+title: Textuel
+description: Utilisez les tags textuels.
+---
 
 Le modèle de données FlowerDocs offre la possibilité de définir des tags textuels : 
 
@@ -15,7 +14,6 @@ Le modèle de données FlowerDocs offre la possibilité de définir des tags tex
 Ce type permet la saisie libre d'une chaîne de caractère.
 Sur ce type de tag, il est possible d'ajouter une expression régulière dans l'attribut `pattern` afin de valider la saisie de l'utilisateur.
 
-[shortcode]
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <ns2:TagClass xmlns="https://flower.com/docs/domain/common" xmlns:ns2="https://flower.com/docs/domain/tagclass"
@@ -25,13 +23,11 @@ Sur ce type de tag, il est possible d'ajouter une expression régulière dans l'
     <ns2:pattern>[A-Z]*</ns2:pattern>
 </ns2:TagClass>
 ```
-[shortcode]
 
 # Texte
 
 Ce type permet la saisie libre dans une zone de texte.
 
-[shortcode]
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <ns2:TagClass xmlns="https://flower.com/docs/domain/common" xmlns:ns2="https://flower.com/docs/domain/tagclass"
@@ -40,4 +36,3 @@ Ce type permet la saisie libre dans une zone de texte.
     <ns2:type>TEXT</ns2:type>
 </ns2:TagClass>
 ```
-[shortcode]

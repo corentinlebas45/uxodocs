@@ -1,8 +1,7 @@
-+++
-date= "2001-03-01"
-title = "DOMOffMenu"
-intro = "OffMenu affichant un contenu DOM."
-+++
+---
+title: DOMOffMenu
+intro: OffMenu affichant un contenu DOM.
+---
 
 Les OffMenus de type Contenu DOM permettent d'ajouter un élément DOM dans le menu.
 

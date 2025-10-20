@@ -1,0 +1,446 @@
+###################################################################
+######################## default configuration ####################
+
+baseURL = "/"
+removePathAccents = true
+title = "ARender | View any document anywhere"
+theme = "educenter-hugo"
+MetaDataFormat = "yaml"
+enableGitInfo = true
+enableRobotsTXT = "true"
+
+#################################################################
+########################### Languages ###########################
+[languages.en]
+languageName = "English"
+languageCode = "en-us"
+weight = 1
+home = "Home"
+
+[languages.fr]
+languageName = "Français"
+languageCode = "fr-fr"
+weight = 2
+home = "Accueil"
+
+
+#Génère automatiquement le menu à partir des folder
+# SectionPagesMenu = "main"
+DefaultContentLanguage = "en"
+
+# Define the number of posts per page
+Paginate = 10
+
+# post excerpt
+summaryLength = "10"
+
+[markup]
+    [markup.highlight]
+        codeFences = true
+        guessSyntax = false
+        lineNoStart = 1
+        lineNos = false
+        lineNumbersInTable = true
+        noClasses = true
+        style = "manni"
+        tabWidth = 4
+
+    [markup.goldmark]
+        [markup.goldmark.renderer]
+            unsafe = true  # to allow Goldmark to render HTML content in md files.
+
+# For search functionality
+#[outputs]
+#    home = [ "HTML", "RSS", "JSON"]
+
+[sitemap]
+    changefreq = "monthly"
+    filename = "sitemap.xml"
+    priority = 0.5
+
+################################################################
+########################### pluggins ###########################
+
+# CSS Plugins
+[[params.plugins.css]]
+link = "plugins/bootstrap/bootstrap.min.css"
+[[params.plugins.css]]
+link = "plugins/slick/slick.css" #for carousel
+[[params.plugins.css]]
+link = "plugins/animate/animate.css"
+[[params.plugins.css]]
+link = "plugins/venobox/venobox.css" #for responsive jQuery
+[[params.plugins.css]]
+link = "plugins/themify-icons/themify-icons.css"
+
+# JS Plugins
+[[params.plugins.js]]
+link = "js/jquery/jquery-1.12.4.js"
+[[params.plugins.js]]
+link = "plugins/bootstrap/bootstrap.min.js"
+[[params.plugins.js]]
+link = "plugins/slick/slick.min.js"
+[[params.plugins.js]]
+link = "plugins/venobox/venobox.min.js"
+[[params.plugins.js]]
+link = "plugins/filterizr/jquery.filterizr.min.js"
+[[params.plugins.js]]
+link = "plugins/google-map/gmap.js"
+
+[[params.plugins.js]]
+link = "js/clipboard/clipboard.min.js"
+[[params.plugins.js]]
+link = "js/clipboard/clipboard.js"
+[[params.plugins.js]]
+link = "js/wow/wow.min.js"
+[[params.plugins.js]]
+link = "js/match-height/jquery.matchHeight-min.js"
+[[params.plugins.js]]
+link = "js/jquery/jquery-ui.js"
+[[params.plugins.js]]
+link = "js/dot/dot-script.js"
+
+[[params.customJS]]
+link = "js/custom_functions.js"
+
+##################################################################
+########################### navigation ###########################
+
+[menu]
+[[menu.main]]
+    name = "Free Trial"
+    url = "https://www.arender.io/free-trial"
+    weight = 10
+
+ [[menu.main]]
+    name = "Solutions"
+    identifier = "Solutions"
+    url = "https://www.arender.io/solutions"
+    weight = 20
+
+        [[menu.main]]
+            name = "Corporate Risk & Compliance"
+            parent = "Solutions"
+            url = "https://www.arender.io/solutions/compliance"
+            weight = 10
+
+        [[menu.main]]
+            name = "PII"
+            parent = "Solutions"
+            url = "https://www.arender.io/solutions/secure-pii"
+            weight = 20
+
+        [[menu.main]]
+            name = "Enterprise Content Management"
+            parent = "Solutions"
+            url = "https://www.arender.io/solutions/enterprise-content-management"
+            weight = 30
+
+        [[menu.main]]
+            name = "Remote Work"
+            parent = "Solutions"
+            url = "https://www.arender.io/solutions/remote-work"
+            weight = 40
+
+[[menu.main]]
+    name = "Platform"
+    identifier = "Platform"
+    url = "https://www.arender.io/platform/how-does-it-work"
+    weight = 30
+
+    [[menu.main]]
+        name = "How Does it Work?"
+        parent = "Platform"
+        url = "https://www.arender.io/platform/how-does-it-work"
+        weight = 10
+
+     [[menu.main]]
+        name = "Features"
+        parent = "Platform"
+        url = "https://www.arender.io/features"
+        weight = 20
+
+    [[menu.main]]
+        name = "Integrations"
+        parent = "Platform"
+        url = "https://www.arender.io/integrations"
+        weight = 30
+
+[[menu.main]]
+    name = "Resources"
+    identifier = "Resources"
+    url = "https://www.arender.io/resources"
+    weight = 40
+
+    [[menu.main]]
+        name = "Resources Library"
+        parent = "Resources"
+        url = "https://www.arender.io/resources"
+        weight = 10
+
+     [[menu.main]]
+        name = "Blog"
+        parent = "Resources"
+        url = "https://hub.arender.io/en"
+        weight = 20
+
+    [[menu.main]]
+        name = "Product Updates"
+        parent = "Resources"
+        url = "https://hub.arender.io/technical-blog"
+        weight = 30
+
+    [[menu.main]]
+        name = "Documentation"
+        parent = "Resources"
+        url = "https://docs.arender.io/"
+        weight = 40
+
+     [[menu.main]]
+        name = "Customer Stories "
+        parent = "Resources"
+        url = "https://www.arender.io/customers"
+        weight = 50
+
+    [[menu.main]]
+        name = "Download"
+        parent = "Resources"
+        url = "https://www.arender.io/download"
+        weight = 60
+
+
+[[menu.main]]
+    name = "Partners"
+    identifier = "Partners"
+    url = "https://www.arender.io/partners"
+    weight = 50
+
+    [[menu.main]]
+        name = "Become a Partner"
+        parent = "Partners"
+        url = "https://www.arender.io/become-a-partner"
+        weight = 30
+
+
+[[menu.main]]
+    name = "Company"
+    identifier = "Company"
+    url = "https://www.arender.io/company"
+    weight = 60
+
+    [[menu.main]]
+        name = "About ARender"
+        parent = "Company"
+        url = "https://www.arender.io/company"
+        weight = 10
+
+    [[menu.main]]
+        name = "Contact us"
+        url = "https://www.arender.io/contact"
+        parent = "Company"
+        weight = 20
+
+# [[menu.documentation]]
+# name = "Try online"
+# url = "https://www.arender.io/free-trial"
+# weight = 1
+
+# [[menu.documentation]]
+# name = "All documentations"
+# url = "https://docs.arender.io/"
+# weight = 2
+
+# Footer
+
+# [[menu.footer]]
+# name = "News & Updates"
+# url = "news-and-updates"
+# weight = 1
+
+# [[menu.footer]]
+# name = "Our offer"
+# url = "offer"
+# weight = 2
+
+# [[menu.footer]]
+# name = "Technical blog"
+# url = "technical-blog"
+# weight = 3
+
+[[menu.footer]]
+name = "Technical FAQ"
+url = "https://docs.arender.io/faq/"
+weight = 3
+
+[[menu.footer]]
+name = "User License Agreement"
+url = "https://www.arender.io/user-license-agreement"
+weight = 4
+
+[[menu.footer]]
+name = "Sitemap"
+url = "https://www.arender.io/sitemap"
+weight = 5
+
+
+[[menu.company]]
+name = "About ARender"
+url = "https://www.arender.io/company"
+weight = 10
+
+[[menu.company]]
+name = "Our partners"
+url = "https://www.arender.io/partners"
+weight = 20
+
+[[menu.company]]
+name = "Free Trial"
+url = "https://www.arender.io/free-trial"
+weight = 30
+
+[[menu.company]]
+name = "Contact us"
+url = "https://www.arender.io/contact"
+weight = 40
+
+
+[[menu.resources]]
+name = "Resource Library"
+url = "https://www.arender.io/resources"
+weight = 10
+
+[[menu.resources]]
+name = "Blog"
+url = "https://hub.arender.io/en"
+weight = 20
+
+[[menu.resources]]
+name = "Customer Stories"
+url = "https://www.arender.io/customers"
+weight = 30
+
+[[menu.resources]]
+name = "Product Updates"
+url = "https://hub.arender.io/technical-blog"
+weight = 40
+
+
+
+[[menu.products]]
+name = "Flowerdocs"
+URL = "https://flowerdocs.com/"
+weight = 5
+
+[[menu.products]]
+name = "Fast2"
+URL = "https://fast2.tech/"
+weight = 10
+
+##########################################################################
+########################### default parameters ###########################
+
+[params]
+    favicon = "images/favicon.png"
+    logo = "images/logo-white.png"
+
+    # Meta data
+    description = "Find out how ARender can help you solve all your document viewing issues. Large volumes, security, editing, annotating... In your own hands."
+    author = "Arondor"
+    #subtitle = "The fastest, most advanced document viewer!"
+
+    # Contact info
+    country = "France"
+    address = "24/26 Rue de la Pépinière, 75008 Paris"
+    mobile = "+33 1 79 97 21 41"
+    email = "arender-sales@arondor.com"
+
+    # Google Analitycs
+    google_analitycs_id = "UA-86567727-5" # your id - Old website id : UA-86567727-4
+
+    # top header (avec adresse + liens sociaux affichés)
+    #top_header = true
+
+    # Preloader
+    # [params.preloader]
+    # enable = false
+    # preloader = "images/preloader.gif" # use jpg, png, svg or gif format.
+
+    #Pour afficher Home dans le menu (désactivé), et dans le fil d'Arianne
+    home = "Home"
+
+    copyright = "© 2020 ARender. All Rights Reserved."
+    hugo_copyright = "Hugo theme by [themefisher](https://themefisher.com)"
+    legal_notice_url = "[Legal notice](/legal-notice)"
+
+    
+
+[params.USA]
+enable = true
+country = "USA"
+address = "55 E 59th St - New York, NY 10022"
+mobile = "+1 302-467-2375"
+email = "arondor.us@arondor.com"
+
+[params.source]
+url = "https://bitbucket.org/arondor/arender-documentation/src/develop/content/"
+display = false
+
+[params.documentation]
+bg_image = "/images/bg/bg-documentation.jpg"
+
+[params.techblog]
+bg_image = "/images/bg/ian-taylor-tZnU5HvRIjs-unsplash.jpg"
+
+# Subscription
+[params.subscription]
+# removing newsletter in footer
+enable = false
+
+# mailchimp subsciption
+# mailchimp_form_action = "https://gmail.us4.list-manage.com/subscribe/post?u=463ee871f45d2d93748e77cad&amp;id=a0a2c6d074" # replace this url with yours
+# mailchimp_form_name = "b_463ee871f45d2d93748e77cad_a0a2c6d074" # replace this code with yours
+
+
+# google map
+[params.map]
+enable = false
+#gmap_api = "https://maps.googleapis.com/maps/api/js?key=AIzaSyBu5nZKbeK-WHQ70oqOWo-_4VmwOwKP9YQ"
+#map_latitude = "34.0937458"
+#map_longitude = "-118.3614978"
+#map_marker = "images/marker.png"
+
+
+
+
+#google_fonts = [
+#    ["Poppins", "400, 700"],
+#    ["Raleway", "400, 400i, 700, 700i"]
+#]
+#heading_font = "Poppins"
+#body_font = "Raleway"
+#
+#background_color_class = "bg-black"
+
+
+##############################################################
+########################### Social ###########################
+
+[[params.social]]
+title = "facebook"
+icon = "ti-facebook"
+link = "https://www.facebook.com/Arondor/"
+
+[[params.social]]
+title = "twitter"
+icon = "ti-twitter-alt"
+link = "https://twitter.com/ARender_"
+
+[[params.social]]
+title = "linkedin"
+icon = "ti-linkedin"
+link = "https://www.linkedin.com/company/arender"
+
+[[params.social]]
+title = "youtube"
+icon = "ti-youtube"
+link = "https://www.youtube.com/channel/UCABFiFKNsT35Yf_eZ0qA1oA/videos"

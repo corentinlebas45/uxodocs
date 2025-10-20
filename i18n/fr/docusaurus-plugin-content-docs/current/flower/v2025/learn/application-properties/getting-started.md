@@ -1,8 +1,7 @@
-+++
-date = "2000-01-01T12:20:01+02:00"
-title = "Getting Started"
-description= "Découvrez les différentes possibilités de personnaliser le logo de l'application"
-+++
+---
+title: Getting Started
+description: Découvrez les différentes possibilités de personnaliser le logo de l'application
+---
 
 # Objectif 
 

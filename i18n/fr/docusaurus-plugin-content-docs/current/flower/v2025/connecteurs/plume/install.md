@@ -1,8 +1,7 @@
-+++
-date = "2001-03-28T13:20:01+02:00"
-title = "Installation"
-intro = "Le plugin Plume doit faire partie du même domaine HTTP qu'ARender."
-+++
+---
+title: Installation
+intro: Le plugin Plume doit faire partie du même domaine HTTP qu'ARender.
+---
 
 Deux types de packaging sont fournis : 
 

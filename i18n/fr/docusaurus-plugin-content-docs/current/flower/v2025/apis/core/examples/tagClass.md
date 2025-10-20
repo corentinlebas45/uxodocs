@@ -1,8 +1,7 @@
-+++
-date = "2001-04-29T13:30:01+01:02"
-title = "Manipuler une classe de tags"
-description = "Créez, récupérez, modifiez, supprimez vos classes de tags"
-+++
+---
+title: Manipuler une classe de tags
+description: Créez, récupérez, modifiez, supprimez vos classes de tags
+---
 
 Le service `TagClassService` expose toutes les opérations disponibles autour des composants de type `TagClass`.
 
@@ -10,18 +9,14 @@ Le service `TagClassService` expose toutes les opérations disponibles autour de
 
 Les exemples ci-dessous indiquent comment récupérer toutes les classes de tags.
 
-[shortcode]
-[shortcode]
 GET {{core}}/rest/tagclass HTTP/1.1
 
 -- Paramètre d'URL -- 
 core: host de FlowerDocs core
 
 -- Headers -- 
-token: {{token}}
+token: {token}
 
-[shortcode]
-[shortcode]
 	@Autowired
     private TagClassService tcService;
 
@@ -29,22 +24,18 @@ token: {{token}}
     {
         return tcService.getAll();
     }
-[shortcode]
-[shortcode]
 
 # Création de classe de tags
 
 Les exemples ci-dessous indiquent comment créer une classe de tags. 
 
-[shortcode]
-[shortcode]
 POST {{core}}/rest/tagclass HTTP/1.1
 
 -- Paramètre d'URL -- 
 core: host de FlowerDocs core
 
 -- Headers -- 
-token: {{token}}
+token: {token}
 Content-Type: application/json
 
 -- Body (json) --
@@ -70,8 +61,6 @@ Content-Type: application/json
     }
 ]
 
-[shortcode]
-[shortcode]
 	@Autowired
     private TagClassService tcService;
     
@@ -94,15 +83,11 @@ Content-Type: application/json
 
         return tcService.create(vfcList);
     }
-[shortcode]
-[shortcode]
 
 # Modification de classe de tags
 
 Les exemples ci-dessous indiquent comment modifier une classe de tags.
 
-[shortcode]
-[shortcode]
 POST {{core}}/rest/tagclass/{ids} HTTP/1.1
 
 -- Paramètre d'URL -- 
@@ -111,7 +96,7 @@ ids : liste des identifiants de classe de tags à mettre à jour, séparés par 
 
 -- Headers --
 
-token: {{token}}
+token: {token}
 Content-Type: application/json
 
 -- Body (json) --
@@ -137,8 +122,6 @@ Content-Type: application/json
     }
 ]
 
-[shortcode]
-[shortcode]
 	@Autowired
     private TagclassService tcService;
 
@@ -158,15 +141,11 @@ Content-Type: application/json
 
         return tcService.create(tcList);
     }
-[shortcode]
-[shortcode]
 
 # Recherche de classe de tags
 
 Les exemples ci-dessous indiquent comment récupérer une classe de tags à partir d'une liste d'identifiants.
 
-[shortcode]
-[shortcode]
 GET {{core}}/rest/tagclass/{ids} HTTP/1.1
 
 -- Paramètre d'URL -- 
@@ -174,10 +153,8 @@ core: host de FlowerDocs core
 ids : liste des identifiants de classe de tags à récupérer, séparés par des virgules
 
 -- Headers --
-token: {{token}}
+token: {token}
 
-[shortcode]
-[shortcode]
 	@Autowired
 	private TagClassService tcService;
 	
@@ -186,15 +163,11 @@ token: {{token}}
         List<Id> ids = Lists.newArrayList(new Id("Test"));
         return tcService.get(ids);
     }
-[shortcode]
-[shortcode]
 
 # Suppression de classe de tags
 
 Les exemples ci-dessous indiquent comment supprimer une liste de classes de tags à partir d'une liste d'identifiants.
 
-[shortcode]
-[shortcode]
 DELETE {{core}}/rest/tagclass/{ids} HTTP/1.1
 
 -- Paramètre d'URL -- 
@@ -202,10 +175,8 @@ core: host de FlowerDocs core
 ids : liste des identifiants de classe de tags à supprimer, séparés par des virgules
 
 -- Headers --
-token: {{token}}
+token: {token}
 
-[shortcode]
-[shortcode]
 	@Autowired
 	private TagClassService tcService;
 	
@@ -215,5 +186,3 @@ token: {{token}}
         List<Id> ids = Lists.newArrayList(new Id("Test"));
         tcService.delete(ids);
     }
-[shortcode]
-[shortcode]

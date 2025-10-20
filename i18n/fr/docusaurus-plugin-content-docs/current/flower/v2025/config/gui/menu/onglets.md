@@ -1,7 +1,6 @@
-+++
-date = "2001-03-01T13:20:01+02:00"
-title = "Onglets"
-+++
+---
+title: Onglets
+---
 
 # Les différents types d'onglets
 
@@ -47,7 +46,6 @@ Après avoir configuré une recherche pour une équipe d'utilisateurs, les utili
 
 La recherche mentionnée doit être définie dans un document de classe `GUIConfiguration` puis associée à une équipe en ajoutant la propriété `tab.component.resolve=<nom de la recherche>`. 
 
-[shortcode]
 ```xml
 <bean id="agentFolderSearch" class="com.flower.docs.domain.search.Search">
   <property name="category">
@@ -93,7 +91,6 @@ La recherche mentionnée doit être définie dans un document de classe `GUIConf
   </property>
 </bean>
 ```
-[shortcode]
 
 
 # Ordre des onglets 

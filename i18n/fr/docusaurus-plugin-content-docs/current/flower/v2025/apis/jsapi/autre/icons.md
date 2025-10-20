@@ -1,8 +1,8 @@
-+++
-date = "2000-02-01"
-title = "Icônes"
-Description = "Modifier l'icône des composants en JavaScript"
-+++
+---
+title: Icônes
+Description: Modifier l'icône des composants en JavaScript
+---
+
 :::info
 Chaque catégorie de composant dispose de sa propre icône dans FlowerDocs GUI. Pour les tâches, l'icône peut être définie par classe pour disposer d'une icône différente en fonction de l'étape utilisateur.
 :::

@@ -1,0 +1,20 @@
+.demo-container {
+    height: 100vh;
+    background-color: $secondary-color;
+
+    .demo {
+        width: 100% !important;
+        height: calc(100vh - 116px) !important;
+        margin-top: 116px;
+
+        @include desktop-lg {
+            height: calc(100vh - 134px) !important;
+            margin-top: 134px;
+        }
+
+        @include desktop {
+            height: calc(100vh - 54px) !important;
+            margin-top: 54px;
+        }
+    }
+}

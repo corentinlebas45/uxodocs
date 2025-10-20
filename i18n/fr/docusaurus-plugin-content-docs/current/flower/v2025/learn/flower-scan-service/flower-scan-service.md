@@ -1,8 +1,7 @@
-+++
-date = "2000-02-01T12:20:01+02:00"
-title = "FlowerScan Service"
-description= "Intégration du module complémentaire `FlowerScan Service`."
-+++
+---
+title: FlowerScan Service
+description: Intégration du module complémentaire `FlowerScan Service`.
+---
 
 # Objectif
 

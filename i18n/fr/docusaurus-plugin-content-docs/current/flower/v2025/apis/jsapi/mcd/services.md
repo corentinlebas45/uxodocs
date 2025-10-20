@@ -1,8 +1,7 @@
-+++
-date = "2001-03-29T13:20:01+02:00"
-title = "Les services"
-description = "Consommer les services FlowerDocs depuis l'API JS"
-+++
+---
+title: Les services
+description: Consommer les services FlowerDocs depuis l'API JS
+---
 
 :::info
 Cette section décrit comment consommer les services exposés par FlowerDocs directement depuis l'API JS.
@@ -35,8 +34,6 @@ Le premier paramètre de cette fonction correspond à un tableau des composants 
 Le paramètre `successCallback` est une fonction appelée de manière asynchrone en cas de succès de la création avec en paramètre le tableau des composants créés.
 Le troisième paramètre `errorCallback` est une fonction facultative exécutée si une erreur survient.
 
-[shortcode]
-[shortcode]
 var folder = new Folder();
 folder.setName('Mon dossier');
 folder.setClassId('Folder');
@@ -45,8 +42,6 @@ JSAPI.get().folder().create([folder], function (created) {
 }, function(error){
   console.error(error);
 });
-[shortcode]
-[shortcode]
 
 # Récupérer des composants
 
@@ -54,15 +49,11 @@ Un service de composant permet de récupérer, à partir des services exposés p
 Le premier paramètre `ids` à fournir est un tableau des identifiants des composants à récupérer. 
 Les deux autres paramètres de type fonction peuvent être fournis pour réagir respectivement au succès et à une erreur de l'opération.
 
-[shortcode]
-[shortcode]
 JSAPI.get().document().get([id], function (documents) {
   console.info('Le document ' + documents[0].getName() + ' a été récupéré');
 }, function(error){
   console.error(error);
 });
-[shortcode]
-[shortcode]
 
 Un composant peut également être récupéré de manière dynamique en fonction de sa catégorie : 
 
@@ -82,31 +73,23 @@ Des composants peuvent être recherchés à l'aide des services de composants et
 Le paramètre `successCallback` est une fonction appelée une fois que la recherche a abouti avec le tableau des résultats trouvés en accord avec la requête fournie.
 De manière optionnelle, la fonction `errorCallback` peut être passée en paramètre pour réagir à une éventuelle erreur.
 
-[shortcode]
-[shortcode]
 var request = new SearchRequest();
 JSAPI.get().task().search(request, function(results) {
     console.info(results.length + ' résultats ont été récupérés');
     results.forEach(result => console.log(result.getId()));
 });
-[shortcode]
-[shortcode]
 
 # Mettre à jour des composants
 
 Tout comme les services de composants permettent la création de composants, il est possible de les utiliser pour mettre à jour des composants.
 Pour cela, la fonction `update(components, successCallback, errorCallback)` est exposée. Elle s'utilise de la même façon que la fonction de création. 
 
-[shortcode]
-[shortcode]
 JSAPI.get().document().get([id], function (documents) {
     documents[0].setName("updated");
     JSAPI.get().document().update([documents[0]], function (updated) {
         console.info('Le document ' + updated[0].getName() + ' a été mis à jour');
     });
 });
-[shortcode]
-[shortcode]
 
 
 # Supprimer des composants
@@ -117,10 +100,6 @@ Les deux autres paramètres de type fonction peuvent être fournis pour réagir 
 
 _**Attention** cette opération est irréversible_, elle doit donc être utilisée avec précaution.
 
-[shortcode]
-[shortcode]
 JSAPI.get().document().doDelete([id], function () {
     console.info('Le document ' + id + ' a été supprimé définitivement');
 });
-[shortcode]
-[shortcode]

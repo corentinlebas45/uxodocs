@@ -1,8 +1,7 @@
-+++
- date = "2020-02-01T13:20:01+02:00"
-title = "Utilisation de l'API JS au sein de la page"
-draft = true
-+++
+---
+title: Utilisation de l'API JS au sein de la page
+draft: true
+---
 
 # Embarquer l'API JS FlowerDocs au sein de la page
 
@@ -27,7 +26,6 @@ Vous pouvez restreindre les utilisateurs à ne pouvoir déposer qu'un unique fic
 
 <br/>
 Vous devriez avoir en script de votre page : 
-[shortcode]
 ```javascript
 Dropzone.autoDiscover = false;
 	$(function() {
@@ -40,7 +38,6 @@ Dropzone.autoDiscover = false;
 		return false;
 	}
 ```
-[shortcode]
 
 <br/>
 L'utilisateur est maintenant restreint, il peut toujours sélectionner un deuxième fichier mais celui-ci ne sera pas valide. Nous allons donc adapter notre script pour supprimer ce fichier invalide et informer l'utilisateur que le nombre maximum de fichier autorisé à été dépassé. Pour cela, nous devons nous abonner à l'évènement `maxfilesexceeded` de la dropzone: 
@@ -69,7 +66,6 @@ function maxFilesExceededNotification(){
 
 <br/>
 Le script de la page est maintenant : 
-[shortcode]
 ```javascript
 	Dropzone.autoDiscover = false;
 	$(function() {
@@ -91,7 +87,6 @@ Le script de la page est maintenant :
 		return false;
 	}
 ```
-[shortcode]
 
 ## Visualisation du document déposé avec ARender
 
@@ -125,7 +120,6 @@ Le script suivant permet de créer l'iframe ARender dans la page :
 
 <br/>
 Le script de la page est maintenant : 
-[shortcode]
 ```javascript
 	Dropzone.autoDiscover = false;
   	var ifrm = document.createElement("iframe");
@@ -160,7 +154,6 @@ Le script de la page est maintenant :
   		return false;
 	}
 ```
-[shortcode]
 
 Lorsque l'utilisateur dépose un fichier celui-ci s'ouvre à côté du formulaire dans ARender.
 
@@ -190,7 +183,6 @@ Maintenant que l'utilisateur a vérifié que le document déposé est le bon ain
 ```
 
 Le script de la page est maintenant : 
-[shortcode]
 ```javascript
 	Dropzone.autoDiscover = false;
   	var ifrm = document.createElement("iframe");
@@ -241,4 +233,3 @@ Le script de la page est maintenant :
 		return false;
 	}
 ```
-[shortcode]

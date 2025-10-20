@@ -1,8 +1,7 @@
-+++
-date = "2000-01-01T13:20:01+02:00"
-title = "Getting Started"
-intro = "Personnaliser l'interface graphique FlowerDocs avec l'API JS."
-+++
+---
+title: Getting Started
+intro: Personnaliser l'interface graphique FlowerDocs avec l'API JS.
+---
 
 L'interface graphique FlowerDocs peut être personnalisée à l'aide de scripts écrits en JavaScript. 
 Ces scripts permettent l'utilisation de la API JS afin d'enrichir et d'interagir avec l'interface.
@@ -23,5 +22,3 @@ __Scripts externes__
 Des scripts externes peuvent être chargés côté client en incluant des ressources WEB dont les URL sont concaténées dans la propriété  ``js.api.scripts`` (séparées par des ``,``). Les URL définies doivent être accessibles depuis les postes clients.
 
 Si ces scripts sont amenés à changer, les URL doivent être suffixées (par exemple avec ``?version``) afin de forcer le navigateur à les renouveler.
-
-

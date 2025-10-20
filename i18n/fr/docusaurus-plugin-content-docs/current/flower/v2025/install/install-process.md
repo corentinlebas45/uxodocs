@@ -1,10 +1,8 @@
-+++
-date = "2000-03-29T13:20:01+02:00"
-title = "Processus d'installation"
-+++
+---
+title: Processus d'installation
+---
 
 :::info
-Cette section décrit l'installation des applications FlowerDocs GUI, FlowerDocs Core et [shortcode]
 :::
 
 Dans la suite de cette page `${APP_HOME}` correspond au dossier dans lequel va être deployée chacune des application.
@@ -16,9 +14,7 @@ Dans la suite de cette page `${APP_HOME}` correspond au dossier dans lequel va �
 * Après avoir effectué les téléchargements mentionnés dans les prérequis, déposer l'application `flower-docs-gui-webapp-2025.2.0.jar` dans le dossier `${APP_HOME}`.
 * Ajouter le fichier de configuration `gui.properties` dans `${APP_HOME}`. 
 
-# [shortcode]
 
-* Après avoir effectué les téléchargements mentionnés dans les prérequis, déposer l'application `arondor-arender-hmi-spring-boot-[shortcode].jar` dans le dossier `${APP_HOME}`.
 * Ajouter un fichier `application.properties` avec les propriétés suivantes : 
 ```javascript
     spring.task.execution.pool.core-size=16
@@ -40,4 +36,4 @@ Veuillez noter que Hazelcast dans ARenderHMI avec FlowerDocs n'est pas fonctionn
 # FlowerDocs Core
 
 * Après avoir effectué les téléchargements mentionnés dans les prérequis, déposer l'application `flower-docs-core-webapp-2025.2.0.jar` dans le dossier `${APP_HOME}`.
-* Ajouter le fichier de configuration `core.properties` dans `${APP_HOME}`. 
+* Ajouter le fichier de configuration `core.properties` dans `${APP_HOME}`.

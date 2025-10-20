@@ -1,8 +1,7 @@
-+++
-date = "2001-04-29T13:30:01+01:02"
-title = "Manipuler les classes de dossiers"
-description = "Créez, récupérez, modifiez, supprimez vos classes de dossiers"
-+++
+---
+title: Manipuler les classes de dossiers
+description: Créez, récupérez, modifiez, supprimez vos classes de dossiers
+---
 
 Le service `FolderClassService` expose toutes les opérations disponibles autour des composants de type `FolderClass`.
 
@@ -16,18 +15,14 @@ Ici, il s'agit bien de dossiers dans le sens de dossiers physiques, et non pas d
 
 Les exemples ci-dessous indiquent comment récupérer la liste de toutes les classes de dossiers présentent sur le scope.
 
-[shortcode]
-[shortcode]
 GET {{core}}/rest/folderclass HTTP/1.1
 
 -- Paramètre d'URL -- 
 core: host de FlowerDocs core
 
 -- Headers -- 
-token: {{token}}
+token: {token}
 
-[shortcode]
-[shortcode]
 	@Autowired
     private FolderClassService folderClassService;
 
@@ -35,15 +30,11 @@ token: {{token}}
     {
         return folderClassService.getAll();
     }
-[shortcode]
-[shortcode]
 
 ## Récupération d'une liste définie de classes de dossiers
 
 Les exemples ci-dessous indiquent comment récupérer une liste de classes de dossiers à partir de leurs identifiants.
 
-[shortcode]
-[shortcode]
 GET {{core}}/rest/folderclass/{ids} HTTP/1.1
 
 -- Paramètre d'URL -- 
@@ -51,10 +42,8 @@ core: host de FlowerDocs core
 ids: liste d'identifiants de classes de dossiers, séparés par des virgules
 
 -- Headers -- 
-token: {{token}}
+token: {token}
 
-[shortcode]
-[shortcode]
 	@Autowired
     private FolderClassService folderClassService;
 
@@ -64,22 +53,18 @@ token: {{token}}
         folderClassesIds.add(new Id("folderClass2Id"));
         return folderClassService.get(folderClassesIds);
     }
-[shortcode]
-[shortcode]
 
 # Création de classes de dossiers
 
 Les exemples ci-dessous indiquent comment créer une classe de dossier. 
 
-[shortcode]
-[shortcode]
 POST {{core}}/rest/folderclass HTTP/1.1
 
 -- Paramètre d'URL -- 
 core: host de FlowerDocs core
 
 -- Headers -- 
-token: {{token}}
+token: {token}
 Content-Type: application/json
 
 -- Body (json) --
@@ -113,8 +98,6 @@ Content-Type: application/json
         "category": "FOLDER"
     }
 ]
-[shortcode]
-[shortcode]
 	@Autowired
     private FolderClassService folderClassService;
     
@@ -145,15 +128,11 @@ Content-Type: application/json
 
         folderClassService.create(folderClasses);
     }
-[shortcode]
-[shortcode]
 
 # Modification de classes de dossiers
 
 Les exemples ci-dessous indiquent comment modifier une classe de dossier.
 
-[shortcode]
-[shortcode]
 POST {{core}}/rest/folderclass/{ids} HTTP/1.1
 
 -- Paramètre d'URL -- 
@@ -161,7 +140,7 @@ core: host de FlowerDocs core
 ids : liste des identifiants de classe de dossiers à mettre à jour, séparés par des virgules
 
 -- Headers --
-token: {{token}}
+token: {token}
 Content-Type: application/json
 
 -- Body (json) --
@@ -203,8 +182,6 @@ Content-Type: application/json
         "category": "FOLDER"
     }
 ]
-[shortcode]
-[shortcode]
 	@Autowired
     private FolderClassService folderClassService;
     
@@ -221,8 +198,6 @@ Content-Type: application/json
 
         return folderClassService.update(folderClasses);
     }
-[shortcode]
-[shortcode]
 
 :::warning
 En utilisant le service REST, les informations non renseignées seront vidées : il faut envoyer la totalité de la classe de dossier et pas seulement les informations à modifier. 
@@ -232,8 +207,6 @@ En utilisant le service REST, les informations non renseignées seront vidées :
 
 Les exemples ci-dessous indiquent comment supprimer une liste de classes de dossiers.
 
-[shortcode]
-[shortcode]
 DELETE {{core}}/rest/folderclass/{ids} HTTP/1.1
 
 -- Paramètre d'URL -- 
@@ -241,10 +214,8 @@ core: host de FlowerDocs core
 ids : liste des identifiants de classe de dossiers à supprimer, séparés par des virgules
 
 -- Headers --
-token: {{token}}
+token: {token}
 
-[shortcode]
-[shortcode]
 	@Autowired
     private FolderClassService folderClassService;
 	
@@ -253,8 +224,6 @@ token: {{token}}
         List<Id> folderClassesIds = Lists.newArrayList(new Id("folderClassId"));
         folderClassService.delete(folderClassesIds);
     }
-[shortcode]
-[shortcode]
 
 :::warning
 La suppression ne fait aucun contrôle : il faut donc vérifier qu'il n'y a pas d'instances en cours avant la suppression d'une classe de dossiers.

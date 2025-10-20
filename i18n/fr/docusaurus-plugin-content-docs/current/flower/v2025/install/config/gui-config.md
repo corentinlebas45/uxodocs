@@ -1,7 +1,6 @@
-+++
-date = "2000-03-30T13:20:01+02:00"
-title = "Configuration GUI"
-+++
+---
+title: Configuration GUI
+---
 
 Cette partie décrit les différentes configurations côté FlowerDocs GUI à définir au sein du fichier `gui.properties` de l'application.
 
@@ -12,7 +11,6 @@ Cette partie décrit les différentes configurations côté FlowerDocs GUI à d�
 |---------------------------|-----------------------------------------------------------------------|
 |system.admin.username  	|Identifiant du compte système											|
 |system.admin.password  	|Mot de passe du compte système, peut être chiffré via un secret		|
-|token.key					|Token partagé entre FlowerDocs Core, FlowerDocs GUI et  [shortcode]	|
 |secret						|Secret utilisé pour encoder le mot de passe *(optionnel)*				|
 |gui.context				|Contexte de l'application												|
 |gui.password.change.enabled|Active la possibilité de modifier le mot de passe sur la page de connexion |

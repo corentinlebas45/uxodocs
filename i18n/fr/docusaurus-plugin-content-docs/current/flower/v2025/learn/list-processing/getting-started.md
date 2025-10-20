@@ -1,7 +1,6 @@
-+++
- date = "2020-01-01T11:20:01+02:00"
-title = "Getting Started"
-+++
+---
+title: Getting Started
+---
 
 # Objectifs
 
@@ -32,4 +31,4 @@ Dans le cadre de ce tutoriel nous nous appuyerons sur les composants suivants :
 	
 :::info
 Afin de faciliter l'accès au dossier virtuel, ajoutez le en onglet. 
-:::	
+:::

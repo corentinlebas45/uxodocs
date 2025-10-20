@@ -1,7 +1,6 @@
-+++
-date = "2020-01-01T12:20:01+02:00"
-title = "Getting Started"
-+++
+---
+title: Getting Started
+---
 
 # Objectifs
 

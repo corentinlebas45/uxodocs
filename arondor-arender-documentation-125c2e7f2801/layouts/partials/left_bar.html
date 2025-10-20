@@ -1,0 +1,15 @@
+{{ $currentPage := . }}
+{{ $allSections := .Site.Sections }}
+
+<nav class="panel sidebar-menu left-sidebar affix left-sidebar-menu" data-spy="affix">
+	<div class="panel-heading">
+		<h3 class="panel-title">Documentation</h3>
+	</div>
+	<div class="panel-body">
+		<div id="left-sidebar" class="nav flex-column" style="padding-left:0;">
+			{{ range $allSections }}
+			{{ partial "left_bar_section.html" (dict "item" . "currentPage" $currentPage "currentURL" .Permalink) }}
+			{{ end }}
+		</div>
+	</div>
+</nav>

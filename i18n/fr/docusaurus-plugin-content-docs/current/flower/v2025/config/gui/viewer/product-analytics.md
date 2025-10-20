@@ -1,8 +1,7 @@
-+++
-date = "2005-07-28T13:20:01+02:00"
-title = "Product Analytics"
-description = "Permette à Uxopian de comprendre comment ARender est utilisé"
-+++
+---
+title: Product Analytics
+description: Permette à Uxopian de comprendre comment ARender est utilisé
+---
 
 # Principe
  Depuis sa version 2025.1.0, FlowerDocs intègre ARender 2023.8.0 (et plus). Dans cette version d'ARender et les suivantes, une nouvelle fonctionnalité  alimentée par MixPanel, Product Analytics, à été mise en place.
@@ -26,4 +25,3 @@ Les utilisateurs peuvent être assurés que leurs informations sensibles restent
 Pour désactiver le Product Analytics, il faut ajouter la propriété ``arender.data.analytics.enabled=false`` dans le profil.
 
 La documentation sur la surcharge de profil peut-être trouvé [ici](broken-link.md).
-

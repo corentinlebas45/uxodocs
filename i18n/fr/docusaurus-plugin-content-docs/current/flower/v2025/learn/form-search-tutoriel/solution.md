@@ -1,7 +1,6 @@
-+++
-date = "2020-07-07T12:20:01+02:00"
-title = "Exemple complet"
-+++
+---
+title: Exemple complet
+---
 
 Rappel :  Accédez à l'éditeur via le menu **Administration > Configuration > XML** : 
 
@@ -17,7 +16,6 @@ Rappel :  Accédez à l'éditeur via le menu **Administration > Configuration > 
 
 </br>
 
-[shortcode]
 
 ```xml 
 
@@ -186,11 +184,9 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.
 </beans>
 
 ```
-[shortcode]
 
 </br>
 
 <!--:::info
 Retrouvez le module de scope correspondant à cette formation [ici](broken-link.md) 
 :::-->
-

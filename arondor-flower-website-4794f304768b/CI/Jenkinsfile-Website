@@ -1,0 +1,28 @@
+node('codecept') {
+	properties([disableConcurrentBuilds()])
+	
+    try {
+        stage('Install Hugo') {
+			sh 'wget -O /tmp/hugo.tar.gz https://github.com/gohugoio/hugo/releases/download/v0.59.0/hugo_extended_0.59.0_Linux-64bit.tar.gz'
+			sh 'tar -zxvf /tmp/hugo.tar.gz -C /tmp hugo'
+		}
+		stage('Build website') {
+			dir('website'){
+			    git branch:'develop-2.5.x', credentialsId:'arondor_git', url:'https://arondor_git@bitbucket.org/arondor/flower-website.git'
+				sh "/tmp/hugo --baseURL https://flowerdocs.com/ --destination website"
+			}
+		}
+		stage('Publish website to S3 bucket') {
+			dir('website'){
+				withAWS(credentials:'flower-aws') {
+				    s3Upload(file:'website', bucket:'flower-website')
+				}
+			}
+		}
+		
+    }catch(err){
+		echo "Error detected during build: "+err.getMessage();	 	
+	}finally {
+        cleanWs()
+    }
+}

@@ -1,8 +1,7 @@
-+++
-date = "2005-04-28T13:20:01+02:00"
-title = "Traitement en série de tâches"
-description = "Traiter une liste de tâches sans revenir sur la recherche"
-+++
+---
+title: Traitement en série de tâches
+description: Traiter une liste de tâches sans revenir sur la recherche
+---
 
 Pour un traitement plus performant d'une liste de tâches, il est possible de définir des sessions de traitement en série. Au cours de ces sessions, l'utilisateur va passer à la tâche suivante sans revenir sur la recherche ayant initiée la session. 
 
@@ -24,4 +23,4 @@ Cependant, l'API JS permet de modifier la session en exposant les méthodes suiv
 |getComponentSource()                    | Récupère le composant à l'origine de la session de traitement      |        
 |getLast()                               | Récupère l'identifiant du dernier composant ouvert au cours de la session de traitement 	|        
 |setEnabled(boolean enabled)             | Permet de désactiver la session de traitement				      |        
-|isEnabled()                             | Détermine si la session de traitement est active ou inactive       |        
+|isEnabled()                             | Détermine si la session de traitement est active ou inactive       |

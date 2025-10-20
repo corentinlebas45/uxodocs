@@ -1,8 +1,7 @@
-+++
-date = "2020-06-06T12:20:01+02:00"
-title = "Association"
-root = "false"
-+++
+---
+title: Association
+root: false
+---
 
 {{%info%}}
 

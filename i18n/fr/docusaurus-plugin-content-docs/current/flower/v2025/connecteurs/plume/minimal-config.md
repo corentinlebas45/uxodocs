@@ -1,8 +1,7 @@
-+++
-date = "2001-03-28T14:20:01+02:00"
-title = "Configuration minimale"
-intro = ""
-+++
+---
+title: Configuration minimale
+intro: 
+---
 
 :::info
 Cette documentation décrit les différents connecteurs disponibles pour Plume. Il faut à minima en définir un dans le fichier ``plume.properties`` présent dans le dossier ``plume.config.dir`` renseigné dans la partie précédente.
@@ -59,4 +58,4 @@ Afin d'activer Plume dans ARender, il faut  :
 	plugins.routes.plume.url=http://localhost:8080/plume
 ```
 
-Pour plus d'informations, concernant l'utilisation de plugin de FlowerDocs GUI, la documentation est disponible  [ici](broken-link.md). 
+Pour plus d'informations, concernant l'utilisation de plugin de FlowerDocs GUI, la documentation est disponible  [ici](broken-link.md).

@@ -1,8 +1,7 @@
-+++
-date = "2005-08-28T13:20:01+02:00"
-title = "Modèles de tampons"
-description = "Collaborer autour des documents à l'aide des annotations."
-+++
+---
+title: Modèles de tampons
+description: Collaborer autour des documents à l'aide des annotations.
+---
 
 # Principe
 
@@ -32,8 +31,6 @@ Les administrateurs configurent les modèles de tampons qui sont accessibles à 
 
 Le tag `User` est renseigné avec l'identifiant de l'équipe d'utilisateurs pouvant utiliser le modèle créé.
 
-[shortcode]
-[shortcode]
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <annotationTemplateCatalog>
     <annotationTemplates>
@@ -64,8 +61,6 @@ Le tag `User` est renseigné avec l'identifiant de l'équipe d'utilisateurs pouv
         <name>Approved</name>
     </annotationTemplates>
 </annotationTemplateCatalog>
-[shortcode]
-[shortcode]
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <annotationTemplateCatalog>
     <annotationTemplates>
@@ -81,5 +76,3 @@ Le tag `User` est renseigné avec l'identifiant de l'équipe d'utilisateurs pouv
         </defaultPosition>
     </annotationTemplates>
 </annotationTemplateCatalog>
-[shortcode]
-[shortcode]

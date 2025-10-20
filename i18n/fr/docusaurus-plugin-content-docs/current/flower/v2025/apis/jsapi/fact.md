@@ -1,8 +1,7 @@
-+++
-date = "2012-03-28T13:20:01+02:00"
-title = "Historique"
-description = "Gérer l'historique d'un composant"
-+++
+---
+title: Historique
+description: Gérer l'historique d'un composant
+---
 
 :::info
 L’historique permet d’afficher les modifications qui ont été effectuées sur un composant depuis sa création. Cet historique peut être manipulé afin de rajouter, modifier ou supprimer des faits.
@@ -110,7 +109,6 @@ Afin de modifier les faits affichés aux utilisateurs, il est nécessaire de fou
    });
 ```
 
-[shortcode]
 ```javascript
 JSAPI.get().registerForComponentChange(function(componentFormAPI, component, phase) {        
 	var factAPI = JSAPI.get().getHelperFactory().getFactAPI();
@@ -136,7 +134,6 @@ JSAPI.get().registerForComponentChange(function(componentFormAPI, component, pha
 	});
 });
 ```
-[shortcode]
 
 
 <br/>

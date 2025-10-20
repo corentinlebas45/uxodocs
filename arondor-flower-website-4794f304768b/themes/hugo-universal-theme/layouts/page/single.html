@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+{{ partial "head.html" . }}
+
+<body data-spy="scroll" data-target="#inside-toc,#TableOfContents" data-offset="280" class="single-page">
+
+  <header id="header-wrap">
+    {{ partial "nav.html" . }}
+  </header>
+  {{ partial "breadcrumbs.html" . }}
+
+
+  <div id="content">
+    {{ if isset .Params "id" }}
+
+    {{ partial .Params.id . }}
+
+    {{ else }}
+
+    <div class="container">
+
+      <div class="row">
+
+        <div class="col-md-12">
+
+          {{ .Content }}
+
+        </div>
+
+      </div>
+      <!-- /.row -->
+
+    </div>
+    <!-- /.container -->
+
+    {{ end }}
+  </div>
+  <!-- /#content -->
+
+  {{ partial "footer.html" . }}
+
+  {{ partial "sticky.html" . }}
+
+  {{ partial "scripts.html" . }}
+
+</body>
+
+</html>

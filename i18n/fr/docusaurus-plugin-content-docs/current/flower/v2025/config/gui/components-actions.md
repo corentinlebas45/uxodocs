@@ -1,9 +1,7 @@
-+++
-date = "2003-03-28T13:20:01+02:00"
-title = "Actions liées aux composants"
-draft = "true"
-+++
-
+---
+title: Actions liées aux composants
+draft: true
+---
 
 # Actions liées aux composants
 

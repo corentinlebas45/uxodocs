@@ -1,14 +1,11 @@
-+++
-date = "2001-03-28T13:20:01+02:00"
-title = "S'authentifier"
-+++
+---
+title: S'authentifier
+---
 
 Le service `authentication` permet de générer un jeton utilisateur pour un scope donné.
 
 # Exemple
 L'exemple ci-dessous indique comment générer un jeton utilisateur.
-[shortcode]
-[shortcode]
 POST {{core}}/rest/authentication HTTP/1.1
 
 -- Paramètres d'URL --
@@ -23,8 +20,6 @@ Content-Type: application/json
     "scope": "TEST", 
     "user": "user"
 }
-[shortcode]
-[shortcode]
 	@Autowired
     private Authenticator authenticator;
 
@@ -32,4 +27,3 @@ Content-Type: application/json
     {
         authenticator.authenticate(scopeId);
     }
-[shortcode]

@@ -1,0 +1,36 @@
+<div id="{{ .name }}"
+    class="capacity row row--padded rad-animation-group rad-fade-down flex-column-reverse flex-md-row m-0">
+    <div class="container p-2 capacity pb-5">
+        <div class="col-12 col-md-6 mt-0 mt-md-5 pull-left">
+            <h3 class="iq-tw-6 iq-mb-25 heading-title big">{{ .capacity.Title }}</h3>
+            <div class="">
+                {{ .capacity.Description | markdownify }}
+            </div>
+            {{ if not .details }}
+            {{ $url := .name | printf "%s/%s" "/produit" | absURL }}
+            {{ $url := "/produit" | absURL }}
+            {{ $url := print $url "#" .name }}
+            <a href="{{ $url }}" class="button iq-mt-20">{{ .capacity.button.btnText }}<i
+                    class="{{ .capacity.button.icon }}"></i></a>
+            {{ end }}
+        </div>
+        <div class="col-12 col-md-5 pl-0 text-right pull-right">
+            <img class='lozad img-fluid img-clip-left-backward' src="{{ .Site.BaseURL }}{{ .capacity.Params.image | absURL }}"
+                data-src="{{ .Site.BaseURL }}{{ .capacity.Params.image | absURL }}"
+                data-srcset="{{ .Site.BaseURL }}{{ .capacity.Params.image | absURL }} 1x, {{ .capacity.Params.image | absURL }} 2x"
+                alt="{{ .capacity.Title }}" />
+        </div>
+    </div>
+
+    {{ if .details }}
+    <div class="container-fluid ">
+        <div class="capacity row row--padded rad-animation-group rad-fade-down background-grey mt-0 pt-3 p-lg-5">
+
+            {{ range $index, $feature := .capacity.Params.features }}
+            {{ partial "card.html" (dict "object" $feature "details" false )  }}
+            {{ end }}
+
+        </div>
+    </div>
+    {{ end }}
+</div>

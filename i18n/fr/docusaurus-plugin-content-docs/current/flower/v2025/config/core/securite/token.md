@@ -1,8 +1,7 @@
-+++
-date = "2019-06-01T13:20:01+02:00"
-title = "Jeton"
-description = "Sécurisation des requêtes effectuées auprès de FlowerDocs Core."
-+++
+---
+title: Jeton
+description: Sécurisation des requêtes effectuées auprès de FlowerDocs Core.
+---
 
 # Jeton utilisateur
 

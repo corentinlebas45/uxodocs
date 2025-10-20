@@ -1,9 +1,7 @@
-+++
-date = "2004-03-27T13:25:01+02:00"
-title = "Confirmation"
-description = "Pop up permettant de confirmer un choix utilisateur"
-+++
-
+---
+title: Confirmation
+description: Pop up permettant de confirmer un choix utilisateur
+---
 
 :::info
 Ce type de pop-up affiche un message permettant de confirmer un choix de l'utilisateur.
@@ -15,8 +13,6 @@ Les deux types de popups fonctionnent de la même manière :
 
 Lorsque l'utilisateur clique sur le bouton `Valider` (pour les popups Valider/Annuler) ou `Oui` (pour les popups Oui/Non), l'intégrateur a la main pour définir le traitement à exécuter.
 
-[shortcode]
-[shortcode]
 var popup = JSAPI.get().getPopupAPI().buildCancelValidateConfirmationPopup('Cette action va être effectuée', function(confirmed){
 	if(confirmed){
 		// .....
@@ -27,8 +23,6 @@ popup.setDescription('Ma description');
 popup.setTitle('Mon titre');
 popup.setIcon('fa fa-remove');
 popup.show();
-[shortcode]
-[shortcode]
 var popup = JSAPI.get().getPopupAPI().buildYesNoConfirmationPopup('Confirmez-vous cette action ?', function(confirmed){
 	if(confirmed){
 		// .....
@@ -39,4 +33,3 @@ popup.setDescription('Ma description');
 popup.setTitle('Mon titre');
 popup.setIcon('fa fa-remove');
 popup.show();
-[shortcode]

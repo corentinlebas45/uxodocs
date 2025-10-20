@@ -1,9 +1,7 @@
-+++
-date = "2005-02-03"
-title = "Recherches sauvegardées"
-description = "Sauvegardez des recherches que vous utilisez régulièrement"
-+++
-
+---
+title: Recherches sauvegardées
+description: Sauvegardez des recherches que vous utilisez régulièrement
+---
 
 # Recherches sauvegardées
 

@@ -1,8 +1,7 @@
-+++
-date = "2012-04-28T13:20:01+02:00"
-title = "Les plugins"
-description = "Intégrer des applications WEB personnalisée au sein de la GUI."
-+++
+---
+title: Les plugins
+description: Intégrer des applications WEB personnalisée au sein de la GUI.
+---
 
 # Qu'est ce qu'un plugin de la GUI ? 
 

@@ -1,8 +1,6 @@
-+++
-date = "2004-03-28T13:20:01+02:00"
-title = "Contenu d'un dossier"
-+++
-
+---
+title: Contenu d'un dossier
+---
 
 # Contenu d'un dossier
 

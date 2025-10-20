@@ -1,7 +1,6 @@
-+++
-date = "2000-04-03T13:20:01+02:00"
-title = "Historique"
-+++
+---
+title: Historique
+---
 
 Cette partie détaille l'affichage de widgets basés sur les composants modifiés, créés ou consultés par l'utilisateur courant.
 

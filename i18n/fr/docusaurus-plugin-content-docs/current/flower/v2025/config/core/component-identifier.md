@@ -1,8 +1,6 @@
-+++
-date = "2004-03-28T13:20:01+02:00"
-title = "Identifiants de composant"
-+++
-
+---
+title: Identifiants de composant
+---
 
 # Identifiants de composant
 
@@ -20,4 +18,3 @@ FlowerDocs permet la génération de deux types d'identifiants différents :
 * Numérique (déconseillé pour les environnements de production)
 
 Pour changer la configuration par défaut, il faut définir la propriété ``id.generate.type`` avec la valeur ``UUID`` ou ``Numeric``.
-

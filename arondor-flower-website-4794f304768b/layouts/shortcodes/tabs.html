@@ -1,0 +1,46 @@
+{{- .Page.Scratch.Add "tabset-counter" 1 -}}
+{{- $tab_set_id := .Get "name" | default (printf "tabset-%s-%d" (.Page.RelPermalink) (.Page.Scratch.Get "tabset-counter") ) | anchorize -}}
+{{- $tabs := .Scratch.Get "tabs" -}}
+{{- if .Inner -}}{{- /* We don't use the inner content, but Hugo will complain if we don't reference it. */ -}}{{- end -}}
+<div id="{{ $tab_set_id }}" class="tabs pt-4 pb-4">
+    <ul id="{{ $tab_set_id }}-tabs" class="nav nav-tabs" role="tablist">
+        {{- range $i, $e := $tabs -}}
+        {{- $id := printf "%s-%d" $tab_set_id $i -}}
+        <li class="nav-item"><a id="{{ $id }}-tab" class="nav-link" data-toggle="tab" role="tab"
+                aria-controls="{{ $id }}" href="#{{ $id }}">{{- trim .name " " -}}</a></li>
+        {{- end -}}
+    </ul>
+    <div id="{{ $tab_set_id }}-tab-content" class="tab-content">
+        {{- range $i, $e := $tabs -}}
+        {{- $id := printf "%s-%d" $tab_set_id $i -}}
+        <div id="{{ $id }}" class="tab-pane fade text-left" role="tabpanel" aria-labelledby="{{ $id }}-tab">
+
+            {{- with .content -}}
+            {{- . | markdownify -}}
+            {{- else -}}
+            {{- if eq $.Page.BundleType "leaf" -}}
+            {{- /* find the file somewhere inside the bundle. Note the use of double asterisk */ -}}
+            {{- with $.Page.Resources.GetMatch (printf "**%s*" .include) -}}
+            {{- if ne .ResourceType "page" -}}
+            {{- /* Assume it is a file that needs code highlighting. */ -}}
+            {{- $codelang := $e.codelang | default ( path.Ext .Name | strings.TrimPrefix ".") -}}
+            {{- highlight .Content $codelang "" -}}
+            {{- else -}}
+            {{- .Content -}}
+            {{- end -}}
+            {{- end -}}
+            {{- else -}}
+            {{- $path := path.Join $.Page.File.Dir .include -}}
+            {{- $page := site.GetPage "page" $path -}}
+            {{- with $page -}}
+            {{- .Content -}}
+            {{- else -}}
+            {{- errorf "[%s] tabs include not found for path %q" site.Language.Lang $path -}}
+            {{- end -}}
+            {{- end -}}
+            {{- end -}}
+        </div>
+        {{- end -}}
+    </div>
+</div>
+{{- $elem :=  $tab_set_id | safeJS -}}

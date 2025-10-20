@@ -1,12 +1,11 @@
-+++
-date = "2020-01-01T12:20:01+02:00"
-title = "Getting Started"
-Order = 1
-Theme = "dev"
-Icon = "fa fa-table-list"
-Description = "Affichez uniquement les onglets ou sous menus souhaités en fonction des profils utilisateur dans l'Administration"
-Duration = "20m" 
-+++
+---
+title: Getting Started
+Order: 1
+Theme: dev
+Icon: fa fa-table-list
+Description: Affichez uniquement les onglets ou sous menus souhaités en fonction des profils utilisateur dans l'Administration
+Duration: 20m
+---
 
 # Objectif
 
@@ -31,5 +30,4 @@ Les utilisateurs faisant partie des `ADMINs` auront accès à tous les onglets t
 * Plugins 
 * Abonnements aux opérations  
 * Faits d'historiques 		
-* Serveurs email 	
-
+* Serveurs email

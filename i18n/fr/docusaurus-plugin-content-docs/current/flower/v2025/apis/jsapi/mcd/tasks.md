@@ -1,10 +1,8 @@
-+++
-date = "2004-02-03"
-title = "Les tâches & processus"
-Description = "Manipuler des tâches en JavaScript"
-Intro = "" 
-+++
-
+---
+title: Les tâches & processus
+Description: Manipuler des tâches en JavaScript
+Intro: 
+---
 
 # Manipuler les pièces jointes
 
@@ -19,8 +17,6 @@ L'ajout de composants en tant que pièces jointes d'une tâche peut être réali
 L'utilisation de ces fonctions nécessitent en entrée l'identifiant de la pièce jointe et la catégorie de composant attendue (définies sur la classe de tâche).
 Les modifications des pièces jointes d'une tâche nécessitent d'être sauvegardées à l'aide des fonctions `create` ou `update` exposées par l'objet `JSAPI.get().task()`.
 
-[shortcode]
-[shortcode]
 JSAPI.get().task().get([id], function (tasks) {
     let task = tasks[0];
     task.addAttachments('Appendices', documentId, 'DOCUMENT');
@@ -28,8 +24,6 @@ JSAPI.get().task().get([id], function (tasks) {
         console.info('The document has been attached to task');
     });
 });
-[shortcode]
-[shortcode]
 
 
 Sur le même principe, la fonction suivante permet de récupérer les pièces jointes existantes : 
@@ -48,14 +42,10 @@ Une réponse peut être appliquée à une ou plusieurs tâches à l'aide de la f
 * un tableau d'identifiants de tâches
 * un objet `Answer` (ou `ReasonedAnswer`) représentant la réponse à appliquer
 
-[shortcode]
-[shortcode]
 var taskAPI = JSAPI.get().task();
 taskAPI.answer([id], new Answer("Validate"), function(){
     JSAPI.get().getNotificationAPI().sendInformation("Answer was applied");
 });
-[shortcode]
-[shortcode]
 
 # Assignation de tâches
 
@@ -67,13 +57,9 @@ La fonction `assign(ids, userId)` permet d'assigner une ou plusieurs tâches à 
 * un tableau d'identifiants de tâches
 * l'identifiant de l'utilisateur auquel assigner les tâches
 
-[shortcode]
-[shortcode]
 JSAPI.get().task().assign([id], 'sarah.hubert', function () {
     console.info('The task ' + id + ' has been assigned');
 });
-[shortcode]
-[shortcode]
 
 L'utilisateur auquel une tâche est assignée peut être récupéré grâce à la fonction `getAssignee()` exposée sur l'objet `Task`.
 
@@ -96,42 +82,30 @@ Un hook d'assignation est une fonction prenant en entrée les trois paramètres 
 
 
 
-[shortcode]
-[shortcode]
 JSAPI.get().task().registerBeforeAssign(function(tasks, assignee, executor){
   // Action à effectuer avant l'assignation
 });
-[shortcode]
-[shortcode]
 JSAPI.get().task().registerAfterAssign(function(tasks, assignee, executor){
   // Action à effectuer après le processus d'assignation
 });
-[shortcode]
-[shortcode]
 
 L'objet `executor` fourni en entrée du hook permet de bloquer le processus d'assignation afin d'attendre l'exécution d'un traitement asynchrone. 
 En effet, lorsqu'un traitement asynchrone doit être finalisé avant la reprise du processus d'assignation, il est possible de l'interrompre en appelant la fonction `executor.hold()` et de le reprendre une fois terminé avec `executor.resume()`.
 
 Dans les exemples ci-dessous, le traitement asynchrone est simulé par l'utilisation d'un timeout de 5 secondes : 
 
-[shortcode]
-[shortcode]
 JSAPI.get().task().registerBeforeAssign(function(tasks, assignee, executor){
     executor.hold();
     setTimeout(function(){
       executor.resume();
     }, 5000);
 });
-[shortcode]
-[shortcode]
 JSAPI.get().task().registerAfterAssign(function(tasks, assignee, executor){
     executor.hold();
     setTimeout(function(){
       executor.resume();
     }, 5000);
 });
-[shortcode]
-[shortcode]
 
 # Informations liées à un processus
 
@@ -140,4 +114,4 @@ JSAPI.get().task().registerAfterAssign(function(tasks, assignee, executor){
 |getWorkflow()                                                                | Déterminer l'identifiant du traitement de la tâche                             |
 |setWorkflow(String workflow)                                                 | Définir l'identifiant du traitement de la tâche                                |                
 |getParticipants()                                                            | Déterminer les identités ayant participées au traitement                       |        
-|addParticipant(String participant)                                           | Ajout d'un participant à une tâche                                             |        
+|addParticipant(String participant)                                           | Ajout d'un participant à une tâche                                             |

@@ -1,7 +1,6 @@
-+++
-date = "2000-03-28T13:20:01+02:00"
-title = "Avant de commencer"
-+++
+---
+title: Avant de commencer
+---
 
 # Couche de présentation
 
@@ -11,9 +10,7 @@ Elle est développée sur la base de technologies [Spring Boot](https://spring.i
 
 Port par défaut : 8080. Il peut être surchargé en utilisant la propriété `server.port` dans le fichier `gui.properties`.
 
-## [shortcode] 
 
-[[shortcode]](https://arender.io/), produit développé par [Uxopian](https://www.uxopian.com), est une application WEB integrée dans FlowerDocs GUI en tant qu'`iframe`. Elle permet la visualisation des documents générer via ARender Rendition Server.
 
 Port par défaut : 8080. Il peut être surchargé en utilisant la propriété `server.port` dans le fichier `application.properties`.
 
@@ -59,7 +56,6 @@ Les **contenus** des documents (PDF, Microsoft Office Word, etc.) gérés par Fl
 
 <br/>
 
-[shortcode]
 
 ## Redis
 

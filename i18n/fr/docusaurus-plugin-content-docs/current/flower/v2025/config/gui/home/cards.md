@@ -1,7 +1,6 @@
-+++
-date = "2000-04-03T13:20:01+02:00"
-title = "Miniatures"
-+++
+---
+title: Miniatures
+---
 
 Il existe un autre type de catalogue de recherche n'étant pas basé sur une liste de widget comme le ``WidgetCatalog`` mais basé sur une recherche, le ``SearchWidgetCatalog``. Ceci permet d'avoir un widget sous forme de carte par recherche. 
 
@@ -120,5 +119,3 @@ Les propriétés à définir sont :
 	</property>
 </bean>
 ```
-
-

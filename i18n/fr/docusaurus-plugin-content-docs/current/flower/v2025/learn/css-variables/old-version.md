@@ -1,7 +1,6 @@
-+++
-date = "2022-04-19T13:20:01+02:00"
-title = "Retour au thème FlowerDocs 2.5"
-+++
+---
+title: Retour au thème FlowerDocs 2.5
+---
 
 # Changement de visuel
 

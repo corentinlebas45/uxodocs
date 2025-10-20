@@ -1,7 +1,6 @@
-+++
-date = "2001-03-03T13:20:01+02:00"
-title = "Raccourcis"
-+++
+---
+title: Raccourcis
+---
 
 # Raccourcis de création
 

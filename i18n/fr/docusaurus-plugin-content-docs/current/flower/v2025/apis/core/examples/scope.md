@@ -1,8 +1,7 @@
-+++
-date = "2023-06-22T12:00:00+02:00"
-title = "Gestion de scope"
-description = "Récuperez les informations, supprimez de vos scopes"
-+++
+---
+title: Gestion de scope
+description: Récuperez les informations, supprimez de vos scopes
+---
 
 Le service `ScopeService` expose les opérations suivantes :
 
@@ -12,8 +11,6 @@ Le service `ScopeService` expose les opérations suivantes :
 
 L'exemple ci dessous indique comment récupérer les informations d'un scope.
 
-[shortcode]
-[shortcode]
 GET {{core}}/rest/scope/{idScope} HTTP/1.1
 
 -- Paramètres d'URL --
@@ -21,11 +18,9 @@ core: host de FlowerDocs core
 idScope: identifiant du scope à récupérer
 
 -- Headers --
-token: {{token}}
+token: {token}
 Content-Type: application/json
 
-[shortcode]
-[shortcode]
 	@Autowired
     private ScopeService scopeService;
     
@@ -34,5 +29,3 @@ Content-Type: application/json
 		List<Id> ids = Lists.newArrayList(new Id("scopeId"));
 		return service.get(ids);
     }
-[shortcode]
-[shortcode]

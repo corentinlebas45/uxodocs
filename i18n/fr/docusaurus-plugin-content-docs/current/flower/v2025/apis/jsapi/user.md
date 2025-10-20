@@ -1,8 +1,6 @@
-+++
-date = "2007-03-28T13:20:01+02:00"
-title = "Utilisateur"
-+++
-
+---
+title: Utilisateur
+---
 
 Une API JS permet d'obtenir des informations concernant les utilisateurs : 
 
@@ -116,5 +114,3 @@ userAPI.registerAssigneeProvider(function(tasks, key, callback){
 	});
 });
 ```
-
-

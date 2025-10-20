@@ -1,8 +1,7 @@
-+++
-date = "2018-03-27T13:20:01+02:00"
-title = "Authentification"
-description = "Authentifiez les utilisateurs accédant à l'application"
-+++
+---
+title: Authentification
+description: Authentifiez les utilisateurs accédant à l'application
+---
 
 :::info
 Plusieurs mécanismes permettent d'assurer l'authentification des utilisateurs (ou clients).

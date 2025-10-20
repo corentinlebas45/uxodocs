@@ -1,8 +1,7 @@
-+++
-date = "2001-03-28T13:20:01+02:00"
-title = "Connecteur"
-description = "Ajouter le connecteur FlowerDocs à Fast2."
-+++
+---
+title: Connecteur
+description: Ajouter le connecteur FlowerDocs à Fast2.
+---
 
 Pour utiliser les tâches d'injection FlowerDocs au sein de Fast2, il est nécessaire de rajouter le connnecteur FlowerDocs dans les librairies Fast2 :  
 

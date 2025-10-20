@@ -1,7 +1,6 @@
-+++
- date = "2020-02-01T11:20:01+02:00"
-title = "Implémentation"
-+++
+---
+title: Implémentation
+---
 
 # Objectif
 
@@ -42,7 +41,6 @@ A l'aide de votre IDE préféré, commencez par créer un nouveau projet Maven a
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-				<version>[shortcode]</version>
 				<executions>
 					<execution>
 						<goals>

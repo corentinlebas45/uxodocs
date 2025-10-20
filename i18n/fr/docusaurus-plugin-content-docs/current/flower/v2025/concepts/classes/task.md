@@ -1,8 +1,7 @@
-+++
-date = "2018-03-02T13:20:01+02:00"
-title = "Tâches"
-description = "Les classes de tâches"
-+++
+---
+title: Tâches
+description: Les classes de tâches
+---
 
 :::info
 Une classe de tâches permet de définir le modèle de tâche à créer. Ses spécificités sont  : 

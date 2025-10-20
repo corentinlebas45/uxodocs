@@ -1,8 +1,7 @@
-+++
-date = "2001-04-29T13:30:01+01:01"
-title = "Manipuler une classe de dossier virtuel"
-description = "Créez, récupérez, modifiez, supprimez vos classes de dossiers virtuels"
-+++
+---
+title: Manipuler une classe de dossier virtuel
+description: Créez, récupérez, modifiez, supprimez vos classes de dossiers virtuels
+---
 
 Le service `VirtualFolderClass` expose toutes les opérations disponibles autour des composants de type `VirtualFolderClass`.
 
@@ -10,19 +9,15 @@ Le service `VirtualFolderClass` expose toutes les opérations disponibles autour
 
 Les exemples ci-dessous indiquent comment récupérer toutes les classes de dossier virtuels.
 
-[shortcode]
-[shortcode]
 GET {{core}}/rest/virtualfolderclass HTTP/1.1
 
 -- Paramètre d'URL -- 
 core: host de FlowerDocs core
 
 -- Headers -- 
-token: {{token}}
+token: {token}
 Content-Type: application/json
 
-[shortcode]
-[shortcode]
 	@Autowired
     private VirtualFolderClassService vfcService;
 
@@ -31,22 +26,18 @@ Content-Type: application/json
     {
         return vfcService.getAll();
     }
-[shortcode]
-[shortcode]
 
 # Création de classe de dossier virtuel
 
 Les exemples ci-dessous indiquent comment créer une classe de dossier virtuel. 
 
-[shortcode]
-[shortcode]
 POST {{core}}/rest/virtualfolderclass HTTP/1.1
 
 -- Paramètre d'URL -- 
 core: host de FlowerDocs core
 
 -- Headers -- 
-token: {{token}}
+token: {token}
 Content-Type: application/json
 
 -- Body (json) --
@@ -135,8 +126,6 @@ Content-Type: application/json
     "active": false
 }]
 
-[shortcode]
-[shortcode]
 	@Autowired
     private VirtualFolderClassService vfcService;
     
@@ -161,8 +150,6 @@ Content-Type: application/json
         return vfcService.create(vfcList);
     }
 	
-[shortcode]
-[shortcode]
 
 # Modification de classe de dossier virtuel
 
@@ -172,8 +159,6 @@ Cette opération permet de mettre à jour les données d'une classe de dossier v
 Ce service fonctionne en annule et remplace, l'ensemble des valeurs de tags doit donc être fourni par le service au moment de la mise à jour. Il est donc préconisé de réaliser une récupération de la classe dossier virtuel, effectuer les modifications et faire l'appel au service de mise à jour.
 :::
 
-[shortcode]
-[shortcode]
 POST {{core}}/rest/virtualfolderclass/{ids} HTTP/1.1
 
 -- Paramètre d'URL -- 
@@ -182,7 +167,7 @@ ids : liste des identifiants de classe de dossiers virtuels à mettre à jour, s
 
 -- Headers --
 
-token: {{token}}
+token: {token}
 Content-Type: application/json
 
 -- Body (json) --
@@ -272,8 +257,6 @@ Content-Type: application/json
     "active": false
 }]
 
-[shortcode]
-[shortcode]
 	@Autowired
 	private VirtualFolderClassService vfcService;
     
@@ -298,15 +281,11 @@ Content-Type: application/json
         vfcService.update(vfcList);
     }
 
-[shortcode]
-[shortcode]
 
 # Recherche de classe de dossier virtuel
 
 L'exemple ci-dessous indique comment récupérer une classe de dossiers virtuels à partir d'une liste d'identifiants.
 
-[shortcode]
-[shortcode]
 GET {{core}}/rest/virtualfolderclass/{ids} HTTP/1.1
 
 -- Paramètre d'URL -- 
@@ -314,11 +293,9 @@ core: host de FlowerDocs core
 ids : liste des identifiants de classe de dossiers virtuels à récupérer, séparés par des virgules
 
 -- Headers --
-token: {{token}}
+token: {token}
 Content-Type: application/json
 
-[shortcode]
-[shortcode]
 	@Autowired
 	private VirtualFolderClassService vfcService;
 	
@@ -329,15 +306,11 @@ Content-Type: application/json
         return vfcService.get(ids);
     }
 
-[shortcode]
-[shortcode]
 
 # Suppression de classe de dossier virtuel
 
 Cette opération permet de supprimer une liste de classe de dossiers virtuels à partir d'une liste d'identifiants.
 
-[shortcode]
-[shortcode]
 DELETE {{core}}/rest/virtualfolderclass/{ids} HTTP/1.1
 
 -- Paramètre d'URL -- 
@@ -345,11 +318,9 @@ core: host de FlowerDocs core
 ids : liste des identifiants de classe de dossiers virtuels à supprimer, séparés par des virgules
 
 -- Headers --
-token: {{token}}
+token: {token}
 Content-Type: application/json
 
-[shortcode]
-[shortcode]
 	@Autowired
 	private VirtualFolderClassService vfcService;
 	
@@ -360,5 +331,3 @@ Content-Type: application/json
         vfcService.delete(ids);
     }
 
-[shortcode]
-[shortcode]

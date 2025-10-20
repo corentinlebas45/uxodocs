@@ -1,8 +1,6 @@
-+++
-title = "Les documents"
-date = "2000-04-02"
-+++
-
+---
+title: Les documents
+---
 
 # Contenu d'un document
 
@@ -22,5 +20,3 @@ Afin de restreindre l'accès ou les modifications pouvant être apportées au(x)
 * Visualiser les annotations du contenu d'un document : `READ_ANNOTATION`
 * Annoter le contenu d'un document : `CREATE_ANNOTATION`
 * Composition de document : `BUILD_NEW_DOCUMENT`
-
-

@@ -1,9 +1,7 @@
-+++
-date = "2018-03-07T13:21:01+02:00"
-title = "Liste"
-description = "Utilisez des tags liés à des listes."
-+++
-
+---
+title: Liste
+description: Utilisez des tags liés à des listes.
+---
 
 Cette section décrit les différents types de tag basés sur une liste : 
 
@@ -26,7 +24,6 @@ Un tag de type liste de choix permet de restreindre les valeurs possibles d'un t
 
 Les valeurs d'une liste de choix affichées au sein de la sélection du tag ou du critère sont triées par ordre alphabétique sur le libellé.
 
-[shortcode]
 ```xml
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <ns2:TagClass xmlns="https://flower.com/docs/domain/common" xmlns:ns2="https://flower.com/docs/domain/tagclass"
@@ -45,16 +42,13 @@ Les valeurs d'une liste de choix affichées au sein de la sélection du tag ou d
 	</ns2:allowedValues>
 </ns2:TagClass>
 ```
-[shortcode]
  
 
 # Liste d'icônes
 
 Un tag de type liste d'icônes est une extension d'une liste de choix pour lesquels il est possible de définir une icône. 
 
-Cette icône doit être définie avec la classe CSS appropriée en s'appuyant sur la librairie disponible dans FlowerDocs [Font Awesome [shortcode]](https://fontawesome.com/icons?d=gallery&m=free)
 
-[shortcode]
 ```xml
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <ns2:TagClass xmlns="https://flower.com/docs/domain/common" xmlns:ns2="https://flower.com/docs/domain/tagclass"
@@ -70,7 +64,6 @@ Cette icône doit être définie avec la classe CSS appropriée en s'appuyant su
 	</ns2:allowedValues>
 </ns2:TagClass>
 ```
-[shortcode]
 
 Si deux icônes doivent être placés côte à côte, il est possible d'utiliser une icône du type : ``stacked(fas fa-exclamation red,fas fa-flag red)``.  
 
@@ -81,7 +74,6 @@ Un tag de type liste libre est une extension d'une liste de choix sans validatio
 
 Les valeurs d’une liste libre affichées au sein de la sélection du tag ou du critère respectent l’ordre d’ajout défini par l’intégrateur.
 
-[shortcode]
 ```xml
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <ns2:TagClass xmlns="https://flower.com/docs/domain/common" xmlns:ns2="https://flower.com/docs/domain/tagclass"
@@ -90,7 +82,6 @@ Les valeurs d’une liste libre affichées au sein de la sélection du tag ou du
 	<ns2:type>FREELIST</ns2:type>
 </ns2:TagClass>
 ```
-[shortcode]
 
 :::info
 Ce type de tag est particulièrement adapté aux intégrations avec des référentiels tiers (par exemple via l'utilisation d'un [lookup](broken-link.md)).

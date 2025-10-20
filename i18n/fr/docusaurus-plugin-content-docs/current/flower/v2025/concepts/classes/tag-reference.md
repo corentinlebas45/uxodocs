@@ -1,9 +1,7 @@
-+++
-date = "2018-03-02T12:00:01+02:00"
-title = "Références de tag"
-description = "Tagguez vos composants en référençant des tags sur une classe de composants."
-+++
-
+---
+title: Références de tag
+description: Tagguez vos composants en référençant des tags sur une classe de composants.
+---
 
 Il est possible de caractériser un tag référencé sur une classe de composants par les paramètres suivants :
 

@@ -1,8 +1,7 @@
-+++
-date = "2003-03-28T13:20:01+02:00"
-title = "Configuration"
-intro ="Un fichier de configuration est généré lors de la configuration de FlowerDocs Companion dans le répertoire C:\\Program Files (x86)\\FlowerDocs\\Companion\\conf. Il contient l'ensemble des paramètres configurables."
-+++
+---
+title: Configuration
+intro: Un fichier de configuration est généré lors de la configuration de FlowerDocs Companion dans le répertoire C:\\Program Files (x86)\\FlowerDocs\\Companion\\conf. Il contient l'ensemble des paramètres configurables.
+---
 
 # Modification de la configuration
 Suite à l'installation de FlowerDocs Companion, il est nécessaire de le configurer en ouvrant l'interface de configuration ou directement depuis le fichier de configuration.

@@ -1,0 +1,24 @@
+{{ if in (.Get "class") "service.api"  }}
+	{{ $.Scratch.Set "type" "service" }}
+{{ else if in (.Get "class") "domain"  }}
+	{{ $.Scratch.Set "type" "domain" }}
+{{ else if in (.Get "class") "ws.api"  }}
+	{{ $.Scratch.Set "type" "ws" }}
+{{ else if in (.Get "class") "operation.api"  }}
+	{{ $.Scratch.Set "type" "operation" }}
+{{ end }}
+{{ $last := last 1 (split (.Get "class") ".") }}
+
+{{ if len (.Get "method") }}
+	{{ $anchor :=  print "#" (.Get "method") "--" }}
+	{{ $.Scratch.Set "anchor" $anchor }}
+{{ end }}
+
+
+{{ if .Get "title" }}
+	{{ $.Scratch.Set "title" (.Get "title") }}
+{{ else }}
+	{{ $.Scratch.Set "title" (index $last 0) }}
+{{ end }}
+
+<a  class="javadoc-link" href="{{ .Site.BaseURL }}javadocs/{{ $.Scratch.Get "type" }}/{{ replace (.Get "class") "." "/" }}.html{{ $.Scratch.Get "anchor" }}">{{ $.Scratch.Get "title" }}</a>

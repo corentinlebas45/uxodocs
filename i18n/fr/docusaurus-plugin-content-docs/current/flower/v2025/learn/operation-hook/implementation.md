@@ -1,7 +1,6 @@
-+++
- date = "2020-02-01T11:20:01+02:00"
-title = "Implémentation"
-+++
+---
+title: Implémentation
+---
 
 :::info
 Ce tutoriel est basé sur Maven et nécessite l'utilisation de l'Artifactory Arondor dans lequel sont déployées les librairies FlowerDocs.
@@ -36,7 +35,6 @@ A l'aide de votre IDE préféré, commencez par créer un nouveau projet Maven a
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-				<version>[shortcode]</version>
 				<executions>
 					<execution>
 						<goals>
@@ -60,7 +58,6 @@ Cette application Spring Boot s'appuie sur le [starter Spring Boot](broken-link.
 
 * Pour commencer, nous avons besoin d'une _main class_ Spring Boot annotée avec l'annotation `@SpringBootApplication` : 
 
-[shortcode]
 package com.flower.samples;
 
 import org.springframework.boot.SpringApplication;
@@ -78,10 +75,8 @@ public class ModifyHookApplication
         SpringApplication.run(ModifyHookApplication.class, args);
     }
 }
-[shortcode]
 
 * Ajoutez ensuite le fichier `application.properties` dans le répertoire `src/main/resources` de votre projet pour configurer l'application : 
-[shortcode]
 spring.application.name=modify-hook
 server.port=7777
 server.servlet.context-path=/modify
@@ -90,26 +85,18 @@ ws.url=http://localhost:8081/core/services
 
 internal.realm.users[0].id=<user>
 internal.realm.users[0].password=<password>
-[shortcode]
 
-    [shortcode]1[shortcode] Nom de l'application Spring Boot
 
-    [shortcode]2[shortcode] Port utilisé pour exposer l'application WEB
 
-    [shortcode]3[shortcode] Chemin de l'application. L'application est ainsi accessible via l'URL de base _http://localhost:7777/modify_
 
-    [shortcode]5[shortcode] URL d'accès aux web services exposés par FlowerDocs Core.
 
-    [shortcode]7[shortcode] Identifiant de l'utilisateur permettant d'accéder à l'`OperationHook`
 
-    [shortcode]8[shortcode] Mot de passe de l'utilisateur permettant d'accéder à l'`OperationHook`
 
 
 # Développement du hook
 
 Passons maintenant à l'`OperationHook` ! Pour implémenter votre premier hook, créez la classe `ModifyOperationHook` telle que : 
 
-[shortcode]
 package com.flower.samples;
 
 import org.springframework.web.bind.annotation.RestController;
@@ -138,15 +125,8 @@ public class ModifyOperationHook extends OperationHook
         }
     }
 }
-[shortcode]
 
-[shortcode]13[shortcode] L'annotation `@RestController` définie le hook comme étant un web service REST exposé sur `/`
 
-[shortcode]14[shortcode] La classe `ModifyOperationHook` étend la classe `OperationHook` qui permet de faciliter l'implémentation d'un hook à l'aide du framework Spring Boot
 
-[shortcode]17[shortcode] La méthode `process` doit être implémentée afin de définir le comportement suite à l'exécution d'une opération au sein de FlowerDocs Core
 
-[shortcode]17[shortcode] L'`OperationHook` réagit seulement aux contextes de classe `DefaultComponentOperationContext`
-
-[shortcode]24[shortcode] Chaque composant du contexte d'opération est renommé à l'aide de la date courrante
 

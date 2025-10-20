@@ -1,7 +1,6 @@
-+++
-date = "2004-03-21T13:20:01+02:00"
-title = "Command Line Manager (CLM)"
-+++
+---
+title: Command Line Manager (CLM)
+---
 
 Cet outil permet d'interagir avec FlowerDocs en ligne de commande. Il offre des fonctionnalités :
 
@@ -12,7 +11,6 @@ Cet outil permet d'interagir avec FlowerDocs en ligne de commande. Il offre des 
 
 <br/>
 __Téléchargement :__
-[shortcode]
 
 __Note :__ Dans cette partie, le dossier d'extraction est appelé ``${CLM_HOME}``
 

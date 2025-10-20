@@ -1,9 +1,6 @@
-+++
-date = "2001-03-02T13:20:01+02:00"
-title = "Page par défaut"
-+++
-
-
+---
+title: Page par défaut
+---
 
 La page par défaut est celle affichée par défaut à la connexion.
 
@@ -27,4 +24,3 @@ Deux cas particuliers :
 
 * La recherche : le mot clé `search` peut prendre un argument : ``search(search_template_id)``
 * Les dossiers virtuels : il est nécessaire de préciser l'identifiant du dossier virtuel en paramètre
-

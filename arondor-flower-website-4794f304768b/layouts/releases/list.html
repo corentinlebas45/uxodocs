@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+{{ partial "head.html" . }}
+
+<body data-spy="scroll" data-offset="80">
+	<div id="blog">
+		<header> {{ partial "nav.html" . }} </header>
+		{{ partial "breadcrumbs.html" . }}
+		<div id="content">
+			<div class="container documentation">
+				<div class="row">
+					<div class="col-md-9" id="blog-listing-medium">
+						{{ range sort .Sections .Params.ReleaseDate }}
+						<div class="col-md-12 download-item">
+							<div class="col-sm-8">
+								<h4>FlowerDocs {{ .Title }}</h4>
+								<i>{{ if .Params.ReleaseDate }} {{ .Site.Params.publish }} {{ .Params.ReleaseDate }} {{ end }} {{ if .Params.FixDate }} {{ .Site.Params.update }} {{ .Params.FixDate }} {{ end }}</i>						
+							</div>
+							<ul class="pager col-sm-4">
+								<li class="next"><a href="{{ .Permalink }}release-notes">Release Notes</a></li>
+							</ul>
+						</div>
+						<hr style="width: 100%;">
+						{{ end }} {{ if .Sections }} {{ else }}
+						<section class="post" id="{{ .Title }}-post">
+							<div class="row">
+								<div class="col-md-12">
+									<h4>{{ .Title }}</h4>
+									<a href="{{ .Permalink }}release-notes">Release Notes</a>
+									<ul class="pager">
+										<li class="next"><a href="{{ .Permalink }}download">Download</a></li>
+									</ul>
+								</div>
+							</div>
+						</section>
+						{{ end }}
+					</div>
+
+					<div class="sidebar col-md-3">{{ partial "widgets/search.html" . }}</div>
+				</div>
+			</div>
+		</div>
+		{{ partial "footer.html" . }}
+	</div>
+	{{ partial "scripts.html" . }} {{ partial "sticky.html" . }}
+</body>
+</html>

@@ -1,12 +1,11 @@
-+++
-date = "2000-02-01T12:20:01+02:00"
-title = "Swagger UI"
-Order = 17
-Theme = "general"
-Icon = "fas fa-globe"
-Description = "Tester et consommer les web services REST."
-Duration = "10m" 
-+++
+---
+title: Swagger UI
+Order: 17
+Theme: general
+Icon: fas fa-globe
+Description: Tester et consommer les web services REST.
+Duration: 10m
+---
 
 # Objectif
 L'objectif de ce module est de donner les clés pour la prise en main et l'utilisation de Swagger UI pour consommer les web services REST exposés par FlowerDocs Core.

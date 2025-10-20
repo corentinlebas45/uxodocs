@@ -1,8 +1,7 @@
-+++
-date = "2018-04-02T12:20:01+01:59"
-title = "Utiliser des templates"
-description = "Enrichir un template HTML ou MS Word avec des valeurs de tags"
-+++
+---
+title: Utiliser des templates
+description: Enrichir un template HTML ou MS Word avec des valeurs de tags
+---
 
 # Template HTML
 Le service `HTML` expose l'opération suivante :
@@ -24,8 +23,6 @@ La réponse est un texte composé du template HTML, dont les identifiants des ta
 ## Exemple
 Les exemples ci-dessous indiquent comment obtenir un template HTML en l'enrichissant avec des valeurs de tags.
 
-[shortcode]
-[shortcode]
 POST {{core}}/rest/template/html/{id} HTTP/1.1
 
 -- Paramètres d'URL --
@@ -33,7 +30,7 @@ core: host de FlowerDocs core
 id : identifiant du template
 
 -- Headers --
-token: {{token}}
+token: {token}
 Content-Type: application/json
 
 -- Body (json) --
@@ -43,8 +40,6 @@ Content-Type: application/json
     "NomClient":"Dupont",
     "PrenomClient":"Jean" 
 }
-[shortcode]
-[shortcode]
 	@Autowired
     private ITemplateEngine templateEngine;
 
@@ -74,8 +69,6 @@ Content-Type: application/json
         tagMap.put("PrenomClient", "Jean");
         return tagMap;
     }
-[shortcode]
-[shortcode]
 
 
 # Template MS Word
@@ -110,8 +103,6 @@ L'appel `storeFromTags` retourne l'identifiant du fichier temporaire créé dans
 ## Exemples - Téléchargement
 Les exemples ci-dessous indiquent comment télécharger un template MSWord en l'enrichissant avec des valeurs de tags.
 
-[shortcode]
-[shortcode]
 POST {{core}}/rest/template/msoffice/{id} HTTP/1.1
 
 -- Paramètres d'URL --
@@ -119,7 +110,7 @@ core: host de FlowerDocs core
 id: identifiant du template MSOffice
 
 -- Headers --
-token: {{token}}
+token: {token}
 Content-Type: application/json
 
 -- Body (json) --
@@ -146,8 +137,6 @@ Content-Type: application/json
     ]
   }
 ]
-[shortcode]
-[shortcode]
 	@Autowired
     private MSOfficeTemplateService service;
 
@@ -182,15 +171,11 @@ Content-Type: application/json
                 : generated.getName();
         return fileName;
     }
-[shortcode]
-[shortcode]
 
 ## Exemples - Fichier temporaire
 Les exemples ci-dessous indiquent comment créer un fichier temporaire d'un template MSWord en l'enrichissant avec des valeurs de tags.
 
-[shortcode]
 
-[shortcode]
 POST {{core}}/rest/template/msoffice/{id}/id HTTP/1.1
 
 -- Paramètres d'URL --
@@ -198,7 +183,7 @@ core: host de FlowerDocs core
 id: identifiant du template MSOffice
 
 -- Headers --
-token: {{token}}
+token: {token}
 Content-Type: application/json
 
 -- Body (json) --
@@ -225,8 +210,6 @@ Content-Type: application/json
     ]
   }
 ]
-[shortcode]
-[shortcode]
 	@Autowired
     private MSOfficeTemplateService service;
     
@@ -265,5 +248,3 @@ Content-Type: application/json
                 : generated.getName();
         return fileName;
     }
-[shortcode]
-[shortcode]

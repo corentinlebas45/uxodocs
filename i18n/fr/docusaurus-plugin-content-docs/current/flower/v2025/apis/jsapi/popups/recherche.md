@@ -1,8 +1,7 @@
-+++
-date = "2004-03-28T13:23:01+02:00"
-title = "Recherche"
-description = "Formulaire de recherche au sein d'une popup."
-+++
+---
+title: Recherche
+description: Formulaire de recherche au sein d'une popup.
+---
 
 :::info
 Ce type de popup permet d'ouvrir un formulaire de recherche dans une popup.

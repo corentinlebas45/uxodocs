@@ -1,7 +1,6 @@
-+++
- date = "2020-02-01T13:20:01+02:00"
-title = "Implémentation"
-+++
+---
+title: Implémentation
+---
 
 # Objectif
 
@@ -44,7 +43,6 @@ JSAPI.get().registerForComponentChange(function(componentFormAPI, component, pha
 
 <br/>
 Vous obtenez donc une nouvelle action avec une icône de ce type : 
-[shortcode]
 
 
 ## Adaptons la taille des icônes
@@ -59,7 +57,6 @@ Différentes tailles sont fournies par FontAwesome et documentées [ici](https:/
 :::
 
 Ainsi nous obtenons le résultat suivant, il ne manque plus qu'à positionner le stylo dans le coin supérieur droit. 
-[shortcode]
 
 ## Positionnement relatif des icônes
 

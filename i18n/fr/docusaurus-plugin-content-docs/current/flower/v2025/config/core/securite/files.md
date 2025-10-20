@@ -1,8 +1,7 @@
-+++
-date = "2023-06-01"
-title = "Fichiers"
-description = "Cette section s'applique au connecteur OpenSearch couplé au stockage sur système de fichiers."
-+++
+---
+title: Fichiers
+description: Cette section s'applique au connecteur OpenSearch couplé au stockage sur système de fichiers.
+---
 
 # Chiffrement
 

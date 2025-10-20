@@ -1,14 +1,12 @@
-+++
-date = "2023-03-28T13:20:01+02:00"
-title = "Actions"
-description = "Ajouter des actions sur formulaires de recherche."
-+++
+---
+title: Actions
+description: Ajouter des actions sur formulaires de recherche.
+---
 
 Pour chaque formulaire de recherche, il est possible de définir une liste d'action qu'un utilisateur peut exécuter.
 
 Ces actions doivent être définies à travers la propriété  ``actions`` sur l'objet `ComponentSearchPresenter`. 
 
-[shortcode]
 ```xml
 <bean id="EnvelopeSearch" class="com.flower.docs.gui.client.search.ComponentSearchPresenter" scope="prototype">
 	<property name="actions">
@@ -19,7 +17,6 @@ Ces actions doivent être définies à travers la propriété  ``actions`` sur l
 	</property>
 </bean>
 ```
-[shortcode]
 
 
 Par défaut ces actions ne sont visibles qu'à partir du moment où la recherche a été exécutée. Pour changer ce comportement, il est possible d'ajouter la propriété :   
@@ -38,7 +35,6 @@ Ce type d'action permet ainsi de pré-indexer le composant à créer à partir d
 Par exemple, si un utilisateur recherche un document de classe ``Facture`` avec un tag ``statut`` dont la valeur est ``réglé`` alors l'action permettra de créer un document avec ces mêmes informations. 
 
 
-[shortcode]
 ```xml
 <bean id="EnvelopeSearch" class="com.flower.docs.gui.client.search.ComponentSearchPresenter" scope="prototype">
 	<property name="actions">
@@ -63,7 +59,6 @@ Par exemple, si un utilisateur recherche un document de classe ``Facture`` avec 
 	</property>
 </bean>
 ```
-[shortcode]
 
 		
 ##  Changement d'écran 
@@ -71,7 +66,6 @@ Par exemple, si un utilisateur recherche un document de classe ``Facture`` avec 
 Les actions de type ``GoToPlaceActionPresenter`` permettent de changer d'écran.
 
 
-[shortcode]
 ```xml
 <bean class="com.flower.docs.gui.client.search.action.GoToPlaceActionPresenter">
 	<constructor-arg type="java.util.List">
@@ -100,7 +94,6 @@ Les actions de type ``GoToPlaceActionPresenter`` permettent de changer d'écran.
 	</property>
 </bean>
 ```
-[shortcode]
 
 
 # Activation

@@ -1,8 +1,7 @@
-+++
-date = "2001-02-01"
-title = "Les composants"
-Description = "Manipuler des composants en JavaScript"
-+++
+---
+title: Les composants
+Description: Manipuler des composants en JavaScript
+---
 
 :::info
 Les [composants](broken-link.md) sont les objets principaux utilisés par FlowerDocs. 
@@ -70,7 +69,6 @@ Afin d'accéder aux valeurs d'un tag présent sur un composant, les fonctions `g
 La première retourne la première valeur d'un tag (_chaîne de caractères_), la seconde retourne un tableau contenant l'ensemble des valeurs d'un tag.
 
 
-[shortcode]
 ```javascript
 var task = new Task();
 task.addTag("Montant", "1234", false);
@@ -78,7 +76,3 @@ if(task.getTags().includes("Montant")){
     console.info('Le montant est de ' + task.getTagValue("Montant"));
 }
 ```
-[shortcode]
-
-
-

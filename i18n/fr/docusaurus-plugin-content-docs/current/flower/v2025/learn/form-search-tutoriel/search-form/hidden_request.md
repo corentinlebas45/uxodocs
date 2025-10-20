@@ -1,7 +1,6 @@
-+++
-date = "2020-04-04T10:20:01+02:00"
-title = "Requête cachée"
-+++
+---
+title: Requête cachée
+---
 
 Dans la partie précédente vous avez vu comment définir le formulaire et les critères de recherche. Vous allez maintenant voir comment paramétrer l'affichage des résultats. 
 
@@ -131,7 +130,3 @@ Le nombre de résultats remontés par la recherche. Cette propriété donne la p
 <property name="max" value="25" />
 
 ```
-
-
-
-

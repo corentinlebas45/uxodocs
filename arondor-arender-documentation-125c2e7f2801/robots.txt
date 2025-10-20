@@ -1,0 +1,7 @@
+User-agent: *
+Sitemap: https://arender.io/sitemap.xml
+
+User-agent: *
+Disallow: /docs/demo/
+Disallow: /docs/market/
+Disallow: https://www.arender.io/

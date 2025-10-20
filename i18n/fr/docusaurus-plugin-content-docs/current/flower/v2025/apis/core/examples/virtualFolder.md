@@ -1,8 +1,7 @@
-+++
-date = "2001-04-29T13:30:01+01:00"
-title = "Manipuler un dossier virtuel"
-description = "Créez, récupérez, modifiez, supprimez et recherchez vos dossiers virtuels"
-+++
+---
+title: Manipuler un dossier virtuel
+description: Créez, récupérez, modifiez, supprimez et recherchez vos dossiers virtuels
+---
 
 Le service `VirtualFolder` expose toutes les opérations disponibles autour des composants de type `VirtualFolder`.
 
@@ -10,8 +9,6 @@ Le service `VirtualFolder` expose toutes les opérations disponibles autour des 
 
 Les exemples ci-dessous indiquent comment récupérer des dossier virtuels à partir d'une liste d'identifiants.
 
-[shortcode]
-[shortcode]
 GET {{core}}/rest/virtualFolder/{ids} HTTP/1.1
 
 -- Paramètre d'URL -- 
@@ -19,11 +16,9 @@ ids : liste des identifiants de dossiers virtuels à récupérer
 
 -- Headers -- 
 core: host de FlowerDocs core
-token: {{token}}
+token: {token}
 Content-Type: application/json
 
-[shortcode]
-[shortcode]
 	@Autowired
     private VirtualFolderService vfService;
 
@@ -32,20 +27,16 @@ Content-Type: application/json
         List<Id> ids = Lists.newArrayList(new Id("123654"));
         return vfService.get(ids);
     }
-[shortcode]
-[shortcode]
 
 # Création de dossier virtuel
 
 Les exemples ci-dessous indiquent comment créer une liste de dossiers virtuels. 
 
-[shortcode]
-[shortcode]
 POST {{core}}/rest/virtualFolder/ HTTP/1.1
 
 -- Headers -- 
 core: host de FlowerDocs core
-token: {{token}}
+token: {token}
 Content-Type: application/json
 
 -- Body (json) --
@@ -84,8 +75,6 @@ Content-Type: application/json
   }
 ]
 
-[shortcode]
-[shortcode]
 	@Autowired
     private VirtualFolderService vfService;
     
@@ -101,8 +90,6 @@ Content-Type: application/json
         return vfService.create(Arrays.asList(vF));
     }
 	
-[shortcode]
-[shortcode]
 
 # Modification de dossier virtuel
 
@@ -112,8 +99,6 @@ Cette opération permet de mettre à jour les données d'un dossier virtuel : ta
 Ce service fonctionne en annule et remplace, l'ensemble des valeurs de tags doit donc être fourni par le service au moment de la mise à jour. Il est donc préconisé de réaliser une récupération du dossier virtuel, effectuer les modifications et faire l'appel au service de mise à jour.
 :::
 
-[shortcode]
-[shortcode]
 POST {{core}}/rest/virtualFolder/{ids} HTTP/1.1
 
 -- Paramètre d'URL -- 
@@ -121,7 +106,7 @@ ids : liste des identifiants de dossiers virtuels à mettre à jour
 
 -- Headers --
 core: host de FlowerDocs core
-token: {{token}}
+token: {token}
 Content-Type: application/json
 
 -- Body (json) --
@@ -160,8 +145,6 @@ Content-Type: application/json
   }
 ]
 
-[shortcode]
-[shortcode]
 	@Autowired
 	private VirtualFolderService vfService;
     
@@ -175,8 +158,6 @@ Content-Type: application/json
       return vfService.update(Arrays.asList(vF));
     }
 
-[shortcode]
-[shortcode]
 
 # Recherche de dossier virtuel
 
@@ -186,8 +167,6 @@ Les opérations de recherche fonctionnent toutes sur le même modèle décrit [i
 
 Les exemples ci-dessous indiquent comment supprimer une liste de dossiers virtuels à partir d'une liste d'identifiants.
 
-[shortcode]
-[shortcode]
 DELETE {{core}}/rest/virtualFolder/{ids} HTTP/1.1
 
 -- Paramètre d'URL -- 
@@ -195,11 +174,9 @@ ids : liste des identifiants de dossiers virtuels à supprimer
 
 -- Headers --
 core: host de FlowerDocs core
-token: {{token}}
+token: {token}
 Content-Type: application/json
 
-[shortcode]
-[shortcode]
 	@Autowired
 	private VirtualFolderService vfService;
 	
@@ -209,5 +186,3 @@ Content-Type: application/json
         vfService.delete(ids);
     }
 
-[shortcode]
-[shortcode]

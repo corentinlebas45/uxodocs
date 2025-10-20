@@ -1,7 +1,6 @@
-+++
- date = "2020-02-01T11:20:01+02:00"
-title = "Implémentation"
-+++
+---
+title: Implémentation
+---
 
 # Demarrer une session en fonction du contexte
 
@@ -9,7 +8,6 @@ Nous allons configurer le démarrage de la session de traitement. Nous souhaiton
 
 Pour cela nous devons connaître la place, au moment de l'ouverture de la tâche, ainsi que l'agrégation sélectionnée si la place est une place de type dossier virtuel.
 
-[shortcode]
 ```javascript
 var place = session.getPlace();
 var aggregation = place.getSelectedLeaf();
@@ -21,10 +19,8 @@ else{
     // aucune session ne doit être démarrée 
 }
 ```
-[shortcode]
 
 Nous obtenons donc le script suivant 
-[shortcode]
 ```javascript
 JSAPI.get().batchSession().registerBuilder(function(session, callback){
   	var place = session.getPlace();
@@ -37,7 +33,6 @@ if(place.getPlaceType().startsWith('Browse') && (aggregation.indexOf('ENCOURS') 
 	}
 });
 ```
-[shortcode]
 
 # Pour aller plus loin: manipuler la session de traitement
 
@@ -47,7 +42,6 @@ Cependant, il est aussi possible, par configuration, de modifier la [requête de
  ainsi que d'autres paramètres.
 
 Dans le cadre de notre exemple, nous allons modifier notre requête et lui rajouter le critère de priorité : 
-[shortcode]
 ```javascript
     var request = session.getRequest();
   	var filter = new AndClause();
@@ -59,10 +53,8 @@ Dans le cadre de notre exemple, nous allons modifier notre requête et lui rajou
   	request.addFilterClause(filter);
   	session.setRequest(request);
 ```
-[shortcode]
 
 Ainsi avec ce script, toutes les tâches ouvertes dans la suite de la session de traitement aurons la même priorité : 
-[shortcode]
 ```javascript
 JSAPI.get().batchSession().registerBuilder(function(session, callback){
   	var place = session.getPlace();
@@ -83,7 +75,6 @@ JSAPI.get().batchSession().registerBuilder(function(session, callback){
 	}
 });
 ```
-[shortcode]
 
 :::warning
 En modifiant la requête pour ajouter un critère plus restrictif que la place d'origine, lorsque l'utilisateur traite la dernière tâche de cette requête, la session se termine.

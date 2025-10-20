@@ -1,8 +1,7 @@
-+++
-date = "2018-03-02T13:20:01+02:00"
-title = "Les documents"
-description = "Gérez vos documents électroniques."
-+++
+---
+title: Les documents
+description: Gérez vos documents électroniques.
+---
 
 Un document est un composant à part entière avec la particularité de posséder un ou plusieurs contenus. On parle également de fichiers.
 

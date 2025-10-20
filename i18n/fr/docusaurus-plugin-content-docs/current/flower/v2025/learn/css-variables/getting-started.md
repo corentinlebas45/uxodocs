@@ -1,8 +1,6 @@
-+++
-date = "2022-04-19T12:20:01+02:00"
-title = "Personnalisation de l'interface graphique"
-+++
-
+---
+title: Personnalisation de l'interface graphique
+---
 
 # Objectif
 

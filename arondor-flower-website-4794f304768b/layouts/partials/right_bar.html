@@ -1,0 +1,58 @@
+{{ $page := . }}
+
+<nav class="panel sidebar-menu affix">
+	{{ if .Sections }} {{ else }} {{ partial "widgets/search.html" . }} {{ end }} {{ if .TableOfContents }}
+	<div class="panel-heading">
+		<h3 class="panel-title">{{ .Title }}</h3>
+	</div>
+	<div class="panel-body">
+		<div id="list-toc" class="col-12 pl-0">
+			<div id="toc" class="nav col-12">{{ .TableOfContents }}</div>
+		</div>
+	</div>
+	{{ end }}
+
+	{{ if .Params.related }}
+	<nav class="panel sidebar-menu mt-4 pt-4">
+		<div class="panel-heading">
+			<h3 class="panel-title">Sur le même sujet</h3>
+		</div>
+		<div class="panel-body nav">
+			<ul>
+				{{ range $index, $related := .Params.related }}
+				<li>
+					{{ if $related.rel }}
+					<a class="nav-link" href="{{ relref $page $related.rel }}">{{ $related.name | markdownify }}</a>
+					{{ end }}
+					{{ if $related.url }}
+					<a class="nav-link" href="{{ $related.url }}">{{ $related.name | markdownify }}</a>
+					{{ end }}
+					{{ if $related.rest }}
+					<a class="nav-link" href="https://www.demo.flowerdocs.cloud/flower-docs-ws/swagger-ui/index.html?urls.primaryName={{ $related.rest }}">
+						{{ $related.name | markdownify }}</a>
+					{{ end }}
+
+					{{ if $related.class }}
+					{{ if in $related.class "service.api" }}
+					{{ $.Scratch.Set "type" "service" }}
+					{{ else if in $related.class "domain" }}
+					{{ $.Scratch.Set "type" "domain" }}
+					{{ else if in $related.class "ws.api" }}
+					{{ $.Scratch.Set "type" "ws" }}
+					{{ else if in $related.class "operation.api" }}
+					{{ $.Scratch.Set "type" "operation" }}
+					{{ end }}
+					{{ $last := last 1 (split $related.class ".") }}
+
+					<a class="nav-link"
+						href='/javadocs/{{ $.Scratch.Get "type" }}/{{ replace $related.class "." "/" }}.html{{ $.Scratch.Get "anchor" }}'>
+						{{ $related.name | markdownify }}</a>
+					{{ end }}
+
+				</li>
+				{{ end }}
+			</ul>
+		</div>
+	</nav>
+	{{ end }}
+</nav>

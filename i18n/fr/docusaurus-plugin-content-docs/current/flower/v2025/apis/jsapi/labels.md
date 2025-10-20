@@ -1,7 +1,6 @@
-+++
-date = "2004-02-28T13:20:01+02:00"
-title = "Libellés"
-+++
+---
+title: Libellés
+---
 
 :::info 
    Cette section a pour but de décrire comment surcharger les libellés provenant du produit. 

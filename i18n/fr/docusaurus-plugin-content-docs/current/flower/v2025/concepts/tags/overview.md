@@ -1,8 +1,7 @@
-+++
-date = "2018-03-02T13:20:01+02:00"
-title = "Overview"
-description = "Taguez vos composants pour les retrouver plus facilement."
-+++
+---
+title: Overview
+description: Taguez vos composants pour les retrouver plus facilement.
+---
 
 Les `tags` sont des métadonnées définies sur un composant permettant de le caractériser et de le retrouver plus facilement. 
 
@@ -32,7 +31,6 @@ Cette classe de tags s'applique à l'ensemble des tags associés aux composants 
 |`BOOLEAN`|Case à cocher (ex : secret médical …)|
 |`USER`|Lié à un utilisateur de l'annuaire (ex : responsable …)|
 
-[shortcode]
 ```xml
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <ns2:TagClass xmlns="https://flower.com/docs/domain/common" xmlns:ns2="https://flower.com/docs/domain/tagclass"
@@ -53,7 +51,6 @@ Cette classe de tags s'applique à l'ensemble des tags associés aux composants 
     <ns2:searchable>true</ns2:searchable>
 </ns2:TagClass>
 ```
-[shortcode]
 
 :::info
 Ajoutez des tags à vos composants en [référençant une classe de tags](broken-link.md) au niveau d'une classe de composant.

@@ -1,8 +1,7 @@
-+++
-date = "2018-04-02T12:20:01+02:00"
-title = "Obfusquer du contenu"
-description = "Obfusquez des données sensibles au sein des documents"
-+++
+---
+title: Obfusquer du contenu
+description: Obfusquez des données sensibles au sein des documents
+---
 
 Le service `ObfuscationService` expose une opération de `create`. Toutes les parties du contenu du document correspondant à la recherche définie dans l'appel, seront automatiquement obfusquées. 
 
@@ -27,8 +26,6 @@ Les paramètres `accentSensitive` et `caseSensitive` indiquent respectivement qu
 
 Les exemples ci-dessous indiquent comment obfusquer une valeur (dans l'exemple : "Demo") et un motif (ici masque les IBAN dans le document).
 
-[shortcode]
-[shortcode]
 POST {{core}}/rest/documents/{{documentId}}/obfuscations HTTP/1.1
 
 --Paramètres d'URL
@@ -36,7 +33,7 @@ core: host de FlowerDocs core
 documentId : identifiant du document à obfusquer
 
 --Headers
-token: {{token}}
+token: {token}
 Content-Type: application/json
 
 --Body (json)
@@ -46,8 +43,6 @@ Content-Type: application/json
   "regex": false,
   "text": "Demo"
 }
-[shortcode]
-[shortcode]
 POST {{core}}/rest/documents/{{documentId}}/obfuscations HTTP/1.1
 
 -- Paramètres d'URL
@@ -55,7 +50,7 @@ core: host de FlowerDocs core
 documentId : identifiant du document à obfusquer
 
 --Headers
-token: {{token}}
+token: {token}
 Content-Type: application/json
 
 --Body (json)
@@ -65,4 +60,3 @@ Content-Type: application/json
   "regex": true,
   "text": "IBAN : (.{4}-){3}.{4}"
 }
-[shortcode]

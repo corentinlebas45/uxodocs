@@ -1,8 +1,7 @@
-+++
-date = "2020-02-01T12:20:01+02:00"
-title = "Librairie personnalisée"
-description = "Développez une librairie Java pour surcharger un comportement du Core."
-+++
+---
+title: Librairie personnalisée
+description: Développez une librairie Java pour surcharger un comportement du Core.
+---
 
 # Objectif
 
@@ -21,8 +20,6 @@ Dans ce module, nous aurons besoin des deux dépendances suivantes :
 * FlowerDocs Core Services pour surcharger le générateur de jeton utilisé par défaut par la couche de services
 
 
-[shortcode]
-[shortcode]
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
@@ -33,7 +30,6 @@ Dans ce module, nous aurons besoin des deux dépendances suivantes :
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
-			<version>[shortcode]</version>
 		</dependency>
 		<dependency>
 			<groupId>com.flower.docs.core</groupId>
@@ -42,16 +38,12 @@ Dans ce module, nous aurons besoin des deux dépendances suivantes :
 		</dependency>
 	</dependencies>
 </project>
-[shortcode]
-[shortcode]
 
 ## Générateur de jeton
 
 Dans ce module, nous souhaitons ajouter un attribut `custom` aux utilisateurs qui s'authentifient sur FlowerDocs.
 Pour cela, nous allons surcharger le générateur de jeton `JWTTokenHelper` utilisé par défaut par FlowerDocs Core.
 
-[shortcode]
-[shortcode]
 package com.flower.samples;
 
 import com.flower.docs.domain.security.AuthenticatedUser;
@@ -69,8 +61,6 @@ public class CustomTokenHelper extends JWTTokenHelper
         return super.generate(user, validityTime);
     }
 }
-[shortcode]
-[shortcode]
 
 
 ## Auto-configuration
@@ -78,8 +68,6 @@ public class CustomTokenHelper extends JWTTokenHelper
 Afin que la librairie définisse le générateur de jeton précédemment ajouté, nous allons utiliser le mécanisme d'[Auto-configuration](https://docs.spring.io/spring-boot/docs/current/reference/html/using-spring-boot.html#using-boot-auto-configuration) de Spring Boot.
 Notre classe de configuration permettra d'instancier automatiquement un objet `CustomTokenHelper` et de le fournir au contexte Spring Beans.
 
-[shortcode]
-[shortcode]
 package com.flower.samples;
 
 import org.springframework.context.annotation.Bean;
@@ -96,18 +84,12 @@ public class SampleLibAutoConfiguration
         return new CustomTokenHelper();
     }
 }
-[shortcode]
-[shortcode]
 
 Pour que cette classe de configuration soit chargée automatiquement par le mécanisme d'Auto-configuration, il est nécessaire de la référencer dans un fichier `META-INF/spring.factories`.
 Avec Maven, ce fichier doit être placé dans le répertoire `src/main/resources` de votre projet.
 
-[shortcode]
-[shortcode]
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
 com.flower.samples.SampleLibAutoConfiguration
-[shortcode]
-[shortcode]
 
 ## Compilation
 
@@ -139,4 +121,3 @@ Pour cela, utilisez le paramètre `-cp`.
     * Collez le token généré dans le champ _Encoded_
 
 L'attribut `custom` ajouté par l'objet `CustomTokenHelper` est bien présent dans les attributs ajoutés au jeton.
-

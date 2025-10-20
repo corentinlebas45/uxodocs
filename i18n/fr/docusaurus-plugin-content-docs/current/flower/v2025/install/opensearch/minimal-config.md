@@ -1,8 +1,7 @@
-+++
-date = "2001-03-28T12:20:01+02:00"
-title = "Configuration minimale"
-intro = ""
-+++
+---
+title: Configuration minimale
+intro: 
+---
 
 :::info
 Cette documentation s'appuie sur le dossier `${FD_HOME}` contenant les fichiers de configuration des applications.

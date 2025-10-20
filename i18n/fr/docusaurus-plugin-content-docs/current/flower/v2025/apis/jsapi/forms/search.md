@@ -1,7 +1,6 @@
-+++
-date = "2001-03-28T13:21:01+02:00"
-title = "Recherche"
-+++
+---
+title: Recherche
+---
 
 # Abonnement
 
@@ -60,4 +59,3 @@ JSAPI.get().registerForSearchOpen(function(searchFormAPI, id) {
 	footerActions.add(action);
 });
 ```
-

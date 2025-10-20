@@ -1,8 +1,7 @@
-+++
-date = "2006-03-28T13:20:01+02:00"
-title = "Montée de version OpenSearch"
-intro = "Installer un nouveau cluster OpenSearch et utiliser la procédure d'index from remote"
-+++
+---
+title: Montée de version OpenSearch
+intro: Installer un nouveau cluster OpenSearch et utiliser la procédure d'index from remote
+---
 
 Pour effectuer la montée de version d'OpenSearch, il est nécessaire d'installer un nouveau cluster OpenSearch dans la version cible. 
 Ensuite, la procédure suivante décrit comment pousser les données d'un cluster OpenSearch à un autre après avoir créé votre scope à partir du CLM.

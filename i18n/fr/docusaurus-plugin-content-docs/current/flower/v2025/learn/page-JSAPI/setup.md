@@ -1,8 +1,7 @@
-+++
- date = "2020-02-01T13:20:01+02:00"
-title = "Mise en place"
-draft = true
-+++
+---
+title: Mise en place
+draft: true
+---
 
 # Objectif
 
@@ -24,7 +23,6 @@ Pour la suite de ce tutoriel, vous aurez besoin d'une classe de document `RH` co
 
 Ainsi que de la page publique `application-success` contenant le template suivant : 
 
-[shortcode]
 ```html
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd ">
 <html xmlns="http://www.w3.org/1999/xhtml " xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
@@ -138,7 +136,6 @@ Ainsi que de la page publique `application-success` contenant le template suivan
 </body>
 </html>
 ```
-[shortcode]
 
 # Mise en place
 
@@ -147,7 +144,6 @@ Ainsi que de la page publique `application-success` contenant le template suivan
 Nous allons commencer par créer le formulaire de dépôt qui évoluera au cours de ce tutoriel pour atteindre notre objectif. 
 Depuis la console d'administration FlowerDocs, créez le template de la page que nous appellerons `application-portal.html` dont le contenu de base est : 
 
-[shortcode]
 ```html
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -257,7 +253,6 @@ Depuis la console d'administration FlowerDocs, créez le template de la page que
 </body>
 </html>
 ```
-[shortcode]
 
 :::info
 Ce template HTML embarque pour l'instant uniquement Dropzone.js et le css utilisé dans FlowerDocs. 
@@ -273,4 +268,4 @@ Afin de tester le rendu du template de notre page à chaque étape de notre form
 * Jeton : Oui
 
 <br/>
-Une fois la page avec votre template créée vous pourrez y accédez à l'adresse suivante : `/gui/public/<scope>/pages/application`. 
+Une fois la page avec votre template créée vous pourrez y accédez à l'adresse suivante : `/gui/public/<scope>/pages/application`.

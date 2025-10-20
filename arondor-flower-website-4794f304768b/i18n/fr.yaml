@@ -1,0 +1,83 @@
+- id: 404error
+  translation: "Erreur 404"
+
+- id: home
+  translation: "Accueil"
+
+- id: templateBy
+  translation: "Template par"
+
+- id: portedBy
+  translation: "Porté sur Hugo par"
+
+- id: clickHere
+  translation: "Cliquez ici"
+
+- id: contactGoTo
+  translation: "Aller à la page de contact"
+
+- id: contactAddrTitle
+  translation: "Adresse"
+
+- id: contactTitle
+  translation: "Contact"
+
+- id: contactForm
+  translation: "Formulaire de contact"
+
+- id: contactName
+  translation: "Nom"
+
+- id: contactMail
+  translation: "Email"
+
+- id: contactMessage
+  translation: "Message"
+
+- id: contactSend
+  translation: "Envoyer"
+
+- id: navHome
+  translation: "aller à l'accueil"
+
+- id: navToggle
+  translation: "Afficher/Cacher Navigation"
+
+- id: categoriesTitle
+  translation: "Catégories"
+
+- id: searchTitle
+  translation: "Recherche"
+
+- id: tagsTitle
+  translation: "Tags"
+
+- id: tableOfContents
+  translation: "Sommaire"
+
+- id: toGoBackHome
+  translation: "pour revenir à l'accueil"
+  
+- id: continueReading
+  translation: "Continuer à lire"
+
+- id: readMore
+  translation: "Lire plus"
+
+- id: authorBy
+  translation: "Par"
+
+- id: recentPosts
+  translation: "Posts récents"
+
+- id: aboutUs
+  translation: "A propos"
+
+- id: newer
+  translation: "Articles plus récents"
+
+- id: older
+  translation: "Articles plus anciens"
+
+- id: oopsPageDoesNotExist
+  translation: "Oups, il semble que cette page n'existe pas."

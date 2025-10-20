@@ -1,8 +1,7 @@
-+++
-date = "2005-03-28T13:23:01+02:00"
-title = "Buckets"
-description = "Gérer l'organisation des résultats de recherche avec les buckets"
-+++
+---
+title: Buckets
+description: Gérer l'organisation des résultats de recherche avec les buckets
+---
 
 # Manipuler les buckets
 
@@ -35,7 +34,6 @@ L'abonnement enregistré est appelé avec deux variables :
 * Le tableau `buckets` contient l'ensemble des buckets d'un même niveau 
 * Le `callback` fourni en entrée de l'abonnement doit être appelé avec un tableau de bucket  
 
-[shortcode]
 ```javascript
 var orderMap = {};
 orderMap[STATUT_1] = 0;
@@ -59,7 +57,6 @@ function getBucketIndex(bucket){
 	return orderMap[statusName];
 }
 ```
-[shortcode]
 
 :::info
 Le fait de supprimer ou d'ajouter des buckets n'est pas supporté. Le nombre total de bucket déterminé doit être égal à celui déterminé par FlowerDocs Core.
@@ -93,7 +90,6 @@ Les buckets fils et parents sont fournis à titre indicatif. Les modifications a
 La fonction `setSkipDisplay(boolean skip)` est également exposée sur l'objet `Bucket` permettant de masquer un bucket et n'afficher que ses fils.
 
 
-[shortcode]
 ```javascript
 var bucketAPI = JSAPI.get().getHelperFactory().getBucketAPI();
 bucketAPI.register(function(buckets, callback){
@@ -110,7 +106,6 @@ bucketAPI.register(function(buckets, callback){
 	callback.onProcessed(ordered);	
 });
 ```
-[shortcode]
 
 # Récupération des buckets après résolution
 
@@ -128,6 +123,3 @@ bucketAPI.registerForResolved("searchId", function(buckets){
 ```
 
 Ceci permet d'obtenir les buckets résolus, notamment les compteurs dans le cas de buckets partiels.
-
-
-

@@ -1,0 +1,14 @@
+<nav class="panel sidebar-menu affix">
+	{{ if .Sections }} {{ else }} {{ partial "widgets/search.html" . }} {{ end }} {{ if .TableOfContents }}
+	<div class="panel-heading">
+		<h3 class="panel-title">{{ .Title }}</h3>
+	</div>
+	<div class="panel-body">
+		<div id="list-toc" class="col-12 pl-0 pb-3">
+			<div id="toc" class="nav col-12">{{ .TableOfContents }}</div>
+		</div>
+
+		{{ partial "widgets/tags.html" . }}
+	</div>
+	{{ end }}
+</nav>

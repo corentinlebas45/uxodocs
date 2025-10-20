@@ -1,7 +1,6 @@
-+++
- date = "2020-03-01T13:20:01+02:00"
-title = "Au sein du fichier de propriétés de FlowerDocs GUI"
-+++
+---
+title: Au sein du fichier de propriétés de FlowerDocs GUI
+---
 
 # Ajout de la propriété dans le fichier gui.properties de l'application
 

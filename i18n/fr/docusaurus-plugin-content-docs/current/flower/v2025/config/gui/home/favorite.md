@@ -1,7 +1,6 @@
-+++
-date = "2000-04-02T13:20:01+02:00"
-title = "Favoris"
-+++
+---
+title: Favoris
+---
 
 Ce type de widget permet d'afficher les favoris de l'utilisateur en fonction d'une recherche configurée.
 

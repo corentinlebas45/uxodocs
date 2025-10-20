@@ -1,16 +1,14 @@
-+++
-date = "2000-02-01T12:20:01+02:00"
-title = "Search box"
-Order = 14
-Theme = "dev"
-Icon = "fas fa-search"
-Description = "Utiliser le plugin `SearchBox` pour faciliter l'ouverture de composants."
-Duration = "10m" 
-+++
+---
+title: Search box
+Order: 14
+Theme: dev
+Icon: fas fa-search
+Description: Utiliser le plugin `SearchBox` pour faciliter l'ouverture de composants.
+Duration: 10m
+---
 
 # Objectif
 
-[shortcode]
 
 Le plugin `SearchBoxPlugin` vous permet de faciliter la vie aux utilisateurs en ajoutant une barre de recherche accessible à tout moment.
 Cette barre de recherche peut afficher des résultats issus de différentes recherches.
@@ -53,4 +51,3 @@ searchBox.start();
 <!--:::info
 Retrouvez le module de scope correspondant à cette formation [ici](broken-link.md) 
 :::-->
-

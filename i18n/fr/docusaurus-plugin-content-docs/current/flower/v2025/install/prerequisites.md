@@ -1,10 +1,8 @@
-+++
-date = "2000-03-28T13:20:01+02:00"
-title = "Prérequis"
-+++
+---
+title: Prérequis
+---
 
 :::info
-Cette section décrit les prérequis des applications FlowerDocs GUI, FlowerDocs Core et [shortcode]
 :::
 
 
@@ -31,7 +29,6 @@ L'installation d'une plateforme FlowerDocs nécessite des serveurs Linux. Flower
 L'installation de Java Runtime 11 est nécessaire au démarrage de l'installation de la plateforme.
 
 :::warning
-Cette documentation ne couvre pas l'installation du serveur de rendition ARender (version [shortcode]). Il doit donc être installé au préalable et être accessible via le protocole HTTP ou HTTPS depuis FlowerDocs GUI, FlowerDocs Core et [shortcode] (version [shortcode])
 :::
 
 ### OpenSearch et Redis
@@ -45,7 +42,6 @@ L’architecture est dépendante de la charge estimée mais il est recommandé d
 
 | Composant|	vCPU	|  RAM	| Note|
 |-------------|----------------------|-----------------------------|--------------------------------------------|
-|**FlowerDocs** 	  |	2 | 4 Go|Les applications FlowerDocs GUI, FlowerDocs Core et [shortcode] doivent être installées sur des serveurs distincts. |
 |**ARender Rendition Server**  |	4| 8 Go|Le dimensionnement d'un serveur de rendition est fortement liée à la typologie et aux nombres de documents visualisés.|
 
 
@@ -56,7 +52,6 @@ Il est préconisé d'isoler chaque composant sur des machines différentes :
 
 * FlowerDocs Core
 * FlowerDocs GUI
-* [shortcode]
 * ARender Rendition
 * Redis
 * OpenSearch
@@ -71,7 +66,6 @@ La plateforme FlowerDocs nécessite l'installation des JARs exécutables :
 
 * `flower-docs-gui-webapp-2025.2.0.jar`
 * `flower-docs-core-webapp-2025.2.0.jar`
-* `arondor-arender-hmi-spring-boot-[shortcode].jar`
 
 
 Ces applications peuvent être configurées par des fichiers de propriétés situés dans le même répertoire que l'application.
@@ -84,10 +78,8 @@ Les applications peuvent être configurés via les fichiers suivants :
 |---------------------------|---------------------------------------------------------------------------|
 |FlowerDocs Core 				|`core.properties`															|
 |FlowerDocs GUI 				|`gui.properties`																|
-|[shortcode] 		|`arender-custom-server.properties`											|
 
 
-Le connecteur FlowerDocs ARender `flower-docs-arender-hmi-2025.2.0.jar` est également nécessaire pour que l'application [shortcode] soit en capacité de récupérer les documents stockés dans FlowerDocs. 
 
 :::info
 La configuration nécessaire est décrite dans la page dediée [ici](broken-link.md).
@@ -107,18 +99,12 @@ Pour cela, il vous faut calculer l'empreinte du fichier à l'aide de la fonction
 
 # Téléchargement
 
-[shortcode]
 
-[shortcode]
 
-[shortcode]
 
-[shortcode]
 
-[shortcode]
 
 <br/>
 :::info
 Vous souhaitez télécharger une autre version ? Accédez aux [anciennes releases](../../../releases).
 :::
-

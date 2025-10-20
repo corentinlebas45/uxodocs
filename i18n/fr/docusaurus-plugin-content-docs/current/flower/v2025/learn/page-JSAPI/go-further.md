@@ -1,8 +1,7 @@
-+++
- date = "2020-02-02T13:20:01+02:00"
-title = "Pour aller plus loin"
-draft = true
-+++
+---
+title: Pour aller plus loin
+draft: true
+---
 
 # Redirection vers une autre page publique
 L'utilisateur a maintenant créé son document dans FlowerDocs, mais il ne le sait pas. Nous pouvons rediriger l'utilisateur sur la page de succès après la création du document : 
@@ -43,7 +42,6 @@ myDropzone.on("removedfile", file =>{
   		});
 ```
 # Bilan : le script de notre page
-[shortcode]
 ```javascript
 	Dropzone.autoDiscover = false;
   	var ifrm = document.createElement("iframe");
@@ -97,4 +95,3 @@ myDropzone.on("removedfile", file =>{
 		return false;
 	}
 ```
-[shortcode]

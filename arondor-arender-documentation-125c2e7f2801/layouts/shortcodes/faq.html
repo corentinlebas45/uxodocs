@@ -1,0 +1,16 @@
+<div class="card mb-4 rounded-0 shadow border-0">
+  <div class="card-header rounded-0 bg-white border p-0 border-0">
+    <div class="card-link h4 d-flex tex-dark mb-0 py-3 px-4 justify-content-between">
+      <span>{{ .Get 0 | humanize | markdownify }}</span>
+  </div>
+  </div>
+  <div id="{{ .Get 0 | replaceRE `[.]` `-` | urlize }}">
+    <div class="card-body font-secondary text-color">
+      {{ if eq (.Get 1) "complex" }}
+      {{ .Inner }}
+      {{ else }}
+      {{ .Inner | markdownify}}
+      {{ end }}
+    </div>
+  </div>
+</div>

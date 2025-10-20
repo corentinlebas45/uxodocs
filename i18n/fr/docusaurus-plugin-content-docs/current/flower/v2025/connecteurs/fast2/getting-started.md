@@ -1,7 +1,6 @@
-+++
-date = "2000-03-28T13:20:01+02:00"
-title = "Getting Started"
-+++
+---
+title: Getting Started
+---
 
 Afin de réaliser des injections de masse et/ou planifiées de document au sein de FlowerDocs, 
 nous vous proposons l'utilisation de l'ETL documentaire Fast2 édité par Arondor.

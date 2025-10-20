@@ -1,8 +1,7 @@
-+++
-date = "2018-03-07T13:22:01+02:00"
-title = "Conditionnel"
-description = "Conditionnez les listes associées à vos tags en fonction du contexte."
-+++
+---
+title: Conditionnel
+description: Conditionnez les listes associées à vos tags en fonction du contexte.
+---
 
 Le type ``CONDITIONAL`` permet de définir des conditions sur les différents choix (ou ensembles de choix) proposés à l'utilisateur dans les formulaires d'indexation ou de recherche.
 
@@ -39,7 +38,6 @@ Seul le premier niveau comporte des balises de type `ConditionalAllowedValue`, l
 De plus, le symbolicName de chaque balise `allowedValues` doit être unique.
 :::
 
-[shortcode]
 ```xml
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <TagClass xmlns="https://flower.com/docs/domain/tagclass" xmlns:ns4="https://flower.com/docs/domain/i18n">
@@ -68,4 +66,3 @@ De plus, le symbolicName de chaque balise `allowedValues` doit être unique.
 
 </TagClass>
 ```
-[shortcode]

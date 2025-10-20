@@ -1,7 +1,6 @@
-+++
-date = "2000-03-28"
-title = "Clustering & HA"
-+++
+---
+title: Clustering & HA
+---
 
 # Activation
 

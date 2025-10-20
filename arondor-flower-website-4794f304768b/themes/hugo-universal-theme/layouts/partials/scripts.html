@@ -1,0 +1,64 @@
+<script src="{{ .Site.BaseURL }}js/jquery.min.js"></script>
+
+<script type="text/javascript">
+    $('#TableOfContents a').each(function (e) {
+        var href = $(this).attr('href');
+        $(this).attr('id', href.substring(1, href.length));
+        $(this).addClass('nav-link');
+    });
+    $('#TableOfContents ul ul').each(function (e) {
+        $(this).addClass('nav collapse');
+    });
+    $(window).on('activate.bs.scrollspy', function () {
+        $("#toc.nav .nav-link").parents('ul.collapse').removeClass('d-flex');
+        $("#toc.nav .active").next('.nav.collapse').addClass('d-flex');
+        $("#toc.nav .active").parents('ul.collapse').addClass('d-flex');
+    });
+</script>
+
+<script src="{{ .Site.BaseURL }}js/owl-carousel/owl.carousel.min.js"></script>
+<script src="{{ .Site.BaseURL }}js/jquery.appear.js"></script>
+<script src="{{ .Site.BaseURL }}js/magnific-popup/jquery.magnific-popup.min.js"></script>
+<script src="{{ .Site.BaseURL }}js/retina.min.js"></script>
+<script src="{{ .Site.BaseURL }}js/wow.min.js"></script>
+<script src="{{ .Site.BaseURL }}js/jquery.countdown.min.js"></script>
+<script src="{{ .Site.BaseURL }}js/skrollr.min.js"></script>
+<script src="{{ .Site.BaseURL }}js/popper.min.js"></script>
+<script src="{{ .Site.BaseURL }}js/bootstrap.min.js"></script>
+<script src="{{ .Site.BaseURL }}js/front.js"></script>
+<script src="{{ .Site.BaseURL }}js/custom.js"></script>
+
+<script type="text/javascript">
+    $('body').addClass('fonts-loaded');
+</script>
+<script src="{{ .Site.BaseURL }}js/rad-animations.js"></script>
+<script src="{{ .Site.BaseURL }}libs/jquery.waypoints.min.js"></script>
+<script src="{{ .Site.BaseURL }}libs/jquery.counterup.min.js"></script>
+<script src="{{ .Site.BaseURL }}libs/clipboard.min.js"></script>
+
+<script type="text/javascript">
+    if (location.hostname != 'localhost') {
+        function loadAsyncScript(url, id) {
+            var script = document.createElement('script');
+            if (id) {
+                script.id = id;
+            }
+            script.setAttribute('async', '');
+            script.setAttribute('defer', '');
+            script.src = url;
+            document.head.appendChild(script);
+        }
+        function gtag() { dataLayer.push(arguments); }
+
+        loadAsyncScript('//js.hs-scripts.com/7557957.js', 'hs-script-loader');
+        var _hsp = window._hsp = window._hsp || [];
+        _hsp.push(['addPrivacyConsentListener', function (consent) {
+            if (consent.allowed) {
+                loadAsyncScript('https://www.googletagmanager.com/gtag/js?id=UA-115946188-1');
+                window.dataLayer = window.dataLayer || [];
+                gtag('js', new Date());
+                gtag('config', 'UA-115946188-1');
+            }
+        }]);
+    }
+</script>

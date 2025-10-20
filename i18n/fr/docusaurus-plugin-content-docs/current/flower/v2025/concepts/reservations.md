@@ -1,7 +1,6 @@
-+++
-title = "Réservations"
-date = "2008-02-02"
-+++
+---
+title: Réservations
+---
 
 :::info
 Une réservation permet de s'approprier temporairement l'accès en écriture d'un composant dans l'interface graphique afin d'éviter les modifications concurrentes.

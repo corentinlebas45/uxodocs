@@ -1,8 +1,6 @@
-+++
-date = "2023-03-29T13:20:01+02:00"
-title = "Exemple complet"
-+++
-
+---
+title: Exemple complet
+---
 
 ```xml 
 <bean id="AgentSearch" class="com.flower.docs.gui.client.search.ComponentSearchPresenter" scope="prototype">

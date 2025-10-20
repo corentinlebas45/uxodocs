@@ -1,0 +1,191 @@
+.hbspt-form {
+    .hs-firstname {
+        margin: 0 0 20px 0;
+        padding: 0;
+        width: 49%;
+        float: left;
+    }
+
+    .hs-lastname,
+    .hs-phone {
+        margin: 0 0 20px 0;
+        padding: 0;
+        width: 49%;
+        float: left;
+        float: right;
+    }
+
+    .hs-company {
+        margin: 0 0 20px 0;
+        padding: 0;
+        width: 49%;
+        float: left;
+    }
+
+    .hs-email {
+        margin: 0 0 20px 0;
+        padding: 0;
+        clear: both;
+    }
+
+
+    .hs-input {
+        background-color: #fff;
+        border: 1px solid #e0e0e0;
+        padding: 12px;
+        width: 100%;
+        color: #888;
+    }
+
+    .hs-recaptcha {
+        display: none !important;
+    }
+
+    textarea {
+        min-height: 150px;
+    }
+
+    .legal-consent-container {
+        clear: both;
+        font-size: 0.8em !important;
+    }
+
+    .hs-dependent-field [type="checkbox"] {
+        width: auto;
+        margin: 10px 5px 0 0;
+    }
+
+    .actions {
+        margin: 50px auto;
+        text-align: center;
+
+        input {
+            font-size: 17px;
+            background: #04aeef;
+            border-color: #04aeef;
+            color: #fff;
+            padding: 15px 45px;
+            border-radius: 30px;
+            cursor: pointer;
+            border: 1px solid transparent;
+            box-shadow: -10px 10px 30px rgba(0, 0, 0, 0.1);
+
+            &:hover {
+                background: #fff;
+                border-color: #04aeef;
+                color: #04aeef;
+                transition: 0.4s;
+            }
+        }
+    }
+
+    .submitted-message {
+        text-align: center;
+        font-size: 2em;
+        overflow: hidden !important;
+        color: #04aeef;
+    }
+
+}
+
+.hs-form {
+    .hs-error-msgs {
+        label {
+            color: #ff0000;
+            font-size: 0.8em;
+        }
+    }
+
+    .inputs-list {
+        padding-left: 0px;
+        list-style-type: none;
+    }
+
+    .actions {
+        margin-bottom: 0px!important;
+
+        // .hs-button {
+        //     font-size: 16px;
+        //     font-family: $primary-font;
+        //     text-transform: capitalize;
+        //     padding: 15px 40px;
+        //     border-radius: 0;
+        //     font-weight: 500;
+        //     border: 0;
+        //     position: relative;
+        //     z-index: 1;
+        //     transition: .2s ease;
+        //     overflow: hidden;
+
+        //     background: $primary-color;
+        //     color: $white;
+
+        //     &::before {
+        //         position: absolute;
+        //         content: "";
+        //         height: 80%;
+        //         width: 100%;
+        //         left: 0;
+        //         bottom: 10%;
+        //         z-index: -1;
+        //         transition: transform .2s ease-in-out;
+        //         transform-origin: top;
+        //         transform: scaleY(0);
+
+        //         background: white;
+        //     }
+
+        //     &:focus {
+        //         outline: 0;
+        //         box-shadow: none !important;
+        //     }
+
+        //     &:active {
+        //         box-shadow: none;
+
+        //         background: $primary-color !important;
+        //         color: $primary-color;
+
+        //         &::before {
+        //             height: 80%;
+        //         }
+        //     }
+
+        //     &:hover {
+
+        //         &::before {
+        //         transform: scaleY(1);
+        //         transform-origin: bottom;
+
+        //         background: darken($color: $primary-color, $amount: 10);
+        //         color: $primary-color;
+        //         }
+        //     }
+
+                
+            
+        // }
+
+        // .hs-button:not(:disabled):not(.disabled).active,
+        // .hs-button:not(:disabled):not(.disabled):active,
+        // .show>.hs-button.dropdown-toggle {
+        //     color: $white;
+        //     background-color: darken($color: $primary-color, $amount: 10);
+        //     border-color: darken($color: $primary-color, $amount: 10);
+        // }
+    }
+
+    .hs-richtext {
+      color: black;
+      font-weight: 400;
+      font-family: "Raleway", sans-serif;
+
+      p{
+          font-size: 11px;
+      }
+    }
+    
+    .hs_recaptcha {
+      display: none;
+    }
+}

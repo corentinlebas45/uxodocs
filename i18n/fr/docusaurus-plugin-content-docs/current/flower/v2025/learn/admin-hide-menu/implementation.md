@@ -1,7 +1,6 @@
-+++
-date = "2020-02-01T12:20:01+02:00"
-title = "Implementation"
-+++
+---
+title: Implementation
+---
 
 # Masquage des onglets
 
@@ -75,5 +74,3 @@ if(profiles.includes('MANAGER')){
 <!--:::info
 Retrouvez le module de scope correspondant à cette formation [ici](broken-link.md) 
 :::-->
-
-

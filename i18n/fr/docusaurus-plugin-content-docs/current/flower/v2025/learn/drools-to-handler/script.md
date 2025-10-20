@@ -1,13 +1,10 @@
-+++
-date = "2020-02-01T15:20:01+02:00"
-title = "Script OH"
-+++
+---
+title: Script OH
+---
 
 Ajouter un nouvel operation handler de type ScriptOperationHandler, qui référence un script. 
 Voici le script qui, avec les mêmes conditions, applique les mêmes traitements que la table de décision précédente : 
 
-[shortcode]
-[shortcode]
   logger.info("[GEC_Workflow_OH]");
   var classId = RuleUtil.getClassId(component);
   var answerId = component.getAnswer().getId().getValue();
@@ -54,5 +51,3 @@ Voici le script qui, avec les mêmes conditions, applique les mêmes traitements
       }
     return false;
   }
-[shortcode]
-[shortcode]

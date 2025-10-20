@@ -1,10 +1,8 @@
-+++
-date = "2004-03-28T13:22:01+02:00"
-title = "Activité"
-draft = "true"
-description = "Démarrer une activité dans une popup."
-+++
-
+---
+title: Activité
+draft: true
+description: Démarrer une activité dans une popup.
+---
 
 :::info
 Ce type de popup permet d'ouvrir une place au sein d'une popup, via JavaScript.

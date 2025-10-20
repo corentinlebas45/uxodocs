@@ -1,16 +1,12 @@
-+++
-title = "Aller plus loin"
-date = "2020-02-03T12:20:01+02:00"
-+++
-
+---
+title: Aller plus loin
+---
 
 # Permettre la création
 
 Lors de la sélection d'un composant à lier, il est possible de proposer à l'utilisateur de créer un nouveau composant.
 Pour le permettre, l'option `creation` accepte les phases d'indexation durant lesquelles l'utilisateur pourra créer un nouveau composant.
 
-[shortcode]
-[shortcode]
 var plugin = new LinkFreeListPlugin({
 	toPopulate: 'RH_OfferLink',
 	category: 'TASK',
@@ -21,8 +17,6 @@ var plugin = new LinkFreeListPlugin({
 	creation: { phases: ['INSERT', 'MODIFY']}
 });
 plugin.bind();
-[shortcode]
-[shortcode]
 
 # Réagir à la sélection
 
@@ -30,8 +24,6 @@ Lors de la sélection d'un composant proposé par ce plugin, il peut s'avérer n
 Ces informations peuvent être utilisées pour répliquer des informations sur le composant en cours d'indexation ou encore proposer des actions supplémentaires à l'utilisateur.
 L'option `selector` permet de fournir une fonction appelée lors de la sélection avec le composant sélectionné.
 
-[shortcode]
-[shortcode]
 var plugin = new LinkFreeListPlugin({
 	toPopulate: 'RH_OfferLink',
 	category: 'TASK',
@@ -44,8 +36,6 @@ var plugin = new LinkFreeListPlugin({
 	}
 });
 plugin.bind();
-[shortcode]
-[shortcode]
 
 <!--
 # Filtres
@@ -57,8 +47,6 @@ Lors de l'indexation, l'utilisateur commence par sélectionner l'offre d'emploi.
 
 Pour cela, il est possible d'ajouter l'option `filterTags: ['RH_OfferLink']` pour filtrer les valeurs proposées en fonction d'un tag présent sur le formulaire.
 
-[shortcode]
-[shortcode]
 var plugin = new LinkFreeListPlugin({
 	toPopulate: 'RH_ApplicationLink',
 	category: 'TASK',
@@ -69,8 +57,6 @@ var plugin = new LinkFreeListPlugin({
 	filterTags: ['RH_OfferLink']
 });
 plugin.bind();
-[shortcode]
-[shortcode]
 -->
 
 <!--:::info

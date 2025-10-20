@@ -1,8 +1,7 @@
-+++
-date = "2019-06-05T13:20:01+02:00"
-title = "OpenID Connect"
-description = "Un pour tous, tous pour un"
-+++
+---
+title: OpenID Connect
+description: Un pour tous, tous pour un
+---
 
 # Concept
 
@@ -27,7 +26,6 @@ Le partage de la clé secrète est nécessaire afin que FlowerDocs GUI puisse in
 La configuration d'un _Identity Provider_ OpenId Connect peut être réalisée à travers la console d'administration FlowerDocs. 
 Cette configuration est stockée dans des documents techniques de classe `OAuthClientConfiguration`. Les différents paramètres à renseigner sont stockés dans des tags.
 
-[shortcode]
 ```xml
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <ns5:DocumentClass category="DOCUMENT" active="false" technical="true" xmlns="http://flower.com/docs/domain/common" xmlns:ns2="http://flower.com/docs/domain/componentclass" xmlns:ns4="http://flower.com/docs/domain/tagclass" xmlns:ns3="http://flower.com/docs/domain/i18n" xmlns:ns6="http://flower.com/docs/domain/component" xmlns:ns20="http://flower.com/docs/domain/security" xmlns:ns5="http://flower.com/docs/domain/documentclass" xmlns:ns8="http://flower.com/docs/domain/search" xmlns:ns7="http://flower.com/docs/domain/acl" xmlns:ns13="http://flower.com/docs/domain/scope" xmlns:ns9="http://flower.com/docs/domain/file" xmlns:ns12="http://flower.com/docs/domain/reservation" xmlns:ns11="http://flower.com/docs/domain/task" xmlns:ns22="http://flower.com/docs/domain/folderclass" xmlns:ns10="http://flower.com/docs/domain/taskclass" xmlns:ns21="http://flower.com/docs/domain/virtualfolderclass" xmlns:ns17="http://flower.com/docs/domain/folder" xmlns:ns16="http://flower.com/docs/domain/document" xmlns:ns15="http://flower.com/docs/domain/report" xmlns:ns14="http://flower.com/docs/domain/workflow" xmlns:ns19="http://flower.com/docs/domain/fact" xmlns:ns18="http://flower.com/docs/domain/virtualFolder">
@@ -64,7 +62,6 @@ Cette configuration est stockée dans des documents techniques de classe `OAuthC
 	<ns2:displayNames language="FR">
 </ns5:DocumentClass>
 ```
-[shortcode]
 
 
 ## Compte d'accès
@@ -101,8 +98,6 @@ _Pour plus de détails, consultez les spécifications_ [OpenId Connect](https://
 
 ## Exemples
 
-[shortcode]
-[shortcode]
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <ns3:Document category="DOCUMENT" name="Google" xmlns="http://flower.com/docs/domain/common"
 	xmlns:ns2="http://flower.com/docs/domain/component" xmlns:ns3="http://flower.com/docs/domain/document">
@@ -153,8 +148,6 @@ _Pour plus de détails, consultez les spécifications_ [OpenId Connect](https://
 		</ns2:tags>
 	</ns2:Tags>
 </ns3:Document>
-[shortcode]
-[shortcode]
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <ns3:Document category="DOCUMENT" name="Microsoft" xmlns="http://flower.com/docs/domain/common"
 	xmlns:ns2="http://flower.com/docs/domain/component" xmlns:ns3="http://flower.com/docs/domain/document">
@@ -206,8 +199,6 @@ _Pour plus de détails, consultez les spécifications_ [OpenId Connect](https://
 		</ns2:tags>
 	</ns2:Tags>
 </ns3:Document>
-[shortcode]
-[shortcode]
 
 
 # Connexion automatique
@@ -215,5 +206,3 @@ _Pour plus de détails, consultez les spécifications_ [OpenId Connect](https://
 Pour authentifier un utilisateur automatiquement à l'aide de ce mécanisme d'authentification, il est possible d'ajouter le paramètre `sso=auto` dans l'URL.
 
 Avec ce paramètre, l'utilisateur, lorsqu'il accède à la page de connexion est automatiquement authentifié en utilisant OpenId Connect.
-
-

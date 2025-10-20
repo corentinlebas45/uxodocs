@@ -1,8 +1,7 @@
-+++
-date = "2018-04-02T12:20:01+01:57"
-title = "Gérer les ACL"
-description = "Gérez vos listes de contrôle d'accès"
-+++
+---
+title: Gérer les ACL
+description: Gérez vos listes de contrôle d'accès
+---
 
 Le service ACLService expose différentes opérations que vous pouvez effectuer sur les ACL :
 
@@ -25,19 +24,15 @@ Les exemples ci-dessous indiquent comment récupérer des ACL en utilisant les d
 <br/>
 GET :
 
-[shortcode]
-[shortcode]
 GET {{core}}/rest/acl/ HTTP/1.1
 
 -- Paramètres d'URL --
 core: host de FlowerDocs core
 
 -- Headers --
-token: {{token}}
+token: {token}
 Content-Type: application/json
-[shortcode]
 
-[shortcode]
 @Autowired
 private ACLService service;
 
@@ -45,14 +40,10 @@ public List<SecurityObject> getAllAcl() throws TechnicalException, FunctionalExc
 {
     return service.getAll();
 }
-[shortcode]
-[shortcode]
 
 <br/>
 GET FOR COMPONENT :
 
-[shortcode]
-[shortcode]
 GET {{core}}/rest/acl/{category}/{ids} HTTP/1.1
 
 -- Paramètres d'URL
@@ -61,11 +52,9 @@ category: categorie du composant
 ids: identifiant du composant
 
 -- Headers --
-token: {{token}}
+token: {token}
 Content-Type: application/json
-[shortcode]
 
-[shortcode]
 @Autowired
 private ACLService service;
 
@@ -76,25 +65,19 @@ public SecurityObject getForComponentAcl() throws FunctionalException, Technical
 	component.setCategory(Category.DOCUMENT);
 	return service.getForComponent(component);
 }
-[shortcode]
-[shortcode]
 
 <br/>
 GET BY ID :
 
-[shortcode]
-[shortcode]
 GET {{core}}/rest/acl/{ids} HTTP/1.1
 
 -- Paramètres d'URL --
 core: host de FlowerDocs core
 
 -- Headers --
-token: {{token}}
+token: {token}
 Content-Type: application/json
-[shortcode]
 
-[shortcode]
 @Autowired
 private ACLService service;
 
@@ -103,22 +86,18 @@ public List<SecurityObject> get() throws FunctionalException, TechnicalException
 	List<Id> ids = Lists.newArrayList(new Id("acl-admin"));
 	return service.get(ids);
 }
-[shortcode]
-[shortcode]
 
 # Création d'ACL
 
 Les exemples ci-dessous indiquent comment créer des ACL en utilisant l'opération de `create`.
 
-[shortcode]
-[shortcode]
 POST {{core}}/rest/acl/ HTTP/1.1
 
 -- Paramètres d'URL --
 core : host de FlowerDocs core
 
 -- Headers --
-token: {{token}}
+token: {token}
 Content-Type: application/json
 
 -- Body (json) --
@@ -134,9 +113,7 @@ Content-Type: application/json
         "name": "Test d'ACL"
 	}
 ]
-[shortcode]
 
-[shortcode]
 @Autowired
 private ACLService service;
 
@@ -148,15 +125,11 @@ public List<SecurityObject> create() throws FunctionalException, TechnicalExcept
 	List<SecurityObject> acls = Lists.newArrayList(acl);
 	return service.create(acls);
 }
-[shortcode]
-[shortcode]
 
 # Modification d'ACL
 
 Les exemples ci-dessous indiquent comment mettre à jour des ACL en utilisant l'opération d'`update`.
 
-[shortcode]
-[shortcode]
 POST {{core}}/rest/acl/{ids} HTTP/1.1
 
 -- Paramètres d'URL --
@@ -164,7 +137,7 @@ core: host de FlowerDocs core
 ids: identifiants des ACL à modifier
 
 -- Headers --
-token: {{token}}
+token: {token}
 Content-Type: application/json
 
 -- Body (json)
@@ -180,9 +153,7 @@ Content-Type: application/json
         "name": "Test d'ACL"
 	}
 ]
-[shortcode]
 
-[shortcode]
 @Autowired
 private ACLService service;
 
@@ -195,15 +166,11 @@ public List<SecurityObject> update() throws FunctionalException, TechnicalExcept
 	List<SecurityObject> acls = Lists.newArrayList(acl);
 	return service.update(acls);
 }
-[shortcode]
-[shortcode]
 
 # Suppression d'ACL
 
 Les exemples ci-dessous indiquent comment supprimer des ACL en utilisant l'opération de `delete`.
 
-[shortcode]
-[shortcode]
 DELETE {{core}}/rest/acl/{ids} HTTP/1.1
 
 -- Paramètres d'URL --
@@ -211,11 +178,9 @@ core: host de FlowerDocs core
 ids: identifiants des ACL à supprimer
 
 -- Headers --
-token: {{token}}
+token: {token}
 Content-Type: application/json
-[shortcode]
 
-[shortcode]
 @Autowired
 private ACLService service;
 
@@ -224,5 +189,3 @@ public void delete() throws FunctionalException, TechnicalException
 	List<Id> ids = Lists.newArrayList(new Id("acl_test"));
 	service.delete(ids);
 }
-[shortcode]
-[shortcode]

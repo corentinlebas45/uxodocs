@@ -1,8 +1,8 @@
-+++
-date = "2019-06-02T13:20:01+02:00"
-title = "Utilisateurs internes"
-description = "Définir des utilisateurs internes"
-+++
+---
+title: Utilisateurs internes
+description: Définir des utilisateurs internes
+---
+
 :::info
 Des utilisateurs propres à FlowerDocs peuvent être définis au niveau de FlowerDocs Core. Ces utilisateurs peuvent être utilisés comme compte de service, pour des administrateurs etc.
 {{% /info%}}

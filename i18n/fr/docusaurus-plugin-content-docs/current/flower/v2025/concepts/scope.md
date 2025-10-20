@@ -1,8 +1,7 @@
-+++
-date = "2001-02-02"
-title = "Scope"
-description = "Isolez vos clients / métiers."
-+++
+---
+title: Scope
+description: Isolez vos clients / métiers.
+---
 
 :::info
 Les scopes permettent d'isoler les données entre différents clients / métiers tout en utilisant une même plateforme.

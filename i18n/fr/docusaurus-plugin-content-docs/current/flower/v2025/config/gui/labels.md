@@ -1,7 +1,6 @@
-+++
-date = "2009-03-29T13:20:01+02:00"
-title = "Libellés"
-+++
+---
+title: Libellés
+---
 
 Cette section détaille la configuration des libellés de FlowerDocs GUI. Nativement, l'application supporte le français et l'anglais.
 Ces libellés natifs peuvent être définis à l'aide de : 
@@ -12,21 +11,14 @@ Ces libellés natifs peuvent être définis à l'aide de :
 # Définition des libellés
 
 Nativement, l'interface graphique supporte le français et l'anglais. Il est possible de surcharger les libellés natifs ou d'ajouter de nouvelles langues.
-La définition de libellés  peut être effectuée grâce à des fichiers de propriétés placés dans un dossier `labels` du [répertoire de configuration]([shortcode]).
 
 Le fichier de propriété contenant les libellés doit être nommé tel que `<locale>.properties` (par exemple `fr.properties`).
 
 <br/>
 __Exemple :__ Surcharger le libellé de l'onglet Accueil.
 
-[shortcode]
-[shortcode]
 home=Tableau de bord
-[shortcode]
-[shortcode]
 home=Dashboard
-[shortcode]
-[shortcode]
 
 # Détermination de la locale
 

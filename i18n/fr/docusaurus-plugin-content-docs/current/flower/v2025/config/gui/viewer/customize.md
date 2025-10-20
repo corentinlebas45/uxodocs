@@ -1,8 +1,7 @@
-+++
-date = "2010-06-28T13:20:01+02:00"
-title = "Personnalisation ARender"
-description = "Personnaliser ARender au sein de FlowerDocs."
-+++
+---
+title: Personnalisation ARender
+description: Personnaliser ARender au sein de FlowerDocs.
+---
 
 # Introduction
 

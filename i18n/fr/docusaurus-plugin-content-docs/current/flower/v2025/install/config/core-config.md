@@ -1,7 +1,6 @@
-+++
-date = "2000-03-31T13:20:01+02:00"
-title = "Configuration Core"
-+++
+---
+title: Configuration Core
+---
 
 Cette partie décrit les différentes configurations côté FlowerDocs Core à définir au sein du fichier `core.properties` de l'application.
 
@@ -12,7 +11,6 @@ Cette partie décrit les différentes configurations côté FlowerDocs Core à d
 |----------------------|------------------------------------------------------------------------|
 |system.admin.username |Identifiant du compte système											|
 |system.admin.password |Mot de passe du compte système, peut être encrypté via un secret		|
-|token.key			   |Token partagé entre FlowerDocs Core, FlowerDocs GUI et  [shortcode]	|
 |secret				   |Secret utilisé pour encoder le mot de passe *(optionnel)*				|
 |core.context		   |Contexte de l'application												|
 

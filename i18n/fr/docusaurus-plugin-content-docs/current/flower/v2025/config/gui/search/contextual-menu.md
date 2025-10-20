@@ -1,7 +1,6 @@
-+++
-date = "2012-03-28T13:20:01+02:00"
-title = "Menus contextuels"
-+++
+---
+title: Menus contextuels
+---
 
 Lors du clic droit sur un ou plusieurs résultats de recherche, un menu contextuel apparaît. Celui-ci présente à la fois : 
 
@@ -66,4 +65,3 @@ class="com.flower.docs.gui.client.search.document.DocumentContextualMenuPresente
 	</property>
 </bean>
 ```
-

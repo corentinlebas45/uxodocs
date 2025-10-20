@@ -1,7 +1,6 @@
-+++
-date = "2000-03-29T13:20:01+02:00"
-title = "Page de connexion"
-+++
+---
+title: Page de connexion
+---
 
 L'affichage du formulaire de connexion est configurable à l'aide de propriétés à définir dans le fichier ``gui.properties``: 
 

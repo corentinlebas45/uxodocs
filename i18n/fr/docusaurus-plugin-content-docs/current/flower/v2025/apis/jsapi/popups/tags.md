@@ -1,8 +1,7 @@
-+++
-date = "2004-03-28T13:21:01+02:00"
-title = "Tags"
-description = "Affichage des tags d'un composant dans une popup."
-+++
+---
+title: Tags
+description: Affichage des tags d'un composant dans une popup.
+---
 
 :::info
 Ce type de popup permet d'afficher les tags d'un composant existant au sein d'une popup.

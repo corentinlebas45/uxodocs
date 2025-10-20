@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+{{ partial "head.html" . }}
+
+<body data-spy="scroll" data-offset="80">
+
+	<div id="all">
+
+		<header> {{ partial "nav.html" . }} </header>
+
+		{{ partial "breadcrumbs.html" . }}
+
+
+		{{ $site := .Site }}
+
+		<div id="content">
+
+			{{ if .Params.starter }}
+			<section id="how-it-works" class="overview-block-ptb it-works p-5 mb-4 fixed-bg fixed-bg-grey">
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-12">
+							<div class="heading-title">
+								<h2 class="title iq-tw-7 mb-5">{{ .Params.starter.title }}</h2>
+								<p class="pb-3">{{ .Params.starter.text | markdownify }}</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			{{ end }}
+
+
+			{{ partial "profits.html" .Params.profits  }}
+			<div class="container">
+
+				<div class="row">
+					{{ if .Params.nav }}
+					<div class="col-md-9" id="blog-post">
+						<div id="post-content" class="{{ if .Params.landing }}landing-page {{ end }}">
+							{{ .Content }}
+						</div>
+					</div>
+
+					<div class="col-md-3">
+						{{ partial "right_bar.html" . }}
+					</div>
+					{{ else }}
+					<div class="col-md-12" id="blog-post">
+						<div id="post-content" class="landing-page">
+							{{ .Content }}
+						</div>
+					</div>
+					{{ end }}
+
+				</div>
+
+			</div>
+			{{ partial "footer.html" . }} {{ partial "sticky.html" . }}
+
+		</div>
+		<!-- /#all -->
+
+		{{ partial "scripts.html" . }}
+
+</body>
+
+</html>

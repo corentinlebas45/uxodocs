@@ -1,8 +1,8 @@
-+++
-date = "2012-03-28T13:20:01+02:00"
-title = "Versions"
-Description = "Stratégies de version de documents"
-+++
+---
+title: Versions
+Description: Stratégies de version de documents
+---
+
 Une stratégie de nommage permet de définir les libellés que l’utilisateur peut renseigner lors de la création d’une version d'un document. Différentes stratégies sont disponibles : 
 
 * `MINOR` :  Version MINEURE uniquement. 

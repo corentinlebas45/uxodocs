@@ -1,9 +1,7 @@
-+++
-date = "2005-03-28T13:20:01+02:00"
-title = "Modèle"
-description = "Rechercher des composants à travers l'API JS"
-+++
-
+---
+title: Modèle
+description: Rechercher des composants à travers l'API JS
+---
 
 Pour rechercher des composants via l'API JS, la fonction ``search`` des différentes API de services est à disposition **[ici](broken-link.md)**.
 

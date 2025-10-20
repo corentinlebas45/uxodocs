@@ -1,8 +1,6 @@
-+++
-date = "2000-02-01T12:20:01+02:00"
-title = "Getting Started"
-+++
-
+---
+title: Getting Started
+---
 
 :::info
 Prenez en main les concepts liés au modèle de données FlowerDocs conçu dans le but de faciliter : 

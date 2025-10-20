@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.Language }}">
+
+{{ partial "head.html" . }}
+
+<body>
+    <div id="all">
+        <header>
+            {{ partial "nav.html" . }}
+        </header>
+
+        {{ partial "breadcrumbs.html" . }}
+
+        <div id="content">
+            <div class="container">
+                <div class="col-sm-10 col-sm-offset-2" id="error-page">
+                    <div class="box iq-mb-100">
+                        <p>
+                            {{ i18n "oopsPageDoesNotExist" }}<br />
+                            {{ if eq .Language.Lang "fr" }}
+    	                    <a href="/documentation">
+    	                    {{ else }}
+    	                    <a href="/{{ .Language.Lang }}/documentation">
+    	                    {{ end }}
+                            {{ i18n "clickHere" }}</a> {{ i18n "toGoBackHome" }}.
+                        </p>
+                        <img class="iq-mt-30" src="{{ .Site.BaseURL }}images/erreur-404.jpg"
+                            alt="{{ i18n "404error" }} FlowerDocs" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {{ partial "footer.html" . }}
+        {{ partial "sticky.html" . }}
+        {{ partial "scripts.html" . }}
+
+    </div>
+</body>
+
+</html>

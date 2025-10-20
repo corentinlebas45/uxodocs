@@ -1,8 +1,7 @@
-+++
-date= "2001-03-01"
-title = "IFrameOffMenu"
-intro = "OffMenu affichant une IFrame."
-+++
+---
+title: IFrameOffMenu
+intro: OffMenu affichant une IFrame.
+---
 
 Les OffMenus de type IFrame permettent d'ajouter une IFrame au sein du menu. 
 

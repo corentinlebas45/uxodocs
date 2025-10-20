@@ -1,0 +1,23 @@
+<div class="card card-clickable text-center h-100 pt-3{{ if .horizontal }}{{ if not .post.Params.image }}horizontal{{ end }}{{ end }}"  {{ if .post.Params.carousel }}style="max-width:100%;"{{ end }}>
+    {{ if .url }}
+        <a href="{{ .url | absURL }}" class="button float-right iq-mt-20">
+    {{ else }}
+        {{ if .post.Content}}
+            <a href="{{ .post.Permalink }}" class="button float-right iq-mt-20">
+        {{ end }}
+    {{ end }}
+    {{ if .post.Params.image }}
+    <img class="card-img-top" src="{{ .post.Params.image | absURL }}" alt="{{ .post.Title }}" />
+    {{ else }}
+    {{ if .post.Params.icon }}
+    <div class="icon-bg center-block m-auto">
+        <i aria-hidden="true" class="icon {{ .post.Params.icon }}"></i>
+    </div>
+    {{ end }}
+    {{ end }}
+    <div class="card-body d-flex flex-column mt-0">
+        <h5 class="card-title">{{ .post.Title }}</h5>
+        <p class="card-text text-justify lead">{{ .post.Description | markdownify }}</p>
+    </div>
+    </a>
+</div>

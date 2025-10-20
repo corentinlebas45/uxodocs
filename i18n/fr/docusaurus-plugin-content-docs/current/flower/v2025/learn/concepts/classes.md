@@ -1,7 +1,6 @@
-+++
-title = "Les classes"
-date = "2000-03-02"
-+++
+---
+title: Les classes
+---
 
 # A quoi ça sert ?
 

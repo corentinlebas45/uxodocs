@@ -1,8 +1,6 @@
-+++
-title = "Les composants"
-date = "2000-02-01"
-+++
-
+---
+title: Les composants
+---
 
 Les objets manipulés à travers l'interface et les APIs sont les [composants](/javadocs/domain/com/flower/docs/domain/component/Component.html). Chaque composant est classifié en fonction de critères métiers ou techniques grâce à une [classe de composants](broken-link.md).
 

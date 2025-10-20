@@ -1,9 +1,7 @@
-+++
-date = "2004-03-21T13:22:01+02:00"
-title = "Merge de plusieurs scopes"
-description = "Description des règles utilisées pour le merge de scope : quels éléments sont mergés, comportement en cas de conflits..."
-+++
-
+---
+title: Merge de plusieurs scopes
+description: Description des règles utilisées pour le merge de scope : quels éléments sont mergés, comportement en cas de conflits...
+---
 
 :::info
 Le paramètre ``force`` permet de déterminer le comportement à adopter en cas de conflits entre les éléments de plusieurs modules :

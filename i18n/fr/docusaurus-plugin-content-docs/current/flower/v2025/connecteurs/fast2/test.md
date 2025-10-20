@@ -1,12 +1,8 @@
-+++
-date = "2001-03-28T15:20:01+02:00"
-title = "Test"
-description = "Valider la configuration d'une injection Fast2"
-intro = "Afin de valider la configuration d'une tâche d'injection dans FlowerDocs, il est possible de suivre les étapes suivantes pour définir une source de punnet."
-+++
-
-
-
+---
+title: Test
+description: Valider la configuration d'une injection Fast2
+intro: Afin de valider la configuration d'une tâche d'injection dans FlowerDocs, il est possible de suivre les étapes suivantes pour définir une source de punnet.
+---
 
 # Tâche d'import
 

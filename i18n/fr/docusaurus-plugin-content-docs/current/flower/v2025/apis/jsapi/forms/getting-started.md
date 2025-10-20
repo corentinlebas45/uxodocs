@@ -1,7 +1,6 @@
-+++
-date = "2001-03-28T13:19:01+02:00"
-title = "Interactions avec les champs"
-+++
+---
+title: Interactions avec les champs
+---
 
 :::info
 Les formulaires sont la base des écrans présentés au sein de l'interface graphique. 
@@ -163,5 +162,3 @@ Pour fournir à vos utilisateurs des formulaires interactifs, il est possible de
 	// Utilisation de la nouvelle valeur d'un champ
   });
 ```
-
-

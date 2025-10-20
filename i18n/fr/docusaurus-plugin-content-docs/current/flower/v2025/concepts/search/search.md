@@ -1,8 +1,7 @@
-+++
-date = "2005-02-02"
-title = "Recherches"
-description = "Profitez de la richesse de FlowerDocs"
-+++
+---
+title: Recherches
+description: Profitez de la richesse de FlowerDocs
+---
 
 Les capacités de FlowerDocs en terme de recherche permettent d'exploiter au maximum le fond documentaire tout en conservant l'ergonomie requise par les utilisateurs finaux.
 

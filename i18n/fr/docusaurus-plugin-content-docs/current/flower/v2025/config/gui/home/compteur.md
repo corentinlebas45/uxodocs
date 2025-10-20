@@ -1,8 +1,6 @@
-+++
-date = "2000-04-15T13:20:01+02:00"
-title = "Compteur"
-+++
-
+---
+title: Compteur
+---
 
 Un compteur permet d'afficher le nombre de résultats d'une recherche au sein d'un widget affiché sur la page d'accueil.
 

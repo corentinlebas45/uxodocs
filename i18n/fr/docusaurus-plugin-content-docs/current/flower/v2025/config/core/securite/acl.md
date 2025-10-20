@@ -1,10 +1,8 @@
-+++
-date = "2019-06-06"
-title = "Liste de contrôle d'accès"
-Description = "Sécurisez l'accès aux composants"
-Intro = "Une liste de contrôle d'accès (ACL) définit une liste d'entrées (ACE) permettant d’attribuer des permissions à des identités."
-+++
-
+---
+title: Liste de contrôle d'accès
+Description: Sécurisez l'accès aux composants
+Intro: Une liste de contrôle d'accès (ACL) définit une liste d'entrées (ACE) permettant d’attribuer des permissions à des identités.
+---
 
 # Les permissions
 

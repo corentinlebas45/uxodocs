@@ -1,8 +1,7 @@
-+++
-date = "2005-06-28T13:20:01+02:00"
-title = "Configuration"
-description = "Configurer la visionneuse ARender."
-+++
+---
+title: Configuration
+description: Configurer la visionneuse ARender.
+---
 
 # Surcharge de profil 
 
@@ -26,4 +25,3 @@ Cet exemple permet de changer la couleur par défaut des notes textuelles.
 :::warning
 Il n'est pas préconisé de modifier des propriétés d'Arender via du paramétrage dans les fichiers properties. Les propriétés non définies dans la documentation ne sont pas qualifiées par FlowerDocs : le bon fonctionnement de l'application n'est donc pas garanti avec ces modifications.
 :::
-

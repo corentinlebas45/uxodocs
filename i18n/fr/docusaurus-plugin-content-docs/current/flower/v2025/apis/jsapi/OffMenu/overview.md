@@ -1,8 +1,7 @@
-+++
-date= "2001-02-01"
-title = "Overview"
-intro = "Ouvrez plusieurs fenêtres en même temps ."
-+++
+---
+title: Overview
+intro: Ouvrez plusieurs fenêtres en même temps .
+---
 
 Plusieurs types de OffMenu peuvent être instanciés ou modifiés : 
 

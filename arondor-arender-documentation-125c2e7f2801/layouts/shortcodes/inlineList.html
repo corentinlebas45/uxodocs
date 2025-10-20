@@ -1,0 +1,6 @@
+<div>
+  {{- .Inner -}}
+    {{range (split (.Get 0) ";" ) }}
+    <p>{{- . | markdownify -}}</p>
+    {{ end }}
+</div>

@@ -1,8 +1,6 @@
-+++
-date = "2004-04-02T13:20:01+02:00"
-title = "Formulaire"
-+++
-
+---
+title: Formulaire
+---
 
 # Sélecteur de catégorie
 
@@ -335,7 +333,6 @@ Afin de décider si le bouton de recherche doit être désactivé ou non, la pro
 * `false` : le formulaire doit être valide pour activer l'action
 
 
-[shortcode]
 ```xml
 <bean id="RechercheAgent" class="com.flower.docs.gui.client.search.ComponentSearchPresenter" scope="prototype">
 	<property name="title">
@@ -353,7 +350,6 @@ Afin de décider si le bouton de recherche doit être désactivé ou non, la pro
 	<property name="enableIfInvalid" value="true" />
 </bean>
 ```
-[shortcode]
 
 # Configuration avancée de dossiers virtuels
 
@@ -381,7 +377,6 @@ Si l'ID du dossier virtuel ou du formulaire de recherche contient des underscore
     __Exemple :__ pour la classe de dossiers virtuels Courrier_Mail, le nom du bean du formulaire de recherche associé sera ``contentCourrierMailVirtualFolder``
 :::
 
-[shortcode]
 ```xml
 	<bean id="contentCourriercollectiveVirtualFolderCourriersearch" 
 		class="com.flower.docs.gui.client.search.ComponentSearchPresenter"
@@ -450,7 +445,6 @@ Si l'ID du dossier virtuel ou du formulaire de recherche contient des underscore
 		</property>
 	</bean>
 ```
-[shortcode]
 
 ## Indexation
 

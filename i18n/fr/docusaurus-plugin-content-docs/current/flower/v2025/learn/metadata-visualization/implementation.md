@@ -1,9 +1,6 @@
-+++
- date = "2020-02-01T11:20:01+02:00"
-title = "Implémentation"
-+++
-
-
+---
+title: Implémentation
+---
 
 # Visualiser les métadonnées de toutes les pièces jointes d'une tâche
 
@@ -23,35 +20,28 @@ L'utilisateur peut maintenant voir les métadonnées de chaque pièce jointe d'u
 Nous allons maintenant restreindre l'affichage de cette action. Nous souhaitons que seule la pièce jointe identifiée `Courrier` dispose de l'action de visualisation. Pour cela, nous ajoutons l'option `attachmentId` à notre configuration de plugin afin de renseigner sur quelle pièce jointe l'action doit être positionnée.
 
 
-[shortcode]
 ```javascript
 attachmentId: 'Courrier'
 ```
-[shortcode]
 
 Nous obtenons donc le script suivant 
-[shortcode]
 ```javascript
 new MetadataVisualizationAttachmentPlugin({
 	classId: 'GEC_Step2_ATraiter',
   	attachmentId: 'Courrier'
 }).bind();
 ```
-[shortcode]
 
 # Pour aller plus loin : personnalisation de l'action
 
 Nous souhaitons maintenant personnaliser l'action de visualisation. Nous allons ajouter à notre script, les options de personnalisation du titre et de l'icône de l'action: 
 
-[shortcode]
 ```javascript
 	title:'Visualisation des données du courrier entrant',
 	icon:'fa-up-right-from-square'
 ```
-[shortcode]
 
 Ainsi avec ce script, l'action de visualisation est entièrement personnalisée : 
-[shortcode]
 ```javascript
 new MetadataVisualizationAttachmentPlugin({
 	classId: 'GEC_Step2_ATraiter',
@@ -60,4 +50,3 @@ new MetadataVisualizationAttachmentPlugin({
 	icon:'fa-up-right-from-square'
 }).bind();
 ```
-[shortcode]

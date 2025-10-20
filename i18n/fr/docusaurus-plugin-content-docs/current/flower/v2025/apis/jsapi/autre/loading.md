@@ -1,7 +1,6 @@
-+++
-date = "2018-03-28T13:21:01+02:00"
-title = "Panneau de chargement"
-+++
+---
+title: Panneau de chargement
+---
 
 Pour notifier l'utilisateur d'un traitement en cours lors de l'exécution de JavaScript, le panneau de chargement peut être affiché puis caché à la fin du traitement avec les fonctions suivantes disponibles depuis l'API ``FlowerJSAPI.get()`` : 
 
@@ -19,7 +18,3 @@ setTimeout(function() {
 	JSAPI.get().hideLoadingPanel();
 }, 3000)
 ```
- 
-
-
-

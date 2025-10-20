@@ -1,8 +1,7 @@
-+++
-date = "2018-06-21T09:40:01+02:00"
-title = "Gérer les jetons d’authentification"
-description = "Génerez et validez vos jetons"
-+++
+---
+title: Gérer les jetons d’authentification
+description: Génerez et validez vos jetons
+---
 
 Le service `token` permet de générer un jeton pour des documents donnés ou encore de rallonger la durée de vie d'un jeton.
 
@@ -15,8 +14,6 @@ Les exemples ci dessous indiquent comment génerer des jetons utilisateurs.
 
 L'exemple ci-dessous indique comment générer un jeton avec une durée de vie paramètrable pour l'utilisateur authentifié.
 
-[shortcode]
-[shortcode]
 POST {{core}}/rest/token/user?validityTime={validityTime} HTTP/1.1
 
 -- Paramètres d'URL --
@@ -24,10 +21,8 @@ core: host de FlowerDocs core
 validityTime : la validité du token en secondes
 
 -- Headers --
-token: {{token}}
+token: {token}
 Content-Type: application/json
-[shortcode]
-[shortcode]
 	@Autowired
 	private TokenService tokenService;
 
@@ -35,25 +30,19 @@ Content-Type: application/json
 	{
 		return service.generate(validityTime);
 	}
-[shortcode]
-[shortcode]
 
 ## Générer un nouveau token
 
 L'exemple ci dessous permet de générer un nouveau token pour l'utilisateur authentifié.
 
-[shortcode]
-[shortcode]
 PUT {{core}}/rest/token/user HTTP/1.1
 
 -- Paramètres d'URL --
 core: host de FlowerDocs core
 
 -- Headers --
-token: {{token}}
+token: {token}
 Content-Type: application/json
-[shortcode]
-[shortcode]
 	@Autowired
 	private TokenService tokenService;
 
@@ -61,8 +50,6 @@ Content-Type: application/json
 	{
 		return service.generate();
 	}
-[shortcode]
-[shortcode]
 
 :::warning
 Les endpoints de génération de token se terminant par `/token` sont dépréciés depuis la version 2025.2.0 car ils ne renvoient pas de date d'expiration.
@@ -72,8 +59,6 @@ Les endpoints de génération de token se terminant par `/token` sont dépréci�
 
 L'exemple ci dessous permet de générer un nouveau token pour l'utilisateur authentifié afin d'accéder à une liste de documents spécifiques.
 
-[shortcode]
-[shortcode]
 POST {{core}}/rest/token/document/{ids}?readOnly={readOnly} HTTP/1.1
 
 -- Paramètres d'URL --
@@ -82,10 +67,8 @@ ids: identifiants des documents pour lesquel générer le token
 readOnly : true or false pour accès en lecture seule ou non
 
 -- Headers --
-token: {{token}}
+token: {token}
 Content-Type: application/json
-[shortcode]
-[shortcode]
 	@Autowired
 	private TokenService tokenService;
 
@@ -93,15 +76,11 @@ Content-Type: application/json
 	{
 		return service.generateForDocuments(ids, readOnly);
 	}
-[shortcode]
-[shortcode]
 
 # Validation d'un token
 
 L' exemple ci dessous permet de valider un token.
 
-[shortcode]
-[shortcode]
 POST {{core}}/rest/token/{tokenToValidate} HTTP/1.1
 
 -- Paramètres d'URL --
@@ -109,10 +88,8 @@ core: host de FlowerDocs core
 tokenToValidate : le token à valider
 
 -- Headers --
-token: {{token}}
+token: {token}
 Content-Type: application/json
-[shortcode]
-[shortcode]
 	@Autowired
 	private TokenService tokenService;
 
@@ -120,5 +97,3 @@ Content-Type: application/json
 	{
 		return service.validate(token);
 	}
-[shortcode]
-[shortcode]

@@ -1,12 +1,11 @@
-+++
-date = "2020-02-01T12:20:01+02:00"
-title = "Getting Started"
-Order = 1
-Theme = "dev"
-Icon = "fa fa-cogs"
-Description = "Générez une pièce jointe au format Word"
-Duration = "20m"
-+++
+---
+title: Getting Started
+Order: 1
+Theme: dev
+Icon: fa fa-cogs
+Description: Générez une pièce jointe au format Word
+Duration: 20m
+---
 
 # Objectif
 
@@ -18,4 +17,3 @@ Quand vous aurez fini ce module, vous pourrez :
 
 # Avant de commencer
 
-Ce tutoriel demande l'utilisation du scope GEC, ainsi que l'API JavaScript de FlowerDocs. Il se base sur le [TemplateAttachmentPlugin]([shortcode]).

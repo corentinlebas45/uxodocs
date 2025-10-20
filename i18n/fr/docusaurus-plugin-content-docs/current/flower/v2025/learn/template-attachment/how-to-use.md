@@ -1,7 +1,6 @@
-+++
-date = "2020-02-01T14:20:01+02:00"
-title = "Utilisation du plugin"
-+++
+---
+title: Utilisation du plugin
+---
 
 # Objectif
 
@@ -24,7 +23,6 @@ Vous aurez alors un choix de modèle. Choisissez le modèle qui correspond à vo
 
 Lorsque vous validez le modèle de document voulu, un nouveau dossier est créé dans FlowerDocs. Le contenu de celui-ci est un fichier au format Word généré en fonction du modèle sélectionné.  
 
-Ce fichier est alors enregistré en local et il peut alors être modifié directement dans Word puis mis à jour sur FlowerDocs. Si le [plugin Microsoft Word]([shortcode]) est installé sur votre machine, le fichier sera ouvert dans Word et vous pouvez le mettre à jour sur FlowerDocs directement depuis Word.
 
 <br/>
 Il ne reste plus qu'à enregistrer la tâche ou y appliquer une réponse pour que la pièce jointe soit prise en compte.

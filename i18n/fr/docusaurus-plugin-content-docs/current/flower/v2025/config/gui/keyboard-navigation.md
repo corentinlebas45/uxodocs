@@ -1,7 +1,6 @@
-+++ 
-title = "RGAA - Navigation clavier" 
-date = "1999-02-28" 
-+++
+---
+title: RGAA - Navigation clavier
+---
 
 :::info 
 Découvrez comment accéder rapidement aux différentes régions de FlowerDocs

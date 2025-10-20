@@ -1,9 +1,7 @@
-+++
-date = "2000-06-28T13:20:01+02:00"
-title = "Graphiques"
-description = ""
-+++
-
+---
+title: Graphiques
+description: 
+---
 
 Dans la page d'accueil, il est possible d'afficher des graphiques définis à partir de recherche. Le type de graphique est automatiquement déterminé à partir du nombre d'agrégation : 
 
@@ -101,7 +99,6 @@ __Exemple : Donut de mes courriers en fonction de leur statut__
 
 Le résultat suivant sur la page d'accueil :
 
-[shortcode]
 
 
 :::info
@@ -217,7 +214,6 @@ __Exemple : Histogramme de tous les courriers en fonction du service et du statu
 
 Le résultat suivant sur la page d'accueil :
 
-[shortcode]
 
 
 

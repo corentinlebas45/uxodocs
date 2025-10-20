@@ -1,8 +1,6 @@
-+++
-date = "2000-04-01T13:20:01+02:00"
-title = "Recherche"
-+++
-
+---
+title: Recherche
+---
 
 Ce type de widget permet d'afficher la concaténation des champs présents dans la `selectClause` de la recherche pour chaque composant remonté par la recherche configurée.
 

@@ -1,8 +1,6 @@
-+++
-title = "Validation"
-date = "2000-02-04T13:20:01+02:00"
-+++
-
+---
+title: Validation
+---
 
 Afin de valider le bon fonctionnement de ce qui a été mis en place, commencez par créer un document client.
 Pour cela, rendez-vous sur l'onglet `Insérer`, insérez un fichier puis cliquez sur `Suivant` afin de passer à l'étape d'indexation.
@@ -37,4 +35,3 @@ Pour faciliter la gestion de client entre le dossier virtuel et les documents, u
 <!--:::info
 Retrouvez le module de scope correspondant à cette formation [ici](broken-link.md) 
 :::-->
-

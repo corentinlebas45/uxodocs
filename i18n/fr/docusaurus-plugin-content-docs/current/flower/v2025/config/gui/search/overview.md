@@ -1,8 +1,6 @@
-+++
-date = "2004-03-28T13:20:01+02:00"
-title = "Pour commencer"
-+++
-
+---
+title: Pour commencer
+---
 
 :::info
 Les formulaires de recherches sont des modèles de recherche pré-configurés et mis à disposition des utilisateurs finaux.
@@ -51,7 +49,6 @@ __Exemple :__ Un formulaire de recherche ``RechercheAgent`` basique dont le titr
 Un formulaire de recherche peut être associé à une équipe d'utilisateur à travers une propriété qui peut être définie via :
 
 * le CLM et le fichier `scope.xml` : 
-[shortcode]
 ```xml
 <profiles>
 	<name>ALL_USERS</name>
@@ -63,7 +60,6 @@ Un formulaire de recherche peut être associé à une équipe d'utilisateur à t
 	</properties>
 </profiles>
 ```
-[shortcode]
 * la console d'administration : dans la section `Sécurité > Equipes > Propriétés`, ajouter une propriété `Formulaire de recherche`
  
 <br/> 

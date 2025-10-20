@@ -1,8 +1,7 @@
-+++
-date = "2023-08-25T13:20:01+02:00"
-title = "Constructeur de document"
-description = "Manipuler les fichiers d'un document."
-+++
+---
+title: Constructeur de document
+description: Manipuler les fichiers d'un document.
+---
 
 # Principe
 

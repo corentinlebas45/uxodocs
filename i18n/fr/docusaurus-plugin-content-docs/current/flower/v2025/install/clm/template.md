@@ -1,8 +1,6 @@
-+++
-date = "2004-03-20T13:20:01+02:00"
-title = "Template"
-+++
-
+---
+title: Template
+---
 
 # Import d'un scope
 

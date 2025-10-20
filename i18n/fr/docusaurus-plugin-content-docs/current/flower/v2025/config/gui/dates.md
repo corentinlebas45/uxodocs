@@ -1,8 +1,6 @@
-+++
-date = "2009-03-28T13:20:01+02:00"
-title = "Gestion des dates"
-+++
-
+---
+title: Gestion des dates
+---
 
 # Configuration globale
 

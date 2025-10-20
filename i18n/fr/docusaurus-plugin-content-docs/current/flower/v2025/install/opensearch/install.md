@@ -1,14 +1,12 @@
-+++
-date = "2001-03-28T13:20:01+02:00"
-title = "Installation"
-intro = ""
-+++
+---
+title: Installation
+intro: 
+---
 
 # Installation OpenSearch
 
 ## Procédure d'installation
 
-Pour installer OpenSearch, différents moyens sont mis à disposition et sont expliqués pas à pas dans la [documentation officielle](https://opensearch.org/docs/[shortcode]/opensearch/install/index).
  
 ## Configuration 
 
@@ -40,7 +38,6 @@ Pour changer le mot de passe d'un utilisateur :
 * afin que les modifications soient prises en compte, exécuter le script ``${OPENSEARCH_HOME}/plugins/opensearch-security/tools/securityadmin.sh``
 
 <br/>
-Pour plus d'informations concernant la sécurisation d'une instance OpenSearch, la documentation officielle est disponible [ici](https://opensearch.org/docs/[shortcode]/security-plugin/index).
 
 ### Démarrage  
 
@@ -52,7 +49,6 @@ Pour terminer, démarrez OpenSearch en allant dans le dossier ``${OPENSEARCH_HOM
 
 Pour installer OpenSearch en tant que service `systemd`, le fichier suivant doit être créé dans le répertoire /etc/systemd/system tel que :
 
-[shortcode]
 ```sh
 [Unit]
 Description=opensearch
@@ -106,17 +102,13 @@ SuccessExitStatus=143
 [Install]
 WantedBy=multi-user.target
 ```
-[shortcode]
 
 
 Afin que le service soit démarré automatiquement par systemd, exécuter les commandes suivantes :
 
-[shortcode]
-[shortcode]
   systemctl enable opensearch.service
 {{< /tab >>}}
-[shortcode] 
 
 ### Validation 
 
-Afin de vérifier le bon fonctionnement d'OpenSearch, allez sur la page http://localhost:9200/. 
+Afin de vérifier le bon fonctionnement d'OpenSearch, allez sur la page http://localhost:9200/.

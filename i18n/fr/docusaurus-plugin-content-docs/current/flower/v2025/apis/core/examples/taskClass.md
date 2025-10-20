@@ -1,8 +1,7 @@
-+++
-date = "2001-04-29T13:30:01+01:02"
-title = "Manipuler les classes de tâches"
-description = "Créez, récupérez, modifiez, supprimez vos classes de tâches"
-+++
+---
+title: Manipuler les classes de tâches
+description: Créez, récupérez, modifiez, supprimez vos classes de tâches
+---
 
 Le service `TaskClassService` expose toutes les opérations disponibles autour des composants de type `TaskClass`.
 
@@ -12,18 +11,14 @@ Le service `TaskClassService` expose toutes les opérations disponibles autour d
 
 Les exemples ci-dessous indiquent comment récupérer toutes les classes de tâches.
 
-[shortcode]
-[shortcode]
 GET {{core}}/rest/taskclass HTTP/1.1
 
 -- Paramètre d'URL -- 
 core: host de FlowerDocs core
 
 -- Headers -- 
-token: {{token}}
+token: {token}
 
-[shortcode]
-[shortcode]
 	@Autowired
     private TaskClassService taskClassService;
 
@@ -31,15 +26,11 @@ token: {{token}}
     {
         return taskClassService.getAll();
     }
-[shortcode]
-[shortcode]
 
 ## Récupération d'une liste définie de classes de tâches
 
 Les exemples ci-dessous indiquent comment récupérer une liste de classes de tâches à partir de leurs identifiants.
 
-[shortcode]
-[shortcode]
 GET {{core}}/rest/taskclass/{ids} HTTP/1.1
 
 -- Paramètre d'URL -- 
@@ -47,10 +38,8 @@ core: host de FlowerDocs core
 ids: liste d'identifiants de classes de tâches
 
 -- Headers -- 
-token: {{token}}
+token: {token}
 
-[shortcode]
-[shortcode]
 	@Autowired
     private TaskClassService taskClassService;
 
@@ -60,22 +49,18 @@ token: {{token}}
         taskClassesIds.add(new Id("taskClass2Id"));
         return taskClassService.get(taskClassesIds);
     }
-[shortcode]
-[shortcode]
 
 # Création de classes de tâches
 
 Les exemples ci-dessous indiquent comment créer une classe de tâches. 
 
-[shortcode]
-[shortcode]
 POST {{core}}/rest/taskclass HTTP/1.1
 
 -- Paramètre d'URL -- 
 core: host de FlowerDocs core
 
 -- Headers -- 
-token: {{token}}
+token: {token}
 Content-Type: application/json
 
 -- Body (json) --
@@ -128,8 +113,6 @@ Content-Type: application/json
     "workflow": "GEC"
   }
 ]
-[shortcode]
-[shortcode]
 	@Autowired
     private TaskClassService taskClassService;
     
@@ -171,15 +154,11 @@ Content-Type: application/json
 
         taskClassService.create(taskClasses);
     }
-[shortcode]
-[shortcode]
 
 # Modification de classes de tâches
 
 Les exemples ci-dessous indiquent comment modifier une classe de tâche.
 
-[shortcode]
-[shortcode]
 POST {{core}}/rest/taskclass/{ids} HTTP/1.1
 
 -- Paramètre d'URL -- 
@@ -187,7 +166,7 @@ core: host de FlowerDocs core
 ids : liste des identifiants de classe de tâches à mettre à jour, séparés par des virgules
 
 -- Headers --
-token: {{token}}
+token: {token}
 Content-Type: application/json
 
 -- Body (json) --
@@ -249,8 +228,6 @@ Content-Type: application/json
     "workflow": "GEC"
   }
 ]
-[shortcode]
-[shortcode]
 	@Autowired
     private TaskClassService taskClassService;
     
@@ -273,8 +250,6 @@ Content-Type: application/json
 
         return taskClassService.update(taskClasses);
     }
-[shortcode]
-[shortcode]
 
 :::warning
 En utilisant le service REST, les informations non renseignées seront vidées : il faut envoyer la totalité de la classe de tâche et non pas seulement les informations à modifier. 
@@ -284,8 +259,6 @@ En utilisant le service REST, les informations non renseignées seront vidées :
 
 Les exemples ci-dessous indiquent comment supprimer une liste de classes de tâches.
 
-[shortcode]
-[shortcode]
 DELETE {{core}}/rest/taskclass/{ids} HTTP/1.1
 
 -- Paramètre d'URL -- 
@@ -293,10 +266,8 @@ core: host de FlowerDocs core
 ids : liste des identifiants de classe de tâches à supprimer, séparés par des virgules
 
 -- Headers --
-token: {{token}}
+token: {token}
 
-[shortcode]
-[shortcode]
 	@Autowired
 	private TaskClassService taskClassService;
 	
@@ -305,8 +276,6 @@ token: {{token}}
         List<Id> taskClassesIds = Lists.newArrayList(new Id("taskClassId"));
         taskClassService.delete(taskClassesIds);
     }
-[shortcode]
-[shortcode]
 
 :::warning
 Avant de supprimer une classe de tâche, il est important de s'assurer d'avoir bien supprimé toutes les instances de cette classe, ainsi que les références à celle-ci au niveau des objets de type workflow.

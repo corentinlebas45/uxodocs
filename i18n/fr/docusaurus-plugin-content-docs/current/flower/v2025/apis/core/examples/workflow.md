@@ -1,8 +1,7 @@
-+++
-date = "2018-04-03T12:20:01+01:57"
-title = "Gestion des processus"
-description = "Créez, récupérez, modifiez, supprimez vos processus"
-+++
+---
+title: Gestion des processus
+description: Créez, récupérez, modifiez, supprimez vos processus
+---
 
 Le service `WorkflowService` expose toutes les opérations disponibles autour des `Processus`.
 
@@ -13,18 +12,14 @@ Le service `WorkflowService` expose toutes les opérations disponibles autour de
 
 Les exemples ci-dessous indiquent comment récupérer tous les processus présents sur le scope.
 
-[shortcode]
-[shortcode]
 GET {{core}}/rest/workflow HTTP/1.1
 
 -- Paramètre d'URL -- 
 core: host de FlowerDocs core
 
 -- Headers -- 
-token: {{token}}
+token: {token}
 
-[shortcode]
-[shortcode]
 	@Autowired
     private WorkflowService wkfService;
 
@@ -32,15 +27,11 @@ token: {{token}}
     {
         return wkfService.getAll();
     }
-[shortcode]
-[shortcode]
 
 ## Récupération d'une liste définie de processus
 
 Les exemples ci-dessous indiquent comment récupérer une liste de processus à partir de leurs identifiants.
 
-[shortcode]
-[shortcode]
 GET {{core}}/rest/workflow/{ids} HTTP/1.1
 
 -- Paramètre d'URL -- 
@@ -48,10 +39,8 @@ core: host de FlowerDocs core
 ids: liste d'identifiants de processus, séparés par des virgules
 
 -- Headers -- 
-token: {{token}}
+token: {token}
 
-[shortcode]
-[shortcode]
 	@Autowired
     private WorkflowService wkfService;
 
@@ -61,22 +50,18 @@ token: {{token}}
         workflowIds.add(new Id("processId"));
         return wkfService.get(workflowIds);
     }
-[shortcode]
-[shortcode]
 
 # Création de classes de processus
 
 Les exemples ci-dessous indiquent comment créer un processus. 
 
-[shortcode]
-[shortcode]
 POST {{core}}/rest/workflow HTTP/1.1
 
 -- Paramètre d'URL -- 
 core: host de FlowerDocs core
 
 -- Headers -- 
-token: {{token}}
+token: {token}
 Content-Type: application/json
 
 -- Body (json) --
@@ -91,8 +76,6 @@ Content-Type: application/json
         "id": "GECTest"
     }
 ]
-[shortcode]
-[shortcode]
 	@Autowired
     private WorkflowService wkfService;
     
@@ -113,15 +96,11 @@ Content-Type: application/json
 
         wkfService.create(workflowList);
     }
-[shortcode]
-[shortcode]
 
 # Modification de processus
 
 Les exemples ci-dessous indiquent comment modifier un processus.
 
-[shortcode]
-[shortcode]
 POST {{core}}/rest/workflow/{ids} HTTP/1.1
 
 -- Paramètre d'URL -- 
@@ -129,7 +108,7 @@ core: host de FlowerDocs core
 ids : liste des identifiants de workflow à mettre à jour, séparés par des virgules
 
 -- Headers --
-token: {{token}}
+token: {token}
 Content-Type: application/json
 
 -- Body (json) --
@@ -145,8 +124,6 @@ Content-Type: application/json
         ]
     }
 ]
-[shortcode]
-[shortcode]
 	@Autowired
     private WorkflowService wkfService;
     
@@ -158,8 +135,6 @@ Content-Type: application/json
 
         return wkfService.update(workflowList);
     }
-[shortcode]
-[shortcode]
 
 :::warning
 En utilisant le service REST, les informations non renseignées seront vidées : il faut envoyer la totalité du processus et pas seulement les informations à modifier. 
@@ -169,8 +144,6 @@ En utilisant le service REST, les informations non renseignées seront vidées :
 
 Les exemples ci-dessous indiquent comment supprimer une liste de processus.
 
-[shortcode]
-[shortcode]
 DELETE {{core}}/rest/workflow/{ids} HTTP/1.1
 
 -- Paramètre d'URL -- 
@@ -178,10 +151,8 @@ core: host de FlowerDocs core
 ids : liste des identifiants de processus à supprimer, séparés par des virgules
 
 -- Headers --
-token: {{token}}
+token: {token}
 
-[shortcode]
-[shortcode]
 	@Autowired
 	private WorkflowService wkfService;
 	
@@ -190,8 +161,6 @@ token: {{token}}
         List<Id> workflowIds = Lists.newArrayList(new Id("workflowId"));
         wkfService.delete(workflowIds);
     }
-[shortcode]
-[shortcode]
 
 :::warning
 La suppression ne fait aucun contrôle : il faut donc vérifier qu'il n'y a pas d'instances en cours avant la suppression d'un processus.

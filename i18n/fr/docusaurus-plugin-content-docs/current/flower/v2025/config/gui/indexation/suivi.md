@@ -1,8 +1,7 @@
-+++
-date = "2002-04-28T13:20:01+02:00"
-title = "Suivi d'un composant"
-description = ""
-+++
+---
+title: Suivi d'un composant
+description: 
+---
 
 Le suivi d’un composant permet de visualiser les différentes tâches liées à un composant. Ce `suivi des tâches` peut être configuré grâce au fragment XML suivant, en définissant la catégorie voulue via la propriété ``category`` d'un bean ``taskTrackingConfiguration``.
 

@@ -1,7 +1,6 @@
-+++
-title = "Script et résultat"
-date = "2000-02-03T12:20:01+02:00"
-+++
+---
+title: Script et résultat
+---
 
 # Script
 
@@ -52,6 +51,3 @@ plugin.bind();
 <br/>
 Ouvrez la candidature créée, vous pourrez voir qu'à côté du tag `RH_OfferLink`, une icône est apparue. En cliquant sur cette icône, une popup s'ouvre et affiche les tags de l'offre d'emploi référencée (ou liée). 
 Le bouton `Ouvrir` permet d'accéder à l'écran de consultation de l'offre d'emploi afin de visualiser à la fois les tags et les pièces jointes de cette tâche.
-
-
-

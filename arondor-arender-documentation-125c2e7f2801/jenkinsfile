@@ -1,0 +1,73 @@
+pipeline {
+    agent {
+        ecs {
+            inheritFrom 'maven'
+            image 'artifactory.arondor.cloud:5002/jenkins-agents/hugo'
+        }
+    }
+    stages {
+        stage('Build') {
+            when
+            {
+                not
+                {
+                    anyOf {
+                        branch 'develop'
+                        branch pattern: 'release/2023.*'
+                    }
+                }
+            }
+            environment {
+                GIT = credentials('arondor_git')
+            }
+            steps {
+                sh 'bash getPropertiesList.sh'
+                sh 'hugo --destination "website"'
+            }
+        }
+        stage('Build next') {
+            when
+            {
+                anyOf {
+                    branch 'develop'
+                    branch pattern: 'release/2023.*'
+                }
+            }
+            environment {
+                GIT = credentials('arondor_git')
+            }
+            steps {
+                sh 'bash getPropertiesList.sh'
+                sh 'hugo --environment next-production --destination "website"'
+            }
+        }
+        stage('Deploy master') {
+            when {
+                branch 'master'
+            }
+            steps {
+                withAWS(credentials:'arender.jenkins', region: 'eu-west-3') {
+                    s3Delete(bucket: 'arender-documentation', path: '/')
+                    s3Download(bucket: 'aro-arender-dev-documentation', path: 'docs/third-party/', file: 'website/temp/')
+                    sh 'mv website/temp/docs/third-party/ website/docs/'
+                    sh 'rm -rf website/temp/'
+                    s3Upload(file:'website', bucket:'arender-documentation')
+                }
+            }
+        }
+        stage('Deploy next') {
+            when {
+                anyOf {
+                    branch 'develop'
+                    branch pattern: 'release/2023.*'
+                }
+            }
+            steps {
+                withAWS(credentials:'arender.jenkins', region: 'eu-west-3') {
+                    s3Delete(bucket: 'arender-documentation-next', path: '/')
+                    s3Upload(file:'website', bucket:'arender-documentation-next')
+                }
+            }
+        }
+    }
+}

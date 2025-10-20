@@ -1,7 +1,6 @@
-+++
-date = "2018-03-28T13:20:01+02:00"
-title = "Autre"
-+++
+---
+title: Autre
+---
 
 # Lien avec un formulaire de recherche
 
@@ -17,4 +16,3 @@ Pour définir le formulaire de recherche à ouvrir, il est nécessaire de rajout
 	</bean>
 </property>
 ```
-

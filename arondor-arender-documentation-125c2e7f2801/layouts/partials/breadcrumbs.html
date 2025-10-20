@@ -1,0 +1,107 @@
+
+<!-- Breadcrumbs under header -->
+<div id="breadcrumb" class="breadcrumb sticky-top">
+    <span>
+        <a class="text-primary font-secondary" href='{{- if .Params.documentationonly.enabled -}}{{ relref . `./documentation` }}{{- else -}}{{ "/" | absLangURL}}{{- end -}}'>{{ i18n "home" }}</a>
+        <span>&nbsp; > &nbsp;</span>
+        {{ template "breadcrumb" dict "currentPage" .Page "perma" .Permalink }}
+    </span>
+
+    {{ if or .IsTranslated .Site.Params.source.display }}
+    <div class="right">
+        <!-- Go to sources -->
+
+        {{if and .Site.Params.source.display .File }}
+        <span class="gts-button">
+            <a target="_blank" href="{{.Site.Params.source.url}}{{ replace .File.Path `\` `/` | htmlUnescape }}?mode=edit&spa=0&at=develop&fileviewer=file-view-default" class="button"><i class="ti-pencil"></i>{{ i18n "go_to_sources" }}</a>
+        </span>
+        {{ end }}
+        <!-- Language List -->
+        {{ if .IsTranslated }}
+        <span class="langage-selector">
+            <select class="border-0" id="select-language" onchange="location = this.value;">
+                {{ $siteLanguages := .Site.Languages}}
+                {{ $pageLang := .Page.Lang}}
+                {{ range .Page.AllTranslations }}
+                {{ $translation := .}}
+                {{ range $siteLanguages }}
+                {{ if eq $translation.Lang .Lang }}
+                {{ $selected := false }}
+                {{ if eq $pageLang .Lang}}
+                <option id="{{ $translation.Language }}" value="{{ $translation.Permalink }}" selected>
+                    {{ .LanguageName }}
+                </option>
+                {{ else }}
+                <option id="{{ $translation.Language }}" value="{{ $translation.Permalink }}">{{ .LanguageName }}
+                </option>
+                {{ end }}
+                {{ end }}
+                {{ end }}
+                {{ end }}
+            </select>
+        </span>
+        {{ end }}
+
+        <!-- Language list for technical blog -->
+        {{ if eq .Section "technical-blog" }}
+        <!-- Language List -->
+        {{ if .IsTranslated }}
+        <span class="langage-selector">
+            <select class="border-0" id="select-language" onchange="location = this.value;">
+                {{ $siteLanguages := .Site.Languages}}
+                {{ $pageLang := .Page.Lang}}
+                {{ range .Page.AllTranslations }}
+                {{ $translation := .}}
+                {{ range $siteLanguages }}
+                {{ if eq $translation.Lang .Lang }}
+                {{ $selected := false }}
+                {{ if eq $pageLang .Lang}}
+                <option id="{{ $translation.Language }}" value="{{ $translation.Permalink }}" selected>
+                    {{ .LanguageName }}
+                </option>
+                {{ else }}
+                <option id="{{ $translation.Language }}" value="{{ $translation.Permalink }}">{{ .LanguageName }}
+                </option>
+                {{ end }}
+                {{ end }}
+                {{ end }}
+                {{ end }}
+            </select>
+        </span>
+        {{ end }}
+        {{ end }}
+        <!-- /Language list for technical blog -->
+
+    </div>
+    {{end}}
+</div>
+
+
+<!-- templates -->
+{{ define "breadcrumb" }}
+{{ if .currentPage.Parent }}
+{{ if ne .currentPage.Parent .IsHome }}
+{{ template "breadcrumb" dict "currentPage" .currentPage.Parent }}
+{{ end }}
+{{ if eq .perma .currentPage.Permalink }}
+<a href="{{ .currentPage.Permalink }}">{{ .currentPage.Title }}</a>
+{{ else }}
+<a href="{{ .currentPage.Permalink }}">{{ .currentPage.Title }}</a>&nbsp; > &nbsp;
+{{ end }}
+{{ end }}
+{{ end }}
+
+{{ if .IsHome }}
+<section class="page-title-section overlay">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <h2 class="section-title">{{ i18n "home_topics_title" | safeHTML }}</h2>
+                {{ partial "widgets/search.html" . }}
+                {{ else }}
+                <div class="page-title-section-custom"></div>
+                {{ end }}
+            </div>
+        </div>
+    </div>
+</section>

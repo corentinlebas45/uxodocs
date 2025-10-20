@@ -1,8 +1,7 @@
-+++
-date = "2008-03-28T13:20:01+02:00"
-title = "Raccourcis"
-intro = "Faciliter l'accès à certaines actions en personnalisant les raccourcis."
-+++
+---
+title: Raccourcis
+intro: Faciliter l'accès à certaines actions en personnalisant les raccourcis.
+---
 
 Afin de faciliter l'accès à certaines actions, plusieurs conteneurs de raccourcis peuvent être manipulés à travers l'API JS : 
 
@@ -89,8 +88,3 @@ Cette fonctionnalité peut être désactivée en ajoutant le script JS suivant :
 ```javascript
 function registerToAddAnswersInTaskContextualMenu(){}
 ```
-
-
-
-
-

@@ -1,10 +1,7 @@
-+++
-date = "2005-03-28T13:21:01+02:00"
-title = "Décorations"
-description = "Décorer vos résultats de recherche"
-+++
-
-
+---
+title: Décorations
+description: Décorer vos résultats de recherche
+---
 
 # Format de date des résultats de recherche
 

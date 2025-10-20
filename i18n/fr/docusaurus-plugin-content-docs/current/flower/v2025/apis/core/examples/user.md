@@ -1,8 +1,8 @@
-+++
-date = "2018-05-02T12:20:01+02:00"
-title = "Gestion des utilisateurs"
-description = "Créez, modifiez, recherchez des utilisateurs"
-+++
+---
+title: Gestion des utilisateurs
+description: Créez, modifiez, recherchez des utilisateurs
+---
+
 Le service `UserService` expose les opérations suivantes :
 
 * `create` : pour créer un utilisateur 
@@ -51,15 +51,13 @@ Voici la description associée à l'ensemble des données de l'appel :
 
 ## Exemple
 Les exemples ci-dessous indiquent comment créer et modifier un utilisateur.
-[shortcode]
-[shortcode]
 POST {{core}}/rest/users/ HTTP/1.1
 
 -- Paramètres d'URL --
 core: host de FlowerDocs core
 
 -- Headers --
-token: {{token}}
+token: {token}
 Content-Type: application/json
 
 -- Body (json) -- 
@@ -79,8 +77,6 @@ Content-Type: application/json
     "AllUsers", "eEnvelope"
   ]
 }
-[shortcode]
-[shortcode]
 	@Autowired
     private UserService userService;
 
@@ -91,8 +87,6 @@ Content-Type: application/json
                 new ArrayList<Id>(), new ArrayList<IdentityAttribute>(), "prenom", "nom", "mdp", false);
         userService.create(user);
     }
-[shortcode]
-[shortcode]
 POST {{core}}/rest/users/{id} HTTP/1.1
 
 -- Paramètres d'URL --
@@ -100,7 +94,7 @@ core: host de FlowerDocs core
 id: identifiant de l'utilisateur
 
 -- Headers --
-token: {{token}}
+token: {token}
 Content-Type: application/json
 
 {
@@ -110,8 +104,6 @@ Content-Type: application/json
   "mail": "exemple@gmail.com",
   "password": "mdp"
 }
-[shortcode]
-[shortcode]
 	@Autowired
     private UserService userService;
     
@@ -125,8 +117,6 @@ Content-Type: application/json
         user.setLastname("Nouveau nom");
         userService.update(user);
     }
-[shortcode]
-[shortcode]
 # Récupération d'un ou plusieurs utilisateur(s)
 ## Modèle
 Les paramètres à renseigner sont :
@@ -138,8 +128,6 @@ Les paramètres à renseigner sont :
 
 ## Exemple
 L'exemple ci-dessous indique comment récupérer des utilisateurs.
-[shortcode]
-[shortcode]
 GET {{core}}/rest/users/{ids}?resolveAuthorities={resolveAuthorities} HTTP/1.1
 
 -- Paramètres d'URL -- 
@@ -148,10 +136,8 @@ ids: identifiant des utilisateurs à récupérer
 resolveAuthorities : false
 
 -- Headers --
-token: {{token}}
+token: {token}
 
-[shortcode]
-[shortcode]
 	@Autowired
     private UserService userService;
 
@@ -161,8 +147,6 @@ token: {{token}}
         List<String> ids = Lists.newArrayList("exemple");
         return userService.get(ids, true);
     }
-[shortcode]
-[shortcode]
 
 # Recherche d'un ou plusieurs utilisateur(s)
 ## Modèle
@@ -170,8 +154,6 @@ Le paramètre à renseigner est `search`, il correspond à la valeur recherchée
 
 ## Exemple
 L'exemple ci-dessous indique comment rechercher un utilisateur.
-[shortcode]
-[shortcode]
 GET {{core}}/rest/users/search?name={name} HTTP/1.1
 
 -- Paramètres d'URL -- 
@@ -179,9 +161,7 @@ core: host de FlowerDocs core
 name: le nom de l'utilisateur
 
 -- Headers --
-token: {{token}}
-[shortcode]
-[shortcode]
+token: {token}
    	@Autowired
     private UserService userService;
 
@@ -190,8 +170,6 @@ token: {{token}}
     {
         return userService.search("le");
     }
-[shortcode]
-[shortcode]
 
 # Modifier le mot de passe d'un utilisateur
 ## Modèle
@@ -204,23 +182,19 @@ Les paramètres à renseigner sont :
 
 ## Exemple
 L'exemple ci-dessous indique comment modifier le mot de passe d'un utilisateur.
-[shortcode]
-[shortcode]
 PUT {{core}}/rest/users/{id}/password HTTP/1.1
 
 -- Paramètres d'URL --
 core: host de FlowerDocs core
 
 -- Headers --
-token: {{token}}
+token: {token}
 id: identifiant de l'utilisateur
 
 -- Body --
 {
 	"password": newpassword
 }
-[shortcode]
-[shortcode]
     @Autowired
     private UserService userService;
 
@@ -231,8 +205,6 @@ id: identifiant de l'utilisateur
         String newPassword = "NouveauPass";
         userService.changePassword(id, newPassword);
     }
-[shortcode]
-[shortcode]
 
 # Supprimer un utilisateur
 ## Modèle
@@ -240,8 +212,6 @@ Le paramètre à renseigner est `id`, l'identifiant unique de l'utilisateur à s
 
 ## Exemple
 L'exemple ci-dessous indique comment supprimer un utilisateur.
-[shortcode]
-[shortcode]
 DELETE {{core}}/rest/users/{id} HTTP/1.1
 
 -- Paramètres d'URL --
@@ -249,9 +219,7 @@ core: host de FlowerDocs core
 id: identifiant de l'utilisateur
 
 -- Headers --
-token: {{token}}
-[shortcode]
-[shortcode]
+token: {token}
     @Autowired
     private UserService userService;
 
@@ -261,5 +229,3 @@ token: {{token}}
         String id = "exemple";
         userService.delete(id);
     }
-[shortcode]
-[shortcode]

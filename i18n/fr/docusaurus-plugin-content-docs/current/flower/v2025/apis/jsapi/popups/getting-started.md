@@ -1,8 +1,7 @@
-+++
-date = "2001-03-28T13:19:01+02:00"
-title = "Overview"
-description = "Ouvrez vos propres popups."
-+++
+---
+title: Overview
+description: Ouvrez vos propres popups.
+---
 
 Différents types de popup peuvent être instanciés ou modifiés : 
 
@@ -44,6 +43,3 @@ Afin de modifier les différents attributs communs des popups, les fonctions sui
 <!---
  |setScrollable()                                        | Active le scroll sur le corps de la popup                                      | 
 -->
-
-
-

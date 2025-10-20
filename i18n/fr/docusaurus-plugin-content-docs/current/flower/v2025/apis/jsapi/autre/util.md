@@ -1,7 +1,6 @@
-+++
-date = "2018-03-28T13:22:01+02:00"
-title = "Fonctions utilitaires"
-+++
+---
+title: Fonctions utilitaires
+---
 
 # Permissions
 

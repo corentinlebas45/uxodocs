@@ -1,8 +1,8 @@
-+++
-date = "2006-03-28T13:20:01+02:00"
-title = "Navigation"
-description = "Gérer la navigation entre les différents écrans"
-+++
+---
+title: Navigation
+description: Gérer la navigation entre les différents écrans
+---
+
 :::info 
 FlowerDocs s'appuie sur un mécanisme de place permettant de définir dans l'URL, l'activité (ou écran) sur laquelle se trouve l'utilisateur.
 Le fait que cette place soit portée par l'URL permet aux utilisateurs de pouvoir : 
@@ -70,5 +70,4 @@ Cet objet expose les méthodes suivantes :
 |getRequest()		      | Permet de récupérer la requête exécutée dans les recherches et les dossiers virtuels (visible dans l'URL)			|
 |getSearchDisplayMode() | Récupère le mode d'affichage de la recherche : `CARD` ou `TABLE`			                              			|
 |getVirtualFolderMode() | Récupère le mode d'affichage du dossier virtuel : `VIEWER` ou `AGGREGATION`												   |
-|isAdminPlace() 	      | Indique si la page est côté administration 								      							           			|        
-
+|isAdminPlace() 	      | Indique si la page est côté administration 								      							           			|

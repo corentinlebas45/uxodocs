@@ -1,8 +1,7 @@
-+++
-date = "2001-02-02"
-title = "Les classes de composants"
-Description = "Manipuler des classes de composants en JavaScript"
-+++
+---
+title: Les classes de composants
+Description: Manipuler des classes de composants en JavaScript
+---
 
 :::info
 Les [classes de composants](broken-link.md) définissent des typologies de composants.
@@ -72,5 +71,4 @@ A partir d'une classe de composants, la fonction `getTagReferences()` expose les
 |isMandatory()                                          | Détermine si le tag est obligatoire                                                                               |        
 |isMultivalued()                                        | Détermine si le tag est multivalué                                                                                |        
 |isReadonly()                                           | Détermine si le tag est en lecture seule                                                                          |        
-|isTechnical()                                          | Détermine si le tag est technique                                                                                 |        
-
+|isTechnical()                                          | Détermine si le tag est technique                                                                                 |

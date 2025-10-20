@@ -1,12 +1,11 @@
-+++
-date = "2020-02-01T12:20:01+02:00"
-title = "Getting Started"
-Order = 1
-Theme = "dev"
-Icon = "fa fa-cubes"
-Description = "Superposez vos icônes pour une icône plus adaptée à vos actions"
-Duration = "20m" 
-+++
+---
+title: Getting Started
+Order: 1
+Theme: dev
+Icon: fa fa-cubes
+Description: Superposez vos icônes pour une icône plus adaptée à vos actions
+Duration: 20m
+---
 
 # Objectif
 

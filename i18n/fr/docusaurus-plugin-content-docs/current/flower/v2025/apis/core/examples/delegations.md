@@ -1,8 +1,7 @@
-+++
-date = "2001-03-30T13:20:01+02:00"
-title = "Manipuler les délégations"
-description = "Créez, modifiez, supprimez les délégations"
-+++
+---
+title: Manipuler les délégations
+description: Créez, modifiez, supprimez les délégations
+---
 
 Le service `Delegations` expose toutes les opérations disponibles autour des délégations.
 
@@ -12,8 +11,6 @@ Les exemples ci-dessous indiquent comment récupérer des délégations en utili
 
 ## Récupération à partir d'un identifiant
 
-[shortcode]
-[shortcode]
 GET {{core}}/rest/delegation/{ids} HTTP/1.1
 
 -- Paramètres d'URL
@@ -21,10 +18,8 @@ core: host de FlowerDocs core
 ids: identifiants des délégations à récupérer, séparés par des virgules
 
 -- Headers --
-token: {{token}}
-[shortcode]
+token: {token}
 
-[shortcode]
 	@Autowired
 	private DelegationService service;
 	   
@@ -33,13 +28,9 @@ token: {{token}}
 		List<Id> ids = Lists.newArrayList(new Id("delegationId"));
 	    return service.get(ids);
 	}
-[shortcode]
-[shortcode]
 
 ## Récupération à partir de l'utilisateur à qui la délégation a été donnée
 
-[shortcode]
-[shortcode]
 GET {{core}}/rest/delegation/delegate/{id}?includeTerminated={include} HTTP/1.1
 
 -- Paramètres d'URL
@@ -48,10 +39,8 @@ id: identifiant de l'utilisateur à qui la délégation a été donnée
 include: boolean
 
 -- Headers --
-token: {{token}}
-[shortcode]
+token: {token}
 
-[shortcode]
 	@Autowired
 	private DelegationService service;
 	   
@@ -59,13 +48,9 @@ token: {{token}}
 	{
 		return service.getByDelegate(new Id("userDelegateId"), true);
 	}
-[shortcode]
-[shortcode]
 
 ## Récupération à partir de l'utilisateur qui a donné la délégation
 
-[shortcode]
-[shortcode]
 GET {{core}}/rest/delegation/delegator/{id}?includeTerminated={include} HTTP/1.1
 
 -- Paramètres d'URL
@@ -74,10 +59,8 @@ id: identifiant de l'utilisateur qui a donné la délégation
 include: boolean
 
 -- Headers --
-token: {{token}}
-[shortcode]
+token: {token}
 
-[shortcode]
 	@Autowired
 	private DelegationService service;
 	   
@@ -85,20 +68,16 @@ token: {{token}}
 	{
 		return service.getByDelegator(new Id("userDelegatorId"), true);
 	}
-[shortcode]
-[shortcode]
 
 # Création de délégations
 
-[shortcode]
-[shortcode]
 POST {{core}}/rest/delegation HTTP/1.1
 
 -- Paramètres d'URL
 core: host de FlowerDocs core
 
 -- Headers --
-token: {{token}}
+token: {token}
 Content-Type: application/json
 
 -- Body (json) --
@@ -113,9 +92,7 @@ Content-Type: application/json
     "start": "2024-04-07 13:59:53.401 +0100"
   }
 ]
-[shortcode]
 
-[shortcode]
 	@Autowired
 	private DelegationService service;
 	   
@@ -138,13 +115,9 @@ Content-Type: application/json
 
         return service.create(listDel);
     }
-[shortcode]
-[shortcode]
 
 # Modification de délégations
 
-[shortcode]
-[shortcode]
 POST {{core}}/rest/delegation/{ids} HTTP/1.1
 
 -- Paramètres d'URL
@@ -152,7 +125,7 @@ core: host de FlowerDocs core
 ids: identifiants des délégations à mettre à jour, séparés par des virgules
 
 -- Headers --
-token: {{token}}
+token: {token}
 Content-Type: application/json
 
 -- Body (json) --
@@ -167,9 +140,7 @@ Content-Type: application/json
     "start": "2024-04-07 13:59:53.401 +0100"
   }
 ]
-[shortcode]
 
-[shortcode]
 	@Autowired
 	private DelegationService service;
 	   
@@ -185,8 +156,6 @@ Content-Type: application/json
 
         return service.update(listDel);
     }
-[shortcode]
-[shortcode]
 
 :::warning 
 En utilisant le service REST, les informations non renseignées seront vidées : il faut envoyer la totalité de la délégation et pas seulement les informations à modifier.
@@ -194,8 +163,6 @@ En utilisant le service REST, les informations non renseignées seront vidées :
 
 # Suppression de délégations
 
-[shortcode]
-[shortcode]
 DELETE {{core}}/rest/delegation/{ids} HTTP/1.1
 
 -- Paramètres d'URL
@@ -203,10 +170,8 @@ core: host de FlowerDocs core
 ids: identifiants des délégations à supprimer, séparés par des virgules
 
 -- Headers --
-token: {{token}}
-[shortcode]
+token: {token}
 
-[shortcode]
 	@Autowired
 	private DelegationService service;
 	   
@@ -215,5 +180,3 @@ token: {{token}}
 		List<Id> ids = Lists.newArrayList(new Id("delegationId"));
 	    return service.delete(ids);
 	}
-[shortcode]
-[shortcode]

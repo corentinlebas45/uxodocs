@@ -1,8 +1,7 @@
-+++
-date = "2018-03-05T13:20:01+02:00"
-title = "Les tâches"
-description = "Gérez vos processus métiers ou techniques."
-+++
+---
+title: Les tâches
+description: Gérez vos processus métiers ou techniques.
+---
 
 :::info
 

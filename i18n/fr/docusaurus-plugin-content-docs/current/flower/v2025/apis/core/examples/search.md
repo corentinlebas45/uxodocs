@@ -1,8 +1,7 @@
-+++
-date = "2001-03-29T13:30:01+02:00"
-title = "Rechercher un composant"
-description = "Construisez vos requêtes de recherche"
-+++
+---
+title: Rechercher un composant
+description: Construisez vos requêtes de recherche
+---
 
 Les requêtes de recherche permettent de rechercher des composants stockés dans FlowerDocs en fonction de différents critères. Ces requêtes de recherche sont composées de la façon suivante : 
 
@@ -46,8 +45,6 @@ La recherche renvoie un maximum de 10 000 résultats, une erreur est générée 
 
 Les exemples ci-dessous indiquent comment effectuer une recherche de document ayant un nom contenant la chaîne de caractères `facture`.
 
-[shortcode]
-[shortcode]
 POST {{core}/rest/documents/search HTTP/1.1
 
 -- Paramètres d'URL --
@@ -75,8 +72,6 @@ Content-Type: application/json
     ],
     "max": 10
 }
-[shortcode]
-[shortcode]
 @Autowired
 private DocumentService documentService;
 
@@ -87,8 +82,6 @@ public void search() throws FunctionalException, TechnicalException
 	SearchRequest request = SearchRequestBuilder.init().filter(filter).build();
 	SearchResponse response = documentService.search(request);
 }
-[shortcode]
-[shortcode]
 
 :::info
 Dans les critères de recherche, l'opérateur ``CONTAINS`` n'est pas sensible à la casse (ne fait pas de distinction entre les majuscules et les minuscules), contrairement aux opérateurs ``EQUALS_TO`` et ``DIFFERENT``.

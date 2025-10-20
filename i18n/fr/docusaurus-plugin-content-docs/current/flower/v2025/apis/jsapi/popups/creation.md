@@ -1,8 +1,7 @@
-+++
-date = "2004-03-28T13:20:01+02:00"
-title = "Création de composants"
-description = "Popup permettant la création d'un composant à partir d'un formulaire d'indexation."
-+++
+---
+title: Création de composants
+description: Popup permettant la création d'un composant à partir d'un formulaire d'indexation.
+---
 
 :::info
 Ce type de popup permet de lancer la création d'un composant en affichant, dans une popup, un formulaire d'indexation.

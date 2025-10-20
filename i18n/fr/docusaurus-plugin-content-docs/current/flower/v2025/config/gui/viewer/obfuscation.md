@@ -1,8 +1,7 @@
-+++
-date = "2005-08-29T13:20:01+02:00"
-title = "Obfuscation"
-description = "Obfusquer des données sensibles au sein des documents."
-+++
+---
+title: Obfuscation
+description: Obfusquer des données sensibles au sein des documents.
+---
 
 # Principe
 
@@ -47,8 +46,6 @@ Ce web service permet de définir :
 
 Pour chaque occurrence trouvée, une annotation de type obfuscation est automatiquement créée.
 
-[shortcode]
-[shortcode]
 POST <core>/rest/documents/{id}/obfuscations HTTP/1.1
 Host: {core}
 token: {token}
@@ -60,8 +57,6 @@ Content-Type: application/json
   "caseSensitive": true,
   "regex": false
 }
-[shortcode]
-[shortcode]
 
 # Accès au contenu d’un document
 
@@ -84,12 +79,8 @@ Le processus d'obfuscation n’implique aucune modification du contenu stocké.
 Dans certaines situations, il est nécessaire d'avoir accès au contenu d'un document avec l'ensemble des obfuscations même si l'utilisateur a le droit de voir les données obfusquées.
 Pour cela, le web service REST d'accès au contenu d'un document permet de préciser si les obfuscations doivent être incluses.
 
-[shortcode]
-[shortcode]
 GET <core>/rest/documents/{id}/files/{file}/content?includeObfuscations=true HTTP/1.1
 Host: {core}
 token: {token}
-[shortcode]
-[shortcode]
 
 Dans le cas où le contenu obtenu inclut des obfuscations, l'en-tête HTTP `X-ALTERED` avec la valeur `true` est ajoutée à la réponse HTTP.

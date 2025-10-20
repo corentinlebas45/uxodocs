@@ -1,0 +1,38 @@
+<section class="container" style="margin-top:120px;">
+</section>
+<div class="page-row row flex-column-reverse flex-md-row ml-0 mr-0 pb-3">
+	<div class="container pl-0 pr-0 pt-4 pb-4 stake">
+		<div
+			class="col-12 my-md-auto pull-left {{if .Params.image}}col-md-6{{ else }}{{if .Params.video}}col-md-6{{ end }}{{ end }}">
+			<h1 class="page-title app-title">{{ .Title }}</h1>
+			{{ if .Description }}
+			<div class="page-description pt-3">
+				{{ .Description | markdownify }}
+			</div>
+			{{ else }}
+			{{ if .Params.Summary }}
+			<div class="page-summary pt-3">
+				{{ .Summary | markdownify }}
+			</div>
+			{{ end }}
+			{{ end }}
+		</div>
+		{{ if .Params.video }}
+		<a class="popup-youtube col-12 col-md-5 text-right pull-right" style="height: 400px;"
+			href="//www.youtube.com/watch?v={{ .Params.video }}">
+			<div class="play-button">
+				<i class="ion ion-play"></i>
+			</div>
+			<img src="https://img.youtube.com/vi/{{ .Params.video }}/hqdefault.jpg" />
+		</a>
+		{{ end }}
+		{{ if .Params.image }}
+		{{ if .IsPage }}
+		<div class="col-12 col-md-5 text-right pull-right" style="height: 400px;">
+			<img class='lozad img-fluid img-clip-left-backward pt-3' src="{{ .Params.image | absURL }}"
+				alt="{{ .Title }}" />
+		</div>
+		{{ end }}
+		{{ end }}
+	</div>
+</div>

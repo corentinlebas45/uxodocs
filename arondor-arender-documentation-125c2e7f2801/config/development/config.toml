@@ -1,0 +1,11 @@
+#################################################################
+########################### Languages ###########################
+
+buildDrafts = true
+baseURL = "http://localhost/"
+
+[params.source]
+display = true
+
+[params.documentationonly]
+enabled = false

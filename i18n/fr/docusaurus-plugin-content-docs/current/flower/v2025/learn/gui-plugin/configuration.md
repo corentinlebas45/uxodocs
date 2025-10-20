@@ -1,8 +1,7 @@
-+++
-date = "2020-02-01T15:20:01+02:00"
-title = "Intégration"
-description = "Configurer le plugin depuis la console d'administration."
-+++
+---
+title: Intégration
+description: Configurer le plugin depuis la console d'administration.
+---
 
 # Configuration du plugin
 

@@ -1,0 +1,23 @@
+<div
+    class="post-preview row rad-animation-group rad-fade-down {{ if .grey }}background-grey{{ end }} m-0 mt-4 pt-5 pb-5">
+    <div class="container d-flex align-items-center flex-column {{ if .left }}flex-md-row{{ else }}flex-md-row-reverse{{ end }}">       
+        <div class="post-content col-md-6 pt-3 pb-3">
+            <h1 class="iq-tw-6 iq-mb-25 heading-title big">{{ .post.Title }}</h1>
+            <div class="post-description text-justify">
+                {{ .post.Summary | markdownify }}
+            </div>
+            {{ if .post.Params.button }}
+            <a href="{{ .post.RelPermalink }}" class="button iq-mt-20">{{ .post.Params.button }}<i
+                    class="fas fa-long-arrow-alt-right"></i></a>
+            {{ end }}
+        </div>
+        <div class="post-image d-flex align-items-center col-md-6 p-4">
+            <img class='lozad img-fluid img-clip-left-backward'
+                src="{{ .Site.BaseURL }}{{ .post.Params.image | absURL }}"
+                data-src="{{ .Site.BaseURL }}{{ .post.Params.image | absURL }}"
+                data-srcset="{{ .Site.BaseURL }}{{ .post.Params.image | absURL }} 1x, {{ .post.Params.image | absURL }} 2x"
+                alt="{{ .post.Title }}" />
+        </div>
+        
+    </div>
+</div>

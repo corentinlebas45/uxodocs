@@ -1,8 +1,7 @@
-+++
-date = "2001-04-29T13:30:01+01:02"
-title = "Manipuler les classes de documents"
-description = "Créez, récupérez, modifiez, supprimez vos classes de documents"
-+++
+---
+title: Manipuler les classes de documents
+description: Créez, récupérez, modifiez, supprimez vos classes de documents
+---
 
 Le service `DocumentClassService` expose toutes les opérations disponibles autour des composants de type `DocumentClass`.
 
@@ -12,18 +11,14 @@ Le service `DocumentClassService` expose toutes les opérations disponibles auto
 
 Les exemples ci-dessous indiquent comment récupérer toutes les classes de documents.
 
-[shortcode]
-[shortcode]
 GET {{core}}/rest/documentclass HTTP/1.1
 
 -- Paramètre d'URL -- 
 core: host de FlowerDocs core
 
 -- Headers -- 
-token: {{token}}
+token: {token}
 
-[shortcode]
-[shortcode]
 	@Autowired
     private DocumentClassService docClassService;
 
@@ -31,15 +26,11 @@ token: {{token}}
     {
         return docClassService.getAll();
     }
-[shortcode]
-[shortcode]
 
 ## Récupération d'une liste définie de classes de documents
 
 Les exemples ci-dessous indiquent comment récupérer une liste de classes de documents à partir de leurs identifiants.
 
-[shortcode]
-[shortcode]
 GET {{core}}/rest/documentclass/{ids} HTTP/1.1
 
 -- Paramètre d'URL -- 
@@ -47,10 +38,8 @@ core: host de FlowerDocs core
 ids: liste d'identifiants de classes de documents
 
 -- Headers -- 
-token: {{token}}
+token: {token}
 
-[shortcode]
-[shortcode]
 	@Autowired
     private DocumentClassService docClassService;
 
@@ -60,22 +49,18 @@ token: {{token}}
         docClassesIds.add(new Id("docClass2Id"));
         return docClassService.get(docClassesIds);
     }
-[shortcode]
-[shortcode]
 
 # Création de classes de documents
 
 Les exemples ci-dessous indiquent comment créer une classe de documents. 
 
-[shortcode]
-[shortcode]
 POST {{core}}/rest/documentclass HTTP/1.1
 
 -- Paramètre d'URL -- 
 core: host de FlowerDocs core
 
 -- Headers -- 
-token: {{token}}
+token: {token}
 Content-Type: application/json
 
 -- Body (json) --
@@ -133,8 +118,6 @@ Content-Type: application/json
         "technical": false
     }
 ]
-[shortcode]
-[shortcode]
 	@Autowired
     private DocumentClassService docClassService;
     
@@ -177,15 +160,11 @@ Content-Type: application/json
 
         docClassService.create(docClasses);
     }
-[shortcode]
-[shortcode]
 
 # Modification de classes de documents
 
 Les exemples ci-dessous indiquent comment modifier une classe de documents.
 
-[shortcode]
-[shortcode]
 POST {{core}}/rest/documentclass/{ids} HTTP/1.1
 
 -- Paramètre d'URL -- 
@@ -193,7 +172,7 @@ core: host de FlowerDocs core
 ids : liste des identifiants de classe de documents à mettre à jour, séparés par des virgules
 
 -- Headers --
-token: {{token}}
+token: {token}
 Content-Type: application/json
 
 -- Body (json) --
@@ -240,8 +219,6 @@ Content-Type: application/json
         "technical": false
     }
 ]
-[shortcode]
-[shortcode]
 	@Autowired
     private DocumentClassService docClassService;
     
@@ -257,8 +234,6 @@ Content-Type: application/json
 
         return docClassService.update(docClasses);
     }
-[shortcode]
-[shortcode]
 
 :::warning
 En utilisant le service REST, les informations non renseignées seront vidées : il faut envoyer la totalité de la classe de document et pas seulement les informations à modifier.
@@ -268,8 +243,6 @@ En utilisant le service REST, les informations non renseignées seront vidées :
 
 Les exemples ci-dessous indiquent comment supprimer une liste de classes de documents.
 
-[shortcode]
-[shortcode]
 DELETE {{core}}/rest/documentclass/{ids} HTTP/1.1
 
 -- Paramètre d'URL -- 
@@ -277,10 +250,8 @@ core: host de FlowerDocs core
 ids : liste des identifiants de classe de documents à supprimer, séparés par des virgules
 
 -- Headers --
-token: {{token}}
+token: {token}
 
-[shortcode]
-[shortcode]
 	@Autowired
     private DocumentClassService docClassService;
 	
@@ -289,8 +260,6 @@ token: {{token}}
         List<Id> docClassesIds = Lists.newArrayList(new Id("docClassId"));
         docClassService.delete(docClassesIds);
     }
-[shortcode]
-[shortcode]
 
 :::warning
 La suppression ne fait aucun contrôle : il faut donc vérifier qu'il n'y a pas d'instances en cours avant la suppression d'une classe de document.

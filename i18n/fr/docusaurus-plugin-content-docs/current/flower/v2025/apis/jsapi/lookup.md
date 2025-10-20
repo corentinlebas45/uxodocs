@@ -1,8 +1,7 @@
-+++
-date = "2011-03-28T13:20:01+02:00"
-title = "Lookups"
-intro = "Proposer des listes dynamiques pour enrichir les données dans FLowerDocs."
-+++
+---
+title: Lookups
+intro: Proposer des listes dynamiques pour enrichir les données dans FLowerDocs.
+---
 
 Un lookup consiste en la récupération de données issues d'un référentiel tiers ou autre et permet de constituer des listes dynamiques de valeurs. Ce mécanisme favorise l'expérience utilisateur pour enrichir les données stockées ou restituées à travers FlowerDocs.
 

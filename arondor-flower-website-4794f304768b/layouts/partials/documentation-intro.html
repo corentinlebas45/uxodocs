@@ -1,0 +1,8 @@
+{{ if .Params.intro }}
+	<div class="intro">
+		<div class="well well-lg">
+			<i class="col-1 far fa-lightbulb"></i>
+			<div class="col-11 mt-auto mb-auto"> {{ .Params.intro | markdownify }}</div>
+		</div>
+	</div>
+{{ end }}

@@ -1,7 +1,6 @@
-+++
-title = "Mise en place du modèle"
-date = "2000-02-01T13:20:01+02:00"
-+++
+---
+title: Mise en place du modèle
+---
 
 Gardons l'exemple du dossier client évoqué précédemment pour tester la mise en place d'un cas concret.
 

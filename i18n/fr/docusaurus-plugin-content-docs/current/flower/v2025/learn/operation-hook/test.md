@@ -1,7 +1,6 @@
-+++
-date = "2020-02-01T15:20:01+02:00"
-title = "Test du Hook"
-+++
+---
+title: Test du Hook
+---
 
 # Abonnement
 

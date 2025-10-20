@@ -1,13 +1,11 @@
-+++
-date= "2001-03-01"
-title = "Actions"
-intro = "Surcharger les actions natives ou ajouter des actions personnalisées."
-+++
+---
+title: Actions
+intro: Surcharger les actions natives ou ajouter des actions personnalisées.
+---
 
 Plusieurs types d'actions sont mis à disposition : 
 
 * Bouton : texte présenté sous la forme d'un bouton
-* Icône : basé sur la police d'icônes supportée par FlowerDocs [Font Awesome [shortcode]](https://fontawesome.com/icons?d=gallery&m=free)
 * DOM : élément HTML 
 
 # Conteneur d'actions

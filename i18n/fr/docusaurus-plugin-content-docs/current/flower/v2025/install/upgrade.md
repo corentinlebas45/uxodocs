@@ -1,7 +1,6 @@
-+++
-date = "2000-03-31T13:20:01+02:00"
-title = "Montée de version"
-+++
+---
+title: Montée de version
+---
 
 Cette partie décrit les actions à réaliser après une montée de version de l'application.
 

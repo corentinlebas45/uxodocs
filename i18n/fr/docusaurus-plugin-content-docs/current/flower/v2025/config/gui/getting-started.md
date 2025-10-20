@@ -1,8 +1,7 @@
-+++
-date = "1998-03-28T13:20:01+02:00"
-title = "Getting Started"
-description="Configurer l'interface graphique."
-+++
+---
+title: Getting Started
+description: Configurer l'interface graphique.
+---
 
 # Introduction
 
@@ -38,5 +37,3 @@ Les propriétés suivantes permettent de définir l'instance déployée, elles s
 * ``gui.client.app.env``   : définit l'environnement sur lequel est déployée l'instance
 * ``gui.client.app.style`` : définit une feuille de style (CSS) personnalisée à appliquer
 * ``gui.password.change.enabled`` : activer/désactiver l'action permettant de changer le mot de passe d'un utilisateur
-
-

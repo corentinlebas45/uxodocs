@@ -1,9 +1,7 @@
-+++
-date = "2002-02-28T13:20:01+02:00"
-title = "Formulaire d'indexation"
-description = "Configurez les formulaires d'indexation"
-+++
-
+---
+title: Formulaire d'indexation
+description: Configurez les formulaires d'indexation
+---
 
 Les vues d'indexation sont composées de deux parties : 
 
@@ -116,5 +114,3 @@ __Exemple :__
 	</property>
 </bean>
 ```
-
- 

@@ -1,7 +1,6 @@
-+++
-date = "2000-03-28T13:20:01+02:00"
-title = "Getting Started"
-+++
+---
+title: Getting Started
+---
 
 Plume est un plugin ARender permettant de rédiger des emails depuis votre navigateur WEB.
 

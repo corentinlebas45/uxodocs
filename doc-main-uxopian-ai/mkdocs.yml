@@ -1,0 +1,52 @@
+site_name: Uxopian-ai documentation
+site_author: Uxopian
+site_description: Documentation for Uxopian-ai
+
+theme:
+  name: material
+  language: en
+  logo: images/uxopian-ico.png
+  favicon: images/uxopian-ico.png
+  custom_dir: custom_theme
+  palette:
+    - scheme: default
+      primary: '#3A3A8D'
+      accent: '#3EB650'
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: '#3A3A8D'
+      accent: '#3EB650'
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+  features:
+    - navigation.tabs
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+
+extra_css:
+  - extra.css
+
+nav:
+  - 'Getting Started': 'getting_started/installation_guide.md'
+  - 'Architecture': 'architecture/overview.md'
+  - 'Concepts': 'concepts/overview.md'
+  - 'Configuration': 'configuration/api_reference.md'
+  - 'Administration': 'administration/backup_recovery.md'
+  - 'How-To Guides':
+      - 'Contributing Prompts and Goals': 'how_to_guides/contributing.md'
+      - 'Adding a New LLM Provider': 'how_to_guides/new_provider.md'
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences

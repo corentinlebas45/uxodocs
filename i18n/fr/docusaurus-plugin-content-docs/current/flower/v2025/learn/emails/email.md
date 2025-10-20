@@ -1,8 +1,6 @@
-+++
-date = "2020-02-05"
-title = "Notification email"
-+++
-
+---
+title: Notification email
+---
 
 # Configurer un serveur SMTP
 
@@ -35,4 +33,3 @@ Internet Message Access Protocol (IMAP) est un protocol qui permet l’accès au
 <!--# Utiliser un template
 ## document technique
 ## variables-->
-

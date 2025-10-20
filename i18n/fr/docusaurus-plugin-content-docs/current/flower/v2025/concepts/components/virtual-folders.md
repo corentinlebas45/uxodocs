@@ -1,8 +1,7 @@
-+++
-date = "2018-03-04T13:20:01+02:00"
-title = "Les dossiers virtuels"
-description = "Organisez dynamiquement vos composants."
-+++
+---
+title: Les dossiers virtuels
+description: Organisez dynamiquement vos composants.
+---
 
 La notion de dossier virtuel est une notion clé au sein de FlowerDocs. Ce type de composant permet de définir un dossier dont le contenu est résolu de manière dynamique. Son contenu est donc dit "virtuel".
 

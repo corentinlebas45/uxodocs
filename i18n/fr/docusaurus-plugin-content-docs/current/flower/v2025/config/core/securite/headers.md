@@ -1,8 +1,7 @@
-+++
-date = "2019-06-01T13:25:01+02:00"
-title = "Headers"
-description = "Sécurisation des requêtes effectuées auprès de FlowerDocs Core."
-+++
+---
+title: Headers
+description: Sécurisation des requêtes effectuées auprès de FlowerDocs Core.
+---
 
 # Content security policy (CSP) et HTTP Strict Transport Security (HSTS)
 

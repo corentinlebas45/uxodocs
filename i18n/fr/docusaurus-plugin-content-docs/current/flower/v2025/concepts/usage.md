@@ -1,8 +1,6 @@
-+++
-title = "Cas d'application"
-date = "2010-02-02"
-+++
-
+---
+title: Cas d'application
+---
 
 :::info
 Découvrez les concepts évoqués dans un cas d'application simple : la **Gestion de factures fournisseurs**  

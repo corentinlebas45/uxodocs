@@ -1,7 +1,6 @@
-+++
-date = "2000-03-31T13:20:01+02:00"
-title = "Docker"
-+++
+---
+title: Docker
+---
 
 # Installation Docker
 
