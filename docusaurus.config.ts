@@ -144,10 +144,26 @@ const config: Config = {
           ],
         },
         {
-          type: 'docSidebar',
-          sidebarId: 'arenderSidebar',
+          type: 'dropdown',
           label: 'ARender',
           position: 'left',
+          items: [
+            {
+              type: 'docSidebar',
+              sidebarId: 'arenderv2025Sidebar',
+              label: 'v2025',
+            },
+            {
+              type: 'docSidebar',
+              sidebarId: 'arenderv4Sidebar',
+              label: 'v4',
+            },
+            {
+              type: 'docSidebar',
+              sidebarId: 'arenderv43Sidebar',
+              label: 'v4.3',
+            },
+          ],
         },
         {
           type: 'docSidebar',
