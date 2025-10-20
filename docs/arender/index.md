@@ -1,8 +1,12 @@
-# ARender Documentation
+# ARender Documentation v4.3
 
-Bienvenue dans la documentation officielle d'ARender, la solution de visualisation de documents de référence.
+Bienvenue dans la documentation officielle d'ARender v4.3, la solution de visualisation de documents de référence.
 
 ARender est une plateforme de visualisation de documents qui permet de consulter, annoter et partager des documents en toute sécurité, sans les télécharger.
+
+:::info Version
+Cette documentation concerne **ARender v4.3** - Pour les versions antérieures, consultez le sélecteur de version.
+:::
 
 ## Commencer
 
