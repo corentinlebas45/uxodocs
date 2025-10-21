@@ -12,11 +12,11 @@ The very first step of every migration is to start building the workflow. Since 
 1. then you perform any required transformation to get the content compliant with the target system,
 1. finally you load the content and/or its metadata.
 
-With Fast2 started, go to the UI (default address ``). From here, you can create a new map browse your machine to import an existing one.
+With Fast2 started, go to the UI (default address `<http://localhost:1789/index.html>`). From here, you can create a new map browse your machine to import an existing one.
 
 :::warning
 
-A map must start with a ****Source**** task, picked up from the list in the [task configuration section](../catalog/source.md).
+A map must start with a <b><i>Source</i></b> task, picked up from the list in the [task configuration section](../catalog/source.md).
 
 :::
 
@@ -27,9 +27,7 @@ To select a task, click on its name and it will appear in the design area. You w
 
 ![New map GIF](../assets/img/create_workflow/newMap2025.gif)
 
-```xml
-<!-- Commentaire nettoyé -->
-```
+<!-- todo -->
 
 For task and link configuration, please head towards the [task configuration](#tasks) and [link configuration](#links) sections.
 
@@ -129,7 +127,7 @@ Two tasks cannot be linked both ways.
 | Link condition         | Details                                                                                                                            |
 | ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
 | PatternCondition       | Set specific condition with java language                                                                                          |
-| Otherwise              | Punnet which doesn't match other conditions will passConsider using when a task has at least 2 multiple output links |
+| Otherwise              | Punnet which doesn't match other conditions will pass<br/>:warning: Consider using when a task has at least 2 multiple output links |
 | AlwaysTrue             | All punnets will pass, no matter what                                                                                              |
 | AlwaysFalse            | All punnets will be blocked, no matter what                                                                                        |
 | PunnetInException      | All punnets in exception will pass                                                                                                 |
@@ -165,9 +163,9 @@ Next to this toggle button, you'll find the control buttons. It's with these thr
 
 From left to right :
 
-- _Run as new_: When a campaign is run for the first time , a pop-up will ask you to put a name. Otherwise, a new campaign is created keeping the original campaign name and incrementing the `_Try` number.
-- _Rerun_: Fast2 will run the same campaign again. No any campaign will be created.
-- _Stop_: For a running campaign, you have the opportunity to stop its process. Notice that the stop button becomes a _Resume_ button once the campaign is stopped.
+- _Run as new_:<br /> When a campaign is run for the first time , a pop-up will ask you to put a name. Otherwise, a new campaign is created keeping the original campaign name and incrementing the `_Try` number.
+- _Rerun_:<br /> Fast2 will run the same campaign again. No any campaign will be created.
+- _Stop_:<br /> For a running campaign, you have the opportunity to stop its process. Notice that the stop button becomes a _Resume_ button once the campaign is stopped.
 
 :::info
 
@@ -182,9 +180,9 @@ You can see in the table below the allowed actons depending on the campaign stat
 | Campaign Status | Action(s) allowed         |
 | --------------- | ------------------------- |
 | Started         | Stop                      |
-| Stopped         | Start as new Resume |
-| Undefined       | Start as new Rerun  |
-| Finished        | Start as new Rerun  |
+| Stopped         | Start as new<br /> Resume |
+| Undefined       | Start as new<br /> Rerun  |
+| Finished        | Start as new<br /> Rerun  |
 
 ## New campaign name
 

@@ -8,11 +8,9 @@ Let's guide you here through the common process for retrieving data, content, pa
 
 For the educational aspect of this topic, let us consider a folder gathering all the different archives, matching the following structure:
 
-```xml
-<!-- Commentaire nettoyé -->
-```
+<!-- ![ZIP tree view](../assets/img/cookbooks/fromZip2Punnet.png) -->
 
-
+<figure markdown>
 ```txt
 ├─ ZIP archive/
 │       ├─ metadata.json
@@ -22,7 +20,7 @@ For the educational aspect of this topic, let us consider a folder gathering all
 │       └─ content.pdf
 └─ ...
 ```
-
+</figure>
 
 Each ZIP archive embeds a PDF content as flat file, alongside a JSON listing the metadata which we'll have to attach to the PDF document (before any injection-or-else phase).
 
@@ -50,8 +48,8 @@ At a glance, we are just 3 (major) steps away from having a PDF content in our p
 1. Then we need to dive into the ZIP "documents" one after the other,
 1. And finally focus on the JSON content to parse and map the embedded properties.
 
-
-
+<br/>
+<br/>
 
 Since our purpose is to dive into the ZIP files, we first need to gather them all with the [LocalSource](../catalog/source.md#LocalSource) task, providing the parent folder where all these archives are currently being stored. The only required parameter is the path of the parent folder(s).
 
@@ -65,12 +63,12 @@ Not a big deal, right ? Let's then tackle this challenge right away, shall we !!
 ![TopGun GIF](../assets/img/cookbooks/top-gun_aircraft-salute.gif)
 
 
-
-
+<br/>
+<br/>
 
 ## 🚀 Way to go !
 
-Inside Fast2, the map design is now pretty straightforward, given our ideas are rather clear in terms of **the mission** the overall order of the operations.
+Inside Fast2, the map design is now pretty straightforward, given our ideas are rather clear in terms of <strike>the mission</strike> the overall order of the operations.
 
 The map is even quite close to the 3 steps detailed earlier. The [DispatchingArchive](../catalog/converter.md#DispatchingArchive) task just needs to be preceeded by a [MimeTypeFinder](../catalog/tool.md#MimeTypeFinder) task to highlight the archive format (here the ZIP extension is correct, but you could deal with archives without any extension, or mis-identified format).
 

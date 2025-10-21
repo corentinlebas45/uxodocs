@@ -64,34 +64,32 @@ Since the embedded database has to be reach from both Fast2 broker and Kibana mo
     | File                                           | Specification                                         |
     | ---------------------------------------------- | ----------------------------------------------------- |
     | ./config/application.properties                | `opensearch.port=1790`                                |
-```xml
-    | ./elasticsearch-X.Y.Z/config/elasticsearch.yml | `http.port: <!-- Commentaire nettoyé -->"]` |
-```
+    | ./elasticsearch-X.Y.Z/config/elasticsearch.yml | `http.port: <es-port>`                                |
+    | ./kibana-X.Y.Z/config/kibana.yml               | `elasticsearch.hosts: ["http://localhost:<es-port>"]` |
 
 === "v2.5+"
 
     | File                                                           | Specification                                      |
     | -------------------------------------------------------------- | -------------------------------------------------- |
     | ./config/application.properties                                | `opensearch.port=1790`                             |
-```xml
-    | ./opensearch-X.Y.Z/config/opensearch.yml                       | `http.port: <!-- Commentaire nettoyé -->"]` |
-```
+    | ./opensearch-X.Y.Z/config/opensearch.yml                       | `http.port: <es-port>`                             |
+    | ./opensearch-dashboards-X.Y.Z/config/opensearch_dashboards.yml | `opensearch.hosts: ["http://localhost:<es-port>"]` |
 
 If the dashboard component is installed, the database port also needs to be updated on this front as the dashboard needs to access the DB in order to read the data :
 
 === "v2.4-"
 
     ```ini title="./kibana-X.Y.Z/config/kibana.yml"
-    elasticsearch.hosts: ["http://&lt;DB-server:DB-port&gt;"]
+    elasticsearch.hosts: ["http://<DB-server:DB-port>"]
     ```
 
 === "v2.6+"
 
     ```ini title="./opensearch-dashboards-X.Y.Z/config/opensearch_dashboards.yml"
-    opensearch.hosts: ["http://&lt;DB-server:DB-port&gt;"]
+    opensearch.hosts: ["http://<DB-server:DB-port>"]
     ```
 
-
+<br />
 
 ### Memory
 
@@ -108,18 +106,25 @@ The configuration required are the following:
 
 :::warning
 
-As specified in the `./opensearch-X.Y.Z/config/jvm.options` file, you should always set the min and max JVM heap size to **the same value**. See the [Official OpenSearch documentation](https://opensearch.org/docs/opensearch/install/important-settings/) for more information.
+As specified in the `./opensearch-X.Y.Z/config/jvm.options` file, you should always set the min and max JVM heap size to **the same value**. <br /><br />See the [Official OpenSearch documentation](https://opensearch.org/docs/opensearch/install/important-settings/) for more information.
 
 :::
 
 For further comprehension of these parameters, check out the [Elasticsearch official documentation](https://www.elastic.co/guide/en/elasticsearch/reference/current/important-settings.html#heap-size-settings) on the topic or [OpenSearch official documenation](https://opensearch.org/docs/1.1/opensearch/install/important-settings/).
 Upgrading the metrics will prevent `java.lang.OutOfMemoryError` to pop up during heavy migration executions.
 
+<br />
 
+<!-- Still uptodate ??
+## Database without dashboards
 
-```xml
-<!-- Commentaire nettoyé -->
-```
+To visualize data stored in the database without using the dashboard addon proposed, we recommend to use web navigator plugins. These GUIs are focused on visualisation of your documents as tables, more easily than with Kibana. You can browse your data as classic SQL tables. The downside is ElasticVue does not offer any metrics, graphs or anaytics options.
+
+Two different plugins exist, depending on your web navigator:
+* [ElasticVue](https://elasticvue.com/) under Mozilla Firefox, MS Edge and Google Chrome;
+* [ElasticSearch Head](https://chrome.google.com/webstore/detail/elasticsearch-head/ffmkiejjmecolpfloofpjologoblkegm) only for Google Chrome.
+
+-->
 
 ## Remote access to the database
 
@@ -134,24 +139,79 @@ The database port needs to be opened from the Fast2 server, and accessible by yo
 1.  To check the database port is accessible from your machine, run the following command (from your work station):
 
     ```sh
-```xml
-    curl :<!-- Commentaire nettoyé -->:<!-- Commentaire nettoyé -->:<!-- Commentaire nettoyé -->]"
+    curl <fast2.server>:<database-port>
+    ```
+
+2.  Head out to the database configuration YAML file `opensearch.yml` and add the following lines:
+
+    ```yml
+    network.host: 0.0.0.0
+    node.name: node-1
+    cluster.initial_master_nodes: node-1
+    ```
+
+3.  If Fast2 is installed on a Linux server, you may also need to increase the memory usage for your cluster (on the server where the database is running), as stipulated in the [Official OpenSearch documentation](https://opensearch.org/docs/1.0/opensearch/install/important-settings/).
+
+    ```ini title="/etc/sysctl.conf"
+    # for remote access to Fast2 embedded database
+    vm.max_map_count=262144
+    ```
+
+4.  Save the file, and run the following command to _refresh_ your server configuration :
+
+    ```sh
+    sudo sysctl -p
+    ```
+
+5.  Restart the broker (which will induce the bootup of the database), and go check from your machine the access to the Fast2 database.
+
+    The webpage (at the same URL we `curl`-ed in the 1st step) should display something like so :
+
+    ![Webpage of remote access to the database](../assets/img/components/db_remote_access_webpage.png)
+
+<br/>
+
+<br />
+
+## Troubleshooting
+
+In reason of the tight commmunication between the broker and the database, chances are you will soon be reported 500 server error generated by unsuccessful exchanges of the two entities.
+
+### Server error 500 when starting a campaign
+
+After running quite a bunch of campaigns, you might end up not being able to start anymore of them due to the limit of shards of the embedded database (for more in-depth details about the shards, checkout the [Official Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch/reference/current/scalability.html)).
+
+The symptom of this limitations comes as a regular 500 server error toast in the UI, but is is by checking the logs/broker.log file that its raw nature is exposed:
+
+```log
+17:24:45.017 [http-nio-1789-exec-17] ERROR org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]:175 - Exception while dispatching incoming RPC call com.google.gwt.user.server.rpc.UnexpectedException: Service method 'public abstract com.fast2.model.taskflow.Campaign com.fast2.hmi.gwt.client.service.GWTCampaignManager.startProcessing(
+    com.fast2.model.taskflow.Campaign,com.fast2.model.taskflow.design.TaskFlowMapRef,boolean)' threw an unexpected exception:
+    java.lang.RuntimeException: Caught exception OpenSearch exception [type=validation_exception, reason=Validation Failed: 1: this action would add [2] total shards, but this cluster currently has [1000]/[1000] maximum shards open;]
+	...
+Caused by: org.opensearch.OpenSearchStatusException: OpenSearch exception [type=validation_exception, reason=Validation Failed: 1: this action would add [2] total shards, but this cluster currently has [1000]/[1000] maximum shards open;]
 ```
+
+As mentioned in the [database technicalities](#index-names), Fast2 records data under indices prefixed with `f2_`. Thus it implies to begin each index to delete with this prefix.
+
+Although a drastic cleanup induced by a `curl -X DELETE -i "http://<database-server>:<database-port>/f2_*` would resolve our issue, you might be interested in keeping some campaigns or indices. As any _curl_ query allows, exceptions can be added to the deletion operation to prevent them from being removed of the backup database. The syntax goes as follows:
+
+```shell
+curl -X DELETE -i "http://<Fast2-server>:<database-port>/f2_*,-f2_campaigns,-f2_campaigns_sources[,-f2_<campaign-name>]"
 ```
 
-
-
+<br/>
+<br/>
 Let us now study this query:
-
-
+<br/>
+<br/>
 
 | Section                               | Purpose                                                                                                                                                                                                                                        |
 | ------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `http://server:port/f2_*`             | Here we ask to aim at all indices starting with the `f2_` prefix. This will prevent the deletion of additional indices which could be related to parallel work on the same database instance, such as Kibana reports, charts or data analysis. |
 | `-f2_campaigns,-f2_campaigns_sources` | These 2 indices are needed if you decide to keep any other campaign. The `-` sign declares them as exception from the delete action.                                                                                                           |
-| `[,-f2_<!-- Commentaire nettoyé -->without space,<!-- Commentaire nettoyé -->separated by commas (`,`)<!-- Commentaire nettoyé -->mentioning the `-` exclusion character**Do not forget to begin each name with the indice prefix.     |
+| `[,-f2_<campaign-name>]`              | Then you can list all the campaigns you are willing to preserve, <ul><li>without space,</li><li>separated by commas (`,`)</li><li>mentioning the `-` exclusion character</li></ul>Do not forget to begin each name with the indice prefix.     |
 
-
+<br/>
 
 Wildcards are supported, therefore an exception written `-f2_mycampaign*` will protect all the campaign with this _myCampaign_ radical (ex/ myCampaign_Try1, myCampaign_Try2...).
 
@@ -161,9 +221,7 @@ Documents concerned by a migration can quickly add up, especially on cumulative 
 
 ```log
 Suppressed: org.opensearch.client.ResponseException: method [POST], host [http://localhost:1790], URI [/f2_campaign_try1/_search?pre_filter_shard_size=...], status line [HTTP/1.1 503 Service Unavailable]
-```xml
-<!-- Commentaire nettoyé -->],"type":"search_phase_execution_exception","reason":"all shards failed","phase":"query","grouped":true,"failed_shards":[<!-- Commentaire nettoyé -->}]},"status":503}
-```
+{"error":{"root_cause":[{"type":"too_many_buckets_exception","reason":"Trying to create too many buckets. Must be less than or equal to: [10000] but was [10001]. This limit can be set by changing the [search.max_buckets] cluster level setting.","max_buckets":10000}],"type":"search_phase_execution_exception","reason":"all shards failed","phase":"query","grouped":true,"failed_shards":[{"shard":0,"index":"f2_stg-100k_try1","node":"4XM6VD2wTfeOSpr2brIs7g","reason":{"type":"too_many_buckets_exception","reason":"Trying to create too many buckets. Must be less than or equal to: [10000] but was [10001]. This limit can be set by changing the [search.max_buckets] cluster level setting.","max_buckets":10000}}]},"status":503}
 ```
 
 To fix this, you need to stop Fast2 (and the database), and add the following line:
@@ -176,5 +234,5 @@ search.max_buckets: 1000000
 
 This integrated database guarantees data persistence to Fast2. If required, an embedded database can be shared among several Fast2 servers.
 
-
+<br/>
 Allocated resources should be increased in order to resist charge of production environments.

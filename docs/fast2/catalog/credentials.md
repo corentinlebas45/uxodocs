@@ -1,10 +1,8 @@
-```xml
-## AWSConnectionProvider ** - AWS S3 user credentials ** <!-- Commentaire nettoyé -->
-```
+## AWSConnectionProvider <small> - AWS S3 user credentials </small> {#AWSConnectionProvider data-toc-label="AWSConnectionProvider"}
 
 With an access key id and the secret access key, you have the option to connect to an AWS S3 instance by specifying the region concerned. However, to perform this king of connection, Fast2 required the permission : AmazonS3FullAccess
 
-**Mandatory settings**
+<b>Mandatory settings</b>
 
 | Key               | Type     | Description                                                  |
 | ----------------- | -------- | ------------------------------------------------------------ |
@@ -12,7 +10,7 @@ With an access key id and the secret access key, you have the option to connect 
 | Secret access key | `String` | This field is mandatory unless 'Use Instance Profile' is set |
 | AWS Region        | `String` |                                                              |
 
-**Optional settings**
+<b>Optional settings</b>
 
 | Key                                                 | Type                | Description                                                                                           | Default value |
 | --------------------------------------------------- | ------------------- | ----------------------------------------------------------------------------------------------------- | ------------- |
@@ -23,13 +21,11 @@ With an access key id and the secret access key, you have the option to connect 
 | sessionName                                         | `String`            |                                                                                                       |
 | AWS extra Client Configuration                      | ClientConfiguration | Use this AWS class to fine-tune connection details to S3, such as timeouts, connection pool size, ... |
 
-```xml
-## AlfrescoCMISConnectionProvider ** - CMIS connection provider ** <!-- Commentaire nettoyé -->
-```
+## AlfrescoCMISConnectionProvider <small> - CMIS connection provider </small> {#AlfrescoCMISConnectionProvider data-toc-label="AlfrescoCMISConnectionProvider"}
 
 From a URI and giving a username with password, this class allow you to access any Alfresco instance
 
-**Mandatory settings**
+<b>Mandatory settings</b>
 
 | Key                         | Type     | Description |
 | --------------------------- | -------- | ----------- |
@@ -37,11 +33,9 @@ From a URI and giving a username with password, this class allow you to access a
 | Username                    | `String` |             |
 | URI for connection settings | `String` |             |
 
-```xml
-## AlfrescoRESTConnectionProvider ** - ** <!-- Commentaire nettoyé -->
-```
+## AlfrescoRESTConnectionProvider <small> - </small> {#AlfrescoRESTConnectionProvider data-toc-label="AlfrescoRESTConnectionProvider"}
 
-**Mandatory settings**
+<b>Mandatory settings</b>
 
 | Key                        | Type     | Description |
 | -------------------------- | -------- | ----------- |
@@ -49,20 +43,18 @@ From a URI and giving a username with password, this class allow you to access a
 | URL to connect to Alfresco | `String` |             |
 | Username                   | `String` |             |
 
-```xml
-## CMConnectionProvider ** - Connection provider for Content Manager solution ** <!-- Commentaire nettoyé -->
-```
+## CMConnectionProvider <small> - Connection provider for Content Manager solution </small> {#CMConnectionProvider data-toc-label="CMConnectionProvider"}
 
 The CM connection provider will help you to manage a pool of connections. For performance reasons, it is sometimes desirable to limit the number of connections created by the pool.The connection pool will allow you to specify the maximum number of connections that should exist at one time, whether in use or in the pool.Once this maximum value is reached, an error may be thrown or you may optionally wait for an existing connection to be freed
 
-**Mandatory settings**
+<b>Mandatory settings</b>
 
 | Key      | Type     | Description                                               | Default value |
 | -------- | -------- | --------------------------------------------------------- | ------------- |
 | Password | `String` | Password of the aforementioned username                   |
 | Username | `String` | Login with scope to access the docbase with proper rights | `icmadmin `   |
 
-**Optional settings**
+<b>Optional settings</b>
 
 | Key                       | Type      | Description                                                     | Default value |
 | ------------------------- | --------- | --------------------------------------------------------------- | ------------- |
@@ -73,13 +65,11 @@ The CM connection provider will help you to manage a pool of connections. For pe
 | Internal connection       | `Integer` | Maximum number of connections for internal side                 | `64 `         |
 | Connection duration       | `Long`    | Length of time to kill a free connection in milliseconds        | `100000 `     |
 
-```xml
-## CMODConnectionProvider ** - CMOD connection provider ** <!-- Commentaire nettoyé -->
-```
+## CMODConnectionProvider <small> - CMOD connection provider </small> {#CMODConnectionProvider data-toc-label="CMODConnectionProvider"}
 
 With a username / password and an IP address, this class allow you to connect at your CMOD instance.To optimize connections between Fast2 and CMOD you can use a single connection
 
-**Mandatory settings**
+<b>Mandatory settings</b>
 
 | Key               | Type     | Description | Default value    |
 | ----------------- | -------- | ----------- | ---------------- |
@@ -87,20 +77,18 @@ With a username / password and an IP address, this class allow you to connect at
 | Password          | `String` |             |
 | Username          | `String` |             | `admin `         |
 
-**Optional settings**
+<b>Optional settings</b>
 
 | Key                  | Type      | Description                                             | Default value |
 | -------------------- | --------- | ------------------------------------------------------- | ------------- |
 | Port number          | `Integer` |                                                         | `1445 `       |
 | Singleton connection | `Boolean` | Optimization of the connection in case of regular calls | `false `      |
 
-```xml
-## DctmConnectionProvider ** - Documentum connection provider ** <!-- Commentaire nettoyé -->
-```
+## DctmConnectionProvider <small> - Documentum connection provider </small> {#DctmConnectionProvider data-toc-label="DctmConnectionProvider"}
 
 Module used by Fast2 to establish to communication with the destination Documentum instance.
 
-**Mandatory settings**
+<b>Mandatory settings</b>
 
 | Key          | Type     | Description                                                |
 | ------------ | -------- | ---------------------------------------------------------- |
@@ -108,32 +96,28 @@ Module used by Fast2 to establish to communication with the destination Document
 | Password     | `String` | Password of the aforementioned username.                   |
 | Username     | `String` | Login with scope to access the docbase with proper rights. |
 
-```xml
-## EmbeddedDbConnectionProvider ** - OpenSearch connection provider ** <!-- Commentaire nettoyé -->
-```
+## EmbeddedDbConnectionProvider <small> - OpenSearch connection provider </small> {#EmbeddedDbConnectionProvider data-toc-label="EmbeddedDbConnectionProvider"}
 
 Module used by Fast2 to connect to its own database.
 
-**Mandatory settings**
+<b>Mandatory settings</b>
 
 | Key      | Type     | Description | Default value |
 | -------- | -------- | ----------- | ------------- |
 | Database endPoint | `String` | The endpoint of the Fast2 database | `"http://localhost:1790 ` |
 
-```xml
-## FileNet35ConnectionProvider ** - Connection provider for FileNet 3.5 solution ** <!-- Commentaire nettoyé -->
-```
+## FileNet35ConnectionProvider <small> - Connection provider for FileNet 3.5 solution </small> {#FileNet35ConnectionProvider data-toc-label="FileNet35ConnectionProvider"}
 
 This task is used to provide connection information to connect specifically to the FileNet P8 3.5 ECM.
 
-**Mandatory settings**
+<b>Mandatory settings</b>
 
 | Key      | Type     | Description                                               |
 | -------- | -------- | --------------------------------------------------------- |
 | Password | `String` | Password of the aforementioned username                   |
 | Username | `String` | Login with scope to access the docbase with proper rights |
 
-**Optional settings**
+<b>Optional settings</b>
 
 | Key                 | Type                                                   | Description                                                |
 | ------------------- | ------------------------------------------------------ | ---------------------------------------------------------- |
@@ -141,77 +125,151 @@ This task is used to provide connection information to connect specifically to t
 | Object store name   | `String`                                               | Name of the docbase involved in the migration              |
 | URL settings        | [WcmApiConfigSettings](helper.md#WcmApiConfigSettings) | Class used for setting multiple URLs (download, upload...) |
 
-```xml
-## FileNetConnectionProvider ** - Connection provider for FileNet P8 solution ** <!-- Commentaire nettoyé -->
-```
+## FileNetConnectionProvider <small> - Connection provider for FileNet P8 solution </small> {#FileNetConnectionProvider data-toc-label="FileNetConnectionProvider"}
 
 Using this class allows you to provide connection information to specifically connect to your FileNet P8 5.x ECM
 
-**Mandatory settings**
+<b>Mandatory settings</b>
 
 | Key         | Type     | Description                                                                                                    |
 | ----------- | -------- | -------------------------------------------------------------------------------------------------------------- |
 | Password    | `String` | Password of the aforementioned username                                                                        |
-```xml
-| URI address | `String` | URI to determine which FileNet instance to connect to  <!-- Commentaire nettoyé -->/wsi/FNCEWS40MTOM/`<!-- Commentaire nettoyé --> Ex/ imap<!-- Commentaire nettoyé --> Ex/ imap.gmail.com<!-- Commentaire nettoyé --> Ex/ myValue.toAdd = true<!-- Commentaire nettoyé --> ⚠️ **Deleted**: The `MobiusConnectionProvider` module is deleted and no longer available in Fast2 from v2025.0.0.
-```
+| URI address | `String` | URI to determine which FileNet instance to connect to <br/> <p> Ex/ `http://<ip>:<port>/wsi/FNCEWS40MTOM/`</p> |
+| Username    | `String` | Login with scope to access the docbase with proper rights                                                      |
+
+<b>Optional settings</b>
+
+| Key                                      | Type      | Description                                                                                        | Default value |
+| ---------------------------------------- | --------- | -------------------------------------------------------------------------------------------------- | ------------- |
+| JAAS coonfiguration stanza property name | `String`  | Property containing JAAS coonfiguration. If null, the default JAAS stanza name is set to FileNetP8 |
+| Singleton connection                     | `Boolean` | Reuse the same connection to optimize calls                                                        | `false `      |
+| Initial naming factory                   | `String`  |                                                                                                    |
+
+## FlowerDocsConnectionProvider <small> - Connection module for FlowerDocs ECM </small> {#FlowerDocsConnectionProvider data-toc-label="FlowerDocsConnectionProvider"}
+
+Module responsible for authentication of Fast2 for FlowerDocs
+
+<b>Mandatory settings</b>
+
+| Key          | Type     | Description                                             |
+| ------------ | -------- | ------------------------------------------------------- |
+| URL endpoint | `String` | Web services target URL                                 |
+| Password     | `String` | Password of the service account used for authentication |
+| Scope        | `String` | Scope of the service account used for authentication    |
+| Username     | `String` | Username of the service account used for authentication |
+
+<b>Optional settings</b>
+
+| Key                          | Type      | Description                              | Default value |
+| ---------------------------- | --------- | ---------------------------------------- | ------------- |
+| Overrides authenticated user | `Boolean` | Allows connections to multiple endpoints | `false `      |
+
+## MailBoxProvider <small> - Mail box connection </small> {#MailBoxProvider data-toc-label="MailBoxProvider"}
+
+This class is used to access any mailbox from some connection information.
+
+<b>Mandatory settings</b>
+
+| Key              | Type     | Description                                                                                   |
+| ---------------- | -------- | --------------------------------------------------------------------------------------------- |
+| Protocol         | `String` | Protocol used to establish the connection <br/> <p> Ex/ imap</p>                              |
+| Password         | `String` | Password of the aforementioned username                                                       |
+| Host address     | `String` | Exact address of the mail server where to retrieve the mails <br/> <p> Ex/ imap.gmail.com</p> |
+| Root folder name | `String` | Name of the root folder to extract mails                                                      |
+| Username         | `String` | Login with scope to access the docbase with proper rights                                     |
+
+<b>Optional settings</b>
+
+| Key                          | Type                | Description                                                                               | Default value |
+| ---------------------------- | ------------------- | ----------------------------------------------------------------------------------------- | ------------- |
+| Session debugging            | `Boolean`           | Keep logs written for the connection into stdout                                          | `false `      |
+| Number of retries            | `Integer`           | Maximum number of times to retry the connection in case of failure                        | `0 `          |
+| Read and write permissions   | `Boolean`           | Open mail session with read and write permissions. If false, the session is only readable | `false `      |
+| Extended properties map      | `String/String map` | List of additional properties to apply <br/> <p> Ex/ myValue.toAdd = true</p>             |
+| Time between two connections | `Integer`           | Time in milliseconds between each connection attempt                                      | `1000 `       |
+
+## MailSenderProvider <small> - Email connection provider </small> {#MailSenderProvider data-toc-label="MailSenderProvider"}
+
+This module will grant Fast2 access to send emails on behalf of a given user
+
+<b>Mandatory settings</b>
+
+| Key        | Type                | Description                                                                                                                                                                                                                                                                              |
+| ---------- | ------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Password   | `String`            | The password of the aforementioned user                                                                                                                                                                                                                                                  |
+| Properties | `String/String map` | It is expected that the client supplies values for the properties listed in Appendix A of the JavaMail spec. Please provide<br/>-mail.store.protocol,<br/>-mail.transport.protocol,<br/>-mail.host,<br/>-mail.user, and<br/>-mail.from as the defaults are unlikely to work in all cases |
+| Username   | `String`            | The username with proper rights to access the email client server                                                                                                                                                                                                                        |
+
+<b>Optional settings</b>
+
+| Key   | Type      | Description                                                                                                                                                                                                                                                              |
+| ----- | --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Debug | `Boolean` | Set the debug setting for this Session. Since the debug setting can be turned on only after the Session has been created, to turn on debugging in the Session constructor, set the property `mail.debug` in the Properties object passed in to the constructor to `true` |
+
+
+## MFilesConnectionProvider <small> - Connection settings for MFiles </small> {#MFilesConnectionProvider data-toc-label="MFilesConnectionProvider"}
+
+Credentials to connect to M-Files remote system via its REST API.
+
+<b>Mandatory settings</b>
+
+| Key               | Type     | Description                                                            | Default value |
+| ----------------- | -------- | ---------------------------------------------------------------------- | ------------- |
+| M-Files REST endpoint | `String` | | http://ip.address/REST |
+| Login | `String` | |  |
+| Password | `String` | |  |
+| Vault GUID | `String` | ex : `{15c876e7-8462-4a35-83d6-c8c21694eed6}` |  |
+
+## MobiusConnectionProvider <small> - Mobius connection provider </small> {#MobiusConnectionProvider data-toc-label="MobiusConnectionProvider"}
+
+> ⚠️ **Deleted**: The `MobiusConnectionProvider` module is deleted and no longer available in Fast2 from v2025.0.0.
 
 This Mobius connection module is required for Fast2 to successfully establish the connection with your Mobius instance in order to properly migrate metadata and contents.
 
-**Mandatory settings**
+<b>Mandatory settings</b>
 
 | Key               | Type     | Description                                                            |
 | ----------------- | -------- | ---------------------------------------------------------------------- |
 | Repository ID     | `String` | The Universally unique identifier (UUID) of the destination repository |
 | Mobius Server URL | `String` |                                                                        |
 
-**Optional settings**
+<b>Optional settings</b>
 
 | Key                        | Type     | Description                                                 |
 | -------------------------- | -------- | ----------------------------------------------------------- |
 | Authentication REST Header | `String` | The value of the 'Authorization' header of the REST request |
 
-```xml
-## NuxeoConnectionProvider ** - Connection settings for Nuxeo ** <!-- Commentaire nettoyé -->
-```
+## NuxeoConnectionProvider <small> - Connection settings for Nuxeo </small> {#NuxeoConnectionProvider data-toc-label="NuxeoConnectionProvider"}
 
-**Mandatory settings**
+<b>Mandatory settings</b>
 
 | Key                | Type     | Description                                                              | Default value |
 | ------------------ | -------- | ------------------------------------------------------------------------ | ------------- |
 | Accessible schemas | `String` | List of document schemas accessible with this connexion                  | `* `          |
-```xml
-| Connexion URL      | `String` | `http://hostname:port/nuxeo`  <!-- Commentaire nettoyé --> |
-```
+| Connexion URL      | `String` | `http://hostname:port/nuxeo` <br/> <p> Ex/ `http://localhost:8080/nuxeo`</p> |
 | Password           | `String` |                                                                          |
 | UserName           | `String` |                                                                          |
 
-```xml
-## OpenTextCredentials ** - OpenText user credentials ** <!-- Commentaire nettoyé -->
-```
+## OpenTextCredentials <small> - OpenText user credentials </small> {#OpenTextCredentials data-toc-label="OpenTextCredentials"}
 
-**Mandatory settings**
+<b>Mandatory settings</b>
 
 | Key      | Type     | Description |
 | -------- | -------- | ----------- |
 | Password | `String` |             |
 | Username | `String` |             |
 
-```xml
-## SQLQueryGenericCaller ** - Generic query caller ** <!-- Commentaire nettoyé -->
-```
+## SQLQueryGenericCaller <small> - Generic query caller </small> {#SQLQueryGenericCaller data-toc-label="SQLQueryGenericCaller"}
 
 This modules is responsible of establishing the connection between Fast2 and the designated database
 
-**Mandatory settings**
+<b>Mandatory settings</b>
 
 | Key                   | Type     | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
 | --------------------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-```xml
-| Connection definition | `String` | Use a standard jdbc:// syntax. If a driver is needed, the JAR file has to be added to the worker-libs/ folder. Make sure to pick up a version compatible with the JDK used by Fast2. If clear credentials is a problem, please use below fields username and password  <!-- Commentaire nettoyé -->;user=...;password=...;``jdbc//**:3306/<!-- Commentaire nettoyé --> |
-```
+| Connection definition | `String` | Use a standard jdbc:// syntax. If a driver is needed, the JAR file has to be added to the worker-libs/ folder. Make sure to pick up a version compatible with the JDK used by Fast2. If clear credentials is a problem, please use below fields username and password <br/> <p> Ex/ <br />`jdbc:sqlite:C:/sqlite/mydatabase.db;`<br />`jdbc:sqlserver://localhost:<port>;user=...;password=...;`<br />`jdbc:mysql://<ip-address>:3306/<db-name>?user=...&password=...`</p> |
 
-**Optional settings**
+<b>Optional settings</b>
 
 | Key                      | Type      | Description                                                                                        |
 | ------------------------ | --------- | -------------------------------------------------------------------------------------------------- |

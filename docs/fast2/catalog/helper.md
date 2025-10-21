@@ -1,12 +1,10 @@
-```xml
-## DctmConfiguration ** - Module for customized Documentum configuration ** <!-- Commentaire nettoyé -->
-```
+## DctmConfiguration <small> - Module for customized Documentum configuration </small> {#DctmConfiguration data-toc-label="DctmConfiguration"}
 
 
 
 
 
-**Optional settings**
+<b>Optional settings</b>
 
 |Key      | Type    | Description |  Default value |
 | - | - | - | - |
@@ -19,15 +17,13 @@
 
 
 
-```xml
-## WcmApiConfigSettings ** - URL configuration ** <!-- Commentaire nettoyé -->
-```
+## WcmApiConfigSettings <small> - URL configuration </small> {#WcmApiConfigSettings data-toc-label="WcmApiConfigSettings"}
 
 This class allows to configure several elements associated with a URL.
 
 
 
-**Optional settings**
+<b>Optional settings</b>
 
 |Key      | Type    | Description | 
 | - | - | - |

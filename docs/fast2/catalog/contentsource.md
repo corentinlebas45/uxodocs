@@ -1,50 +1,216 @@
-## AWSContentSource ** - Extract content from AWS S3 bucket ** 
+## AWSContentSource <small> - Extract content from AWS S3 bucket </small> {#AWSContentSource data-toc-label="AWSContentSource"}
 
 
 
-**Mandatory settings**
+<b>Mandatory settings</b>
 
 |Key      | Type    | Description | 
 | - | - | - |
  | AWS access credentials | [AWSConnectionProvider](credentials.md#AWSConnectionProvider) | Credentials of the user (must have been granted AmazonS3FullAccess permission). | 
 
 
-**Optional settings**
+<b>Optional settings</b>
 
 |Key      | Type    | Description |  Default value |
 | - | - | - | - |
  | ARN key for getAwsPrefixKMS encryption | `String` |  | 
- | Bucket name | `String` | Name of the S3 bucket where the content is stored. | `$ ` | 
+ | Bucket name | `String` | Name of the S3 bucket where the content is stored. | `${bucket} ` | 
+ | Content path (S3 object key) | `String` | Path leading to S3 object corresponding to the content you intend to extract from the bucket. To use this options, you must enable the content extraction option. <br/> <p> Ex/ `${contentPath}`</p> | 
+ | Extract contents | `Boolean` | All existing contents of documents will be replaced by the newly found contents, retrieved from the S3 bucket. If the S3 objects are parsed as punnets, then the contents will be attached based on the 'Content path' input field. | 
+ | Process s3 objects as punnets | `Boolean` |  | 
+
+
+
+## AlfrescoContentExtractor <small> - Alfresco content extractor using CMIS technology </small> {#AlfrescoContentExtractor data-toc-label="AlfrescoContentExtractor"}
+
+This alfresco extractor will use the CMIS technology to fetch your document content from a given Alfresco repository
+
+<b>Mandatory settings</b>
+
+|Key      | Type    | Description | 
+| - | - | - |
+ | Alfresco connection provider | [AlfrescoCMISConnectionProvider](credentials.md#AlfrescoCMISConnectionProvider) | CMIS version must be 1.1 | 
+
+
+<b>Optional settings</b>
+
+|Key      | Type    | Description |  Default value |
+| - | - | - | - |
+ | Property Helper | PropertyHelper |  | 
+ | Extract document content | `Boolean` |  | `true ` | 
+
+
+
+## AlfrescoRestContentExtractor <small> - Alfresco content extractor using Alfresco REST protocol </small> {#AlfrescoRestContentExtractor data-toc-label="AlfrescoRestContentExtractor"}
+
+This task relies on the Alfresco public REST API (with v1.0.4 of the Alfresco REST client) to retrieve documents and metadata into a given Alfresco instance
+
+<b>Mandatory settings</b>
+
+|Key      | Type    | Description | 
+| - | - | - |
+ | Alfresco connection provider | [AlfrescoRESTConnectionProvider](credentials.md#AlfrescoRESTConnectionProvider) |  | 
+
+
+<b>Optional settings</b>
+
+|Key      | Type    | Description |  Default value |
+| - | - | - | - |
+ | Date format | `String` |  | `E MMM dd HH:mm:ss Z YYYY ` | 
+ | CMIS query | `String` | CMIS SQL query, pattern resolvable, to fetch document based on alternative data. Using this feature will create new docs in the punnet with corresponding ID of documents. Consider following this task with a secondary AlfrescoRestContentExtractor task to extract data and contents. | 
+ | Extract content | `Boolean` |  | 
+ | Extract all versions | `Boolean` | Extract the superseded versions of the documents matching the query |
+ | Extract parent site | `Boolean` | If the document is not stored in an Alfresco site, nothing will happen. Otherwise, the site details will be attached to the punnet dataset. | 
+ | Map permissions | `Boolean` | Map permissions to either the document, folder or site. |
+ | Map parent folder | `Boolean` | Map direct parent folder info onto the related document. |
+ | Extract folders as tree | `Boolean` | Extract folders as tree, with all parent folders. This option must be selected if you wish to map permissions of parent folders. |
+ | Extract users as email addresses | `Boolean` | |
+
+
+## AlfrescoRestSiteExtractor <small> - Alfresco Site extractor using Alfresco REST protocol </small> {#AlfrescoRestSiteExtractor data-toc-label="AlfrescoRestSiteExtractor"}
+
+This task relies on the Alfresco public REST API (with v1.0.4 of the Alfresco REST client) to retrieve sites into a given Alfresco instance.
+
+<b>Mandatory settings</b>
+
+|Key      | Type    | Description | Default value |
+| - | - | - | - |
+| Alfresco connection provider | [AlfrescoRESTConnectionProvider](credentials.md#AlfrescoRESTConnectionProvider) | | |
+| AFTS query | `String` | Query used to retrieve all sites from Alfresco | TYPE:\"st:site\" |
+
+
+
+## CMContentExtractor <small> - Basic content extractor from Content Manager </small> {#CMContentExtractor data-toc-label="CMContentExtractor"}
+
+This class is dedicated to the extraction of content for the Content Manager solution. You'll have the possiblity to extract annotations, custom properties or even logs.
+
+<b>Mandatory settings</b>
+
+|Key      | Type    | Description | 
+| - | - | - |
+ | CM connection provider | [CMConnectionProvider](credentials.md#CMConnectionProvider) |  | 
+
+
+<b>Optional settings</b>
+
+|Key      | Type    | Description |  Default value |
+| - | - | - | - |
+ | Extact history logs | `Boolean` |  | `true ` | 
+ | Extract standard system properties | `Boolean` |  | `true ` | 
+ | Extract advanced system properties from DKDDO object | `Boolean` |  | `true ` | 
+ | Extract document annotation | `Boolean` |  | `false ` | 
+ | Extract note logs | `Boolean` |  | `false ` | 
+ | Extract custom properties | `Boolean` |  | `true ` | 
+ | Extract note logs as annotations | `Boolean` |  | `false ` | 
+ | Extract document content | `Boolean` |  | `true ` | 
+
+
+
+## CMODContentExtractor <small> - Basic CMOD content extractor </small> {#CMODContentExtractor data-toc-label="CMODContentExtractor"}
+
+
+
+<b>Mandatory settings</b>
+
+|Key      | Type    | Description | 
+| - | - | - |
+ | CMOD Connection Settings | [CMODConnectionProvider](credentials.md#CMODConnectionProvider) |  | 
+
+
+<b>Optional settings</b>
+
+|Key      | Type    | Description |  Default value |
+| - | - | - | - |
+ | Pattern to store resource files | `String` |  | `${resourceId} ` | 
  | Export attached CMOD resources | `Boolean` |  | `true ` | 
 
 
 
-## DctmContentExtractor ** - Extract document-related details from Documentum ** 
+## DctmContentExtractor <small> - Extract document-related details from Documentum </small> {#DctmContentExtractor data-toc-label="DctmContentExtractor"}
 
-This Documentum connector is designed for extraction of document versions, metadata, folders and content (only the 1st content of a document) from a Documentum repository. Multiversion documents will be retrieved from the shared 'i_chronicle_id'. Since Documentum architecture involves particular port and access management, a worker should be started on the same server where Documentum is running; Make sure to check the basic requirements at [the setup for Documentum](https://www.fast2.tech/documentation/setup-with-environment/documentum).
-
-| Parameter | Type | Description | Default |
-|-----------|------|-------------|---------|
-| Query | String | SELECT [Id],[DocumentTitle] FROM Document WHERE [Property] = `'$\{myCriterion\}'` | |
-| Extract folders absolute path | `Boolean` | The absolute path of the folder inside the FileNet instance will be extracted during the process | `false ` |
-| Extract content | `Boolean` | The document content will be extracted during the process | `true ` |
-| Extract all versions | `Boolean` | Extract the superseded versions of the documents matching the query | |
-| Extract annotations | `Boolean` | All annotations owned by the document will be extracted | `true ` | 
+This Documentum connector is designed for extraction of document versions, metadata, folders and content (only the 1st content of a document) from a Documentum repository. Multiversion documents will be retrieved from the shared 'i_chronicle_id'. Since Documentum architecture involves particular port and access management, a worker should be started on the same server where Documentum is running; <br/><br/>Make sure to check the basic requirements at <a href="https://www.fast2.tech/documentation/setup-with-environment/documentum/">the setup for Documentum</a> on the official Fast2 documentation.
 
 
 
-## FlowerContentExtractor ** -  ** 
+<b>Optional settings</b>
+
+|Key      | Type    | Description |  Default value |
+| - | - | - | - |
+ | Connexion information to Documentum Repository | [DctmConnectionProvider](credentials.md#DctmConnectionProvider) |  | 
+ | Extract folders | `Boolean` |  | `true ` | 
+ | Map empty or unset properties | `Boolean` | Attach Documentum metadata onto document dataset even if the value is missing or unset. | 
+ | Extract renditions | `Boolean` | Check this option to extract renditions of each document. They will be attached as side-contents in the document, with properties populated from original renditions properties. | 
+ | Whitelist for metadata to extract | `String` | All values need to be separated by comma `,`. | 
+ | Extract metadata | `Boolean` |  | `true ` | 
+ | Continue on fail | `Boolean` | If `true`, any error which occurs during extraction of either metadata, content or folders will trigger an exception. Otherwise, the error will be found in the logs. | 
+ | Extract content | `Boolean` |  | `true ` | 
+ | Extract all versions | `Boolean` |  | 
 
 
 
-**Mandatory settings**
+## FileNet35ContentSource <small> - Extract content from FileNet 3.5 </small> {#FileNet35ContentSource data-toc-label="FileNet35ContentSource"}
+
+Use this task to retrieve content of documents to extract from a given FileNet instance. This task needs to be preceeded by a FileNet35Source task.
+
+<b>Mandatory settings</b>
+
+|Key      | Type    | Description | 
+| - | - | - |
+ | FileNet 3.5 connection provider | [FileNet35ConnectionProvider](credentials.md#FileNet35ConnectionProvider) | Connection parameters to the FileNet instance | 
+
+
+<b>Optional settings</b>
+
+|Key      | Type    | Description |  Default value |
+| - | - | - | - |
+ | Ignore documents with zero-sized content | `Boolean` | Document without any content will not be processed | `false ` | 
+
+
+
+## FileNetContentExtractor <small> - Extract document content from FileNet P8 </small> {#FileNetContentExtractor data-toc-label="FileNetContentExtractor"}
+
+This task is not a real source task. The documents to be extracted are identified by an BlankSource task generating a set of 'empty' Punnets, i.e. containing only documents each bearing a document number (documentId) to extract.
+
+<b>Mandatory settings</b>
+
+|Key      | Type    | Description | 
+| - | - | - |
+ | FileNet connection provider | [FileNetConnectionProvider](credentials.md#FileNetConnectionProvider) | Connection parameters to the FileNet instance | 
+
+
+<b>Optional settings</b>
+
+|Key      | Type    | Description |  Default value |
+| - | - | - | - |
+ | Property Helper to use | [PropertyHelper](tool.md#PropertyHelper) |  | 
+ | Extract object type properties | `Boolean` | The FileNet P8 metadata of the document which are Object type will be saved at the punnet level | `false ` | 
+ | Compound parent data for children references | `String` | Name of the parent document property under which the children properties will be stored. | 
+ | Object store name | `String` | Name of the repository to extract from | 
+ | Compound children data to record | `String` | Name of the child property to store in the parent. Consider setting parent data name as well. | 
+ | Extract FileNet system properties | `Boolean` | Save the FileNet system properties as document metadata | `false ` | 
+ | Default mimetype | `String` | Default mimetype to set if the one from FileNet is empty | 
+ | Skip annotation exceptions | `Boolean` | Extract documents even if related annotations are in exception like null content | `false ` | 
+ | Extract FileNet security | `Boolean` | The security of the document will be saved at the punnet level | `false ` | 
+ | SQL fetch query | `String` | Use this SQL to fetch documents based on your criteria. <br/> <p> Ex/ SELECT [Id],[DocumentTitle] FROM Document WHERE [Property] = `'${myCriterion}'`</p> | 
+ | Extract folders absolute path | `Boolean` | The absolute path of the folder inside the FileNet instance will be extracted during the process | `false ` | 
+ | Extract content | `Boolean` | The document content will be extracted during the process | `true ` | 
+ | Extract all versions | `Boolean` | Extract the superseded versions of the documents matching the query | 
+ | Extract annotations | `Boolean` | All annotations owned by the document will be extracted | `true ` | 
+
+
+
+## FlowerContentExtractor <small> -  </small> {#FlowerContentExtractor data-toc-label="FlowerContentExtractor"}
+
+
+
+<b>Mandatory settings</b>
 
 |Key      | Type    | Description | 
 | - | - | - |
  | Flower component category (DOCUMENT, TASK, FOLDER or VIRTUAL_FOLDER) | `String` |  | 
 
 
-**Optional settings**
+<b>Optional settings</b>
 
 |Key      | Type    | Description |  Default value |
 | - | - | - | - |
@@ -55,11 +221,11 @@ This Documentum connector is designed for extraction of document versions, metad
 
 
 
-## IDMISContentExtractor ** - ImageServices WAL JNI-bridged Extractor ** 
+## IDMISContentExtractor <small> - ImageServices WAL JNI-bridged Extractor </small> {#IDMISContentExtractor data-toc-label="IDMISContentExtractor"}
 
 This task extracts documents from the Panagon Image Services ECM (indexes, optional content and annotations). One punnet of one document for each ECM document. However, it's not a real source task. The documents to be extracted are identified by a [BlankSource](#BlankSource) task generating a set of empty Punnets, i.e. containing only documents each bearing a document number (documentId) to extract.
 
-**Mandatory settings**
+<b>Mandatory settings</b>
 
 |Key      | Type    | Description | 
 | - | - | - |
@@ -69,7 +235,7 @@ This task extracts documents from the Panagon Image Services ECM (indexes, optio
  | Username | `String` | Login with scope to access the docbase with proper rights | 
 
 
-**Optional settings**
+<b>Optional settings</b>
 
 |Key      | Type    | Description |  Default value |
 | - | - | - | - |
@@ -86,7 +252,7 @@ This task extracts documents from the Panagon Image Services ECM (indexes, optio
 
 
 
-## MDOParserExternalContent ** - Parse FWTF (Fixed Width Text File) with external content to a punnet description ** 
+## MDOParserExternalContent <small> - Parse FWTF (Fixed Width Text File) with external content to a punnet description </small> {#MDOParserExternalContent data-toc-label="MDOParserExternalContent"}
 
 An MDO file is a flat file defined such as: each line corresponds to a document and each line contains information about the document
 The extraction of information from each line is based on a CSV configuration file, which provides the name of the metadata to be inserted into the punnet document, as well as its characteristics.
@@ -104,14 +270,14 @@ It consists of the following columns, separated by a comma:
 
 The MDOParserExternalContent task is used to retrieve external content for each document. To do this, the name of the column defining the content path is specified in the task settings.
 
-**Mandatory settings**
+<b>Mandatory settings</b>
 
 |Key      | Type    | Description | 
 | - | - | - |
  | MDO format specification file path | `String` | CSV configuration absolute file path containing MDO format specification | 
 
 
-**Optional settings**
+<b>Optional settings</b>
 
 |Key      | Type    | Description |  Default value |
 | - | - | - | - |
@@ -125,18 +291,18 @@ The MDOParserExternalContent task is used to retrieve external content for each 
 
 
 
-## MDOParserInternalContent ** - FWTF (Fixed Width Text File) parser with internal content ** 
+## MDOParserInternalContent <small> - FWTF (Fixed Width Text File) parser with internal content </small> {#MDOParserInternalContent data-toc-label="MDOParserInternalContent"}
 
 Like the MDOParserExternalContent task, the MDOParserExternalContent source allows you to parse each line of the MDO file in Punnet. The difference between these two tasks is that the content is stored inside the MDO itself. The start and end of the content is defined by a tag specified in the task settings
 
-**Mandatory settings**
+<b>Mandatory settings</b>
 
 |Key      | Type    | Description | 
 | - | - | - |
  | MDO format specification file path | `String` | CSV configuration absolute file path containing MDO format specification | 
 
 
-**Optional settings**
+<b>Optional settings</b>
 
 |Key      | Type    | Description |  Default value |
 | - | - | - | - |
@@ -150,11 +316,11 @@ Like the MDOParserExternalContent task, the MDOParserExternalContent source allo
 
 
 
-## OpenTextContentSource ** - OpenText content extractor using OpenText REST protocol ** 
+## OpenTextContentSource <small> - OpenText content extractor using OpenText REST protocol </small> {#OpenTextContentSource data-toc-label="OpenTextContentSource"}
 
 
 
-**Mandatory settings**
+<b>Mandatory settings</b>
 
 |Key      | Type    | Description | 
 | - | - | - |
@@ -162,7 +328,7 @@ Like the MDOParserExternalContent task, the MDOParserExternalContent source allo
  | OpenText client | OpenTextRestClient |  | 
 
 
-**Optional settings**
+<b>Optional settings</b>
 
 |Key      | Type    | Description |  Default value |
 | - | - | - | - |
@@ -174,11 +340,11 @@ Like the MDOParserExternalContent task, the MDOParserExternalContent source allo
 
 
 
-## SQLContentExtractor ** - Extract document content from SQL ** 
+## SQLContentExtractor <small> - Extract document content from SQL </small> {#SQLContentExtractor data-toc-label="SQLContentExtractor"}
 
 Extract clob and blob object-types. Classic types like varchar are extraced as well
 
-**Mandatory settings**
+<b>Mandatory settings</b>
 
 |Key      | Type    | Description | 
 | - | - | - |
@@ -186,7 +352,7 @@ Extract clob and blob object-types. Classic types like varchar are extraced as w
  | SQL query | Pattern | Select precisely documents you want to extract through a classic SQL query | 
 
 
-**Optional settings**
+<b>Optional settings</b>
 
 |Key      | Type    | Description | 
 | - | - | - |

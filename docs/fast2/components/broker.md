@@ -18,7 +18,7 @@ BROKER_MAX_MEMORY=1G
 
 If the campaign are involving a couple of millions of documents, increasing this value to 8GB or 16GB will definitely help increasing the performance rate of the migration.
 
-
+<br />
 
 ## :material-laptop: Configure the UI port
 
@@ -33,6 +33,4 @@ Fast2 application run on the 1789 port by default. To change this, add or update
 server.port=1789
 ```
 
-```xml
-<!-- Commentaire nettoyé -->
-```
+<!-- Put the same value for these two properties. -->

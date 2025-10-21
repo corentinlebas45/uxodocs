@@ -1,5 +1,7 @@
 ---
-title: Datasets
+title: "Datasets"
+
+tags: ["boilerplate", "dataset", "java", "data"]
 ---
 
 # Learn how to deal with datasets
@@ -67,7 +69,58 @@ The returned object will differ accordingly.
 ```java
 String dataValue = data.getValue();
 
-List<!-- Commentaire nettoyé --> allData = myDataset.getData();
+List<String> dataValues = data.getValues();
+```
+
+Data values can be added along the way, even when the data has already been created with a given value to begin with:
+
+```java
+data.addValue(value);
+```
+
+<br />
+<br />
+
+### Properties
+
+A data can be dealt with just like any other object with properties.
+
+Therefore, adding a property, removing it or getting it are just as simple as you would think:
+
+```java
+data.setProperty(name, value);
+
+String value = data.getProperty(name);
+
+data.removeProperty(name);
+```
+
+## Add data
+
+Several ways of adding data to the dataset are available, depending on the type of value you are willing to store:
+
+```java
+Data myData = myDataset.addData(name, "String", value);  // String
+Data myData = myDataset.addData(name, null, value);
+
+Data myData = myDataset.addData(name, "boolean", true);  // boolean
+
+Data myData = myDataset.addData(name, type, 10);         // long, int
+
+Data myData = myDataset.addData(name, "String");             // list or arrays of String
+myData.getValues().addAll(Arrays.asList("a", "b", "c"));
+
+document.getDataSet().addData("multivalued", "String").getValues().addAll(Arrays.asList("value #1", "value #2"));
+```
+
+Adding a new data with the same name as an already stored one, will result in overwriting the existing value with the new one.
+
+## Iterating through all data
+
+Data mapping often requires to cover all data, no matter their name. To do so, the easiest way is to get them as a list:
+
+```java
+List<Data> allData = myDataset.getData();
 
 for(Data data : allData){
     // ...
@@ -100,7 +153,12 @@ String value = myDataSet.getDataValue(dataName);
 
 ```java
 // 1st way : via data object
-List<!-- Commentaire nettoyé --> value = myDataSet.getDataValues(dataName);
+List<String> value = myDataSet.getData(dataName).getValues();
+
+// or
+
+// 2nd way : dataset shortcut
+List<String> value = myDataSet.getDataValues(dataName);
 ```
 
 ## Remove data

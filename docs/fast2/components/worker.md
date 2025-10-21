@@ -180,8 +180,8 @@ The most recommended scale-up here would be to start another worker on a differe
 
 A second non-negligible aspect is the number of connections and sessions opened by the workers to communicate with both the source and destination environments. Adding worker will consequently increase these numbers, especially if several threads have been allocated to their processing queues.
 
-
-
+<br />
+<br />
 
 ### And what about...
 
@@ -211,11 +211,11 @@ This guide explains how to configure a remote worker to your broker. It covers b
 #### Remote worker config
 
 ```properties 
-server.host=
+server.host=<broker_ip_address>
 
 # Remote = docs ends broker side
 # Local = docs ends worker side
-worker.content.factory="remote|local"
+worker.content.factory=<remote|local>
 ```
 
 #### Network
@@ -237,7 +237,7 @@ worker.content.factory="remote|local"
 **Step 1: Ensure Network Connectivity**
 On the worker machine, ensure that you can ping the public IP address of the broker. You may need to test it by pinging broker_public_ip_address.
 ```bash
-ping 
+ping <broker_public_ip_address>
 ```
 If the ping works, proceed to the next step. If the ping does not work, there may be an issue with the router, firewall, or routing configuration.
 
@@ -248,7 +248,7 @@ If needed, you can change the protocol and port information as well. The **broke
 
 ```properties
 server.protocol=http
-server.host=
+server.host=<broker_local_ip_address>
 server.port=1789
 
 broker.url=${server.protocol}://${server.host}:${server.port}/broker
@@ -259,14 +259,45 @@ Make sure the port is open and the broker is listening on the specified port.
 On the broker machine, verify that the broker application is listening on the port you specified by using the following command:
 ```bash
 # Linux
-sudo netstat -tuln | grep <!-- Commentaire nettoyé -->`
+sudo netstat -tuln | grep <port>
+
+# Windows
+`netstat -ano | findstr <port>`
 ```
 The output should show something like:
 ```ruby
-tcp6       0      0 :::<!-- Commentaire nettoyé -->
+tcp6       0      0 :::<port>                 :::*                    LISTEN
+```
+
+**Step 4: Test the connection**
+On the worker machine, test the connection to the broker using nc (netcat) to check if the port is open and accessible:
+```bash
+# Linux
+nc -zv <broker_local_ip_address> <port>
 
 # Windows
-telnet  <!-- Commentaire nettoyé -->/tcp
+telnet <broker_local_ip_address> <port>
+```
+If the connection is successful, the worker and broker can communicate.
+
+
+#### Configure Worker and Broker on different networks
+
+**Step 1: Configure Port Forwarding on the Broker’s Router**
+On the router connected to the broker, you need to configure port forwarding to forward incoming traffic on a specific port to the broker's local IP address and port.
+
+1. Log into the router's web interface (usually at 192.168.1.1 or 192.168.0.1).
+2. Navigate to the Port Forwarding or NAT settings section.
+3. Add a rule to forward traffic coming on port to the internal IP address of the broker (broker_local_ip_address).
+4. Save the settings.
+
+**Step 2: Verify Firewall Configuration**
+Ensure that both the broker’s firewall and the worker’s firewall allow communication on the specified port. If necessary, open the required port in the firewall:
+
+On Ubuntu, to open a port in the firewall (if using ufw):
+
+```bash
+sudo ufw allow <port>/tcp
 ```
 
 **Step 3: Repeat steps explained for same network**
@@ -280,7 +311,7 @@ You can either store the files processed from the broker or at the worker side.
 To choose one or the other you simply have to modify this property :
 
 ```properties
-worker.content.factory="remote|local"
+worker.content.factory=<remote|local>
 ```
 
 - Select **remote** to send back documents to the broker.
@@ -289,27 +320,31 @@ worker.content.factory="remote|local"
 ##### Example
 This is an example to understand what happens for both scenarios. Imagine that we are extracting some documents from a Documentum environment and we need to convert tiff files to a pdf format.
 
-```xml
-<!-- Commentaire nettoyé -->> Broker: Hi broker, I'm available
-```
+<!-- ###### Local
+```mermaid 
+sequenceDiagram
+Worker ->> Broker: Hi broker, I'm available
 Broker ->> Worker: Hello worker, I have some work for you
 Worker ->> Dctm: Ask for documents
 Dctm ->> Worker: Provide documents
 Worker ->> Worker: Convert tiff to pdf
-Note right of Worker: Tiff and output  pdf files will be stored  from worker side
+Note right of Worker: Tiff and output <br> pdf files will be stored <br> from worker side
 Broker ->> Worker: Good job, campaign finished
 Worker ->> Broker: I'm still available if you need
 ``` -->
 
-<!-- Commentaire nettoyé -->> Broker: Hi broker, I'm available
+<!-- ###### Remote
+```mermaid 
+sequenceDiagram
+Worker ->> Broker: Hi broker, I'm available
 Broker ->> Worker: Hello worker, I have some work for you
 Worker ->> Dctm: Ask for documents
 Dctm ->> Worker: Provide documents
 Worker ->> Worker: Convert tiff to pdf
 Worker ->> Broker: Upload documents on broker side
-Note left of Broker: As we specified remote,  worker will upload files  to the broker side
+Note left of Broker: As we specified remote, <br> worker will upload files <br> to the broker side
 Worker ->> Worker: Clean up space
-Note right of Worker: To avoid duplicates,  worker will clean files  from its environment
+Note right of Worker: To avoid duplicates, <br/> worker will clean files <br/> from its environment
 Broker ->> Worker: Good job, campaign finished
 Worker ->> Broker: I'm still available if you need
 ``` -->

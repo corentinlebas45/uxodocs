@@ -1,5 +1,7 @@
 ---
-title: Documentation
+title : "CSV source : a step further" 
+author: Joseph TESSIER
+tags: ["csv"]
 ---
 
 ![unsplash drawers](../assets/img/cookbooks/unsplash-drawers.jpg)
@@ -10,18 +12,18 @@ The CSVSource task has been designed to receive a CSV file as input.
 
 ## Basic usage
 With little to no configuration, each line represents one document with different values matching the column header. From a Fast2 standpoint, a CSV with following content :
-
+<figure markdown>
 ```txt
 header1,header2
 value1_A,value2_A
 value1_B,value2_B
 ```
-
+</figure>
 
 will generate 2 documents :
 
  - The first document will have 2 data, `header1: value1_A` and `header2: value2_A` 
- - The second document will have 2 data, `header1: value1_B` and `header2: value2_B`
+ - The second document will have 2 data, `header1: value1_B` and `header2: value2_B`<br/>
 
 Although the default before resolved the data names from the 1st row (column headers), these names can be overwritten by the user, or even enriched.
 
@@ -36,23 +38,23 @@ With such a setting, Fast2 will map the data retrieved from the CSV directly und
 
 ### Example
 Let's consider processing a CSV file with the following content:
-
+<figure markdown>
 ```txt
 header1,header2
 value1 ,value2
 ```
-
+</figure>
 
 With the default settings, the document in Fast2 would have such dataset:
 
-
+<figure markdown>
 ```json
 {
     "header1": "value1",
     "header2": "value2"
 }
 ```
-
+</figure>
 
 
 If the CSVSource task is configured as shown below,
@@ -63,14 +65,14 @@ If the CSVSource task is configured as shown below,
 
 the created document will only have a dataset looking like:
 
-
+<figure markdown>
 ```json
 {
     "new header A": "value1",
     "new header B": "value2"
 }
 ``` 
-
+</figure>
 
 Fast2 will keep no trace of the old header names, generating a document with a dataset populated from the CSV file alongside new data names.
 
@@ -91,15 +93,15 @@ Enter one line per new data you intend to create.
 ```
 ### Rules
 1. The separator is the character `:` (semi-colon).
-2. Parameters have to striclty match the format `$&lt;data_name&gt;`. A data with the name "key" will be accessed under `$key`.
+2. Parameters have to striclty match the format `$<data_name>`. A data with the name "key" will be accessed under `$key`.
 3. Parameters can use other params
 
-
+<figure markdown>
 ```ruby
 param1=stringLength:$keyA
 param2=substring:$param1:3:5
 ```
-
+</figure>
 
 ### Supported functions
 |Function|	Description|
@@ -111,12 +113,12 @@ param2=substring:$param1:3:5
 
 ### Example
 We consider the following CSV content as input :
-
+<figure markdown>
 ```txt
 header1,header2,header3,header4
 value1 ,value2 ,value3 ,this-is-the-value4
 ```
-
+</figure>
 
 In the following examples, a new data with the name 'var_name' will be created with the value depending on the chosen option.
 

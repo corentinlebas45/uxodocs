@@ -1,7 +1,11 @@
 ---
-title: Sort documents in a punnet
+title: "Sort documents in a punnet"
+date: "2023-01-12"
+author: "Joseph TESSIER"
+tags: ["worker", "json", "javascript", "document", "nashorn"]
+photograph: "Héctor J. Rivas"
+photograph_pseudo: "@@hjrc33"
 ---
-
 ![photo cover](../assets/img/cookbooks/photo-cover.avif)
 
 
@@ -16,7 +20,7 @@ For the educational aspect of this topic, let us consider a punnet gathering sev
 
 Our punnet would look like this:
 
-
+<figure markdown>
 ```txt
 ├─ Punnet
 │     ├─ document_1
@@ -34,7 +38,7 @@ Our punnet would look like this:
 │     └─ ...
 └─ ...
 ```
-
+</figure>
 
 As we can see, the correct order should be **document_2**, then **document_3** and finally **document_1**.
 
@@ -66,11 +70,15 @@ var Collections = Java.type("java.util.Collections");
 
 // Global parameters
 var dataToSort = "creation_date";
-var dateFormat = "MM/d/yyyy hss aa";
+var dateFormat = "MM/d/yyyy h:mm:ss aa";
 
 var formatter = new SimpleDateFormat(dateFormat);
 
-var compareByDate = function (doc1, doc2) <!-- Expression supprimée -->;
+var compareByDate = function (doc1, doc2) {
+  try {
+    return formatter
+      .parse(doc1.getDataSet().getDataValue(dataToSort))
+      .compareTo(formatter.parse(doc2.getDataSet().getDataValue(dataToSort)));
   } catch (e) {}
   return 0;
 };
@@ -82,11 +90,11 @@ Explanations :
 
 - L7 : the data which you want to sort, in our case the `creation_date`
 - L8 : the date format we deduced from the `String` value of the previous data 
-- L12-L17 : we need to parse the value as date, to compare the date as so instead of regular `String` values (which could be too approximative) 
+- L12-L17 : we need to parse the value as date, to compare the date as so instead of regular `String` values (which could be too approximative) <br/>
 
 The output of this task will be the same documents in the punnet, just ordered by creation date ascending.
 
-
+<br/>
 
 
 Head out now to the Run screen, and start your campaign.
@@ -94,7 +102,7 @@ Head out now to the Run screen, and start your campaign.
 ### 🏁 Result
 At the latest stage of your workflow, the document dataset is filled with the properties found in the JSON and integrated as metadata.
 
-
+<figure markdown>
 ```txt
 ├─ Punnet
 │     ├─ document_2
@@ -112,7 +120,7 @@ At the latest stage of your workflow, the document dataset is filled with the pr
 │     └─ ...
 └─ ...
 ```
-
+</figure>
 
 ## 👏 Let's sum up
 We can bring this scenario further by sorting based on 2 or more data, regular `int` values or else.

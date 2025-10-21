@@ -51,13 +51,13 @@ A CRON is a String composed of 6 or 7 fields separated by spaces. Each field rep
 | Day of month | :white_check_mark: | 1-31             | , - \* ? / L W             |
 | Month        | :white_check_mark: | 1-12 or JAN-DEC  | , - \* /                   |
 | Day of week  | :white_check_mark: | 1-7 or SUN-SAT   | , - \* ? / L ##            |
-| Year         |        | empty, 1970-2099 | , - \* /                   |
+| Year         |        :x:         | empty, 1970-2099 | , - \* /                   |
 
 ### Examples of cron
 
 These examples are basic ones but they highlight the interest of using cron expressions.
 
-
+<div class="overflow-x-none" markdown="block">
 
 - Every 2 minutes
 
@@ -77,7 +77,7 @@ These examples are basic ones but they highlight the interest of using cron expr
 | :-----: | :-----: | :---: | :----------: | :---: | :---------: | :--: |
 |    0    |    0    |  12   |      ?       |  \*   |     SUN     |  \*  |
 
-
+</div>
 
 Cron expressions can be really useful but might quite hard to use.
 

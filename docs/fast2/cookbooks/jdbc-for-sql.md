@@ -58,7 +58,7 @@ Basically, two fields are mandory:
     For example, you can use :
 
     ```
-    jdbc//localhost;databaseName=demo;encrypt=false;integratedSecurity=true;
+    jdbc:sqlserver://localhost;databaseName=demo;encrypt=false;integratedSecurity=true;
     ```
 
     If you do not want to put your credentials in the login URL, you can encrypt your password by entering your credentials by filling in the fields below.
@@ -68,9 +68,7 @@ Basically, two fields are mandory:
 - The query to insert or update your database.
 
     ```sql
-```text
     INSERT INTO table_test_connection (column_A, column_B) VALUES ('${punnetId}', "test");
-```
     ```
 
     ![SQLStatement](../assets/img/cookbooks/jdbc_SQLStatement.png)
@@ -88,7 +86,7 @@ SELECT * from table_test_connection;
 ## 👏 Fast2: 1, JDBC & SQL: 0
 
 Congrats, you've made it !
-
+<br/><br/>
 Now you can also use the JDBC connection for other tasks such as [SQLMultiQueryTask](../catalog/tool.md#SQLMultiQueryTask) or [SQLSource](../catalog/source.md#SQLSource).
-
+<br/>
 In addition to inserting or updating your database, you can also use these tasks to remove the contents of your tables !

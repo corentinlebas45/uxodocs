@@ -1,5 +1,6 @@
 ---
-title: Contents in Fast2
+title: "Contents in Fast2"
+tags: ["boilerplate", "content", "java"]
 ---
 
 # Learn how to deal with contents
@@ -95,7 +96,7 @@ The contents in Fast2 also embed properties, for more closely related data.
 
 ```java
 
-Collection myProps = myContent.getProperties();
+Collection<Property> myProps = myContent.getProperties();
 
 String myValue = myContent.getProperty(myName);
 

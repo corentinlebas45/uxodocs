@@ -1,5 +1,7 @@
 ---
-title: Documentation
+image: images/cookbooks/fast2-models/punnet.png
+author: Joseph TESSIER
+tags: ["boilerplate", "document", "dataset", "content", "java"]
 ---
 
 # Learn how to deal with documents
@@ -61,7 +63,7 @@ No-content cases could be like:
 - the content has already been migrated
 - the migration is just an update with only a few metadata to send to the destination
 
-
+<br />
 
 Several-contents cases could be like:
 

@@ -1,5 +1,6 @@
 ---
-title: Documentation
+author: Joseph TESSIER
+tags: ["boilerplate", "punnet", "content", "java"]
 ---
 
 # Learn how to deal with punnets
@@ -73,7 +74,28 @@ Whatever the reason, the documents can be added to the punnet in two ways:
 All documents can be access via the list of all documents stored in the punnet:
 
 ```java
-List<!-- Commentaire nettoyé -->
+List<Document> myDocuments = myPunnet.getDocuments();
+```
+
+As any Java list, documents can be removed as long as the correct index is provided.
+
+For more information concerning the documents, head out to the [dedicated section](document_basics.md).
+
+## DataSet
+
+The purpose of the punnet dataset is to store metadata not closely related to any folder or document specifically.
+
+This dataset can be access via an usual getter:
+
+```java
+DataSet myDataset = myPunnet.getDataSet();
+```
+
+A punnet is built with an empty dataset by default.
+
+For more information concerning the dataset, head out to the [dedicated section](dataset_basics.md).
+
+<!-- ## Workflows -->
 
 ## Folders
 
@@ -87,4 +109,4 @@ FolderSet myFolders = myPunnet.getFolders();
 
 A punnet is built with an empty folderset by default.
 
-<!-- Commentaire nettoyé -->
+<!-- For more information concerning the folders, head out to the [dedicated section](../folder_basics). -->

@@ -100,7 +100,7 @@ server.ssl.trust-store=config/truststore.jks
 
 **Explanation of the properties:**
 - `server.protocol=https`: The new secured protocol 
-- `server.ssl.key-store=`: Specifies the location of the keystore containing the certificate and private key. You can place this file in your classpath.
+- `server.ssl.key-store=<path_to_fast2_ui.jks>`: Specifies the location of the keystore containing the certificate and private key. You can place this file in your classpath.
 -   `server.ssl.key-store-password=changeit`: The password for the keystore.
 -   `server.ssl.key-store-type:pkcs12`: The type of the key store (JKS or PKCS12).
 - `server.ssl.key-alias: fast2_ui`: The alias that identifies the key in the key store.

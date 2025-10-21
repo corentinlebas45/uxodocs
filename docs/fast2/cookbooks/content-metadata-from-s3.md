@@ -1,5 +1,6 @@
 ---
-title: Retrieve content and metadata from an S3 bucket
+title: "Retrieve content and metadata from an S3 bucket"
+tags: ["xml", "pattern", "document", "AWS S3", "content"]
 ---
 
 ![Blog cover](../assets/img/cookbooks/content-metadata-from-s3_cover.png)
@@ -16,7 +17,7 @@ Let’s quickly review here how extracting both content and metadata in a S3 buc
 
 For this case, let's supposed our documents have been injected in S3 bucket (direct sequel of the Upload content and metadata in a S3 bucket cookbook). This action splits them into pairs of individual files : contents (PDF) and matching metadata (XML) files, each sharing the same file name.
 
-
+<figure markdown>
 ```txt
 ├─ Bucket S3/
 │       ├─ folder A
@@ -31,7 +32,7 @@ For this case, let's supposed our documents have been injected in S3 bucket (dir
 │       └─...
 └─ ...  
 ```
-
+</figure>
 Another constraint is that the PDF path information has been set into the XML file during the serialisation prior to the injection. So, once stored in the S3 bucket, it is not up-to-date.
 
 ## 🤔 Where to go ?
@@ -58,11 +59,11 @@ Optionally, you can also provide the concerned folder(s) in the Source folders i
 
 In the [AWSContentSource](../catalog/contentsource.md#AWSContentSource) task configuration, fields to fill are :
 
-- Bucket name : `$\{bucket\}`
+- Bucket name : `${bucket}`
 - Content path (S3 object key) :
 
 ```java
-$<!-- Expression supprimée --> + ”/” + docName}
+${s3_key.substring(0, s3_key.lastIndexOf(“/”)) + ”/” + docName}
 ```
 
 By filling the S3 objecy key, the connector will on-the-fly build up the correct path where to look for the related content, and tie it to the punnet.

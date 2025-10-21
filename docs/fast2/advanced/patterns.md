@@ -1,5 +1,8 @@
 ---
+draft: false
+
 title: Patterns
+tags: ["configuration", "Java"]
 ---
 
 A pattern is a sequence of instructions, a model, which can be easily recognized by an aware glance. It is strictly under this definition that Fast2 patterns stand.
@@ -15,15 +18,13 @@ For a successful pattern recognition, only use the data known by Fast2, such as 
 
 :::
 
-```xml
-## Patterns, what are they anyway ? <!-- Commentaire nettoyé -->
-```
+## Patterns, what are they anyway ? {#context-and-definition data-toc-label="Context and definition" }
 
-In Fast2, several data can be retrieved and accessed dynamically from a dedicated syntax which Fast2 supports for your convenience. This `$\{...\}` syntax can be used in most of the configuration fields of the tasks composing your migration workflow.
+In Fast2, several data can be retrieved and accessed dynamically from a dedicated syntax which Fast2 supports for your convenience. This `${...}` syntax can be used in most of the configuration fields of the tasks composing your migration workflow.
 
 ![Example of pattern implementation](../assets/img/advanced/pattern_example2025.png)
 
-Using such syntax will comes in handy when you will have to rely on a value whose you only know the name. In other words, retrieving a metadata whose key is `doc_mimeType` and value is unique for every document, will just be `$\{doc_mimeType\}`.
+Using such syntax will comes in handy when you will have to rely on a value whose you only know the name. In other words, retrieving a metadata whose key is `doc_mimeType` and value is unique for every document, will just be `${doc_mimeType}`.
 
 No need to list all your possible values, Fast2 will resolve this expression by looking first at the document dataset level, then at the punnet level, an later at map/campaign level. Some applications of the latter could be to store the name of the map, or even accessing map- or global-scoped shared objects for cross-campaign communications.
 
@@ -33,7 +34,7 @@ Although links are designed to offer basic statements for conditional routing, t
 
 :::note
 
-Pattern-related syntax `$\{...\}` is not required, fill the field with your expression directly !
+Pattern-related syntax `${...}` is not required, fill the field with your expression directly !
 
 :::
 
@@ -61,12 +62,12 @@ And the list goes on, it's your turn now to build the condition meeting your nee
 
 As handy as they may sound, patterns do embed specifications due to the particular syntax they are subjected to.
 
-The most common issue is when dealing with colon character `:`, but the approach also addressed data name with space characters. To prevent running into a SpEL syntax error which would wipe its interest out, the syntax has to be slightly expanded. Where before you were accessing the value with `$\{key\}`, you now need to write it as follows:
+The most common issue is when dealing with colon character `:`, but the approach also addressed data name with space characters. To prevent running into a SpEL syntax error which would wipe its interest out, the syntax has to be slightly expanded. Where before you were accessing the value with `${key}`, you now need to write it as follows:
 
 ```js
-$<!-- Expression supprimée -->}
+${property('prefix:suffix')}
 
-$<!-- Expression supprimée -->}
+${property('with space')}
 ```
 
 You can now safely extract data with namespaces, or any special character which may eventually break the SpEL syntax.
@@ -78,7 +79,7 @@ In case the pattern value is not known by Fast2, an empty String is return. Howe
 To do so, use the Elvis ternary operator along the `property()` function:
 
 ```js
-$<!-- Expression supprimée -->?:'defaultValue'}
+${property('missingData')?:'defaultValue'}
 ```
 
 From now on, if the 'missingData' is not fount either at the punnet or document level, the value you earlier planned to retrieve will be replaced with the value set as default, although no additional property is created.
@@ -91,18 +92,14 @@ However targetting object is not always intuitive, so here are the different key
 
 | Keyword                | Description                                                                                                                                      | Examples                                                                                        |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------- |
-```xml
-| `$&#92;{CurrentDocument&#92;}`   | Access the focused document, to call its metadata. This can be quite useful when dealing with multi-document punnets.                  | `$<!-- Commentaire nettoyé -->` |
-```
-| `$\{CurrentContainer\}`  | Access the focused content, to call its properties. This can be quite useful when dealing with multi-contented documents.              | `$\{CurrentContainer.mimetype\}`                                                                  |
-| `$\{CurrentAnnotation\}` | Access the annotation of the document.                                                                                                           | `$\{CurrentAnnotation.annotationId\}`                                                             |
-```xml
-| `$&#92;{punnet&#92;}`            | Access the punnet as an object. From there, all datasets and subobjects can be accessed.The accessor is generally used for conditions. | `$<!-- Expression supprimée -->&#92;}`                                                       |
-| `$&#92;{documents&#92;}`         | The list of the documents stored in the punnet.                                                                                                  | `$<!-- Expression supprimée -->&#92;}` `$<!-- Expression supprimée -->&#92;}`                                                     |
-```
-| `$\{step\}`              | The name of the step where the pattern is called.                                                                                                |
-| `$\{map\}`               | The name of the map which is run during this campaign. Often used for output directory names                                                | `$\{map\}/my_output_file.csv`                                                                     |
-| `$\{campaign\}`          | The name of the campaign. Often used for output directory names                                                                                  | `$\{map\}/$\{campaign\}/my_output_file.csv`                                                         |
+| `${CurrentDocument}`   | Access the focused document, to call its metadata. <br/><br/>This can be quite useful when dealing with multi-document punnets.                  | `${CurrentDocument.getDataSet().getData('multivalued data').getValues().get(0).split('\.')[0]}` |
+| `${CurrentContainer}`  | Access the focused content, to call its properties. <br/><br/>This can be quite useful when dealing with multi-contented documents.              | `${CurrentContainer.mimetype}`                                                                  |
+| `${CurrentAnnotation}` | Access the annotation of the document.                                                                                                           | `${CurrentAnnotation.annotationId}`                                                             |
+| `${punnet}`            | Access the punnet as an object. <br/>From there, all datasets and subobjects can be accessed.<br/>The accessor is generally used for conditions. | `${punnetId.toString().startsWith('My')}`                                                       |
+| `${documents}`         | The list of the documents stored in the punnet.                                                                                                  | `${documents.size()}` `${documents.get(0)}`                                                     |
+| `${step}`              | The name of the step where the pattern is called.                                                                                                |
+| `${map}`               | The name of the map which is run during this campaign. <br/>Often used for output directory names                                                | `${map}/my_output_file.csv`                                                                     |
+| `${campaign}`          | The name of the campaign. Often used for output directory names                                                                                  | `${map}/${campaign}/my_output_file.csv`                                                         |
 
 ### Using Java classes
 
@@ -117,27 +114,31 @@ The required syntax is `T(clazz)`.
 For example, adding an UUID created on-the-fly would just required using the following pattern:
 
 ```java
-$<!-- Expression supprimée -->}
+${T(java.util.UUID).randomUUID().toString()}
 ```
 
-
+<br />
 
 An other example could be to add today's date as a new data. Such a pattern might go like:
 
 ```java
-$<!-- Expression supprimée -->}
+${T(java.time.LocalDate).now().toString()}
 ```
 
 Bringing it further, we might also want the time when the document got through the migration (namely this [AlterDocumentProperties](../catalog/transformer.md#AlterDocumentProperties) task), with
 
 ```java
-$<!-- Expression supprimée -->}
+${T(java.time.LocalDateTime).now().toString()}
 ```
 
 Mapping these patterns respectively to a new `today` and `currentTime` data will result in the following punnet :
 
 ```json {11-12}
-<!-- Expression supprimée -->,
+{
+	"punnetId": "doc_0_0#1",
+	"data": {
+        ...
+	},
 	"documents": [
 		{
 			"documentId": "doc_0_0",

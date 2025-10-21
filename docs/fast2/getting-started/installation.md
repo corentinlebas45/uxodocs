@@ -1,4 +1,7 @@
 ---
+weight: 10
+draft: false
+
 title: Installation
 ---
 
@@ -9,11 +12,11 @@ The installation of Fast2 requires a few environment specifications to run prope
 
 | What      |                        | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
 | --------- | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| RAM       | 8GB+                   | We highly recommend having at least 8GB. When switching to production environments, 16GB or 32GB will be required since more documents will be handled at once, and heavy tasks (_e.g._ conversion, extraction) might get short on resources.                                                                                                                                                                                                                                                                                                                                  |
+| RAM       | 8GB+                   | We highly recommend having at least 8GB. <br /><br />When switching to production environments, 16GB or 32GB will be required since more documents will be handled at once, and heavy tasks (_e.g._ conversion, extraction) might get short on resources.                                                                                                                                                                                                                                                                                                                                  |
 | Processor | 8 CPUs                 | Processor capabilities need to be aligned with migration requirements, such as data mapping, content conversion and heavy I/O.                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 | Storage   | 128GB+                 | Although the contents dealt by Fast2 will be temporarily stored (and deleted afterwards if asked), the server needs enough storage for the files/contents alongside the database tracking all the migration information.                                                                                                                                                                                                                                                                                                                                                                   |
 | Java      | JDK-11          | Any provider will fit (Oracle, [OpenJDK](https://developers.redhat.com/products/openjdk/download), etc). If you have multiple JDK/JRE already installed, specify the correct one in the `./config/env.properties` file.                                                                                                                                                                                                                                                                                                                                                                    |
-| OS        | Windows&nbsp;7+, Linux | All versions of Windows 7+ are supported. All common distros of Linux are supported (Ubuntu, RedHat, CentOS, etc)Power architecture are supported as well (except the ones running in AIX), but only Java parts will work seamlessly whereas third-party software (_e.g._ imagemagick, libreoffice, etc) might not, as they have not all have been developed for such platforms.  Although the broker will not run correctly on an Windows 2003, a worker can still run on it, remotely, and communicate with a broker installed on a more recent version. |
+| OS        | Windows&nbsp;7+, Linux | All versions of Windows 7+ are supported. <br/><br/>All common distros of Linux are supported (Ubuntu, RedHat, CentOS, etc)<br /><br />Power architecture are supported as well (except the ones running in AIX), but only Java parts will work seamlessly whereas third-party software (_e.g._ imagemagick, libreoffice, etc) might not, as they have not all have been developed for such platforms. <br/><br/> Although the broker will not run correctly on an Windows 2003, a worker can still run on it, remotely, and communicate with a broker installed on a more recent version. |
 | Bandwidth | 1GB                    | The more calls, payloads, and contents Fast2 will have to deal with, the bigger the network bandwidth must be to reduce latency. If 250-500MB might do for lower environments, we recommend 1GB for Production environments.                                                                                                                                                                                                                                                                                                                                                               |
 
 While setting up the production server for Fast2, make sure to scale the Fast2 machine accordingly. You may need to increase the allocated memory for both the broker and the background database. If you planned to deal with campaigns of a few millions of documents, setting **8GB** of memory for the [broker](../components/broker.md#configure-the-broker) and **8GB** for the [database](../components/database.md#configuration) as well is a good starting point.
@@ -26,8 +29,8 @@ While setting up the production server for Fast2, make sure to scale the Fast2 m
 
 The Fast2 distribution you need depends on your target environment. It exists three way to deploy a Fast2 :
 
-&nbsp;&nbsp;&nbsp;&nbsp;:material-folder-zip-outline: On premise: regular package, as an all-in-one zip file
-&nbsp;&nbsp;&nbsp;&nbsp;:fontawesome-brands-aws: AWS: Standard AMIs
+&nbsp;&nbsp;&nbsp;&nbsp;:material-folder-zip-outline: On premise: regular package, as an all-in-one zip file<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;:fontawesome-brands-aws: AWS: Standard AMIs<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;:material-docker: K8S: Docker Images
 
 Each distribution ships the following
@@ -129,7 +132,7 @@ To end the Fast2 process, just hit `Ctrl+C` in the command line the startup file
     There are several ways to create a service under linux distribution. We will do it through systemd.
     Its major benefit is that it has been the default init system for the majority of linux distributions (Ubuntu, Red Hat, Fedora...).
 
-    
+    <br />
 
     ##### :material-numeric-1-circle: Create a user for Fast2
 
@@ -139,17 +142,86 @@ To end the Fast2 process, just hit `Ctrl+C` in the command line the startup file
 
     Open the `./startup-broker.sh` file and update the last line to switch users (with `su fast2user -c`) for the Java command:  
 
-    **Original line:** `"$JAVA" -Xmx$BROKER_MAX_MEMORY ... -jar fast2-broker-package-X.Y.Z.jar`
-    
-    **Your updated line:** `"$JAVA -Xmx$BROKER_MAX_MEMORY ... -jar fast2-broker-package-X.Y.Z.jar"`
-    
-    FAST2_HOME/services/linux/fast2-broker.service to >FAST2_HOME/services/linux/fast2-broker**-2.11.0**.service for example
+    <table>
+    <tr style={{color: "red"}}>
+    <td style={{fontWeight: "bold"}}>Original line</td>
+    <td>`"$JAVA" -Xmx$BROKER_MAX_MEMORY ... -jar fast2-broker-package-X.Y.Z.jar`</td>
+    </tr>
+    <tr style={{color: "green"}}>
+    <td style={{fontWeight: "bold"}}>Your updated line</td>
+    <td><mark>`su fast2user -c`</mark>`"$JAVA -Xmx$BROKER_MAX_MEMORY ... -jar fast2-broker-package-X.Y.Z.jar"`</td>
+    </tr>
+    </table>
+    <br/>
+
+    ##### :material-numeric-2-circle: Execution path
+
+    Edit the `ExecStart` field from the file `service/linux/fast2-broker.service`: it must point out to the Fast2 installation path.
+
+    ```sh {2,6}
+    [Unit]
+    Description=Fast2 Broker vX.Y.Z
+
+    [Service]
+    Environment="JAVA_HOME=/home/JDK/bin/java"
+    ExecStart=/home/userName/fast2-complete-package-X.Y.Z/startup-broker.sh
+    User=fast2user
+    Group=fast2user
+
+    [Install]
+    WantedBy=default.target
+    ```
+
+    - The `[Unit]` section provides metadata and dependencies for the service.
+        - `Description`: Provides a human-readable description of the service. In this case, the service is named "Fast2 Broker".
+    - The `[Service]` section defines how the service behaves when it is started, stopped, or restarted.
+
+        - `Environment`: Sets environment variables that the service will use during execution.
+
+            This line sets the `JAVA_HOME` environment variable, which is required for the Fast2 Broker service to run. The value is set to `/home/JDK/java`, which should be the path to the Java installation used by the service.
+            However, the link to Java must be the final link (and not Ubuntu internal link to the Java installation).
+            ```sh
+            ubuntu@ip-...:~/2.11.0$ which java
+            /usr/bin/java ❌
+
+            ubuntu@ip-...:~/2.11.0$ readlink -f $(which java)
+            /usr/lib/jvm/java-11-openjdk-amd64/bin/java ✅
+            ```
+
+            The value to set the `JAVA_HOME` environment variable will be, in this case, `Environment="JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64"`.
+
+        - `ExecStart`: Specifies the command that will be executed to start the service. This line specifies the startup command for the Fast2 Broker service. It points to the `startup-broker.sh` script located in the `fast2-complete-package-2.0.0` directory. When the service starts, this script is executed.
+        - `User`: Specifies the user account under which the service will run. This line indicates that the service should be run under the `fast2-user` user account. Running services as a non-root user is a security best practice.
+        - `Group`: Specifies the group under which the service will run. This line sets the group ownership for the service process to `fast2-user`. This ensures that the service process has the correct permissions as defined by the user and group.
+    - The `[Install]` section defines how the service should be installed or integrated with systemd.
+        - `WantedBy`: Specifies the target in which this service should be started. This line indicates that the service should be started as part of the `default.target`, which is the default system runlevel (usually equivalent to multi-user mode or graphical mode, depending on the system configuration).
+
+    <br />
+
+    ##### :material-numeric-3-circle: Symbolic link
+
+    Now link it to the `/etc/systemd/system` directory through a symbolic link.
+
+    ```sh
+    $ sudo ln -s SOURCE TARGET
+
+    $ sudo ln -s service/linux/fast2-broker.service /etc/systemd/system
+    ```
+
+    <br/>
+
+    :::tip
+
+        This is the moment where you might want to *rename* the Fast2 service file in case you have multiple instances of Fast2 installed on the same machine.
+        For this,
+
+        - rename the file <span style={{color: "red"}}>FAST2_HOME/services/linux/fast2-broker.service</span> to <span style={{color: "green"}}>FAST2_HOME/services/linux/fast2-broker<b>-2.11.0</b>.service</span> for example
         - run the `sudo ln -s ...` command with the new name, something like
             ```sh
             sudo ln -s service/linux/fast2-broker-2.11.0.service /etc/systemd/system
             ```
     :::
-    
+    <br/>
 
     If the links are broken once they're created, you probably need to put an absolute path for the target as follow ;
 
@@ -170,7 +242,7 @@ To end the Fast2 process, just hit `Ctrl+C` in the command line the startup file
     Created symlink from /etc/systemd/system/default.target.wants/fast2-broker.service to /etc/systemd/system/fast2-broker.service.
     ```
 
-    
+    <br />
 
     ##### :material-numeric-4-circle: Script uses
 
@@ -226,15 +298,20 @@ You can setup Fast2 Worker as a service the same way you did for the Fast2 Broke
 
 The `Fast2_worker_service.xml` file will look like this :
 ```xml
-Fast2 Worker DCTMFast2 Worker DCTM v-2.12.1
-    
-    
-    
-    
-    
-        
-        
-    
+<service>
+    <id>Fast2WorkerDCTM</id>
+    <name>Fast2 Worker DCTM</name>
+    <description>Fast2 Worker DCTM v-2.12.1</description>
+    <!-- Fast2_service lives in service\windows, rewind 2 levels to find home -->
+    <env name="FAST2_HOME" value="%BASE%\..\.." />
+    <executable>%BASE%\..\..\startup-worker.bat</executable>
+    <logpath>%BASE%\..\log</logpath>
+    <startmode>Manual</startmode>
+    <log mode="roll-by-size">
+        <sizeThreshold>10240</sizeThreshold>
+        <keepFiles>8</keepFiles>
+    </log>
+</service>
 ```
 
 And then, to install the worker as a service :

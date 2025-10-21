@@ -1,5 +1,8 @@
 ---
-title: Documentation
+tags:
+  - Drools
+  - Java
+  - Excel
 ---
 
 # Drools: the Java rules engine
@@ -48,7 +51,7 @@ It’s composed with :
 
 - Variables used are indicated below the column CONDITION (doc : Document)
 
-
+<br /><br />
 
 ## :octicons-light-bulb-16: How to read
 
@@ -76,7 +79,7 @@ A condition cell will only hold one statement. If several conditions have to be 
 
 The actions are read just like any code snippet, similarly to a regular script file.
 
-
+<br /><br />
 
 ## Parameters
 
@@ -85,22 +88,18 @@ There are two different ways to use parameters:
 - You only need one parameter for your condition or action : `$param`.
 - Otherwise, separate values by comma, and use `$1`, `$2` and so on in you condition/action.
 
-
+<br /><br />
 
 ## :octicons-pencil-16: Write a condition
 
-```xml
-Conditions, just as in a regular coding snippet, must be performed as a boolean. Actions are executed only if condition is _TRUE_. It’s highly recommended to use `eval(<!-- Commentaire nettoyé -->)` for conditions.
-```
+Conditions, just as in a regular coding snippet, must be performed as a boolean. Actions are executed only if condition is _TRUE_. It’s highly recommended to use `eval(<condition>)` or `!eval(<condition>)` for conditions.
 
 !!! Check
 
     Just as you would write any condition in your code,
 
     - Conditions must not end by a semi-colon (`;`)
-```xml
     - Characters allowed : `<`, `>`, `<=`, `>=`, `||`, `&&`, …
-```
 
 If you want to perform an action no matter what, do `eval($param)` with `$param = true`.
 
@@ -108,7 +107,7 @@ If you need the document to have a specific data before making any action, do:
 
 `doc.getDataSet().hasData($param)` with `$param = yourDataName`.
 
-
+<br /><br />
 
 ## Action examples
 
@@ -121,13 +120,31 @@ If you need the document to have a specific data before making any action, do:
 To add a new data, if you know both the key/name and the value, use the following code :
 
 ```java
-doc.getDataSet().addData("<!-- Commentaire nettoyé -->","<!-- Commentaire nettoyé -->", "<!-- Commentaire nettoyé -->","<!-- Commentaire nettoyé -->").addValue("$param");
+doc.getDataSet().addData("<key>", "<type>","<value>");
+```
+
+In case the value is unknown at the moment or you object is too complex and you might need to add properties to the data object:
+
+```java
+Data data = doc.getDataSet().addData("<key>", "<type>");
+
+data.setProperty("<key>","<value>");
+```
+
+When performing such operation, though, don’t forget to add the proper Fast2 package to manipulate Data type.
+
+### Add new value to existing data
+
+Add one value:
+
+```java
+doc.getDataSet().getData("<data-key>").addValue("$param");
 ```
 
 Add multiple values to the same data:
 
 ```java
-doc.getDataSet().getData("<!-- Commentaire nettoyé -->);
+doc.getDataSet().getData("<data-key>").getValues().addAll(<list-of-values>);
 ```
 
 ### Stop a rule

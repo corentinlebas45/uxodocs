@@ -98,9 +98,9 @@ opensearch.hosts: ["http://localhost:1790"]
 
 The visualizations created from the dashboards add-on needs to be attached to the `f2_*` index. If this index pattern is not existing, create it via the add-on management tools:
 
-1. Stack management > Index pattern ![Dashboards : create index, step 1 out of 3](../assets/img/components/dashboards_create-index_1-3.png)
-1. Create a new index ![Dashboards : create index, step 2 out of 3](../assets/img/components/dashboards_create-index_2-3.png)
-1. Set _time filter_ to **none**![Dashboards : create index, step 3 out of 3](../assets/img/components/dashboards_create-index_3-3.png)
+1. Stack management > Index pattern <br />![Dashboards : create index, step 1 out of 3](../assets/img/components/dashboards_create-index_1-3.png)<br /><br />
+1. Create a new index <br />![Dashboards : create index, step 2 out of 3](../assets/img/components/dashboards_create-index_2-3.png)<br /><br />
+1. Set _time filter_ to **none**<br />![Dashboards : create index, step 3 out of 3](../assets/img/components/dashboards_create-index_3-3.png)<br /><br />
 
 :::warning
 
@@ -110,7 +110,7 @@ Make sure to set the *time filter* to _"I don't want to use the time filter"_ to
 
 :::note
 
-If the metadata you are looking for is not available and cannot be found in the dropdown options, refresh the **f2\_\*** index (which can be manually triggered from the list of saved objects).
+If the metadata you are looking for is not available and cannot be found in the dropdown options, refresh the <code>f2\_\*</code> index (which can be manually triggered from the list of saved objects).
 
 :::
 
@@ -120,9 +120,7 @@ However data manipulations in this tool are not always intuitive nor straight fo
 
 Several use-cases can be envisioned, we will only relate here the data conversion steps to go through given the widespread necessity of such a basic task.
 
-```xml
-### Imports objects into the dashboards feature <!-- Commentaire nettoyé -->
-```
+### Imports objects into the dashboards feature {#how-to-import data-toc-label="How to import"}
 
 This section will guide you through the import process of resources (such as indices, visualization as `.ndjson` files and others).
 
@@ -131,16 +129,14 @@ This resource can be imported into your dashboard add-on from the right-side men
 as shown on the screen-capture below :
 
 ![Dashboard : import resource](../assets/img/components/dashboards_import-menu.png)
-
+<br/>
 
 ![Dashboards : ask to choose on import conflict](../assets/img/components/Dashboards-choose-on-conflict.png)
-
+<br/>
 
 ![Dashboards : choose already existing Fast2 index](../assets/img/components/Dashboards-select-existing-index.png)
 
-```xml
-### Resource #1 : Exception table <!-- Commentaire nettoyé -->
-```
+### Resource #1 : Exception table {#visualisation-exception-table data-toc-label="Exception table"}
 
 :::info
 
@@ -169,13 +165,11 @@ To get started with this visualisation, or to add it to your existing dashboard,
 [:material-file-download: Download this resource](../documents/dashboards_exception-data-table.ndjson)
 
 This resources can be imported as [explained previously](#imports-objects-into-the-dashboards-feature)
+<br/>
+<br/>
+<br/>
 
-
-
-
-```xml
-### Resource #2 : Campaign success ratio <!-- Commentaire nettoyé -->
-```
+### Resource #2 : Campaign success ratio {#visualisation-campaign-ration data-toc-label="Ratio per campaign"}
 
 :::info
 
@@ -192,13 +186,11 @@ To get started with this visualisation, or to add it to your existing dashboard,
 [:material-file-download: Download this visualization](../documents/dashboards_Campaign-success-ratio-per-day.ndjson)
 
 This resources can be imported as [explained previously](#imports-objects-into-the-dashboards-feature).
+<br/>
+<br/>
+<br/>
 
-
-
-
-```xml
-### Resource #3 : Processing speed per task <!-- Commentaire nettoyé -->
-```
+### Resource #3 : Processing speed per task {#visualisation-processing-speed data-toc-label="Processing speed"}
 
 :::info
 
@@ -215,9 +207,9 @@ To get started with this visualisation, or to add it to your existing dashboard,
 [:material-file-download: Download this visualization](../documents/dashboards_processing_speed_per_task.ndjson)
 
 This resources can be imported as [explained previously](#imports-objects-into-the-dashboards-feature).
-
-
-
+<br/>
+<br/>
+<br/>
 
 ### Advanced filtering capabilities
 
@@ -229,7 +221,7 @@ Head out to the matching documentation (Kibana or OpenSearch dashboards) for bas
 
 We will here just focus on one main filter, which would help to only get the relevant data for either a ratio or datatable of success or failure along the migration.
 
-Our need is to only the the documents/punnets, whose status are `ProcessedException` (to gather all failed documents, no matter the task where the exception got thrown) or the documents/punnets being both `ProcessedOK` from the injection task (which will be called here: **Last task**).
+Our need is to only the the documents/punnets, whose status are `ProcessedException` (to gather all failed documents, no matter the task where the exception got thrown) or the documents/punnets being both `ProcessedOK` from the injection task (which will be called here: <b>Last task</b>).
 
 In short, we only want to select :
 
@@ -247,12 +239,20 @@ Since
 - `||` is _should_
 - `&&` is _must_
 
-the final syntax is (for DSL -- **Dashboards Query Language** -- or KQL -- **Kibana query language**) :
+the final syntax is (for DSL -- <i>Dashboards Query Language</i> -- or KQL -- <i>Kibana query language</i>) :
 
 ```json
-<!-- Commentaire nettoyé -->
+{
+  "query": {
+    "bool": {
+      "should": [
+        {
+          "term": { "status.keyword": "ProcessedException" }
         },
-        <!-- Commentaire nettoyé --> },
+        {
+          "bool": {
+            "must": [
+              { "term": { "status.keyword": "ProcessedOK" } },
               { "term": { "stepName.keyword": "Last task" } }
             ]
           }
@@ -267,7 +267,7 @@ This code is to be used in the filter function, as advanced filter (instead of t
 
 ![Dashboard : import menu](../assets/img/components/dashboards_query-json.png)
 
-
+<br />
 
 The dashboards add-on provided with Fast2 is the go-to tool for migration report, project advancement insights, and deeper data analysis.
 
@@ -283,32 +283,32 @@ We will base our example on the following punnet structure:
 
 ```xml title="punnet.xml" {14-16}"
 <?xml version='1.0' encoding='UTF-8'?>
-
-	
-		
-			
-				
-					path/to/file/content
-				
-			
-			
-				
-					application/pdf
-				
-				
-					43315.0
-				
-				
-					file_name
-				
+<ns:punnet xmlns:ns="http://www.arondor.com/xml/document" punnetId="FileNetSource#page_0#pageIndex_0">
+	<ns:documentset>
+		<ns:document documentId="{1B62F7C4-8E75-4D99-B84C-0AAD14B13A4E}">
+			<ns:contentset>
+				<ns:content mimeType="application/pdf">
+					<ns:url>path/to/file/content</ns:url>
+				</ns:content>
+			</ns:contentset>
+			<ns:dataset>
+				<ns:data name="MimeType" type="String">
+					<ns:value>application/pdf</ns:value>
+				</ns:data>
+				<ns:data name="ContentSize" type="String">
+					<ns:value>43315.0</ns:value>
+				</ns:data>
+				<ns:data name="name" type="String">
+					<ns:value>file_name</ns:value>
+				</ns:data>
 				...
-			
-			
-			
-		
-	
-	<folderSet >
-
+			</ns:dataset>
+			<ns:folderset />
+			<ns:annotationset />
+		</ns:document>
+	</ns:documentset>
+	<folderSet />
+</ns:punnet>
 ```
 
 Here, the data type of the _ContentSize_ property is `String`, as the type attribute states. Our job will be to parse this `String` value to `Float`, since we have a decimal.
@@ -318,7 +318,7 @@ This operation happens in 2 steps:
 1. Making the original field (with the wrong type) accessible from a script,
 2. Writing the correct parsing script.
 
-
+<br />
 
 #### Step 1: Making the field accessible
 
@@ -360,7 +360,7 @@ PUT f2_*/_mapping
 
 The query is successfully executed once the `acknowledged:true` message is returned.
 
-
+<br />
 
 #### Step 2: The parsing script
 
@@ -392,25 +392,19 @@ More use cases can be addressed by scripts with higher level of complexity, to c
 
 This new dimension of data analysis via Kibana opens up way more possibilities, while increasing the precision of data aggregation to bring the best answers to the project management team.
 
-
+<br />
 
 ## :octicons-bug-24: Troubleshooting
 
-```xml
-### :material-connection: Dashboards do not reach the database <!-- Commentaire nettoyé -->
-```
+### :material-connection: Dashboards do not reach the database {#cannot-reach-db data-toc-label="Unable to access database"}
 
 Make sure the database port has been correctly configured in the YAML file of the dashboards. Head to the [port section](database.md#port) for more details.
 
-```xml
-### :material-lan-connect: Could not ping dashboard on port 1791 <!-- Commentaire nettoyé -->
-```
+### :material-lan-connect: Could not ping dashboard on port 1791 {#port-not-showing data-toc-label="Unable to access dashboards"}
 
 Make sure declaring your port in the 2 expected places. Head to the [port section](#ports) for more details.
 
-```xml
-### :material-web-remove: Connection refused when accessing the dashboards port <!-- Commentaire nettoyé -->
-```
+### :material-web-remove: Connection refused when accessing the dashboards port {#connection-refused data-toc-label="Connection refused"}
 
 In case you cannot reach the dashboards UI remotely, you might want to check several things :
 
@@ -419,7 +413,7 @@ In case you cannot reach the dashboards UI remotely, you might want to check sev
 - check with your IT team to make sure the network securities are allowing outbound rules for this port (as they might have done for the Fast2UI port)
 - make sure you updated the dashboards `server.host` configuration (check [this section](#remote-access-to-the-dashboards) for more details)
 
-
+<br />
 
 ## FAQ
 
@@ -440,14 +434,10 @@ The latter option gives access to the tool even when Fast2 is not running.
 
 Since the dashboards fetch data directly from the database, it is not possible to populate the visualizations with migration data if the database is not running as well.
 
-```xml
-### :octicons-question-24: Dashboards do not reach the database <!-- Commentaire nettoyé -->
-```
+### :octicons-question-24: Dashboards do not reach the database {#cannot-reach-db data-toc-label="Unable to access database"}
 
 Make sure the database port has been correctly configured in the YAML file of the dashboards. Head to the [port section](database.md#port) for more details.
 
-```xml
-### :octicons-question-24: Could not ping dashboard on port 1791 <!-- Commentaire nettoyé -->
-```
+### :octicons-question-24: Could not ping dashboard on port 1791 {#port-not-showing data-toc-label="Unable to access dashboards"}
 
 Make sure declaring your port in the 2 expected places. Head to the [port section](#ports) for more details.
