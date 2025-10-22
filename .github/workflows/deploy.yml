@@ -2,7 +2,7 @@ name: Hydrate & Deploy Docs
 
 on:
   push:
-    branches: [ master, "fast2/v*", "flower/v*", "arender/v*" ]
+    branches: [ master, "fast2/v*" ]
   workflow_dispatch:
 
 # Autorise l’écriture (gh-pages)
