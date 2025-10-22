@@ -79,66 +79,58 @@ const config: Config = {
       } satisfies Preset.Options,
     ],
   ],
-
-  themes: [
-    // Plugin de recherche locale
+  plugins: [
     [
-      require.resolve("@easyops-cn/docusaurus-search-local"),
+      '@docusaurus/plugin-content-docs',
       {
-        // Configuration de la recherche locale
-        hashed: true,
-        language: ["en", "fr"],
-        highlightSearchTermsOnTargetPage: true,
-        indexBlog: true,
-        indexDocs: true,
+        id: 'arender',
+        path: 'docs/arender',          // current docs for ARender (branch "test")
+        routeBasePath: 'arender',      // URL: /arender/*
+        sidebarPath: require.resolve('./sidebars.ts'),
+        lastVersion: 'current',        // "docs/arender" is the current version
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'fast2',
+        path: 'docs/fast2',
+        routeBasePath: 'fast2',
+        sidebarPath: require.resolve('./sidebars.ts'),
+        lastVersion: 'current',
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'flower',
+        path: 'docs/flower',
+        routeBasePath: 'flower',
+        sidebarPath: require.resolve('./sidebars.ts'),
+        lastVersion: 'current',
       },
     ],
   ],
 
   themeConfig: {
     // Replace with your project's social card
-    image: 'img/docusaurus-social-card.jpg',
-    colorMode: {
-      respectPrefersColorScheme: true,
-    },
-
+    image: 'img/social-card.jpg',
     navbar: {
-      title: '',
+      title: 'UXO Docs',
       logo: {
         alt: 'UXO Docs Logo',
-        src: 'img/uxo.png',
+        src: 'img/favicon-192.png', // adapte si besoin
       },
       items: [
+        // Un dropdown de versions par produit (branché sur l'id du plugin)
+        { type: 'docsVersionDropdown', docsPluginId: 'arender', position: 'left', label: 'ARender' },
+        { type: 'docsVersionDropdown', docsPluginId: 'fast2', position: 'left', label: 'Fast2' },
+        { type: 'docsVersionDropdown', docsPluginId: 'flower', position: 'left', label: 'Flower' },
+
+        // Liens éventuels (ex: repo GitHub)
         {
-          type: 'docSidebar',
-          sidebarId: 'fast2Sidebar',
-          label: 'Fast2',
-          position: 'left',
-        },
-        {
-          type: 'docSidebar',
-          sidebarId: 'flowerSidebar',
-          label: 'FlowerDocs',
-          position: 'left',
-        },
-        {
-          type: 'docSidebar',
-          sidebarId: 'arenderSidebar',
-          label: 'ARender',
-          position: 'left',
-        },
-        {
-          type: 'docSidebar',
-          sidebarId: 'uxopianAiSidebar',
-          label: 'Uxopian AI',
-          position: 'left',
-        },
-        {
-          type: 'search',
-          position: 'right',
-        },
-        {
-          type: 'localeDropdown',
+          href: 'https://github.com/YOUR_GH_USERNAME_OR_ORG/YOUR_REPO_NAME',
+          label: 'GitHub',
           position: 'right',
         },
       ],
@@ -147,58 +139,24 @@ const config: Config = {
       style: 'dark',
       links: [
         {
-          title: 'Documentation',
+          title: 'Produits',
           items: [
-            {
-              label: 'Fast2 v2025',
-              to: '/docs/fast2/',
-            },
-            {
-              label: 'FlowerDocs v2025',
-              to: '/docs/flower/',
-            },
-            {
-              label: 'ARender',
-              to: '/docs/arender/',
-            },
-            {
-              label: 'Uxopian AI',
-              to: '/docs/uxopian-ai/',
-            },
+            { label: 'ARender', to: '/arender' },
+            { label: 'Fast2', to: '/fast2' },
+            { label: 'Flower', to: '/flower' },
           ],
         },
         {
-          title: 'Community',
+          title: 'Communauté',
           items: [
-            {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-            },
-            {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
-            },
-            {
-              label: 'X',
-              href: 'https://x.com/docusaurus',
-            },
-          ],
-        },
-        {
-          title: 'More',
-          items: [
-            {
-              label: 'Blog',
-              to: '/blog',
-            },
             {
               label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
+              href: 'https://github.com/YOUR_GH_USERNAME_OR_ORG/YOUR_REPO_NAME',
             },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} UXO. Built with Docusaurus.`,
     },
     prism: {
       theme: prismThemes.github,
