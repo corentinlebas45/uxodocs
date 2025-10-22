@@ -110,60 +110,22 @@ const config: Config = {
       },
       items: [
         {
-          type: 'dropdown',
+          type: 'docSidebar',
+          sidebarId: 'fast2Sidebar',
           label: 'Fast2',
           position: 'left',
-          items: [
-            {
-              type: 'docSidebar',
-              sidebarId: 'fast2Sidebar',
-              label: 'v2025',
-            },
-            {
-              type: 'docSidebar',
-              sidebarId: 'fast2Sidebar',
-              label: 'v2x',
-            },
-          ],
         },
         {
-          type: 'dropdown',
+          type: 'docSidebar',
+          sidebarId: 'flowerSidebar',
           label: 'FlowerDocs',
           position: 'left',
-          items: [
-            {
-              type: 'docSidebar',
-              sidebarId: 'flowerSidebar',
-              label: 'v2025',
-            },
-            {
-              type: 'docSidebar',
-              sidebarId: 'flowerSidebar',
-              label: 'v2.8 LTS',
-            },
-          ],
         },
         {
-          type: 'dropdown',
+          type: 'docSidebar',
+          sidebarId: 'arenderSidebar',
           label: 'ARender',
           position: 'left',
-          items: [
-            {
-              type: 'docSidebar',
-              sidebarId: 'arenderSidebar',
-              label: 'v2025',
-            },
-            {
-              type: 'docSidebar',
-              sidebarId: 'arenderSidebar',
-              label: 'v4',
-            },
-            {
-              type: 'docSidebar',
-              sidebarId: 'arenderSidebar',
-              label: 'v4.3',
-            },
-          ],
         },
         {
           type: 'docSidebar',
@@ -189,11 +151,11 @@ const config: Config = {
           items: [
             {
               label: 'Fast2 v2025',
-              to: '/docs/fast2/v2025/getting-started/',
+              to: '/docs/fast2/',
             },
             {
               label: 'FlowerDocs v2025',
-              to: '/docs/flower/v2025/',
+              to: '/docs/flower/',
             },
             {
               label: 'ARender',

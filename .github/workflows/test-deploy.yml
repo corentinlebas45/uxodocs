@@ -1,0 +1,121 @@
+name: test-deploy
+
+on:
+  push:
+    branches:
+      - test
+      - test-**         # ex: test-arender-v1, test-fast2-v2, etc.
+  workflow_dispatch:
+
+permissions:
+  contents: write       # nécessaire pour pousser sur la branche "test"
+
+concurrency:
+  group: test-deploy
+  cancel-in-progress: false
+
+jobs:
+  aggregate-and-push-to-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout test branch (destination)
+        uses: actions/checkout@v4
+        with:
+          ref: test
+          fetch-depth: 0
+
+      - name: Setup Node (for Docusaurus tooling/scripts)
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Fetch all branches
+        run: |
+          git fetch --all --prune
+
+      - name: Aggregate docs from test-* branches into versioned_docs
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          # Nettoyage des anciennes agrégations
+          rm -rf versioned_docs
+          mkdir -p versioned_docs
+          rm -rf .worktrees && mkdir -p .worktrees
+
+          # Lister toutes les branches distantes commençant par origin/test-
+          mapfile -t BRANCHES < <(git for-each-ref --format='%(refname:short)' refs/remotes/origin/test-* | sort)
+
+          if [ ${#BRANCHES[@]} -eq 0 ]; then
+            echo "Aucune branche test-* trouvée."
+            exit 0
+          fi
+
+          for remote_ref in "${BRANCHES[@]}"; do
+            # ex: remote_ref = origin/test-arender-v1
+            br="${remote_ref#origin/}"
+
+            # Extraire produit et version depuis le nom de branche
+            product=$(echo "$br" | sed -E 's|^test-([^/-]+)-v[0-9]+$|\1|')
+            version=$(echo "$br" | sed -E 's|^test-[^/-]+-(v[0-9]+)$|\1|')
+
+            # Mapping éventuel pour coller aux dossiers réels
+            case "$product" in
+              flowerdocs) product_dir="flower" ;;
+              *)          product_dir="$product" ;;
+            esac
+
+            echo "→ Branche: $br | produit: $product_dir | version: $version"
+
+            # Préparer un worktree pour lire les fichiers de la branche source
+            worktree_dir=".worktrees/$br"
+            rm -rf "$worktree_dir"
+            git worktree add --force "$worktree_dir" "$br"
+
+            # Source attendue: docs/<produit>
+            src_dir="$worktree_dir/docs/$product_dir"
+            if [ ! -d "$src_dir" ]; then
+              echo "Avertissement: $src_dir introuvable, on ignore cette branche."
+              git worktree remove --force "$worktree_dir"
+              continue
+            fi
+
+            # Cible: versioned_docs/<produit>/<version>
+            dest_dir="versioned_docs/$product_dir/$version"
+            mkdir -p "$dest_dir"
+
+            # Copier la doc
+            rsync -a --delete "$src_dir"/ "$dest_dir"/
+
+            # Nettoyage worktree pour gagner de la place
+            git worktree remove --force "$worktree_dir"
+          done
+
+          # Petit récap
+          echo "Contenu agrégé :"
+          find versioned_docs -maxdepth 2 -mindepth 2 -type d | sort || true
+
+      - name: Build versions/sidebars manifest (custom script)
+        if: ${{ hashFiles('scripts/collectVersions.mjs') != '' }}
+        run: |
+          echo "Exécution de scripts/collectVersions.mjs…"
+          npm ci --prefer-offline --no-audit --no-fund || true
+          node scripts/collectVersions.mjs
+
+      - name: Commit & push changes to test
+        run: |
+          set -euo pipefail
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          # Ajouter uniquement ce qui a changé
+          git add -A
+
+          if git diff --cached --quiet; then
+            echo "Aucun changement à pousser."
+            exit 0
+          fi
+
+          git commit -m "chore(test-deploy): agrégation des docs depuis test-* [skip ci]"
+          git push origin HEAD:test

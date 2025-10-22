@@ -1,6 +1,0 @@
-{{ $tag := .Get 0 }}
-{{if $tag }}
-{{ printf "<%s>%s</%s>" $tag (.Inner | markdownify | safeHTML) $tag | safeHTML }}
-{{else}}
-{{ .Inner | markdownify | safeHTML }}
-{{end}}
