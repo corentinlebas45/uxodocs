@@ -14,14 +14,24 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
+      - name: Checkout (force master)
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
           # Important pour récupérer toutes les branches and allow pushing back
           persist-credentials: true
-          ref: ${{ github.ref }}
+          # Forcer le checkout sur master afin que le build/déploy se base toujours sur master
+          ref: refs/heads/master
           fetch-tags: true
+
+      - name: Debug current ref and branch
+        run: |
+          echo "Triggering ref: ${{ github.ref }}"
+          echo "GITHUB_REF env: $GITHUB_REF"
+          echo "Checkout HEAD:" 
+          git --no-pager branch --show-current || git rev-parse --abbrev-ref HEAD || true
+          echo "Recent commit:" 
+          git --no-pager log -1 --pretty=format:'%h %s (%an)' || true
 
       - name: Ensure remote branches are available
         run: |
