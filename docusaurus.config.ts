@@ -127,35 +127,6 @@ const config: Config = {
           ],
         },
         {
-          type: 'dropdown',
-          label: 'FlowerDocs',
-          position: 'left',
-          items: [
-            {
-              type: 'docSidebar',
-              sidebarId: 'flowerv2025Sidebar',
-              label: 'v2025',
-            },
-            {
-              type: 'docSidebar',
-              sidebarId: 'flowerv28ltsSidebar',
-              label: 'v2.8 LTS',
-            },
-          ],
-        },
-        {
-          type: 'docSidebar',
-          sidebarId: 'arenderSidebar',
-          label: 'ARender',
-          position: 'left',
-        },
-        {
-          type: 'docSidebar',
-          sidebarId: 'uxopianAiSidebar',
-          label: 'Uxopian AI',
-          position: 'left',
-        },
-        {
           type: 'search',
           position: 'right',
         },
@@ -174,19 +145,7 @@ const config: Config = {
             {
               label: 'Fast2 v2025',
               to: '/docs/fast2/v2025/getting-started/',
-            },
-            {
-              label: 'FlowerDocs v2025',
-              to: '/docs/flower/v2025/',
-            },
-            {
-              label: 'ARender',
-              to: '/docs/arender/',
-            },
-            {
-              label: 'Uxopian AI',
-              to: '/docs/uxopian-ai/',
-            },
+            }
           ],
         },
         {
