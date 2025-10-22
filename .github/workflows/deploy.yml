@@ -32,7 +32,7 @@ jobs:
       - name: Install deps
         run: npm ci --prefer-offline --no-audit --no-fund
 
-      # (Optionnel) s'il faut regénérer la navbar/versions après agrégation
+      # (Optionnel) s'il faut regénérer la navbar/versions
       - name: Rebuild versions manifest
         if: ${{ hashFiles('scripts/collectVersions.mjs') != '' }}
         run: node scripts/collectVersions.mjs
