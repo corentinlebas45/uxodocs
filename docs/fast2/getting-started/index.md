@@ -3,7 +3,7 @@ sidebar_label: Getting Started
 sidebar_position: 1
 ---
 
-# Getting started with Fast2 v2x
+# Getting started with Fast2 v2025
 
 This first section is your go-to resource for understanding and harnessing the power of Fast2 to build efficient and seamless document migration workflows. Whether you're new to the product or an experienced user, this documentation will provide you with all the necessary information to get started and create effective document migration workflows.
 
