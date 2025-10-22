@@ -30,22 +30,22 @@ const config: Config = {
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
   // may want to replace "en" with "zh-Hans".
-  i18n: {
-    defaultLocale: 'fr',
-    locales: ['fr', 'en'],
-    localeConfigs: {
-      en: {
-        label: 'English',
-        direction: 'ltr',
-        htmlLang: 'en-US',
-      },
-      fr: {
-        label: 'Français',
-        direction: 'ltr',
-        htmlLang: 'fr-FR',
-      },
-    },
-  },
+  // i18n: {
+  //   defaultLocale: 'fr',
+  //   locales: ['fr', 'en'],
+  //   localeConfigs: {
+  //     en: {
+  //       label: 'English',
+  //       direction: 'ltr',
+  //       htmlLang: 'en-US',
+  //     },
+  //     fr: {
+  //       label: 'Français',
+  //       direction: 'ltr',
+  //       htmlLang: 'fr-FR',
+  //     },
+  //   },
+  // },
 
   presets: [
     [
