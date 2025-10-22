@@ -4,118 +4,119 @@ on:
   push:
     branches:
       - test
-      - test-**         # ex: test-arender-v1, test-fast2-v2, etc.
+      - test-**     # ex: test-fast2-v2, test-arender-v1, ...
   workflow_dispatch:
 
 permissions:
-  contents: write       # nécessaire pour pousser sur la branche "test"
+  contents: write
 
 concurrency:
   group: test-deploy
   cancel-in-progress: false
 
 jobs:
-  aggregate-and-push-to-test:
+  aggregate:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout test branch (destination)
+      - name: Checkout destination branch (test)
         uses: actions/checkout@v4
         with:
           ref: test
           fetch-depth: 0
 
-      - name: Setup Node (for Docusaurus tooling/scripts)
+      - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: "20"
 
       - name: Fetch all branches
-        run: |
-          git fetch --all --prune
+        run: git fetch --all --prune
 
-      - name: Aggregate docs from test-* branches into versioned_docs
+      - name: Aggregate docs branches into docs/<product>/vX
         shell: bash
         run: |
           set -euo pipefail
 
-          # Nettoyage des anciennes agrégations
-          rm -rf versioned_docs
-          mkdir -p versioned_docs
-          rm -rf .worktrees && mkdir -p .worktrees
+          # Produits connus (ajuste si besoin)
+          PRODUCTS=("arender" "fast2" "flower")
+          # mapping pour noms de branches différents des dossiers
+          map_branch_to_product() {
+            case "$1" in
+              flowerdocs) echo "flower" ;;
+              *)          echo "$1" ;;
+            esac
+          }
 
-          # Lister toutes les branches distantes commençant par origin/test-
+          # 1) On efface seulement les anciens dossiers v* sans toucher les index "courants"
+          for p in "${PRODUCTS[@]}"; do
+            if [ -d "docs/$p" ]; then
+              find "docs/$p" -mindepth 1 -maxdepth 1 -type d -name 'v*' -print0 | xargs -0 -r rm -rf
+            fi
+          done
+
+          # 2) Lister les branches test-*-v*
           mapfile -t BRANCHES < <(git for-each-ref --format='%(refname:short)' refs/remotes/origin/test-* | sort)
 
-          if [ ${#BRANCHES[@]} -eq 0 ]; then
-            echo "Aucune branche test-* trouvée."
-            exit 0
-          fi
-
+          mkdir -p .worktrees
           for remote_ref in "${BRANCHES[@]}"; do
-            # ex: remote_ref = origin/test-arender-v1
-            br="${remote_ref#origin/}"
+            br="${remote_ref#origin/}"    # ex: test-fast2-v2
+            raw_product=$(sed -E 's|^test-([^/-]+)-v[0-9]+$|\1|' <<< "$br")
+            version=$(sed -E 's|^test-[^/-]+-(v[0-9]+)$|\1|' <<< "$br")
+            product="$(map_branch_to_product "$raw_product")"
 
-            # Extraire produit et version depuis le nom de branche
-            product=$(echo "$br" | sed -E 's|^test-([^/-]+)-v[0-9]+$|\1|')
-            version=$(echo "$br" | sed -E 's|^test-[^/-]+-(v[0-9]+)$|\1|')
+            # Skip si parsing raté
+            if [[ -z "$product" || -z "$version" ]]; then
+              echo "Ignore: $br (impossible d'extraire produit/version)"
+              continue
+            fi
 
-            # Mapping éventuel pour coller aux dossiers réels
-            case "$product" in
-              flowerdocs) product_dir="flower" ;;
-              *)          product_dir="$product" ;;
-            esac
+            echo "→ $br  -> product=$product  version=$version"
 
-            echo "→ Branche: $br | produit: $product_dir | version: $version"
-
-            # Préparer un worktree pour lire les fichiers de la branche source
             worktree_dir=".worktrees/$br"
             rm -rf "$worktree_dir"
             git worktree add --force "$worktree_dir" "$br"
 
-            # Source attendue: docs/<produit>
-            src_dir="$worktree_dir/docs/$product_dir"
+            src_dir="$worktree_dir/docs/$product"
             if [ ! -d "$src_dir" ]; then
               echo "Avertissement: $src_dir introuvable, on ignore cette branche."
               git worktree remove --force "$worktree_dir"
               continue
             fi
 
-            # Cible: versioned_docs/<produit>/<version>
-            dest_dir="versioned_docs/$product_dir/$version"
+            dest_dir="docs/$product/$version"
             mkdir -p "$dest_dir"
 
-            # Copier la doc
-            rsync -a --delete "$src_dir"/ "$dest_dir"/
+            # Copie le contenu de docs/<product> dans docs/<product>/<vX>,
+            # en excluant d'éventuels sous-dossiers v* déjà présents dans la branche source.
+            rsync -a --delete \
+              --exclude 'v*/' \
+              "$src_dir"/ "$dest_dir"/
 
-            # Nettoyage worktree pour gagner de la place
             git worktree remove --force "$worktree_dir"
           done
 
-          # Petit récap
-          echo "Contenu agrégé :"
-          find versioned_docs -maxdepth 2 -mindepth 2 -type d | sort || true
+          echo "Aperçu:"
+          find docs -maxdepth 2 -type d -name 'v*' | sort || true
 
-      - name: Build versions/sidebars manifest (custom script)
+      - name: Install deps (if collectVersions needs them)
+        run: npm ci --prefer-offline --no-audit --no-fund || true
+
+      - name: Generate versions.manifest.json
         if: ${{ hashFiles('scripts/collectVersions.mjs') != '' }}
-        run: |
-          echo "Exécution de scripts/collectVersions.mjs…"
-          npm ci --prefer-offline --no-audit --no-fund || true
-          node scripts/collectVersions.mjs
+        run: node scripts/collectVersions.mjs
 
-      - name: Commit & push changes to test
+      - name: Commit & push aggregated docs to test
         run: |
           set -euo pipefail
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          # Ajouter uniquement ce qui a changé
           git add -A
-
           if git diff --cached --quiet; then
             echo "Aucun changement à pousser."
             exit 0
           fi
 
-          git commit -m "chore(test-deploy): agrégation des docs depuis test-* [skip ci]"
+          git commit -m "chore(test-deploy): aggregate docs into docs/<product>/<vX> [skip ci]"
           git push origin HEAD:test

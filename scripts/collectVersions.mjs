@@ -12,7 +12,7 @@ for (const id of products) {
         versions = fs.readdirSync(p, { withFileTypes: true })
             .filter(d => d.isDirectory() && d.name.startsWith('v'))
             .map(d => d.name)
-            .sort(); // tri simple
+            .sort((a,b)=>a<b?1:-1)
     }
     out[id] = versions;
 }
