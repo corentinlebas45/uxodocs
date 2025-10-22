@@ -5,7 +5,7 @@ on:
     branches: [ master, "fast2/v*", "flower/v*", "arender/v*" ]
   workflow_dispatch:
 
-# Give the workflow permission to push/deploy (used by the deploy step / gh-pages)
+# Autorise l’écriture (gh-pages)
 permissions:
   contents: write
 
@@ -17,35 +17,39 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0
-          # Important pour récupérer toutes les branches and allow pushing back
-          persist-credentials: true
-          ref: ${{ github.ref }}
-          fetch-tags: true
-
-      - name: Ensure remote branches are available
-        run: |
-          git fetch --prune --unshallow || true
-          git fetch --all --prune
-          git fetch origin '+refs/heads/*:refs/remotes/origin/*' || true
-          git branch -r
+          fetch-depth: 0   # plus robuste pour git worktrees/fetch
 
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          # Si tu as un .nvmrc au repo, décommente la ligne suivante et commente la suivante :
+          # node-version-file: '.nvmrc'
+          node-version: '20.x'
           cache: 'npm'
 
-      - name: Install deps
+      - name: Show versions
+        run: |
+          node -v
+          npm -v
+          git --version
+
+      - name: Install dependencies (lockfile)
         run: npm ci
 
       - name: Hydrate versions from branches
         run: bash scripts/hydrate.sh
 
+      - name: Cleanup hydrated markdown for MDX
+        run: python3 scripts/ci-cleanup.py
+
       - name: Generate versions manifest
         run: node scripts/collectVersions.mjs
 
       - name: Build
+        env:
+          CI: "true"
+          # OPTIONNEL: si besoin de plus de mémoire pour le build
+          # NODE_OPTIONS: --max_old_space_size=4096
         run: npm run build
 
       - name: Deploy to GitHub Pages
