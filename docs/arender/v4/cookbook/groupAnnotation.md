@@ -1,12 +1,11 @@
 ---
 title: "Groupe d'annotations"
-description:
-weight: 
+description: ""
+weight: 0
 draft: false
 icon: mdi-pencil-box-multiple-outline
 ## search related keywords
 keywords: ["tutorial", "annotation", "groupe"]
----
 
 L'assignation d'un groupe à une annotation se fait avec l'utilisation de la propriété *Security* qui permet de stocker une valeur désignant l'appartenance à un groupe.
 

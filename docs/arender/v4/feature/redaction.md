@@ -1,6 +1,6 @@
 ---
 title: Redaction
-description:
+description: ""
 icon: mdi-image-edit-outline
 keyword: ["feature", "redaction", "obfuscate", "biffer"]
 ---

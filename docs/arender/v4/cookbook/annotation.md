@@ -1,7 +1,7 @@
 ---
 title: "Annotations"
-description:
-weight: 
+description: ""
+weight: 0
 draft: false
 icon: mdi-comment-text-outline
 ## search related keywords

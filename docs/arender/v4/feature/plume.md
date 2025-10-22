@@ -1,13 +1,13 @@
 ---
 title: Plume
-description: 
+description: ""
 icon: mdi-email-outline
 keywords: ["feature", "email", "plume"]
 ---
 ## Envois d'emails dans ARender
 
-L'envoi d'email est possible en utilisant une application nommée "plume" qui doit être placée
-dans un serveur d'applications au même titre qu'ARender.
+title: Plume
+description: ""
 
 ### Configuration d'ARender
 

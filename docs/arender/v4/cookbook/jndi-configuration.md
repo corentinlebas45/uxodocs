@@ -1,6 +1,6 @@
 ---
 title: "Configuration JNDI pour ARender Web-UI"
-description:
+description: ""
 weight: 
 draft: false
 icon: mdi-folder-cog-outline
@@ -66,7 +66,7 @@ vous trouverez un détail par serveur d'application.
   <!-- Commenter la configuration ci-dessous -->
   <!--
   	<resource-ref>
-		<res-ref-name>propertiesFileLocation</res-ref-name>
+  description: ""
 		<res-type>java.lang.String</res-type>
 	</resource-ref>
   -->

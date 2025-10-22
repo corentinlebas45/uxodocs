@@ -1,12 +1,10 @@
----
 title: Sélection de texte
-description:
+description: ""
 icon: mdi-cursor-text
 keyword: ["fonctionnalité", "sélection", "sélection texte", "selection", "selection texte", "texte"]
 related:
     - name : "Menu rapide"
       rel: '/features/quickmenu.fr.md'
----
 
 ## Sélection de texte du document
 

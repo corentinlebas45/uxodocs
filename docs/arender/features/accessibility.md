@@ -1,6 +1,6 @@
 ---
 title: Accessibilité
-description:
+description: ""
 icon: mdi-human-handsdown
 keywords: ["feature", "Accessibilité"]
 ---

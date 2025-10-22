@@ -1,19 +1,26 @@
 ---
 title: Menu rapide
-description:
+description: ""
 icon: mdi-cursor-default-click-outline
 keywords: ["fonctionnalité", "annotations", "menu", "Menu rapide", "texte"]
 related:
     - name : "Sélection de texte"
       rel: '/features/textselection.fr.md'
 ---
+title: Menu rapide
+description: ""
+icon: mdi-cursor-default-click-outline
+keywords: ["fonctionnalité", "annotations", "menu", "Menu rapide", "texte"]
+related:
+  - name: "Sélection de texte"
+    rel: '/features/textselection.fr.md'
 
 ## Description
 
-Le menu rapide est un menu contextuel qui apparait à la fin d'une sélection de texte. 
+Le menu rapide est un menu contextuel qui apparait à la fin d'une sélection de texte.
 Ce menu est positionné en dessous du texte et va permettre d'exécuter des actions sur le texte.
 
-Ce menu est désactivable avec la configuration suivante : 
+Ce menu est désactivable avec la configuration suivante :
 [shortcode]
 
 ```cfg
@@ -30,14 +37,14 @@ quick.contextual.menu.enabled=false
 ### Création d'annotations
 
 Les annotations nécessitant une sélection de texte possèdent leur bouton de création dans le menu rapide.
-Le menu rapide supporte l'ajout des annotations suivantes : 
+Le menu rapide supporte l'ajout des annotations suivantes :
 - surlignage
 - soulignage
 - barré
 - biffure (Si l'utilisateur à les droits d'ajout)
-- hyperlien 
+- hyperlien
 
-Chaque bouton est activé par défaut. Vous pouvez désactiver individuellement les boutons avec les configurations suivantes : 
+Chaque bouton est activé par défaut. Vous pouvez désactiver individuellement les boutons avec les configurations suivantes :
 [shortcode]
 
 ```cfg
@@ -66,7 +73,7 @@ quick.contextual.menu.hasRedactText=false
 ### Copie de texte
 
 Un bouton pour copier le texte sélectionné est activé par défaut.
-Ce bouton est désactivable avec la configuration suivante : 
+Ce bouton est désactivable avec la configuration suivante :
 
 [shortcode]
 

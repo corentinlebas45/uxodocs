@@ -1,6 +1,6 @@
 ---
 title: Composition de documents 
-description:
+description: ""
 icon: mdi-scissors-cutting
 keyword: ["foinctionnalité", "composition", "document"]
 ---

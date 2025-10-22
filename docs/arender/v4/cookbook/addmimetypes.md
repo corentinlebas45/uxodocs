@@ -1,7 +1,7 @@
 ---
 title: "Ajout de type mime image/vidéo supportés"
-description: 
-weight: 
+description: ""
+weight: 0
 draft: false
 icon: mdi-file-question-outline
 ## search related keywords

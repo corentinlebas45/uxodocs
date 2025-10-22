@@ -1,6 +1,6 @@
 ---
 title: Sliders
-description:
+description: ""
 icon: mdi-tune
 keyword: ["fonctionnalité", "sliders", "contraste", "luminosité", "opacité"]
 ---

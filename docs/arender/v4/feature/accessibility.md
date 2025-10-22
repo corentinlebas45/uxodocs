@@ -1,6 +1,6 @@
 ---
 title: Accessibilité
-description:
+description: ""
 icon: mdi-comment-text-outline
 keywords: ["feature", "Accessibilité"]
 ---

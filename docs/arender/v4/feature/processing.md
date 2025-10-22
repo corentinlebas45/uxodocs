@@ -1,6 +1,6 @@
 ---
 title: Traitement des images
-description:
+description: ""
 icon: mdi-image-edit-outline
 keyword: ["fonctionnalité", "images", "traitement", "traitement des images", "contraste", "luminosité"]
 ---

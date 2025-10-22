@@ -1,6 +1,6 @@
 ---
 title: "Groupe d'annotations"
-description:
+description: ""
 weight: 
 draft: false
 icon: mdi-pencil-box-multiple-outline

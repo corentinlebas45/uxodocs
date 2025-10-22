@@ -242,8 +242,7 @@ Pour les versions 2.0 et supérieures, se référer à l'installation version 2.
 
 [shortcode]
 
-Description:
-
+description: ""
 - **arender.host**: le nom d'hôte  d'ARender avec son contexte ,ici, *"/arender"*. Utiliser le nom d'hôte par défaut pour éviter les erreurs de Cross Origin.
 - **arender.onPromise**: permet l'ouverture de plusieurs documents ou dossiers.
 - **arender.documentbuilder**: active la fonction de composition de document par défaut.
