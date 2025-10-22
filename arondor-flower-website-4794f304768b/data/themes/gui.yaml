@@ -1,5 +1,0 @@
-id: "gui"
-name: "Interface graphique"
-description: "Personnalisez l'interface graphique."
-icon: "fas fa-desktop"
-weight: "3"

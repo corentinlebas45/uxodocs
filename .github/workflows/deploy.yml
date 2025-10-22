@@ -45,10 +45,6 @@ jobs:
       - name: Generate versions manifest
         run: node scripts/collectVersions.mjs
 
-      - name: CI cleanup for MDX
-        run: |
-          python3 scripts/ci-cleanup.py
-
       - name: Build
         run: npm run build
 

@@ -1,2 +1,0 @@
-User-agent: *
-Sitemap: http://flowerdocs.com/sitemap.xml

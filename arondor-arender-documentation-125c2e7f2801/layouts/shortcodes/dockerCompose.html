@@ -1,1 +1,0 @@
-{{ replace (readFile "static/docs/docker/docker-compose.yml") "${VERSION}" (index .Site.Data.documentation "currentVersion") | safeHTML }}
