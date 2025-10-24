@@ -34,3 +34,37 @@
   background: linear-gradient(135deg, #A14999 0%, #ED8E80 100%) !important;
   background-color: transparent !important;
 }
+
+/* Astuce: remplace le label (qui affiche la version) par le nom du produit */
+
+/* Style de base commun */
+.verdd .navbar__link {
+  position: relative;
+  /* on rend le texte (la version) transparent pour le masquer */
+  color: transparent !important;
+}
+
+/* On affiche notre libellé via ::before, en reprenant les couleurs du thème */
+.verdd .navbar__link::before {
+  position: absolute;
+  left: 0;
+  content: '';
+  color: var(--ifm-navbar-link-color);
+}
+
+/* Hover/active : garder les couleurs du thème */
+.verdd .navbar__link:hover::before,
+.verdd .navbar__link--active::before {
+  color: var(--ifm-navbar-link-hover-color);
+}
+
+/* Un bouton par produit */
+.verdd--fast2 .navbar__link::before {
+  content: 'Fast2';
+}
+.verdd--arender .navbar__link::before {
+  content: 'Arender';
+}
+.verdd--flowerdocs .navbar__link::before {
+  content: 'Flowerdocs';
+}

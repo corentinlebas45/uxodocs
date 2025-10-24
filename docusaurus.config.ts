@@ -76,13 +76,13 @@ const config: Config = {
       logo: { alt: 'UXO', src: 'img/logo.svg' },
       items: [
         // Dropdowns de version (un par produit)
+        // { type: 'doc', docsPluginId: 'fast2', docId: 'index', label: 'Docs Fast2' },
         { type: 'docsVersionDropdown', docsPluginId: 'fast2', position: 'left', label: 'Fast2' },
-        { type: 'doc', docsPluginId: 'fast2', docId: 'index', label: 'Docs Fast2' },
 
+        // { type: 'doc', docsPluginId: 'arender', docId: 'index', label: 'Docs Arender' },
         { type: 'docsVersionDropdown', docsPluginId: 'arender', position: 'left', label: 'Arender' },
-        { type: 'doc', docsPluginId: 'arender', docId: 'index', label: 'Docs Arender' },
 
-        { type: 'doc', docsPluginId: 'flowerdocs', docId: 'index', label: 'Docs Flowerdocs' },
+        // { type: 'doc', docsPluginId: 'flowerdocs', docId: 'index', label: 'Docs Flowerdocs' },
         { type: 'docsVersionDropdown', docsPluginId: 'flowerdocs', position: 'left', label: 'Flowerdocs' },
 
 
