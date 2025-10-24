@@ -29,38 +29,41 @@
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
-/* CIBLE: le lien de dropdown version (la classe est sur <a>) */
+/* Boutons de version : on masque le vrai texte et on affiche un label custom */
 .navbar__link.verdd {
+  display: inline-flex;              /* ← le conteneur s’ajuste à son contenu */
+  align-items: center;               /* ← verticalement centré comme les autres items */
+  gap: .25rem;                       /* espace avec le caret ▼ */
   position: relative;
+
   color: transparent !important;
-  -webkit-text-fill-color: transparent;
   text-shadow: none !important;
+  user-select: none;
 }
 
-/* Garde l'icône de dropdown visible */
+/* notre libellé remplaçant (DANS le flux, pas absolute) */
+.navbar__link.verdd::before {
+  content: '';                       /* sera remplacé ci-dessous par produit */
+  font-size: var(--ifm-navbar-link-font-size, 1rem);
+  line-height: inherit;
+  color: var(--ifm-navbar-link-color);
+}
+
+/* caret ▼ conserve la bonne couleur & l’espacement */
 .navbar__link.verdd svg {
   color: var(--ifm-navbar-link-color) !important;
   fill: currentColor;
+  margin-left: .1rem;
 }
 
-/* Insère le vrai nom du produit */
-.navbar__link.verdd::before {
-  position: absolute;
-  left: 0;
-  top: 0;
-  content: '';
-  color: var(--ifm-navbar-link-color);
-  line-height: inherit;
-}
-
-/* Hover + actif */
+/* états hover/actif : même style que les autres liens navbar */
 .navbar__link.verdd:hover::before,
 .navbar__link.verdd.active::before,
 .navbar__link.verdd:focus::before {
   color: var(--ifm-navbar-link-hover-color);
 }
 
-/* Un label par produit */
+/* Libellés par produit */
 .navbar__link.verdd--fast2::before {
   content: 'Fast2';
 }
@@ -70,5 +73,16 @@
 .navbar__link.verdd--flowerdocs::before {
   content: 'Flowerdocs';
 }
+
+/* (optionnel) sur mobile, laisse le texte réel s’afficher pour l’accessibilité */
+@media (max-width: 996px) {
+  .navbar__link.verdd {
+    font-size: inherit !important;           /* ré-affiche "current/v1/v2" */
+    -webkit-text-fill-color: inherit;
+    color: var(--ifm-navbar-link-color) !important;
+  }
+  .navbar__link.verdd::before { content: none; }
+}
+
 
 
