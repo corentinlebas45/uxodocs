@@ -29,42 +29,50 @@
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
-/* Custom gradient background for homepage hero */
-.hero--primary {
-  background: linear-gradient(135deg, #A14999 0%, #ED8E80 100%) !important;
-  background-color: transparent !important;
-}
-
-/* Astuce: remplace le label (qui affiche la version) par le nom du produit */
-
-/* Style de base commun */
-.verdd .navbar__link {
+/* CIBLE: le container item (la classe est sur .navbar__item) */
+.navbar__item.verdd .navbar__link {
   position: relative;
-  /* on rend le texte (la version) transparent pour le masquer */
-  color: transparent !important;
 }
 
-/* On affiche notre libellé via ::before, en reprenant les couleurs du thème */
-.verdd .navbar__link::before {
+/* Masque le texte "current/v1/v2" sans masquer l'icône ▼ */
+.navbar__item.verdd .navbar__link {
+  color: transparent !important;
+  -webkit-text-fill-color: transparent;   /* Chrome/Safari */
+  text-shadow: none !important;
+}
+
+/* Remet une couleur lisible à l'icône (sinon elle hérite "transparent") */
+.navbar__item.verdd .navbar__link svg {
+  color: var(--ifm-navbar-link-color) !important;
+  fill: currentColor;
+}
+
+/* Insère le nom du produit avant le contenu réel */
+.navbar__item.verdd .navbar__link::before {
   position: absolute;
   left: 0;
+  top: 0;
   content: '';
   color: var(--ifm-navbar-link-color);
+  /* s’aligne bien avec la hauteur/ligne du bouton */
+  line-height: inherit;
 }
 
-/* Hover/active : garder les couleurs du thème */
-.verdd .navbar__link:hover::before,
-.verdd .navbar__link--active::before {
+/* Hover/active: garder les couleurs du thème */
+.navbar__item.verdd .navbar__link:hover::before,
+.navbar__item.verdd .navbar__link--active::before,
+.navbar__item.verdd .navbar__link:focus::before {
   color: var(--ifm-navbar-link-hover-color);
 }
 
-/* Un bouton par produit */
-.verdd--fast2 .navbar__link::before {
+/* Un libellé par produit */
+.navbar__item.verdd--fast2 .navbar__link::before {
   content: 'Fast2';
 }
-.verdd--arender .navbar__link::before {
+.navbar__item.verdd--arender .navbar__link::before {
   content: 'Arender';
 }
-.verdd--flowerdocs .navbar__link::before {
+.navbar__item.verdd--flowerdocs .navbar__link::before {
   content: 'Flowerdocs';
 }
+

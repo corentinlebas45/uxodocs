@@ -75,15 +75,19 @@ const config: Config = {
       title: 'UXO Docs',
       logo: { alt: 'UXO', src: 'img/logo.svg' },
       items: [
+        { type: 'docsVersionDropdown', docsPluginId: 'fast2', position: 'left', className: 'verdd verdd--fast2' },
+        { type: 'docsVersionDropdown', docsPluginId: 'arender', position: 'left', className: 'verdd verdd--arender' },
+        { type: 'docsVersionDropdown', docsPluginId: 'flowerdocs', position: 'left', className: 'verdd verdd--flowerdocs' },
+
         // Dropdowns de version (un par produit)
         // { type: 'doc', docsPluginId: 'fast2', docId: 'index', label: 'Docs Fast2' },
-        { type: 'docsVersionDropdown', docsPluginId: 'fast2', position: 'left', label: 'Fast2' },
+        // { type: 'docsVersionDropdown', docsPluginId: 'fast2', position: 'left', label: 'Fast2' },
 
         // { type: 'doc', docsPluginId: 'arender', docId: 'index', label: 'Docs Arender' },
-        { type: 'docsVersionDropdown', docsPluginId: 'arender', position: 'left', label: 'Arender' },
+        // { type: 'docsVersionDropdown', docsPluginId: 'arender', position: 'left', label: 'Arender' },
 
         // { type: 'doc', docsPluginId: 'flowerdocs', docId: 'index', label: 'Docs Flowerdocs' },
-        { type: 'docsVersionDropdown', docsPluginId: 'flowerdocs', position: 'left', label: 'Flowerdocs' },
+        // { type: 'docsVersionDropdown', docsPluginId: 'flowerdocs', position: 'left', label: 'Flowerdocs' },
 
 
         { href: 'https://github.com/corentinlebas45/uxodocs', label: 'GitHub', position: 'right' },
