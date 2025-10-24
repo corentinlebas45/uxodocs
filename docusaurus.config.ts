@@ -103,9 +103,9 @@ const config: Config = {
     [
       '@docusaurus/plugin-content-docs',
       {
-        id: 'flower',
-        path: 'docs/flower',
-        routeBasePath: 'flower',
+        id: 'flowerdocs',
+        path: 'docs/flowerdocs',
+        routeBasePath: 'flowerdocs',
         sidebarPath: require.resolve('./sidebars.ts'),
         lastVersion: 'current',
       },
@@ -125,7 +125,7 @@ const config: Config = {
         // Un dropdown de versions par produit (branché sur l'id du plugin)
         { type: 'docsVersionDropdown', docsPluginId: 'arender', position: 'left', label: 'ARender' },
         { type: 'docsVersionDropdown', docsPluginId: 'fast2', position: 'left', label: 'Fast2' },
-        { type: 'docsVersionDropdown', docsPluginId: 'flower', position: 'left', label: 'Flower' },
+        { type: 'docsVersionDropdown', docsPluginId: 'flowerdocs', position: 'left', label: 'flowerdocs' },
 
         // Liens éventuels (ex: repo GitHub)
         {
@@ -143,7 +143,7 @@ const config: Config = {
           items: [
             { label: 'ARender', to: '/arender' },
             { label: 'Fast2', to: '/fast2' },
-            { label: 'Flower', to: '/flower' },
+            { label: 'flowerdocs', to: '/flowerdocs' },
           ],
         },
         {
