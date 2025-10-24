@@ -75,28 +75,46 @@ const config: Config = {
       title: 'UXO Docs',
       logo: { alt: 'UXO', src: 'img/logo.svg' },
       items: [
-        // Dropdowns de version (un par produit)
-        { type: 'docsVersionDropdown', docsPluginId: 'fast2', position: 'left', label: 'Fast2' },
-        { type: 'docsVersionDropdown', docsPluginId: 'arender', position: 'left', label: 'Arender' },
-        { type: 'docsVersionDropdown', docsPluginId: 'flowerdocs', position: 'left', label: 'Flowerdocs' },
-
-        // Accès directs (facultatif)
-        { type: 'doc', docsPluginId: 'fast2', docId: 'index', label: 'Docs Fast2' },
-        { type: 'doc', docsPluginId: 'arender', docId: 'index', label: 'Docs Arender' },
-        { type: 'doc', docsPluginId: 'flowerdocs', docId: 'index', label: 'Docs Flowerdocs' },
+        // ✅ Fast2
+        {
+          type: 'dropdown',
+          label: 'Fast2',
+          position: 'left',
+          items: [
+            { type: 'docsVersionDropdown', docsPluginId: 'fast2' },
+          ],
+        },
+        // ✅ Arender
+        {
+          type: 'dropdown',
+          label: 'Arender',
+          position: 'left',
+          items: [
+            { type: 'docsVersionDropdown', docsPluginId: 'arender' },
+          ],
+        },
+        // ✅ Flowerdocs
+        {
+          type: 'dropdown',
+          label: 'Flowerdocs',
+          position: 'left',
+          items: [
+            { type: 'docsVersionDropdown', docsPluginId: 'flowerdocs' },
+          ],
+        },
 
         { href: 'https://github.com/corentinlebas45/uxodocs', label: 'GitHub', position: 'right' },
       ],
     },
-    footer: {
-      style: 'dark',
-      copyright: `© ${new Date().getFullYear()} UXO Docs`,
-    },
-    prism: {
-      theme: prismThemes.github,
-      darkTheme: prismThemes.dracula,
-    },
-  } satisfies Preset.ThemeConfig,
+  footer: {
+    style: 'dark',
+    copyright: `© ${new Date().getFullYear()} UXO Docs`,
+  },
+  prism: {
+    theme: prismThemes.github,
+    darkTheme: prismThemes.dracula,
+  },
+} satisfies Preset.ThemeConfig,
 };
 
 export default config;
