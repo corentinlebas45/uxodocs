@@ -1,5 +1,5 @@
 # .github/workflows/deploy.yml
-name: Docusaurus Deploy (gh-pages branch)
+name: Deploy Docusaurus to gh-pages
 
 on:
   push:
@@ -7,29 +7,34 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: write   # nécessaire pour pousser sur gh-pages
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - name: Configure git author
+      - name: Configure git author (for the gh-pages commit)
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
-      - uses: actions/setup-node@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: npm
 
-      - run: npm ci
+      - name: Install
+        run: npm ci
 
-      - name: Build & Deploy to gh-pages
+      - name: Build & Deploy
         env:
+          # ⬇️ requis par "docusaurus deploy"
+          GIT_USER: github-actions[bot]
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: npm run deploy
