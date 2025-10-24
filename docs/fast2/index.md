@@ -1,20 +1,8 @@
-# Fast2 Documentation
+# Fast2
 
-Welcome to Fast2 documentation.
+Pages par version
 
-## Getting Started
+- [v1](./v1/index)
+- [v2](./v2/index)
 
-Fast2 is a powerful data migration and processing platform.
-
-### Quick Links
-
-- [Installation Guide](./fast2/v2025/getting-started/installation.md)
-- [Basic Concepts](./fast2/v2025/getting-started/overall-concepts.md)
-- [First Steps](./fast2/v2025/getting-started/first-steps.md)
-
-## Advanced Topics
-
-- [Advanced Configuration](./fast2/v2025/advanced/)
-- [API Reference](./fast2/v2025/api/)
-
-[🇫🇷 Documentation en français](/fr/docs/fast2/)
+_Créez **docs/fast2/index.base.md** pour personnaliser ce haut de page._
