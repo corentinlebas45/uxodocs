@@ -29,50 +29,46 @@
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
-/* CIBLE: le container item (la classe est sur .navbar__item) */
-.navbar__item.verdd .navbar__link {
+/* CIBLE: le lien de dropdown version (la classe est sur <a>) */
+.navbar__link.verdd {
   position: relative;
-}
-
-/* Masque le texte "current/v1/v2" sans masquer l'icône ▼ */
-.navbar__item.verdd .navbar__link {
   color: transparent !important;
-  -webkit-text-fill-color: transparent;   /* Chrome/Safari */
+  -webkit-text-fill-color: transparent;
   text-shadow: none !important;
 }
 
-/* Remet une couleur lisible à l'icône (sinon elle hérite "transparent") */
-.navbar__item.verdd .navbar__link svg {
+/* Garde l'icône de dropdown visible */
+.navbar__link.verdd svg {
   color: var(--ifm-navbar-link-color) !important;
   fill: currentColor;
 }
 
-/* Insère le nom du produit avant le contenu réel */
-.navbar__item.verdd .navbar__link::before {
+/* Insère le vrai nom du produit */
+.navbar__link.verdd::before {
   position: absolute;
   left: 0;
   top: 0;
   content: '';
   color: var(--ifm-navbar-link-color);
-  /* s’aligne bien avec la hauteur/ligne du bouton */
   line-height: inherit;
 }
 
-/* Hover/active: garder les couleurs du thème */
-.navbar__item.verdd .navbar__link:hover::before,
-.navbar__item.verdd .navbar__link--active::before,
-.navbar__item.verdd .navbar__link:focus::before {
+/* Hover + actif */
+.navbar__link.verdd:hover::before,
+.navbar__link.verdd.active::before,
+.navbar__link.verdd:focus::before {
   color: var(--ifm-navbar-link-hover-color);
 }
 
-/* Un libellé par produit */
-.navbar__item.verdd--fast2 .navbar__link::before {
+/* Un label par produit */
+.navbar__link.verdd--fast2::before {
   content: 'Fast2';
 }
-.navbar__item.verdd--arender .navbar__link::before {
+.navbar__link.verdd--arender::before {
   content: 'Arender';
 }
-.navbar__item.verdd--flowerdocs .navbar__link::before {
+.navbar__link.verdd--flowerdocs::before {
   content: 'Flowerdocs';
 }
+
 
