@@ -1,0 +1,130 @@
+name: Sync docs → build → deploy
+
+on:
+  push:
+    branches:
+      - test
+      - 'test-*'         # ex: test-fast2-v1
+  workflow_dispatch:
+
+permissions:
+  contents: write        # commit sur test + push vers gh-pages
+
+concurrency:
+  group: ci-pages
+  cancel-in-progress: true
+
+jobs:
+  sync_build_deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Fetch all branches
+        run: |
+          git fetch origin "+refs/heads/*:refs/remotes/origin/*"
+
+      - name: Prepare worktree for branch "test"
+        run: |
+          # crée un worktree local pointant sur origin/test
+          git worktree add ../worktree-test origin/test || {
+            git fetch origin test:test
+            git worktree add ../worktree-test test
+          }
+
+      - name: Aggregate docs from test-* branches into worktree-test
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd ../worktree-test
+
+          # liste toutes les branches "test-*"
+          mapfile -t branches < <(git for-each-ref --format='%(refname:short)' refs/remotes/origin | grep '^origin/test-' | sort)
+
+          # agrège chaque branche dans docs/<product>/<version>/
+          for b in "${branches[@]}"; do
+            bn="${b#origin/}"     # ex: test-fast2-v1
+            IFS='-' read -r prefix product version <<< "$bn"
+            # on attend test-<product>-<version> (version = v1, v2, ...)
+            if [[ "$prefix" != "test" || -z "$product" || -z "$version" ]]; then
+              echo "skip $bn (format inattendu)"; continue
+            fi
+
+            # vérifie si la branche contient docs/<product>/
+            if git cat-file -e "${b}:docs/${product}/" 2>/dev/null; then
+              target="docs/${product}/${version}"
+              mkdir -p "$target"
+              # extrait récursivement docs/<product>/ depuis la branche source dans le dossier de version
+              git archive --format=tar "$b" "docs/${product}" \
+                | tar -x -C "$target" --strip-components=2 || true
+              echo "→ ${bn}  =>  ${target}"
+            else
+              echo "warn: ${bn} ne contient pas docs/${product}/, ignoré."
+            fi
+          done
+
+          # (re)génère l'index de chaque produit avec la liste des versions
+          for product_dir in docs/*; do
+            [[ -d "$product_dir" ]] || continue
+            product="$(basename "$product_dir")"
+            # versions existantes avec un index
+            mapfile -t versions < <(find "$product_dir" -maxdepth 1 -type d -name "v*" -exec test -e "{}/index.md" -o -e "{}/index.mdx" \; -print | xargs -n1 basename | sort -V)
+            # crée l'index produit s'il existe au moins une version ou si un index racine existe déjà
+            if [[ ${#versions[@]} -gt 0 || -f "$product_dir/index.md" || -f "$product_dir/index.mdx" ]]; then
+              {
+                echo "# ${product^}"
+                echo
+                echo "Pages par version"
+                echo
+                for v in "${versions[@]}"; do
+                  echo "- [${v}](./${v}/index)"
+                done
+                echo
+                echo "_Créez **docs/${product}/index.base.md** pour personnaliser ce haut de page._"
+              } > "${product_dir}/index.md"
+            fi
+          done
+
+      - name: Commit aggregated changes to branch test (if any)
+        working-directory: ../worktree-test
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          if ! git diff --quiet; then
+            git add -A
+            git commit -m "Aggregate docs from test-* branches"
+            git push origin HEAD:test
+            echo "changes_pushed=true" >> $GITHUB_ENV
+          else
+            echo "No changes to commit."
+            echo "changes_pushed=false" >> $GITHUB_ENV
+          fi
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install deps (from worktree-test)
+        working-directory: ../worktree-test
+        run: npm ci
+
+      - name: Build Docusaurus (from worktree-test)
+        working-directory: ../worktree-test
+        env:
+          # Optionnel: laisse passer les liens cassés pendant la migration
+          NODE_OPTIONS: "--max_old_space_size=4096"
+        run: npm run build
+
+      # Déploiement vers gh-pages depuis le dossier build du worktree test
+      - name: Publish to gh-pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ../worktree-test/build
+          force_orphan: true
