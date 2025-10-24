@@ -3,7 +3,7 @@ name: Build & Deploy Docusaurus to Pages
 on:
   push:
     branches:
-      - test    # déploie quand la branche test est mise à jour
+      - test
   workflow_dispatch:
 
 permissions:
