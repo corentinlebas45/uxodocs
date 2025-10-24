@@ -7,53 +7,81 @@ const config: Config = {
   tagline: 'Documentation produits',
   favicon: 'img/favicon.ico',
 
+  // URL de base pour ton déploiement GitHub Pages
   url: 'https://corentinlebas45.github.io',
   baseUrl: '/uxodocs/',
   organizationName: 'corentinlebas45',
   projectName: 'uxodocs',
   deploymentBranch: 'gh-pages',
 
+  // Gestion des liens cassés
   onBrokenLinks: 'warn',
   markdown: {
     hooks: {
       onBrokenMarkdownLinks: 'warn',
     },
   },
-  onBrokenMarkdownLinks: 'warn',
 
-  // i18n: {
-  //   defaultLocale: 'fr',
-  //   locales: ['fr'],
-  // },
-
-  presets: [
+  // === Plugins de documentation pour chaque produit ===
+  plugins: [
     [
-      'classic',
+      '@docusaurus/plugin-content-docs',
       {
-        docs: {
-          path: 'docs',
-          routeBasePath: 'docs',
-          sidebarPath: './sidebars.ts',
-          editCurrentVersion: false,
-        } satisfies Preset.Options['docs'],
-        blog: false,
-        theme: {
-          customCss: './src/css/custom.css',
-        } satisfies Preset.Options['theme'],
-      } satisfies Preset.Options,
+        id: 'fast2',
+        path: 'docs/fast2',
+        routeBasePath: 'docs/fast2',
+        sidebarPath: require.resolve('./sidebars_fast2.ts'),
+        lastVersion: 'current',
+        versions: {
+          current: { label: 'current' },
+        },
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'arender',
+        path: 'docs/arender',
+        routeBasePath: 'docs/arender',
+        sidebarPath: require.resolve('./sidebars_arender.ts'),
+        lastVersion: 'current',
+        versions: {
+          current: { label: 'current' },
+        },
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'flowerdocs',
+        path: 'docs/flowerdocs',
+        routeBasePath: 'docs/flowerdocs',
+        sidebarPath: require.resolve('./sidebars_flowerdocs.ts'),
+        lastVersion: 'current',
+        versions: {
+          current: { label: 'current' },
+        },
+      },
     ],
   ],
 
-
+  // === Thème et configuration visuelle ===
   themeConfig: {
     navbar: {
       title: 'UXO Docs',
       logo: { alt: 'UXO', src: 'img/logo.svg' },
       items: [
-        { type: 'doc', docId: 'intro', label: 'Introduction' },
-        { type: 'doc', docId: 'fast2/index', label: 'Fast2' },
-        { type: 'doc', docId: 'arender/index', label: 'Arender' },
-        { type: 'doc', docId: 'flowerdocs/index', label: 'Flowerdocs' },
+        // Dropdowns de version pour chaque produit
+        { type: 'docsVersionDropdown', docsPluginId: 'fast2', position: 'left', label: 'Fast2' },
+        { type: 'docsVersionDropdown', docsPluginId: 'arender', position: 'left', label: 'Arender' },
+        { type: 'docsVersionDropdown', docsPluginId: 'flowerdocs', position: 'left', label: 'Flowerdocs' },
+
+        // Liens directs (facultatif)
+        { type: 'doc', docsPluginId: 'fast2', docId: 'index', label: 'Docs Fast2' },
+        { type: 'doc', docsPluginId: 'arender', docId: 'index', label: 'Docs Arender' },
+        { type: 'doc', docsPluginId: 'flowerdocs', docId: 'index', label: 'Docs Flowerdocs' },
+
+        // Lien GitHub
         { href: 'https://github.com/corentinlebas45/uxodocs', label: 'GitHub', position: 'right' },
       ],
     },
