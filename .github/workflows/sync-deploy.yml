@@ -71,7 +71,7 @@ jobs:
               rsync -a --delete .tmp_docs/ "docs/${product}/"
 
               # crée le snapshot de version pour le plugin correspondant
-              npx docusaurus docs:version --plugin "${product}" "${ver}"
+              npx docusaurus docs:version --plugin-id "${product}" "${ver}"
             done
 
             # Restaure le current d'origine
