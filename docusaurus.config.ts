@@ -77,8 +77,14 @@ const config: Config = {
       items: [
         // Dropdowns de version (un par produit)
         { type: 'docsVersionDropdown', docsPluginId: 'fast2', position: 'left', label: 'Fast2' },
+        { type: 'doc', docsPluginId: 'fast2', docId: 'index', label: 'Docs Fast2' },
+
         { type: 'docsVersionDropdown', docsPluginId: 'arender', position: 'left', label: 'Arender' },
+        { type: 'doc', docsPluginId: 'arender', docId: 'index', label: 'Docs Arender' },
+
+        { type: 'doc', docsPluginId: 'flowerdocs', docId: 'index', label: 'Docs Flowerdocs' },
         { type: 'docsVersionDropdown', docsPluginId: 'flowerdocs', position: 'left', label: 'Flowerdocs' },
+
 
         { href: 'https://github.com/corentinlebas45/uxodocs', label: 'GitHub', position: 'right' },
       ],
