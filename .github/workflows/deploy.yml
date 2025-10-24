@@ -1,18 +1,19 @@
-name: deploy-gh-pages
+name: Build & Deploy Docusaurus to GitHub Pages
 
 on:
   push:
-    branches: [ test ]
-  workflow_dispatch:
+    branches:
+      - test          # déploie quand la branche test est mise à jour
+  workflow_dispatch:  # déclenchement manuel optionnel
 
 permissions:
   contents: read
-  pages: write       # pour publier sur GitHub Pages
-  id-token: write    # requis par actions/deploy-pages
+  pages: write
+  id-token: write
 
 concurrency:
   group: "pages"
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   build:
@@ -21,34 +22,30 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          ref: test
           fetch-depth: 0
 
-      - name: Setup Node
+      - name: Use Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          node-version: 20
+          cache: npm
 
-      - name: Install deps
-        run: npm ci --prefer-offline --no-audit --no-fund
+      - name: Install dependencies
+        run: npm ci
 
-      # (Optionnel) s'il faut regénérer la navbar/versions
-      - name: Rebuild versions manifest
-        if: ${{ hashFiles('scripts/collectVersions.mjs') != '' }}
-        run: node scripts/collectVersions.mjs
-
-      - name: Build site (Docusaurus)
-        env:
-          NODE_OPTIONS: --max_old_space_size=4096
+      - name: Build Docusaurus
         run: npm run build
+        env:
+          # Facultatif : utile si ton site utilise des variables à build-time
+          NODE_OPTIONS: "--max_old_space_size=4096"
 
-      - name: Setup Pages
+      - name: Setup GitHub Pages
         uses: actions/configure-pages@v5
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: build
+          path: build  # dossier de sortie de Docusaurus
 
   deploy:
     needs: build
