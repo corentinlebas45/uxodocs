@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkuxodocs=globalThis.webpackChunkuxodocs||[]).push([[4075],{746:s=>{s.exports=JSON.parse('{"name":"docusaurus-plugin-content-docs","id":"flowerdocs"}')}}]);
