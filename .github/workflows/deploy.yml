@@ -1,46 +1,30 @@
-name: Hydrate & Deploy Docs
+name: Build & Deploy Docusaurus to Pages
 
 on:
   push:
-    branches: [ master, "fast2/v*", "flower/v*", "arender/v*" ]
+    branches:
+      - test    # déploie quand la branche test est mise à jour
   workflow_dispatch:
 
-# Give the workflow permission to push/deploy (used by the deploy step / gh-pages)
 permissions:
-  contents: write
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
 
 jobs:
-  build-deploy:
+  build:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout (force master)
+      - name: Checkout test
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          # Important pour récupérer toutes les branches and allow pushing back
-          persist-credentials: true
-          # Forcer le checkout sur master afin que le build/déploy se base toujours sur master
-          ref: refs/heads/master
-          fetch-tags: true
 
-      - name: Debug current ref and branch
-        run: |
-          echo "Triggering ref: ${{ github.ref }}"
-          echo "GITHUB_REF env: $GITHUB_REF"
-          echo "Checkout HEAD:" 
-          git --no-pager branch --show-current || git rev-parse --abbrev-ref HEAD || true
-          echo "Recent commit:" 
-          git --no-pager log -1 --pretty=format:'%h %s (%an)' || true
-
-      - name: Ensure remote branches are available
-        run: |
-          git fetch --prune --unshallow || true
-          git fetch --all --prune
-          git fetch origin '+refs/heads/*:refs/remotes/origin/*' || true
-          git branch -r
-
-      - name: Setup Node
+      - name: Use Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
@@ -49,21 +33,24 @@ jobs:
       - name: Install deps
         run: npm ci
 
-      - name: Hydrate versions from branches
-        run: bash scripts/hydrate.sh
-
-      - name: Generate versions manifest
-        run: node scripts/collectVersions.mjs
-
-      - name: CI cleanup for MDX
-        run: |
-          python3 scripts/ci-cleanup.py
-
-      - name: Build
+      - name: Build Docusaurus
         run: npm run build
 
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: build
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
       - name: Deploy to GitHub Pages
-        env:
-          GIT_USER: ${{ github.actor }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: npm run deploy
+        id: deployment
+        uses: actions/deploy-pages@v4
