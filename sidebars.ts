@@ -17,33 +17,34 @@ function buildProductCategory(product: string): SidebarItem | null {
 
   const items: SidebarItem[] = [];
 
-  // 1) Index du produit
-  items.push({ type: 'doc', id: `${product}/index`, label: 'Index', key: `${product}-index` });
+  // 1) Index d'abord
+  items.push({
+    type: 'doc',
+    id: `${product}/index`,
+    label: 'Index',
+    key: `${product}-index`,
+  });
 
-  // 2) Pages "current" à la racine (hors index)
-  const rootDocs = (fs.readdirSync(productDir)
-    .filter(n => n.match(/\.(md|mdx)$/i) && !/^index\.mdx?$/i.test(n))
-    .map(n => n.replace(/\.(md|mdx)$/i, ''))); // ex: ['guide', 'api']
+  // 2) Autres docs à la racine (frères de index.md) au même niveau
+  const rootDocs = fs
+    .readdirSync(productDir)
+    .filter((n) => n.match(/\.(md|mdx)$/i) && !/^index\.mdx?$/i.test(n))
+    .map((n) => n.replace(/\.(md|mdx)$/i, ''))
+    .sort((a, b) => a.localeCompare(b, undefined, {numeric: true, sensitivity: 'base'}));
 
-  if (rootDocs.length > 0) {
+  for (const base of rootDocs) {
     items.push({
-      type: 'category',
-      label: 'Courant',
-      collapsed: true,
-      key: `${product}-current`,
-      items: rootDocs.map(base => ({
-        type: 'doc',
-        id: `${product}/${base}`,
-        // label optionnel: Docusaurus prendra le titre H1 du fichier
-        // label: base,
-      })),
+      type: 'doc',
+      id: `${product}/${base}`,
+      // laisse Docusaurus prendre le H1 comme label
+      key: `${product}-root-${base}`,
     });
   }
 
-  // 3) Catégories par version (v1, v2, …)
+  // 3) Versions v*
   const versions = listDirs(productDir)
-    .filter(name => /^v\d+/i.test(name) && hasIndex(path.join(productDir, name)))
-    .sort((a, b) => a.localeCompare(b, undefined, { numeric: true, sensitivity: 'base' }));
+    .filter((name) => /^v\d+/i.test(name) && hasIndex(path.join(productDir, name)))
+    .sort((a, b) => a.localeCompare(b, undefined, {numeric: true, sensitivity: 'base'}));
 
   for (const v of versions) {
     items.push({
