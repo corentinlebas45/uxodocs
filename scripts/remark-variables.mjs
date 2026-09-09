@@ -3,7 +3,7 @@ import { visit } from 'unist-util-visit';
 /**
  * Remark plugin that replaces {{variable}} placeholders in markdown content.
  *
- * Why two separate visit passes:
+ * Why three separate visit passes:
  *
  * When the MDX parser encounters {{varname}} in regular text (outside of code
  * blocks), it treats the outer {} as a JSX expression and converts it to an
@@ -15,6 +15,11 @@ import { visit } from 'unist-util-visit';
  * Inside code blocks and link URLs the MDX parser does NOT evaluate
  * expressions, so {{varname}} remains as a literal string. The second pass
  * handles those via node.value / node.meta / node.url.
+ *
+ * A quoted JSX attribute (version="{{varname}}") is also a literal string,
+ * but it lives in node.attributes rather than in a child node, so neither
+ * pass reaches it. The third pass walks the attributes of JSX elements so a
+ * component prop can be fed a variable instead of a hardcoded value.
  *
  * @param {{ variables: Record<string, string> }} options
  */
@@ -50,6 +55,15 @@ export default function remarkVariables(options) {
             }
             if (typeof node.url === 'string') {
                 node.url = replace(node.url);
+            }
+        });
+
+        // Pass 3 — quoted attribute values on JSX elements, e.g. <Foo version="{{version}}" />
+        visit(tree, ['mdxJsxFlowElement', 'mdxJsxTextElement'], (node) => {
+            for (const attribute of node.attributes ?? []) {
+                if (attribute.type === 'mdxJsxAttribute' && typeof attribute.value === 'string') {
+                    attribute.value = replace(attribute.value);
+                }
             }
         });
     };
