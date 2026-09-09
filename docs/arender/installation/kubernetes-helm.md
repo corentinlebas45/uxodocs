@@ -82,7 +82,7 @@ helm install arender arender/arender \
 ```yaml title="values.yaml"
 global:
   imagePullSecrets: []
-  arenderVersion: "2026.0.0"
+  arenderVersion: "{{version}}"
 ```
 
 The `arenderVersion` sets the image tag for all ARender containers.
